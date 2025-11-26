@@ -1,0 +1,91 @@
+{
+  "race": {
+    "name": "Unbound Gravel 200",
+    "slug": "unbound-200",
+    "tagline": "The World's Premier Gravel Race",
+    "description": "200 miles of Kansas gravel. Heat. Wind. Distance. This is the race that defines gravel racing. Finishing Unbound 200 puts you in an elite club of athletes who've conquered one of the most demanding events in cycling.",
+    "vitals": {
+      "distance_miles": 200,
+      "elevation_gain_ft": 11000,
+      "elevation_ft": 1200,
+      "location": {
+        "city": "Emporia",
+        "state": "KS"
+      }
+    },
+    "terrain_description": "mostly hard-packed gravel with some loose sections",
+    "duration_estimate": "10-14 hours",
+    "key_challenges": "extreme heat, distance, wind, cumulative fatigue",
+    "radar_scores": {
+      "elevation": {"score": 3},
+      "length": {"score": 5},
+      "technicality": {"score": 2},
+      "climate": {"score": 5},
+      "altitude": {"score": 1},
+      "adventure": {"score": 3}
+    },
+    "non_negotiables": [
+      {
+        "requirement": "Heat adaptation protocol starting 4-6 weeks out",
+        "by_when": "Week 4-6",
+        "why": "Kansas heat in June can break unprepared riders. Acclimation is non-negotiable."
+      },
+      {
+        "requirement": "Two 6+ hour rides minimum before race day",
+        "by_when": "Weeks 8-10",
+        "why": "You need to prove you can handle the duration. Fitness without durability fails here."
+      },
+      {
+        "requirement": "Race-day nutrition dialed: 80-100g carbs/hour",
+        "by_when": "Week 6+",
+        "why": "200 miles burns 8,000+ calories. Under-fueling means bonking. Guaranteed."
+      },
+      {
+        "requirement": "Tire strategy: 40mm+ with some chunk protection",
+        "by_when": "Week 8",
+        "why": "Loose sections and washboard will destroy thin tires. Durability over speed."
+      },
+      {
+        "requirement": "Mental prep for hours 8-12 when legs stop working",
+        "by_when": "Week 10+",
+        "why": "The race gets real after 8 hours. Mental training prevents quitting."
+      }
+    ],
+    "support_url": "https://unboundgravel.com",
+    "recommended_tire_width": "40-42mm",
+    "aid_station_strategy": "Aid stations every 30-40 miles. Don't skip them. Refill bottles, grab real food, take 2-3 minutes to reset. The time lost is worth the energy gained.",
+    "weather_strategy": "June in Kansas means heat (80-95°F) and potential wind. Start early if possible. Hydrate aggressively (36-48 oz/hour). Wear light colors. Use ice in bottles. Sunscreen is mandatory.",
+    "skill_notes": "Cornering on loose gravel is critical. Practice eating while riding. Group riding skills save massive energy over 200 miles.",
+    "tactics": "Survive the first 60 miles. Find a sustainable group. Fuel every 20 minutes. Don't chase attacks. The race happens after mile 100 when others fade.",
+    "equipment_checklist": "Power meter, heart rate monitor, GPS computer, 2+ bottles, hydration pack, spare tubes (3), CO2 (4), tire plugs, multi-tool, lights (front + rear), sunscreen, chamois cream"
+  },
+  "ability_level": "Intermediate",
+  "tier_name": "Finisher",
+  "weekly_hours": 10,
+  "weekly_structure": "Monday: Rest | Tuesday: Intensity (60-75 min) | Wednesday: Endurance Z2 (60-90 min) | Thursday: G Spot (60-75 min) | Friday: Rest/Recovery | Saturday: Long Ride (2.5-4 hours) | Sunday: Recovery/Skills (45-60 min)",
+  "key_workouts": [
+    {
+      "name": "G Spot 3×15",
+      "purpose": "Race pace sustainment. Builds ability to hold uncomfortable but sustainable power for extended periods."
+    },
+    {
+      "name": "Threshold 4×12",
+      "purpose": "FTP development. Raises your sustainable power ceiling."
+    },
+    {
+      "name": "Long Ride with G Spot",
+      "purpose": "Race simulation. Combines endurance with race-pace efforts."
+    },
+    {
+      "name": "VO2max 5×3",
+      "purpose": "Top-end power. Maintains ability to respond to attacks and climb hard."
+    }
+  ],
+  "skills": {
+    "skill_5_name": "Pacing Long Efforts",
+    "skill_5_why": "200 miles requires perfect pacing. Going too hard early means suffering later. Going too easy means losing time.",
+    "skill_5_how": "Practice holding G Spot power for 2+ hours during long rides. Learn to read your body's signals. Use power and HR together, not power alone.",
+    "skill_5_cue": "Steady power, check in every hour"
+  }
+}
+

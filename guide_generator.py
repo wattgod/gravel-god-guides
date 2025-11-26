@@ -29,7 +29,7 @@ def load_template() -> str:
         return f.read()
 
 def extract_sections(template: str) -> Dict[str, str]:
-    """Extract sections from template"""
+    """Extract sections from template - captures ALL content"""
     sections = {}
     current_section = None
     current_content = []
@@ -37,29 +37,44 @@ def extract_sections(template: str) -> Dict[str, str]:
     lines = template.split('\n')
     
     for line in lines:
+        stripped = line.strip()
+        
         # Check if it's a section header
-        if line.startswith('SECTION ') or (line.isupper() and 'SECTION' in line):
+        if stripped.startswith('SECTION ') or (stripped.isupper() and 'SECTION' in stripped and len(stripped) < 100):
             if current_section:
                 sections[current_section] = '\n'.join(current_content)
-            current_section = line
+            current_section = stripped
             current_content = []
-        elif line.startswith('ALTITUDE TRAINING SECTION'):
+        elif stripped.startswith('ALTITUDE TRAINING SECTION'):
             if current_section:
                 sections[current_section] = '\n'.join(current_content)
-            current_section = line
+            current_section = stripped
             current_content = []
-        elif line.startswith('CLOSING'):
+        elif stripped == 'CLOSING' or stripped.startswith('CLOSING'):
             if current_section:
                 sections[current_section] = '\n'.join(current_content)
-            current_section = line
+            current_section = 'CLOSING'
             current_content = []
         else:
+            # Add ALL content, including empty lines (they help with formatting)
             if current_section:
                 current_content.append(line)
+            elif not current_section and stripped:  # Content before first section
+                # This is the header/title - create a section for it
+                if 'SECTION' not in sections:
+                    sections['HEADER'] = []
+                if isinstance(sections['HEADER'], list):
+                    sections['HEADER'].append(line)
+                else:
+                    sections['HEADER'] = sections['HEADER'] + '\n' + line
     
     # Add final section
     if current_section:
         sections[current_section] = '\n'.join(current_content)
+    
+    # Convert header list to string
+    if 'HEADER' in sections and isinstance(sections['HEADER'], list):
+        sections['HEADER'] = '\n'.join(sections['HEADER'])
     
     return sections
 
@@ -173,18 +188,33 @@ def generate_svg_radar_chart(race_data: Dict[str, Any]) -> str:
 def format_paragraph(text: str) -> str:
     """Format a paragraph with proper HTML"""
     if not text.strip():
-        return ''
+        return '<br>'
     
-    # Check if it's a header
-    if text.isupper() and len(text) < 100:
-        return f'<h2>{text}</h2>'
+    stripped = text.strip()
+    
+    # Check if it's a header (all caps, short)
+    if stripped.isupper() and len(stripped) < 100 and not stripped.startswith('{{'):
+        return f'<h2>{stripped}</h2>'
     
     # Check for numbered lists
-    if re.match(r'^\d+[\.\)]\s+', text):
-        return f'<p><strong>{text.split(".", 1)[0]}.</strong> {text.split(".", 1)[1] if "." in text else text.split(")", 1)[1] if ")" in text else text}</p>'
+    if re.match(r'^\d+[\.\)]\s+', stripped):
+        num_part = re.match(r'^(\d+[\.\)])\s+', stripped).group(1)
+        content = stripped[len(num_part):].strip()
+        return f'<p><strong>{num_part}</strong> {content}</p>'
+    
+    # Check for bullet points
+    if stripped.startswith('-') or stripped.startswith('•'):
+        content = stripped.lstrip('-•').strip()
+        return f'<p>• {content}</p>'
+    
+    # Check for bold text patterns (text: description)
+    if ':' in stripped and len(stripped.split(':')) == 2:
+        parts = stripped.split(':', 1)
+        if len(parts[0]) < 50:  # Likely a label
+            return f'<p><strong>{parts[0]}:</strong> {parts[1].strip()}</p>'
     
     # Regular paragraph
-    return f'<p>{text}</p>'
+    return f'<p>{stripped}</p>'
 
 def format_table(text: str) -> str:
     """Format table from text"""
@@ -431,28 +461,68 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         section_title = matching_section.replace('SECTION ', '').replace(':', '')
         html_parts.append(f'    <h1>{section_title}</h1>')
         
-        # Process content
+        # Process content - process EVERY line to capture all content
         paragraphs = content.split('\n')
+        in_list = False
+        list_items = []
+        
         for para in paragraphs:
-            if not para.strip():
-                continue
+            stripped = para.strip()
             
             # Replace infographic placeholders
-            if 'INFOGRAPHIC_PHASE_BARS' in para:
+            if 'INFOGRAPHIC_PHASE_BARS' in stripped:
                 html_parts.append('    ' + generate_svg_phase_bars())
-            elif 'INFOGRAPHIC_RATING_HEX' in para:
-                html_parts.append('    ' + generate_svg_radar_chart(race_data))
-            elif 'INFOGRAPHIC' in para:
-                # Skip infographic placeholders for now
                 continue
-            elif 'TABLE' in para and para.startswith('['):
-                # Table placeholder - skip for now
+            elif 'INFOGRAPHIC_RATING_HEX' in stripped:
+                html_parts.append('    ' + generate_svg_radar_chart(race_data))
+                continue
+            elif 'INFOGRAPHIC' in stripped and stripped.startswith('{{'):
+                # Skip infographic placeholders
+                continue
+            elif 'TABLE' in stripped and stripped.startswith('['):
+                # Table placeholder - skip
+                continue
+            
+            # Handle lists
+            if stripped.startswith('-') or stripped.startswith('•') or re.match(r'^\d+[\.\)]\s+', stripped):
+                if not in_list:
+                    in_list = True
+                    list_items = []
+                list_items.append(stripped)
                 continue
             else:
-                # Format as paragraph
-                formatted = format_paragraph(para)
-                if formatted:
-                    html_parts.append('    ' + formatted)
+                # Close list if we were in one
+                if in_list and list_items:
+                    html_parts.append('    <ul>')
+                    for item in list_items:
+                        content = item.lstrip('-•').strip()
+                        if re.match(r'^\d+[\.\)]\s+', item):
+                            num_part = re.match(r'^(\d+[\.\)])\s+', item).group(1)
+                            content = item[len(num_part):].strip()
+                            html_parts.append(f'    <li><strong>{num_part}</strong> {content}</li>')
+                        else:
+                            html_parts.append(f'    <li>{content}</li>')
+                    html_parts.append('    </ul>')
+                    list_items = []
+                    in_list = False
+            
+            # Format as paragraph (including empty lines for spacing)
+            formatted = format_paragraph(para)
+            if formatted:
+                html_parts.append('    ' + formatted)
+        
+        # Close any remaining list
+        if in_list and list_items:
+            html_parts.append('    <ul>')
+            for item in list_items:
+                content = item.lstrip('-•').strip()
+                if re.match(r'^\d+[\.\)]\s+', item):
+                    num_part = re.match(r'^(\d+[\.\)])\s+', item).group(1)
+                    content = item[len(num_part):].strip()
+                    html_parts.append(f'    <li><strong>{num_part}</strong> {content}</li>')
+                else:
+                    html_parts.append(f'    <li>{content}</li>')
+            html_parts.append('    </ul>')
     
     # Close HTML
     html_parts.append('</body>\n</html>')

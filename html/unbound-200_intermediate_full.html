@@ -9,695 +9,695 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-/* ============================================
-           GRAVEL GOD NEO-BRUTALIST DESIGN SYSTEM
-           ============================================ */
-        
-        :root {
-            --cream: #f5f5dc;
-            --cream-dark: #ede5d0;
-            --turquoise: #4ecdc4;
-            --turquoise-light: rgba(78, 205, 196, 0.15);
-            --yellow: #f4d03f;
-            --yellow-light: #fef9e7;
-            --brown-dark: #59473C;
-            --text-dark: #2c2c2c;
-            --red: #e74c3c;
-            --red-light: #fdedec;
-            --green: #27ae60;
-            --green-light: #e9f7ef;
-            --border-width: 3px;
-            --shadow-offset: 6px;
-            --shadow-color: rgba(0,0,0,0.2);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-        body {
-            font-family: 'Sometype Mono', 'Courier New', Courier, monospace;
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-            min-height: 100vh;
-        }
-
         /* ============================================
-           STICKY NAVIGATION
-           ============================================ */
+                   GRAVEL GOD NEO-BRUTALIST DESIGN SYSTEM
+                   ============================================ */
         
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--brown-dark);
-            border-bottom: var(--border-width) solid var(--text-dark);
-            box-shadow: 0 var(--shadow-offset) 0 var(--shadow-color);
-            padding: 0.75rem 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
+                :root {
+                    --cream: #f5f5dc;
+                    --cream-dark: #ede5d0;
+                    --turquoise: #4ecdc4;
+                    --turquoise-light: rgba(78, 205, 196, 0.15);
+                    --yellow: #f4d03f;
+                    --yellow-light: #fef9e7;
+                    --brown-dark: #59473C;
+                    --text-dark: #2c2c2c;
+                    --red: #e74c3c;
+                    --red-light: #fdedec;
+                    --green: #27ae60;
+                    --green-light: #e9f7ef;
+                    --border-width: 3px;
+                    --shadow-offset: 6px;
+                    --shadow-color: rgba(0,0,0,0.2);
+                }
 
-        .sticky-nav a {
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.35rem 0.6rem;
-            border: 2px solid transparent;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
 
-        .sticky-nav a:hover {
-            color: var(--turquoise);
-            border-color: var(--turquoise);
-        }
+                html {
+                    scroll-behavior: smooth;
+                    scroll-padding-top: 80px;
+                }
 
-        .sticky-nav a.active {
-            background: var(--turquoise);
-            color: var(--text-dark);
-            border-color: var(--text-dark);
-        }
+                body {
+                    font-family: 'Sometype Mono', 'Courier New', Courier, monospace;
+                    font-size: 16px;
+                    line-height: 1.7;
+                    color: var(--text-dark);
+                    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+                    min-height: 100vh;
+                }
 
-        /* ============================================
-           HEADER
-           ============================================ */
+                /* ============================================
+                   STICKY NAVIGATION
+                   ============================================ */
         
-        .header {
-            background: var(--brown-dark);
-            background-image: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0,0,0,0.1) 10px,
-                rgba(0,0,0,0.1) 20px
-            );
-            padding: 3rem 2rem;
-            text-align: center;
-            border-bottom: var(--border-width) solid var(--text-dark);
-        }
+                .sticky-nav {
+                    position: sticky;
+                    top: 0;
+                    z-index: 100;
+                    background: var(--brown-dark);
+                    border-bottom: var(--border-width) solid var(--text-dark);
+                    box-shadow: 0 var(--shadow-offset) 0 var(--shadow-color);
+                    padding: 0.75rem 1rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    justify-content: center;
+                }
 
-        .race-badge {
-            display: inline-block;
-            background: var(--turquoise);
-            color: var(--text-dark);
-            padding: 0.5rem 1.5rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-            margin-bottom: 1.5rem;
-        }
+                .sticky-nav a {
+                    color: var(--cream);
+                    text-decoration: none;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    padding: 0.35rem 0.6rem;
+                    border: 2px solid transparent;
+                    transition: all 0.2s ease;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
 
-        .header h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            color: var(--turquoise);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 
-                3px 3px 0 var(--yellow),
-                6px 6px 0 var(--text-dark);
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
+                .sticky-nav a:hover {
+                    color: var(--turquoise);
+                    border-color: var(--turquoise);
+                }
 
-        .header-subtitle {
-            color: var(--cream);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
+                .sticky-nav a.active {
+                    background: var(--turquoise);
+                    color: var(--text-dark);
+                    border-color: var(--text-dark);
+                }
 
-        .tier-badges {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .tier-badge {
-            background: var(--yellow);
-            color: var(--text-dark);
-            padding: 0.5rem 1.25rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-        }
-
-        .level-badge {
-            background: var(--cream);
-            color: var(--text-dark);
-            padding: 0.5rem 1.25rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-        }
-
-        /* ============================================
-           MAIN CONTENT
-           ============================================ */
+                /* ============================================
+                   HEADER
+                   ============================================ */
         
-        .main-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
-        }
+                .header {
+                    background: var(--brown-dark);
+                    background-image: repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 10px,
+                        rgba(0,0,0,0.1) 10px,
+                        rgba(0,0,0,0.1) 20px
+                    );
+                    padding: 3rem 2rem;
+                    text-align: center;
+                    border-bottom: var(--border-width) solid var(--text-dark);
+                }
 
-        /* ============================================
-           SECTIONS
-           ============================================ */
+                .race-badge {
+                    display: inline-block;
+                    background: var(--turquoise);
+                    color: var(--text-dark);
+                    padding: 0.5rem 1.5rem;
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: 4px 4px 0 var(--shadow-color);
+                    margin-bottom: 1.5rem;
+                }
+
+                .header h1 {
+                    font-size: clamp(2.5rem, 8vw, 4.5rem);
+                    color: var(--turquoise);
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    text-shadow: 
+                        3px 3px 0 var(--yellow),
+                        6px 6px 0 var(--text-dark);
+                    margin-bottom: 1rem;
+                    line-height: 1.1;
+                }
+
+                .header-subtitle {
+                    color: var(--cream);
+                    font-size: 1.1rem;
+                    margin-bottom: 1.5rem;
+                    opacity: 0.9;
+                }
+
+                .tier-badges {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .tier-badge {
+                    background: var(--yellow);
+                    color: var(--text-dark);
+                    padding: 0.5rem 1.25rem;
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: 4px 4px 0 var(--shadow-color);
+                }
+
+                .level-badge {
+                    background: var(--cream);
+                    color: var(--text-dark);
+                    padding: 0.5rem 1.25rem;
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: 4px 4px 0 var(--shadow-color);
+                }
+
+                /* ============================================
+                   MAIN CONTENT
+                   ============================================ */
         
-        .section {
-            margin-bottom: 3rem;
-        }
+                .main-content {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    padding: 2rem 1.5rem 4rem;
+                }
 
-        .section-header {
-            background: var(--text-dark);
-            color: var(--cream);
-            padding: 1rem 1.5rem 1rem 4rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            border: var(--border-width) solid var(--text-dark);
-        }
-
-        .section-header h2 {
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-
-        .section-number {
-            position: absolute;
-            left: -12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--turquoise);
-            color: var(--text-dark);
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 3px 3px 0 var(--shadow-color);
-        }
-
-        .section-content {
-            padding: 0 0.5rem;
-        }
-
-        .section-content h3 {
-            font-size: 1.2rem;
-            margin: 2rem 0 1rem;
-            color: var(--brown-dark);
-            border-bottom: 2px solid var(--turquoise);
-            padding-bottom: 0.5rem;
-        }
-
-        .section-content h4 {
-            font-size: 1rem;
-            margin: 1.5rem 0 0.75rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .section-content p {
-            margin-bottom: 1rem;
-        }
-
-        .section-content ul, .section-content ol {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .section-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* ============================================
-           CALLOUT BOXES
-           ============================================ */
+                /* ============================================
+                   SECTIONS
+                   ============================================ */
         
-        .callout {
-            border: var(--border-width) solid var(--text-dark);
-            border-left-width: 6px;
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-            box-shadow: 4px 4px 0 var(--shadow-color);
-        }
+                .section {
+                    margin-bottom: 3rem;
+                }
 
-        .callout-title {
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
+                .section-header {
+                    background: var(--text-dark);
+                    color: var(--cream);
+                    padding: 1rem 1.5rem 1rem 4rem;
+                    margin-bottom: 1.5rem;
+                    position: relative;
+                    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+                    border: var(--border-width) solid var(--text-dark);
+                }
 
-        .callout-warning {
-            border-left-color: var(--yellow);
-            background: var(--yellow-light);
-        }
+                .section-header h2 {
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    margin: 0;
+                }
 
-        .callout-warning .callout-title {
-            color: #b7950b;
-        }
+                .section-number {
+                    position: absolute;
+                    left: -12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: var(--turquoise);
+                    color: var(--text-dark);
+                    width: 48px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: 3px 3px 0 var(--shadow-color);
+                }
 
-        .callout-info {
-            border-left-color: var(--turquoise);
-            background: rgba(78, 205, 196, 0.1);
-        }
+                .section-content {
+                    padding: 0 0.5rem;
+                }
 
-        .callout-info .callout-title {
-            color: #1a8a82;
-        }
+                .section-content h3 {
+                    font-size: 1.2rem;
+                    margin: 2rem 0 1rem;
+                    color: var(--brown-dark);
+                    border-bottom: 2px solid var(--turquoise);
+                    padding-bottom: 0.5rem;
+                }
 
-        .callout-danger {
-            border-left-color: var(--red);
-            background: var(--red-light);
-        }
+                .section-content h4 {
+                    font-size: 1rem;
+                    margin: 1.5rem 0 0.75rem;
+                    color: var(--text-dark);
+                    font-weight: 700;
+                }
 
-        .callout-danger .callout-title {
-            color: var(--red);
-        }
+                .section-content p {
+                    margin-bottom: 1rem;
+                }
 
-        .callout-success {
-            border-left-color: var(--green);
-            background: var(--green-light);
-        }
+                .section-content ul, .section-content ol {
+                    margin-bottom: 1rem;
+                    padding-left: 1.5rem;
+                }
 
-        .callout-success .callout-title {
-            color: var(--green);
-        }
+                .section-content li {
+                    margin-bottom: 0.5rem;
+                }
 
-        /* ============================================
-           TABLES
-           ============================================ */
+                /* ============================================
+                   CALLOUT BOXES
+                   ============================================ */
         
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
+                .callout {
+                    border: var(--border-width) solid var(--text-dark);
+                    border-left-width: 6px;
+                    padding: 1.25rem 1.5rem;
+                    margin: 1.5rem 0;
+                    box-shadow: 4px 4px 0 var(--shadow-color);
+                }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            background: white;
-        }
+                .callout-title {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 0.85rem;
+                    margin-bottom: 0.5rem;
+                }
 
-        th {
-            background: var(--brown-dark);
-            color: var(--cream);
-            padding: 0.75rem 1rem;
-            text-align: left;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid var(--text-dark);
-        }
+                .callout-warning {
+                    border-left-color: var(--yellow);
+                    background: var(--yellow-light);
+                }
 
-        td {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--text-dark);
-            font-size: 0.9rem;
-        }
+                .callout-warning .callout-title {
+                    color: #b7950b;
+                }
 
-        tr:nth-child(even) {
-            background: rgba(0,0,0,0.03);
-        }
+                .callout-info {
+                    border-left-color: var(--turquoise);
+                    background: rgba(78, 205, 196, 0.1);
+                }
 
-        tr:hover {
-            background: var(--turquoise-light);
-        }
+                .callout-info .callout-title {
+                    color: #1a8a82;
+                }
 
-        tr.g-spot-row {
-            background: rgba(78, 205, 196, 0.25) !important;
-            font-weight: 600;
-        }
+                .callout-danger {
+                    border-left-color: var(--red);
+                    background: var(--red-light);
+                }
 
-        tr.g-spot-row td {
-            border-color: var(--turquoise);
-        }
+                .callout-danger .callout-title {
+                    color: var(--red);
+                }
 
-        /* ============================================
-           SVG GRAPHICS CONTAINERS
-           ============================================ */
+                .callout-success {
+                    border-left-color: var(--green);
+                    background: var(--green-light);
+                }
+
+                .callout-success .callout-title {
+                    color: var(--green);
+                }
+
+                /* ============================================
+                   TABLES
+                   ============================================ */
         
-        .graphic-container {
-            background: white;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
+                .table-wrapper {
+                    overflow-x: auto;
+                    margin: 1.5rem 0;
+                }
 
-        .graphic-title {
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: var(--brown-dark);
-            text-align: center;
-        }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+                    background: white;
+                }
 
-        .graphic-container svg {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
+                th {
+                    background: var(--brown-dark);
+                    color: var(--cream);
+                    padding: 0.75rem 1rem;
+                    text-align: left;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border: 2px solid var(--text-dark);
+                }
 
-        /* ============================================
-           CARDS (Non-negotiables, Workouts)
-           ============================================ */
+                td {
+                    padding: 0.75rem 1rem;
+                    border: 1px solid var(--text-dark);
+                    font-size: 0.9rem;
+                }
+
+                tr:nth-child(even) {
+                    background: rgba(0,0,0,0.03);
+                }
+
+                tr:hover {
+                    background: var(--turquoise-light);
+                }
+
+                tr.g-spot-row {
+                    background: rgba(78, 205, 196, 0.25) !important;
+                    font-weight: 600;
+                }
+
+                tr.g-spot-row td {
+                    border-color: var(--turquoise);
+                }
+
+                /* ============================================
+                   SVG GRAPHICS CONTAINERS
+                   ============================================ */
         
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.25rem;
-            margin: 1.5rem 0;
-        }
+                .graphic-container {
+                    background: white;
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+                    padding: 1.5rem;
+                    margin: 1.5rem 0;
+                }
 
-        .card {
-            background: var(--cream);
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-            padding: 1.25rem;
-            position: relative;
-        }
+                .graphic-title {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 0.9rem;
+                    margin-bottom: 1rem;
+                    color: var(--brown-dark);
+                    text-align: center;
+                }
 
-        .card-number {
-            position: absolute;
-            top: -12px;
-            left: -12px;
-            background: var(--turquoise);
-            color: var(--text-dark);
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: 2px solid var(--text-dark);
-        }
+                .graphic-container svg {
+                    display: block;
+                    margin: 0 auto;
+                    max-width: 100%;
+                    height: auto;
+                }
 
-        .card h4 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: var(--brown-dark);
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        /* ============================================
-           CHECKLISTS
-           ============================================ */
+                /* ============================================
+                   CARDS (Non-negotiables, Workouts)
+                   ============================================ */
         
-        .checklist {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
+                .card-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.25rem;
+                    margin: 1.5rem 0;
+                }
 
-        .checklist li {
-            padding: 0.5rem 0 0.5rem 2rem;
-            position: relative;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
-        }
+                .card {
+                    background: var(--cream);
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: 4px 4px 0 var(--shadow-color);
+                    padding: 1.25rem;
+                    position: relative;
+                }
 
-        .checklist li::before {
-            content: "☐";
-            position: absolute;
-            left: 0;
-            font-size: 1.1rem;
-        }
+                .card-number {
+                    position: absolute;
+                    top: -12px;
+                    left: -12px;
+                    background: var(--turquoise);
+                    color: var(--text-dark);
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    border: 2px solid var(--text-dark);
+                }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
+                .card h4 {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                    color: var(--brown-dark);
+                }
+
+                .card p {
+                    font-size: 0.9rem;
+                    margin: 0;
+                }
+
+                /* ============================================
+                   CHECKLISTS
+                   ============================================ */
         
-        .footer {
-            background: var(--brown-dark);
-            color: var(--cream);
-            text-align: center;
-            padding: 3rem 2rem;
-            border-top: var(--border-width) solid var(--text-dark);
-        }
+                .checklist {
+                    list-style: none;
+                    padding: 0;
+                    margin: 1rem 0;
+                }
 
-        .footer-tagline {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--turquoise);
-            margin-bottom: 1rem;
-        }
+                .checklist li {
+                    padding: 0.5rem 0 0.5rem 2rem;
+                    position: relative;
+                    border-bottom: 1px dashed rgba(0,0,0,0.1);
+                }
 
-        .footer-email {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 0.5rem;
-        }
+                .checklist li::before {
+                    content: "☐";
+                    position: absolute;
+                    left: 0;
+                    font-size: 1.1rem;
+                }
 
-        .footer-motto {
-            font-size: 0.85rem;
-            font-style: italic;
-            opacity: 0.7;
-        }
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
+                /* ============================================
+                   FOOTER
+                   ============================================ */
         
-        @media (max-width: 768px) {
-            .sticky-nav {
-                padding: 0.5rem;
-                gap: 0.25rem;
-            }
+                .footer {
+                    background: var(--brown-dark);
+                    color: var(--cream);
+                    text-align: center;
+                    padding: 3rem 2rem;
+                    border-top: var(--border-width) solid var(--text-dark);
+                }
 
-            .sticky-nav a {
-                font-size: 0.65rem;
-                padding: 0.25rem 0.4rem;
-            }
+                .footer-tagline {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: var(--turquoise);
+                    margin-bottom: 1rem;
+                }
 
-            .header {
-                padding: 2rem 1rem;
-            }
+                .footer-email {
+                    font-size: 0.9rem;
+                    opacity: 0.8;
+                    margin-bottom: 0.5rem;
+                }
 
-            .header h1 {
-                font-size: 2rem;
-                letter-spacing: 1px;
-            }
+                .footer-motto {
+                    font-size: 0.85rem;
+                    font-style: italic;
+                    opacity: 0.7;
+                }
 
-            .section-header {
-                padding: 0.75rem 1rem 0.75rem 3.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.1rem;
-            }
-
-            .section-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .main-content {
-                padding: 1rem 1rem 3rem;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ============================================
-           PRINT STYLES
-           ============================================ */
+                /* ============================================
+                   RESPONSIVE
+                   ============================================ */
         
-        @media print {
-            .sticky-nav {
-                display: none;
-            }
+                @media (max-width: 768px) {
+                    .sticky-nav {
+                        padding: 0.5rem;
+                        gap: 0.25rem;
+                    }
 
-            .section {
-                page-break-inside: avoid;
-            }
+                    .sticky-nav a {
+                        font-size: 0.65rem;
+                        padding: 0.25rem 0.4rem;
+                    }
 
-            .section-header {
-                page-break-after: avoid;
-            }
+                    .header {
+                        padding: 2rem 1rem;
+                    }
 
-            body {
-                background: white;
-            }
+                    .header h1 {
+                        font-size: 2rem;
+                        letter-spacing: 1px;
+                    }
 
-            .header {
-                background: var(--brown-dark) !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
+                    .section-header {
+                        padding: 0.75rem 1rem 0.75rem 3.5rem;
+                    }
 
-        /* ============================================
-           INTRO BOX
-           ============================================ */
+                    .section-header h2 {
+                        font-size: 1.1rem;
+                    }
+
+                    .section-number {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 1rem;
+                    }
+
+                    .main-content {
+                        padding: 1rem 1rem 3rem;
+                    }
+
+                    .card-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                /* ============================================
+                   PRINT STYLES
+                   ============================================ */
         
-        .intro-box {
-            background: white;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
+                @media print {
+                    .sticky-nav {
+                        display: none;
+                    }
 
-        .intro-box p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
+                    .section {
+                        page-break-inside: avoid;
+                    }
 
-        .intro-box p:last-child {
-            margin-bottom: 0;
-        }
+                    .section-header {
+                        page-break-after: avoid;
+                    }
 
-        /* ============================================
-           DEFINITION LISTS (Glossary)
-           ============================================ */
+                    body {
+                        background: white;
+                    }
+
+                    .header {
+                        background: var(--brown-dark) !important;
+                        -webkit-print-color-adjust: exact;
+                        print-color-adjust: exact;
+                    }
+                }
+
+                /* ============================================
+                   INTRO BOX
+                   ============================================ */
         
-        .glossary-list {
-            margin: 1rem 0;
-        }
+                .intro-box {
+                    background: white;
+                    border: var(--border-width) solid var(--text-dark);
+                    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+                    padding: 2rem;
+                    margin-bottom: 2rem;
+                }
 
-        .glossary-item {
-            background: white;
-            border: var(--border-width) solid var(--text-dark);
-            margin-bottom: 1rem;
-            box-shadow: 3px 3px 0 var(--shadow-color);
-        }
+                .intro-box p {
+                    font-size: 1.05rem;
+                    line-height: 1.8;
+                }
 
-        .glossary-term {
-            background: var(--brown-dark);
-            color: var(--turquoise);
-            padding: 0.75rem 1rem;
-            font-weight: 700;
-            font-size: 1rem;
-        }
+                .intro-box p:last-child {
+                    margin-bottom: 0;
+                }
 
-        .glossary-def {
-            padding: 1rem;
-            font-size: 0.95rem;
-        }
-
-        /* ============================================
-           PHASE INDICATOR
-           ============================================ */
+                /* ============================================
+                   DEFINITION LISTS (Glossary)
+                   ============================================ */
         
-        .phase-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin: 1rem 0;
-        }
+                .glossary-list {
+                    margin: 1rem 0;
+                }
 
-        .phase-item {
-            display: flex;
-            align-items: stretch;
-            border: 2px solid var(--text-dark);
-            box-shadow: 3px 3px 0 var(--shadow-color);
-        }
+                .glossary-item {
+                    background: white;
+                    border: var(--border-width) solid var(--text-dark);
+                    margin-bottom: 1rem;
+                    box-shadow: 3px 3px 0 var(--shadow-color);
+                }
 
-        .phase-weeks {
-            background: var(--text-dark);
-            color: var(--cream);
-            padding: 0.75rem 1rem;
-            font-weight: 700;
-            font-size: 0.85rem;
-            min-width: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+                .glossary-term {
+                    background: var(--brown-dark);
+                    color: var(--turquoise);
+                    padding: 0.75rem 1rem;
+                    font-weight: 700;
+                    font-size: 1rem;
+                }
 
-        .phase-name {
-            padding: 0.75rem 1rem;
-            font-weight: 700;
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
+                .glossary-def {
+                    padding: 1rem;
+                    font-size: 0.95rem;
+                }
 
-        .phase-base .phase-name { background: var(--turquoise); }
-        .phase-build .phase-name { background: var(--yellow); }
-        .phase-peak .phase-name { background: var(--red); color: white; }
-        .phase-taper .phase-name { background: var(--green); color: white; }
+                /* ============================================
+                   PHASE INDICATOR
+                   ============================================ */
+        
+                .phase-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                    margin: 1rem 0;
+                }
 
-        .phase-desc {
-            padding: 0.75rem 1rem;
-            background: white;
-            flex: 2;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
+                .phase-item {
+                    display: flex;
+                    align-items: stretch;
+                    border: 2px solid var(--text-dark);
+                    box-shadow: 3px 3px 0 var(--shadow-color);
+                }
 
-        /* Strong text styling */
-        strong, b {
-            font-weight: 700;
-            color: var(--brown-dark);
-        }
+                .phase-weeks {
+                    background: var(--text-dark);
+                    color: var(--cream);
+                    padding: 0.75rem 1rem;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    min-width: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-        /* Inline code */
-        code {
-            background: rgba(0,0,0,0.05);
-            padding: 0.15rem 0.4rem;
-            border: 1px solid rgba(0,0,0,0.1);
-            font-size: 0.9em;
-        }
+                .phase-name {
+                    padding: 0.75rem 1rem;
+                    font-weight: 700;
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                }
 
-        /* Horizontal rule */
-        hr {
-            border: none;
-            border-top: 2px dashed var(--text-dark);
-            margin: 2rem 0;
-            opacity: 0.3;
-        }
+                .phase-base .phase-name { background: var(--turquoise); }
+                .phase-build .phase-name { background: var(--yellow); }
+                .phase-peak .phase-name { background: var(--red); color: white; }
+                .phase-taper .phase-name { background: var(--green); color: white; }
 
-        /* Blockquote */
-        blockquote {
-            border-left: 4px solid var(--turquoise);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: var(--brown-dark);
-        }
+                .phase-desc {
+                    padding: 0.75rem 1rem;
+                    background: white;
+                    flex: 2;
+                    font-size: 0.9rem;
+                    display: flex;
+                    align-items: center;
+                }
+
+                /* Strong text styling */
+                strong, b {
+                    font-weight: 700;
+                    color: var(--brown-dark);
+                }
+
+                /* Inline code */
+                code {
+                    background: rgba(0,0,0,0.05);
+                    padding: 0.15rem 0.4rem;
+                    border: 1px solid rgba(0,0,0,0.1);
+                    font-size: 0.9em;
+                }
+
+                /* Horizontal rule */
+                hr {
+                    border: none;
+                    border-top: 2px dashed var(--text-dark);
+                    margin: 2rem 0;
+                    opacity: 0.3;
+                }
+
+                /* Blockquote */
+                blockquote {
+                    border-left: 4px solid var(--turquoise);
+                    padding-left: 1.5rem;
+                    margin: 1.5rem 0;
+                    font-style: italic;
+                    color: var(--brown-dark);
+                }
     </style>
 </head>
 <body>
@@ -733,465 +733,6 @@
 
 <!-- MAIN CONTENT -->
 <main class="main-content">
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            border-radius: 0 !important;
-        }
-        
-        body {
-            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-dark);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0;
-            background: linear-gradient(135deg, var(--cream) 0%, #ede5d0 100%);
-            min-height: 100vh;
-        }
-        
-        /* Sticky Navigation */
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--brown-dark);
-            border-bottom: 3px solid var(--text-dark);
-            padding: 0.75rem 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-        
-        .sticky-nav a {
-            color: var(--cream);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            font-weight: 500;
-            font-size: 0.875rem;
-            border: 2px solid var(--text-dark);
-            background: var(--brown-dark);
-            transition: all 0.1s;
-            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
-        }
-        
-        .sticky-nav a:hover {
-            background: var(--turquoise);
-            color: var(--text-dark);
-            transform: translate(1px, 1px);
-            box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
-        }
-        
-        .sticky-nav a.active {
-            background: var(--turquoise);
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-        
-        .content-wrapper {
-            padding: 20px;
-        }
-        
-        /* Section Headers with Number Badges */
-        section {
-            scroll-margin-top: 80px;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header {
-            background: var(--text-dark);
-            color: var(--cream);
-            padding: 1rem 1.5rem 1rem 3.5rem;
-            position: relative;
-            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
-            margin: 2.5rem 0 1.5rem 0;
-        }
-        
-        .section-number {
-            position: absolute;
-            left: -10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--turquoise);
-            color: var(--text-dark);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            border: 3px solid var(--text-dark);
-            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
-        }
-        
-        h1 {
-            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
-            font-size: 1.5rem;
-            color: var(--cream);
-            margin: 0;
-            font-weight: 700;
-        }
-        
-        h2 {
-            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
-            font-size: 1.25rem;
-            color: var(--brown-dark);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--turquoise);
-            padding-left: 1rem;
-            font-weight: 500;
-        }
-        
-        h3 {
-            font-size: 13pt;
-            color: #59473C;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        
-        /* Header Design */
-        .header-box {
-            background: var(--brown-dark);
-            color: var(--cream);
-            padding: 3rem 2rem;
-            text-align: center;
-            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
-            margin: 0;
-            border-bottom: 3px solid var(--text-dark);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(78, 205, 196, 0.1) 10px,
-                rgba(78, 205, 196, 0.1) 20px
-            );
-            pointer-events: none;
-        }
-        
-        .header-box h1 {
-            color: var(--turquoise);
-            font-size: 3rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin: 0 0 0.5rem 0;
-            text-shadow: 
-                3px 3px 0 var(--yellow),
-                6px 6px 0 var(--text-dark);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header-box .tagline {
-            color: var(--cream);
-            font-size: 1.125rem;
-            margin-top: 0.5rem;
-            font-weight: 400;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .race-badge {
-            display: inline-block;
-            background: var(--turquoise);
-            color: var(--text-dark);
-            padding: 0.5rem 1rem;
-            margin-top: 1rem;
-            border: 3px solid var(--text-dark);
-            font-weight: 700;
-            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Callout Boxes - Four Types */
-        .callout {
-            border: 3px solid var(--text-dark);
-            border-left-width: 6px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
-        }
-        
-        .callout-warning {
-            border-left-color: var(--yellow);
-            background: #fef9e7;
-        }
-        
-        .callout-info {
-            border-left-color: var(--turquoise);
-            background: #e8f8f5;
-        }
-        
-        .callout-danger {
-            border-left-color: var(--red);
-            background: #fdedec;
-        }
-        
-        .callout-success {
-            border-left-color: var(--green);
-            background: #e9f7ef;
-        }
-        
-        /* Legacy class support */
-        .callout-box {
-            border: 3px solid var(--text-dark);
-            border-left-width: 6px;
-            border-left-color: var(--turquoise);
-            background: var(--cream);
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
-        }
-        
-        .callout-turquoise {
-            border-left-color: var(--turquoise);
-            background: #e8f8f5;
-        }
-        
-        .warning-box {
-            border-left-color: var(--yellow);
-            background: #fef9e7;
-            border: 3px solid var(--text-dark);
-            border-left-width: 6px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
-        }
-        
-        /* Tables - Neo-Brutalist */
-        table, .zone-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            border: 3px solid var(--text-dark);
-            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
-            background: white;
-        }
-        
-        th {
-            background: var(--brown-dark);
-            color: var(--cream);
-            padding: 0.75rem;
-            text-align: left;
-            border: 2px solid var(--text-dark);
-            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
-            font-weight: 700;
-        }
-        
-        td {
-            padding: 0.75rem;
-            border: 1px solid var(--text-dark);
-        }
-        
-        tr:nth-child(even) {
-            background: rgba(0,0,0,0.03);
-        }
-        
-        tr:hover {
-            background: rgba(78, 205, 196, 0.1);
-        }
-        
-        /* G Spot row highlight */
-        tr.g-spot-row,
-        .zone-table tr:has(td:contains("G Spot")) {
-            background: rgba(78, 205, 196, 0.2) !important;
-            font-weight: 500;
-        }
-        
-        /* Table of Contents */
-        .toc {
-            background: var(--cream);
-            border: 3px solid var(--text-dark);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
-        }
-        
-        .toc h2 {
-            margin-top: 0;
-            border: none;
-            padding: 0;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .toc-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        
-        .toc-button {
-            background: var(--brown-dark);
-            color: var(--cream);
-            border: 3px solid var(--text-dark);
-            padding: 0.75rem 1rem;
-            text-decoration: none;
-            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
-            font-weight: 500;
-            text-align: center;
-            display: block;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
-            transition: transform 0.1s, box-shadow 0.1s;
-            font-size: 0.875rem;
-        }
-        
-        .toc-button:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
-            background: var(--turquoise);
-            color: var(--text-dark);
-        }
-        
-        .toc-button:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0 rgba(0,0,0,0.2);
-        }
-        
-        p {
-            margin: 15px 0;
-        }
-        
-        /* Neo-brutalist lists */
-        /* Lists */
-        ul, ol {
-            margin: 1.5rem 0;
-            padding: 1rem 1.5rem 1rem 2.5rem;
-            border-left: 3px solid var(--turquoise);
-            border: 2px solid var(--text-dark);
-            background: white;
-            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-            margin-left: 0;
-        }
-        
-        li {
-            margin: 0.5rem 0;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                font-size: 14px;
-            }
-            
-            .header-box h1 {
-                font-size: 2rem;
-            }
-            
-            .sticky-nav {
-                flex-wrap: wrap;
-                gap: 0.25rem;
-                padding: 0.5rem;
-            }
-            
-            .sticky-nav a {
-                font-size: 0.75rem;
-                padding: 0.375rem 0.75rem;
-            }
-            
-            .toc-buttons {
-                grid-template-columns: 1fr;
-            }
-            
-            table {
-                display: block;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .section-header {
-                padding: 0.75rem 1rem 0.75rem 3rem;
-            }
-            
-            .section-number {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
-        }
-        
-        @media print {
-            .sticky-nav {
-                display: none;
-            }
-            
-            body {
-                background: white;
-            }
-            
-            .callout-box, .callout {
-                page-break-inside: avoid;
-            }
-            
-            section {
-                page-break-inside: avoid;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header-box">
-        <h1>Unbound Gravel 200</h1>
-        <p class="tagline">The World's Premier Gravel Race</p>
-        <div class="race-badge">Emporia, KS</div>
-        <p class="tagline" style="margin-top: 1rem;">Intermediate | Finisher</p>
-    </div>
-    <nav class="sticky-nav">
-        <a href="#brief" class="nav-link">Brief</a>
-        <a href="#before" class="nav-link">Before</a>
-        <a href="#fundamentals" class="nav-link">Fundamentals</a>
-        <a href="#arc" class="nav-link">12-Week Arc</a>
-        <a href="#zones" class="nav-link">Zones</a>
-        <a href="#workouts" class="nav-link">Workouts</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#fuel" class="nav-link">Fuel</a>
-        <a href="#mental" class="nav-link">Mental</a>
-        <a href="#tactics" class="nav-link">Tactics</a>
-        <a href="#prep" class="nav-link">Prep</a>
-        <a href="#race-day" class="nav-link">Race Day</a>
-        <a href="#reference" class="nav-link">Ref</a>
-        <a href="#glossary" class="nav-link">Glossary</a>
-    </nav>
-    <div class="content-wrapper">
-    <div class="toc">
-        <h2>Table of Contents</h2>
-        <div class="toc-buttons">
-            <a href="#1-training-plan-brief" class="toc-button">1 Training Plan Brief</a>
-            <a href="#2-before-you-start" class="toc-button">2 BEFORE YOU START</a>
-            <a href="#3-training-fundamentals" class="toc-button">3 TRAINING FUNDAMENTALS</a>
-            <a href="#4-your-12-week-arc" class="toc-button">4 YOUR 12-WEEK ARC</a>
-            <a href="#5-training-zones" class="toc-button">5 TRAINING ZONES</a>
-            <a href="#6-workout-execution" class="toc-button">6 WORKOUT EXECUTION</a>
-            <a href="#7-technical-skills-for-unbound-gravel-200" class="toc-button">7 TECHNICAL SKILLS FOR Unbound Gravel 200</a>
-            <a href="#8-fueling-and-hydration" class="toc-button">8 FUELING & HYDRATION</a>
-            <a href="#9-mental-training" class="toc-button">9 MENTAL TRAINING</a>
-            <a href="#10-race-tactics-for-unbound-gravel-200" class="toc-button">10 RACE TACTICS FOR Unbound Gravel 200</a>
-            <a href="#11-race-specific-preparation-for-unbound-gravel-200" class="toc-button">11 RACE-SPECIFIC PREPARATION FOR Unbound Gravel 200</a>
-            <a href="#12-race-week-protocol" class="toc-button">12 RACE WEEK PROTOCOL</a>
-            <a href="#13-quick-reference" class="toc-button">13 QUICK REFERENCE</a>
-            <a href="#14-glossary" class="toc-button">14 GLOSSARY</a>
-            <a href="#closing" class="toc-button">CLOSING</a>
-        </div>
-    </div>
 <!-- SECTION: 1 Training Plan Brief -->
 <section class="section" id="brief">
     <div class="section-header">
@@ -2667,5 +2208,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveLink();
 });
 </script>
+
 </body>
 </html>

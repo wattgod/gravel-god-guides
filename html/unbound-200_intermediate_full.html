@@ -27,9 +27,12 @@
             font-size: 24pt;
             color: #59473C;
             border-bottom: 4px solid #4ecdc4;
-            padding-bottom: 10px;
+            border-left: 4px solid #4ecdc4;
+            padding: 10px 15px;
             margin-top: 40px;
             margin-bottom: 20px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            border-radius: 0;
         }
         
         h2 {
@@ -38,7 +41,10 @@
             color: #59473C;
             margin-top: 30px;
             border-left: 4px solid #4ecdc4;
-            padding-left: 12px;
+            border-bottom: 2px solid #4ecdc4;
+            padding: 8px 12px;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            border-radius: 0;
         }
         
         h3 {
@@ -69,30 +75,38 @@
             margin-top: 10px;
         }
         
+        /* Neo-Brutalist: No rounded corners, hard borders, strong shadows */
         .callout-box {
             background: #f5f5dc;
-            border: 3px solid #59473C;
+            border: 3px solid #2c2c2c;
             padding: 15px;
             margin: 20px 0;
             box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            border-radius: 0;
         }
         
         .callout-turquoise {
-            border-color: #4ecdc4;
+            border: 3px solid #4ecdc4;
             box-shadow: 6px 6px 0 #4ecdc4;
+            border-radius: 0;
         }
         
         .warning-box {
             background: #FFF3CD;
-            border-left: 4px solid #FFC107;
+            border: 3px solid #FFC107;
             padding: 15px;
             margin: 20px 0;
+            box-shadow: 6px 6px 0 rgba(255, 193, 7, 0.3);
+            border-radius: 0;
         }
         
         .zone-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            border: 3px solid #2c2c2c;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            border-radius: 0;
         }
         
         .zone-table th {
@@ -101,10 +115,11 @@
             padding: 10px;
             text-align: left;
             font-family: 'Courier New', monospace;
+            border: 2px solid #2c2c2c;
         }
         
         .zone-table td {
-            border: 1px solid #ddd;
+            border: 2px solid #2c2c2c;
             padding: 10px;
         }
         
@@ -121,17 +136,78 @@
             background: #E8F5E9 !important;
         }
         
+        /* Table of Contents */
+        .toc {
+            background: #f5f5dc;
+            border: 3px solid #2c2c2c;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            border-radius: 0;
+        }
+        
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        
+        .toc-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .toc-button {
+            background: #59473C;
+            color: #f5f5dc;
+            border: 3px solid #2c2c2c;
+            padding: 12px 16px;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+            transition: transform 0.1s, box-shadow 0.1s;
+            border-radius: 0;
+        }
+        
+        .toc-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+        
+        .toc-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0 rgba(0,0,0,0.2);
+        }
+        
         p {
             margin: 15px 0;
         }
         
+        /* Neo-brutalist lists */
         ul, ol {
             margin: 15px 0;
-            padding-left: 30px;
+            padding: 15px 20px 15px 30px;
+            border-left: 3px solid #4ecdc4;
+            border: 2px solid #2c2c2c;
+            background: white;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            border-radius: 0;
+            margin-left: 0;
         }
         
         li {
             margin: 8px 0;
+        }
+        
+        /* Section IDs for anchor links */
+        section {
+            scroll-margin-top: 20px;
         }
         
         @media print {
@@ -150,6 +226,27 @@
         <p class="tagline">The World's Premier Gravel Race</p>
         <p class="tagline">Intermediate | Finisher</p>
     </div>
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <div class="toc-buttons">
+            <a href="#1-training-plan-brief" class="toc-button">1 Training Plan Brief</a>
+            <a href="#2-before-you-start" class="toc-button">2 BEFORE YOU START</a>
+            <a href="#3-training-fundamentals" class="toc-button">3 TRAINING FUNDAMENTALS</a>
+            <a href="#4-your-12-week-arc" class="toc-button">4 YOUR 12-WEEK ARC</a>
+            <a href="#5-training-zones" class="toc-button">5 TRAINING ZONES</a>
+            <a href="#6-workout-execution" class="toc-button">6 WORKOUT EXECUTION</a>
+            <a href="#7-technical-skills-for-unbound-gravel-200" class="toc-button">7 TECHNICAL SKILLS FOR Unbound Gravel 200</a>
+            <a href="#8-fueling-and-hydration" class="toc-button">8 FUELING & HYDRATION</a>
+            <a href="#9-mental-training" class="toc-button">9 MENTAL TRAINING</a>
+            <a href="#10-race-tactics-for-unbound-gravel-200" class="toc-button">10 RACE TACTICS FOR Unbound Gravel 200</a>
+            <a href="#11-race-specific-preparation-for-unbound-gravel-200" class="toc-button">11 RACE-SPECIFIC PREPARATION FOR Unbound Gravel 200</a>
+            <a href="#12-race-week-protocol" class="toc-button">12 RACE WEEK PROTOCOL</a>
+            <a href="#13-quick-reference" class="toc-button">13 QUICK REFERENCE</a>
+            <a href="#14-glossary" class="toc-button">14 GLOSSARY</a>
+            <a href="#closing" class="toc-button">CLOSING</a>
+        </div>
+    </div>
+    <section id="1-training-plan-brief">
     <h1>1 Training Plan Brief</h1>
     <p>Welcome to Unbound Gravel 200 Training</p>
     <p>This plan isn’t generic. It’s built for Unbound Gravel 200—its 200 miles, mostly hard-packed gravel with some loose sections, 11000, and what it’ll take to be out there for 10-14 hours.</p>
@@ -197,6 +294,8 @@
     <p>The goal isn't perfection—it's consistency. Complete 85-90% of the prescribed workouts, and you'll arrive at Unbound Gravel 200 prepared. Complete 95%+, and you'll be exceptionally prepared.</p>
     <p>Miss multiple weeks, skip the hard workouts, or constantly substitute "easier" options, and the plan won't work. Not because the plan failed—because you didn't do it.</p>
     <p>Be honest with yourself about compliance.</p>
+    </section>
+    <section id="2-before-you-start">
     <h1>2 BEFORE YOU START</h1>
     <p>Health & Safety Check</p>
     <table class="zone-table" style="margin: 20px 0;">
@@ -272,6 +371,8 @@
     <p>HRmax = 211 - (0.64 × age)</p>
     <p><strong>Example:</strong> 38 years old = 211 - 24.3 = 186 bpm</p>
     <p>Use the formula only if you lack actual data. Real-world max is always more accurate than estimates.</p>
+    </section>
+    <section id="3-training-fundamentals">
     <h1>3 TRAINING FUNDAMENTALS</h1>
     <p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
     <p>Not theory for theory's sake—practical understanding that changes how you approach every session, how you structure your week, and how you respond when your body doesn't cooperate.</p>
@@ -340,6 +441,8 @@
     <li><strong>5.</strong> Patience is required</li>
     </ul>
     <p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
+    </section>
+    <section id="4-your-12-week-arc">
     <h1>4 YOUR 12-WEEK ARC</h1>
     <p><strong>[NOTE:</strong> This section contains the week-by-week table and phase descriptions that were previously in the template. Content structure remains the same as v4, just enhanced with better narrative flow between sections.]</p>
     <p>Understanding the big picture helps you navigate the individual weeks.</p>
@@ -366,6 +469,8 @@
     <p><strong>Why:</strong> Arrive at the start line fresh, not fatigued from training. Let your body express the fitness you built.</p>
     <p><strong>How it feels:</strong> Restless. Anxious. Like you should be doing more. Resist. Trust the process.</p>
     <p>[Include week-by-week table from previous version with TSS, duration, key workouts]</p>
+    </section>
+    <section id="5-training-zones">
     <h1>5 TRAINING ZONES</h1>
     <p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
     <p>The Point of Zones</p>
@@ -435,6 +540,8 @@
     <p>Zones are tools, not masters.</p>
     <p>Learn them. Use them. But develop your intuition so you can ride by feel when devices fail, conditions change, or your body sends signals the numbers don't capture.</p>
     <p>Power + Heart Rate + RPE = complete picture. When they align, you're executing correctly. When they conflict, trust your body.</p>
+    </section>
+    <section id="6-workout-execution">
     <h1>6 WORKOUT EXECUTION</h1>
     <p>You've got a plan. You understand the fundamentals. You know what the zones mean.</p>
     <p>None of that matters if you can't execute the workouts correctly.</p>
@@ -766,6 +873,8 @@
     <p>Maintenance strength if you already lift (continue what you're doing)</p>
     <p>Don't try to build a strength base while preparing for a race. Do one thing well, not two things poorly.</p>
     <p>After Unbound Gravel 200, invest in a proper off-season strength block. Your future self—the one who's still racing at 50, 60, 70—will thank you</p>
+    </section>
+    <section id="7-technical-skills-for-unbound-gravel-200">
     <h1>7 TECHNICAL SKILLS FOR Unbound Gravel 200</h1>
     <p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently or waste it fighting your bike, crashing, or making mistakes that cost time and energy.</p>
     <p>A technically skilled rider with moderate fitness will often outperform a fitness monster who can't corner, can't descend, or can't eat while riding. Technical competence is free speed—it requires no additional fitness, just practice.</p>
@@ -823,6 +932,8 @@
     <p>Cornering on loose gravel is critical. Practice eating while riding. Group riding skills save massive energy over 200 miles.</p>
     <p><strong>The bottom line on skills:</strong> You can't cram for these the week before the race. Technical skills require repetition over time. Build them into your training rides starting in Week 1, not Week 11.</p>
     <p>By race day, these skills should be automatic. You shouldn't be thinking about how to corner or how to eat—you should just be doing it.</p>
+    </section>
+    <section id="8-fueling-and-hydration">
     <h1>8 FUELING & HYDRATION</h1>
     <p>Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel and hydrate properly, you won't finish well. Maybe you won't finish at all.</p>
     <p>The challenge with long gravel events is simple math. A fit athlete might have 2,000 calories of stored glycogen. A 200-mile gravel race might burn 8,000+ calories. If you don't take in fuel during the race, you'll bonk. Not maybe—will.</p>
@@ -862,6 +973,8 @@
     <p><strong>The solution:</strong> Treat fueling as a non-negotiable task, not an optional one based on hunger.</p>
     <p>Set a timer on your bike computer. Every 20 minutes: consume calories. Every 15 minutes: drink. Make it automatic. Don't wait until you feel hungry or thirsty—by then, you're already behind.</p>
     <p>This is why practice matters. By race day, eating and drinking on schedule should feel like shifting gears—just something you do without thinking about it.</p>
+    </section>
+    <section id="9-mental-training">
     <h1>9 MENTAL TRAINING</h1>
     <p>Physical training builds the engine. Mental training determines whether you use that engine when things get hard.</p>
     <p>And in any race measured in hours, things will get hard. Your body will hurt. Your motivation will waver. You'll wonder why you signed up for this. These moments are predictable.</p>
@@ -915,6 +1028,8 @@
     <p><strong>Action:</strong> The smallest possible next step (just pedal 100 more meters, then reassess)</p>
     <p>This sequence breaks the spiral of panic. Breathing calms your nervous system. Statement redirects your thoughts. Action gives you something concrete to do.</p>
     <p><strong>The bottom line on mental training:</strong> These tools work, but only if you practice them. Don't wait until mile 150 to try 6-2-7 breathing for the first time. Practice during training so they're automatic during racing.</p>
+    </section>
+    <section id="10-race-tactics-for-unbound-gravel-200">
     <h1>10 RACE TACTICS FOR Unbound Gravel 200</h1>
     <p>Every long gravel race follows a predictable three-act structure. Understanding this structure lets you make smart decisions when others are making emotional ones.</p>
     <p>The specifics vary by race—some races front-load the climbing, some back-load it, some are flat. But the psychological and physiological patterns are consistent across all long events.</p>
@@ -956,6 +1071,8 @@
     <p>Aid Station Strategy</p>
     <p>Aid stations every 30-40 miles. Don't skip them. Refill bottles, grab real food, take 2-3 minutes to reset. The time lost is worth the energy gained.</p>
     <p><strong>The bottom line on tactics:</strong> The race isn't won in the first hour, but it can be lost there. Survive phase one. Execute phase two. Capitalize in phase three.</p>
+    </section>
+    <section id="11-race-specific-preparation-for-unbound-gravel-200">
     <h1>11 RACE-SPECIFIC PREPARATION FOR Unbound Gravel 200</h1>
     <p>Every race has requirements that aren't optional. These are things that, if you skip them, the course itself will punish you. They're non-negotiable not because we're being strict—they're non-negotiable because physics and biology don't care about your intentions.</p>
     <p>This section covers the specific preparation requirements for Unbound Gravel 200, the weather considerations that matter, and the equipment you need to have dialed in.</p>
@@ -974,6 +1091,8 @@
     <p>Equipment Checklist</p>
     <p>Power meter, heart rate monitor, GPS computer, 2+ bottles, hydration pack, spare tubes (3), CO2 (4), tire plugs, multi-tool, lights (front + rear), sunscreen, chamois cream</p>
     <p><strong>The bottom line on preparation:</strong> The race will test everything you didn't practice and expose every shortcut you took. The time to discover your preparation was inadequate is during training, not during the race.</p>
+    </section>
+    <section id="12-race-week-protocol">
     <h1>12 RACE WEEK PROTOCOL</h1>
     <p>By race week, the training is done. You can't add fitness in the final seven days—you can only preserve what you've built or add dumb fatigue through poor decisions.</p>
     <p><strong>The goal now is simple:</strong> arrive at the start line fresh, healthy, rested, and ready. Everything you do this week serves that goal.</p>
@@ -1232,6 +1351,8 @@
     <p>The internet will tell you the "best" tire is some $90 handmade artisan thing with a 127 TPI casing and a proprietary rubber compound.</p>
     <p>The actual best tire is the one that gets you to the finish line without flatting and doesn't beat you up for 8 hours.</p>
     <p>Stop optimizing. Start riding.</p>
+    </section>
+    <section id="13-quick-reference">
     <h1>13 QUICK REFERENCE</h1>
     <p>Key Workouts in This Plan</p>
     <p>These are the signature workouts you'll see throughout your 12 weeks. Understanding their purpose helps you execute them correctly.</p>
@@ -1243,6 +1364,8 @@
     <p>Support & Resources</p>
     <p>For race information: https://unboundgravel.com</p>
     <p><strong>For questions about this training plan:</strong> gravelgodcoacing@gmail.com</p>
+    </section>
+    <section id="14-glossary">
     <h1>14 GLOSSARY</h1>
     <p>FTP (Functional Threshold Power)</p>
     <p>The highest power you can sustain for approximately one hour at maximum steady effort. All training zones in this plan are calculated as percentages of your FTP. This is why knowing your accurate FTP matters—wrong FTP means wrong zones means ineffective training.</p>
@@ -1271,6 +1394,8 @@
     <p>Mitochondria</p>
     <p>The "power plants" in your cells that produce aerobic energy. Endurance training increases mitochondrial density, meaning more power plants, meaning more capacity to produce energy aerobically. This is a key adaptation from Z2 training.</p>
     <h2>[PAGE BREAK]</h2>
+    </section>
+    <section id="closing">
     <h1>CLOSING</h1>
     <p>You have the plan.</p>
     <p>You understand how training works, how to execute the workouts, how to fuel and hydrate, how to manage your mental game, and how to approach race day.</p>
@@ -1286,5 +1411,6 @@
     <p>[CENTER, SMALLER] Become what you could be.</p>
     <h2>END OF GUIDE</h2>
     <br>
+    </section>
 </body>
 </html>

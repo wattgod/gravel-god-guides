@@ -100,9 +100,9 @@ def replace_variables(text: str, race_data: Dict[str, Any]) -> str:
         'RACE_ELEVATION': str(race_data.get('race', {}).get('vitals', {}).get('elevation_ft', 0)),
     }
     
-    # Calculate altitude power loss if elevation > 5000
+    # Calculate altitude power loss if elevation > 3000
     elevation = race_data.get('race', {}).get('vitals', {}).get('elevation_ft', 0)
-    if elevation > 5000:
+    if elevation > 3000:
         power_loss = round((elevation / 1000) * 1.75, 1)
         vars_map['ALTITUDE_POWER_LOSS'] = str(power_loss)
     else:
@@ -289,9 +289,12 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             font-size: 24pt;
             color: {COLORS['brown_dark']};
             border-bottom: 4px solid {COLORS['turquoise']};
-            padding-bottom: 10px;
+            border-left: 4px solid {COLORS['turquoise']};
+            padding: 10px 15px;
             margin-top: 40px;
             margin-bottom: 20px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            border-radius: 0;
         }}
         
         h2 {{
@@ -300,7 +303,10 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             color: {COLORS['brown_dark']};
             margin-top: 30px;
             border-left: 4px solid {COLORS['turquoise']};
-            padding-left: 12px;
+            border-bottom: 2px solid {COLORS['turquoise']};
+            padding: 8px 12px;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            border-radius: 0;
         }}
         
         h3 {{
@@ -331,30 +337,38 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             margin-top: 10px;
         }}
         
+        /* Neo-Brutalist: No rounded corners, hard borders, strong shadows */
         .callout-box {{
             background: {COLORS['cream']};
-            border: 3px solid {COLORS['brown_dark']};
+            border: 3px solid {COLORS['text_dark']};
             padding: 15px;
             margin: 20px 0;
             box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            border-radius: 0;
         }}
         
         .callout-turquoise {{
-            border-color: {COLORS['turquoise']};
+            border: 3px solid {COLORS['turquoise']};
             box-shadow: 6px 6px 0 {COLORS['turquoise']};
+            border-radius: 0;
         }}
         
         .warning-box {{
             background: #FFF3CD;
-            border-left: 4px solid #FFC107;
+            border: 3px solid #FFC107;
             padding: 15px;
             margin: 20px 0;
+            box-shadow: 6px 6px 0 rgba(255, 193, 7, 0.3);
+            border-radius: 0;
         }}
         
         .zone-table {{
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            border: 3px solid {COLORS['text_dark']};
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            border-radius: 0;
         }}
         
         .zone-table th {{
@@ -363,10 +377,11 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             padding: 10px;
             text-align: left;
             font-family: 'Courier New', monospace;
+            border: 2px solid {COLORS['text_dark']};
         }}
         
         .zone-table td {{
-            border: 1px solid #ddd;
+            border: 2px solid {COLORS['text_dark']};
             padding: 10px;
         }}
         
@@ -383,17 +398,78 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             background: #E8F5E9 !important;
         }}
         
+        /* Table of Contents */
+        .toc {{
+            background: {COLORS['cream']};
+            border: 3px solid {COLORS['text_dark']};
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            border-radius: 0;
+        }}
+        
+        .toc h2 {{
+            margin-top: 0;
+            border: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }}
+        
+        .toc-buttons {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }}
+        
+        .toc-button {{
+            background: {COLORS['brown_dark']};
+            color: {COLORS['cream']};
+            border: 3px solid {COLORS['text_dark']};
+            padding: 12px 16px;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+            transition: transform 0.1s, box-shadow 0.1s;
+            border-radius: 0;
+        }}
+        
+        .toc-button:hover {{
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }}
+        
+        .toc-button:active {{
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0 rgba(0,0,0,0.2);
+        }}
+        
         p {{
             margin: 15px 0;
         }}
         
+        /* Neo-brutalist lists */
         ul, ol {{
             margin: 15px 0;
-            padding-left: 30px;
+            padding: 15px 20px 15px 30px;
+            border-left: 3px solid {COLORS['turquoise']};
+            border: 2px solid {COLORS['text_dark']};
+            background: white;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            border-radius: 0;
+            margin-left: 0;
         }}
         
         li {{
             margin: 8px 0;
+        }}
+        
+        /* Section IDs for anchor links */
+        section {{
+            scroll-margin-top: 20px;
         }}
         
         @media print {{
@@ -418,7 +494,7 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         <p class="tagline">{race_data.get('ability_level', 'Training Guide')} | {race_data.get('tier_name', 'Tier')}</p>
     </div>''')
     
-    # Process each section
+    # Define section order
     section_order = [
         'SECTION 1: Training Plan Brief',
         'SECTION 2: BEFORE YOU START',
@@ -438,6 +514,38 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         'CLOSING',
     ]
     
+    # Build table of contents
+    section_titles = []
+    for section_key in section_order:
+        matching_section = None
+        for key in processed_sections.keys():
+            if section_key in key:
+                matching_section = key
+                break
+        
+        if not matching_section:
+            continue
+        
+        # Skip altitude section if elevation < 3000
+        if 'ALTITUDE' in matching_section:
+            elevation = race_data.get('race', {}).get('vitals', {}).get('elevation_ft', 0)
+            if elevation < 3000:
+                continue
+        
+        section_title = matching_section.replace('SECTION ', '').replace(':', '')
+        section_id = section_title.lower().replace(' ', '-').replace('&', 'and')
+        section_titles.append((section_id, section_title))
+    
+    # Add table of contents
+    html_parts.append('    <div class="toc">')
+    html_parts.append('        <h2>Table of Contents</h2>')
+    html_parts.append('        <div class="toc-buttons">')
+    for section_id, section_title in section_titles:
+        html_parts.append(f'            <a href="#{section_id}" class="toc-button">{section_title}</a>')
+    html_parts.append('        </div>')
+    html_parts.append('    </div>')
+    
+    # Process each section
     for section_key in section_order:
         # Find matching section
         matching_section = None
@@ -449,16 +557,18 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         if not matching_section:
             continue
         
-        # Skip altitude section if elevation < 5000
+        # Skip altitude section if elevation < 3000
         if 'ALTITUDE' in matching_section:
             elevation = race_data.get('race', {}).get('vitals', {}).get('elevation_ft', 0)
-            if elevation < 5000:
+            if elevation < 3000:
                 continue
         
         content = processed_sections[matching_section]
         
-        # Format section header
+        # Format section header with ID for anchor links
         section_title = matching_section.replace('SECTION ', '').replace(':', '')
+        section_id = section_title.lower().replace(' ', '-').replace('&', 'and')
+        html_parts.append(f'    <section id="{section_id}">')
         html_parts.append(f'    <h1>{section_title}</h1>')
         
         # Process content - process EVERY line to capture all content
@@ -511,7 +621,7 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             if formatted:
                 html_parts.append('    ' + formatted)
         
-        # Close any remaining list
+            # Close any remaining list
         if in_list and list_items:
             html_parts.append('    <ul>')
             for item in list_items:
@@ -523,6 +633,9 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
                 else:
                     html_parts.append(f'    <li>{content}</li>')
             html_parts.append('    </ul>')
+        
+        # Close section
+        html_parts.append('    </section>')
     
     # Close HTML
     html_parts.append('</body>\n</html>')

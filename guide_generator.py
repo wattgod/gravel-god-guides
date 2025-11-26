@@ -254,6 +254,15 @@ def format_table(text: str) -> str:
     
     return f'<p>{text}</p>'
 
+def load_neo_brutalist_css() -> str:
+    """Load the complete neo-brutalist CSS from template"""
+    css_path = Path(__file__).parent / 'neo_brutalist_css.txt'
+    if css_path.exists():
+        with open(css_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    # Fallback: return inline CSS if file doesn't exist
+    return ""
+
 def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None) -> str:
     """Generate full HTML guide from race data"""
     
@@ -265,36 +274,70 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
     processed_template = replace_variables(template, race_data)
     processed_sections = extract_sections(processed_template)
     
+    # Load neo-brutalist CSS
+    css_content = load_neo_brutalist_css()
+    
     # Build HTML
     html_parts = []
     
-    # HTML header with full neo-brutalist CSS
+    # Get race data
+    race_name = race_data.get('race', {}).get('name', 'Gravel God Training Guide')
+    tagline = race_data.get('race', {}).get('tagline', 'Your Complete Training Resource')
+    ability_level = race_data.get('ability_level', 'Training Guide')
+    tier_name = race_data.get('tier_name', 'Tier')
+    location = race_data.get('race', {}).get('vitals', {}).get('location', {})
+    location_str = f"{location.get('city', '')}, {location.get('state', '')}".strip(', ')
+    if not location_str:
+        location_str = ability_level
+    
+    # HTML header with exact neo-brutalist CSS from template
     html_parts.append(f'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{race_data.get('race', {}).get('name', 'Gravel God Training Guide')} - {race_data.get('ability_level', 'Training Guide')}</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>{race_name} Training Guide | {tier_name} - {ability_level}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Sometype Mono Font - using Google Fonts fallback + local */
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
-        
-        @font-face {{
-            font-family: 'Sometype Mono';
-            src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
-            font-weight: 400;
-            font-style: normal;
-        }}
-        
-        :root {{
-            --cream: {COLORS['cream']};
-            --turquoise: {COLORS['turquoise']};
-            --yellow: {COLORS['yellow']};
-            --brown-dark: {COLORS['brown_dark']};
-            --text-dark: {COLORS['text_dark']};
-            --red: #e74c3c;
-            --green: #27ae60;
-        }}
+{css_content}
+    </style>
+</head>
+<body>
+
+<!-- STICKY NAVIGATION -->
+<nav class="sticky-nav">
+    <a href="#welcome" class="active">Welcome</a>
+    <a href="#structure">Structure</a>
+    <a href="#before">Before</a>
+    <a href="#how-training-works">Training</a>
+    <a href="#zones">Zones</a>
+    <a href="#execution">Execution</a>
+    <a href="#recovery">Recovery</a>
+    <a href="#strength">Strength</a>
+    <a href="#skills">Skills</a>
+    <a href="#fueling">Fuel</a>
+    <a href="#mental">Mental</a>
+    <a href="#race-day">Race Day</a>
+    <a href="#tires">Tires</a>
+    <a href="#glossary">Glossary</a>
+</nav>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="race-badge">{location_str}</div>
+    <h1>{race_name}</h1>
+    <p class="header-subtitle">{tagline}</p>
+    <div class="tier-badges">
+        <span class="tier-badge">{tier_name} Tier</span>
+        <span class="level-badge">{ability_level}</span>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
         
         * {{
             margin: 0;
@@ -866,31 +909,40 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         if not nav_id:
             nav_id = section_id
         
-        html_parts.append(f'    <section id="{nav_id}">')
+        html_parts.append(f'<!-- SECTION: {section_title} -->')
+        html_parts.append(f'<section class="section" id="{nav_id}">')
         if section_num:
             html_parts.append(f'    <div class="section-header">')
-            html_parts.append(f'        <div class="section-number">{section_num}</div>')
-            html_parts.append(f'        <h1>{section_title}</h1>')
+            html_parts.append(f'        <span class="section-number">{section_num}</span>')
+            html_parts.append(f'        <h2>{section_title}</h2>')
             html_parts.append(f'    </div>')
         else:
             html_parts.append(f'    <div class="section-header">')
-            html_parts.append(f'        <h1>{section_title}</h1>')
+            html_parts.append(f'        <h2>{section_title}</h2>')
             html_parts.append(f'    </div>')
+        html_parts.append('    <div class="section-content">')
         
         # Process content - process EVERY line to capture all content
         paragraphs = content.split('\n')
         in_list = False
         list_items = []
+        current_list_type = None
         
         for para in paragraphs:
             stripped = para.strip()
             
             # Replace infographic placeholders
             if 'INFOGRAPHIC_PHASE_BARS' in stripped:
-                html_parts.append('    ' + generate_svg_phase_bars())
+                html_parts.append('        <div class="graphic-container">')
+                html_parts.append('            <div class="graphic-title">Training Phases</div>')
+                html_parts.append('            ' + generate_svg_phase_bars())
+                html_parts.append('        </div>')
                 continue
             elif 'INFOGRAPHIC_RATING_HEX' in stripped:
-                html_parts.append('    ' + generate_svg_radar_chart(race_data))
+                html_parts.append('        <div class="graphic-container">')
+                html_parts.append('            <div class="graphic-title">Race Difficulty Profile</div>')
+                html_parts.append('            ' + generate_svg_radar_chart(race_data))
+                html_parts.append('        </div>')
                 continue
             elif 'INFOGRAPHIC' in stripped and stripped.startswith('{{'):
                 # Skip infographic placeholders
@@ -925,70 +977,81 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             # Format as paragraph (including empty lines for spacing)
             formatted = format_paragraph(para)
             if formatted:
-                html_parts.append('    ' + formatted)
+                html_parts.append('        ' + formatted)
         
             # Close any remaining list
         if in_list and list_items:
-            html_parts.append('    <ul>')
+            html_parts.append('        <ul>')
             for item in list_items:
                 content = item.lstrip('-•').strip()
                 if re.match(r'^\d+[\.\)]\s+', item):
                     num_part = re.match(r'^(\d+[\.\)])\s+', item).group(1)
                     content = item[len(num_part):].strip()
-                    html_parts.append(f'    <li><strong>{num_part}</strong> {content}</li>')
+                    html_parts.append(f'            <li><strong>{num_part}</strong> {content}</li>')
                 else:
-                    html_parts.append(f'    <li>{content}</li>')
-            html_parts.append('    </ul>')
+                    html_parts.append(f'            <li>{content}</li>')
+            html_parts.append('        </ul>')
         
-        # Close section
-        html_parts.append('    </section>')
+        # Close any open lists
+        if current_list_type:
+            if current_list_type == 'ul':
+                html_parts.append('        </ul>')
+            elif current_list_type == 'ol':
+                html_parts.append('        </ol>')
+            current_list_type = None
+        
+        # Close section content and section
+        html_parts.append('    </div>')
+        html_parts.append('</section>')
     
-    # Close content wrapper
-    html_parts.append('    </div>')
+    # Close main content
+    html_parts.append('</main>')
     
-    # Add scroll spy JavaScript
-    html_parts.append('''    <script>
-        // Scroll spy for sticky navigation
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
+    # Add footer
+    html_parts.append('''<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-tagline">See You at the Finish</div>
+    <p>You have the plan. You understand how training works, how to execute the workouts, how to fuel and hydrate, how to manage your mental game, and how to approach race day.</p>
+    <p><strong>Now do the work.</strong></p>
+    <p>Not perfectly. Not heroically. <em>Consistently. Intelligently. Over 12 weeks.</em></p>
+    <p>On race morning, you'll stand at the start line knowing you did everything you could to prepare. That confidence—not hope, not optimism, but confidence based on completed work—is what this plan builds.</p>
+    <p><strong>The race will be hard. You trained for hard.</strong></p>
+    <br>
+    <p class="footer-email">gravelgodcoaching@gmail.com</p>
+    <p class="footer-motto">Become what you could be.</p>
+</footer>
+
+<!-- SCROLL SPY JAVASCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.sticky-nav a');
+    
+    function updateActiveLink() {
+        let current = '';
+        const scrollPos = window.scrollY + 100;
         
-        function updateActiveNav() {
-            let current = '';
-            const scrollY = window.pageYOffset;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
             
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    current = sectionId;
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', updateActiveNav);
-        window.addEventListener('load', updateActiveNav);
-        
-        // Smooth scroll for nav links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
         });
-    </script>''')
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+});
+</script>''')
     
     # Close HTML
     html_parts.append('</body>\n</html>')

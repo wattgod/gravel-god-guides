@@ -151,20 +151,29 @@ def replace_variables(text: str, race_data: Dict[str, Any]) -> str:
     return result
 
 def generate_svg_phase_bars() -> str:
-    """Generate SVG phase bars"""
-    return '''<svg width="100%" height="60" style="margin: 20px 0;">
-        <rect x="0" y="0" width="25%" height="60" fill="#4ECDC4" />
-        <text x="12.5%" y="35" text-anchor="middle" fill="white" font-weight="bold">BASE</text>
-        <rect x="25%" y="0" width="33%" height="60" fill="#40E0D0" />
-        <text x="41.5%" y="35" text-anchor="middle" fill="white" font-weight="bold">BUILD</text>
-        <rect x="58%" y="0" width="25%" height="60" fill="#59473C" />
-        <text x="70.5%" y="35" text-anchor="middle" fill="#F5F5DC" font-weight="bold">PEAK</text>
-        <rect x="83%" y="0" width="17%" height="60" fill="#F4D03F" />
-        <text x="91.5%" y="35" text-anchor="middle" fill="#2c2c2c" font-weight="bold">TAPER</text>
+    """Generate SVG phase bars with neo-brutalist styling"""
+    return '''<svg width="100%" height="80" style="margin: 1.5rem 0; border: 3px solid #2c2c2c; box-shadow: 6px 6px 0 rgba(0,0,0,0.2);">
+        <defs>
+            <style>
+                .phase-text { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; }
+            </style>
+        </defs>
+        <rect x="0" y="0" width="25%" height="80" fill="#4ECDC4" stroke="#2c2c2c" stroke-width="2" />
+        <text x="12.5%" y="45" text-anchor="middle" fill="#2c2c2c" class="phase-text">BASE</text>
+        <text x="12.5%" y="60" text-anchor="middle" fill="#2c2c2c" class="phase-text" font-size="10px">Wks 1-3</text>
+        <rect x="25%" y="0" width="33%" height="80" fill="#F4D03F" stroke="#2c2c2c" stroke-width="2" />
+        <text x="41.5%" y="45" text-anchor="middle" fill="#2c2c2c" class="phase-text">BUILD</text>
+        <text x="41.5%" y="60" text-anchor="middle" fill="#2c2c2c" class="phase-text" font-size="10px">Wks 4-7</text>
+        <rect x="58%" y="0" width="25%" height="80" fill="#e74c3c" stroke="#2c2c2c" stroke-width="2" />
+        <text x="70.5%" y="45" text-anchor="middle" fill="#f5f5dc" class="phase-text">PEAK</text>
+        <text x="70.5%" y="60" text-anchor="middle" fill="#f5f5dc" class="phase-text" font-size="10px">Wks 8-10</text>
+        <rect x="83%" y="0" width="17%" height="80" fill="#27ae60" stroke="#2c2c2c" stroke-width="2" />
+        <text x="91.5%" y="45" text-anchor="middle" fill="#f5f5dc" class="phase-text">TAPER</text>
+        <text x="91.5%" y="60" text-anchor="middle" fill="#f5f5dc" class="phase-text" font-size="10px">Wks 11-12</text>
     </svg>'''
 
 def generate_svg_radar_chart(race_data: Dict[str, Any]) -> str:
-    """Generate SVG radar chart from race data"""
+    """Generate SVG radar chart from race data with neo-brutalist styling"""
     scores = race_data.get('race', {}).get('radar_scores', {})
     # Default scores if not provided
     elevation = scores.get('elevation', {}).get('score', 3)
@@ -174,15 +183,15 @@ def generate_svg_radar_chart(race_data: Dict[str, Any]) -> str:
     altitude = scores.get('altitude', {}).get('score', 2)
     adventure = scores.get('adventure', {}).get('score', 3)
     
-    # Simple radar visualization as table for now
-    return f'''<table class="zone-table" style="margin: 20px 0;">
+    # Enhanced table with neo-brutalist styling
+    return f'''<table class="zone-table">
         <tr><th>Factor</th><th>Score</th><th>What It Means</th></tr>
-        <tr><td><strong>Elevation</strong></td><td style="font-family: monospace; color: #40E0D0;">{"●" * elevation}{"○" * (5-elevation)}</td><td>Cumulative elevation challenge</td></tr>
-        <tr><td><strong>Length</strong></td><td style="font-family: monospace; color: #40E0D0;">{"●" * length}{"○" * (5-length)}</td><td>Distance demands</td></tr>
-        <tr><td><strong>Technicality</strong></td><td style="font-family: monospace; color: #40E0D0;">{"●" * technicality}{"○" * (5-technicality)}</td><td>Bike handling requirements</td></tr>
-        <tr><td><strong>Climate</strong></td><td style="font-family: monospace; color: #40E0D0;">{"●" * climate}{"○" * (5-climate)}</td><td>Weather challenges</td></tr>
-        <tr><td><strong>Altitude</strong></td><td style="font-family: monospace; color: #40E0D0;">{"●" * altitude}{"○" * (5-altitude)}</td><td>Elevation effects</td></tr>
-        <tr><td><strong>Adventure</strong></td><td style="font-family: monospace; color: #40E0D0;">{"●" * adventure}{"○" * (5-adventure)}</td><td>Logistical complexity</td></tr>
+        <tr><td><strong>Elevation</strong></td><td style="font-family: 'JetBrains Mono', monospace; color: #4ecdc4; font-weight: 700;">{"●" * elevation}{"○" * (5-elevation)}</td><td>Cumulative elevation challenge</td></tr>
+        <tr><td><strong>Length</strong></td><td style="font-family: 'JetBrains Mono', monospace; color: #4ecdc4; font-weight: 700;">{"●" * length}{"○" * (5-length)}</td><td>Distance demands</td></tr>
+        <tr><td><strong>Technicality</strong></td><td style="font-family: 'JetBrains Mono', monospace; color: #4ecdc4; font-weight: 700;">{"●" * technicality}{"○" * (5-technicality)}</td><td>Bike handling requirements</td></tr>
+        <tr><td><strong>Climate</strong></td><td style="font-family: 'JetBrains Mono', monospace; color: #4ecdc4; font-weight: 700;">{"●" * climate}{"○" * (5-climate)}</td><td>Weather challenges</td></tr>
+        <tr><td><strong>Altitude</strong></td><td style="font-family: 'JetBrains Mono', monospace; color: #4ecdc4; font-weight: 700;">{"●" * altitude}{"○" * (5-altitude)}</td><td>Elevation effects</td></tr>
+        <tr><td><strong>Adventure</strong></td><td style="font-family: 'JetBrains Mono', monospace; color: #4ecdc4; font-weight: 700;">{"●" * adventure}{"○" * (5-adventure)}</td><td>Logistical complexity</td></tr>
     </table>'''
 
 def format_paragraph(text: str) -> str:
@@ -259,7 +268,7 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
     # Build HTML
     html_parts = []
     
-    # HTML header with neo-brutalist CSS
+    # HTML header with full neo-brutalist CSS
     html_parts.append(f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -267,46 +276,139 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{race_data.get('race', {}).get('name', 'Gravel God Training Guide')} - {race_data.get('ability_level', 'Training Guide')}</title>
     <style>
+        /* Sometype Mono Font - using Google Fonts fallback + local */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+        
+        @font-face {{
+            font-family: 'Sometype Mono';
+            src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+            font-weight: 400;
+            font-style: normal;
+        }}
+        
+        :root {{
+            --cream: {COLORS['cream']};
+            --turquoise: {COLORS['turquoise']};
+            --yellow: {COLORS['yellow']};
+            --brown-dark: {COLORS['brown_dark']};
+            --text-dark: {COLORS['text_dark']};
+            --red: #e74c3c;
+            --green: #27ae60;
+        }}
+        
         * {{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            border-radius: 0 !important;
         }}
         
         body {{
-            font-family: 'Courier New', monospace, 'Arial', sans-serif;
-            font-size: 11pt;
+            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
+            font-size: 16px;
             line-height: 1.7;
-            color: {COLORS['text_dark']};
-            max-width: 800px;
+            color: var(--text-dark);
+            max-width: 900px;
             margin: 0 auto;
+            padding: 0;
+            background: linear-gradient(135deg, var(--cream) 0%, #ede5d0 100%);
+            min-height: 100vh;
+        }}
+        
+        /* Sticky Navigation */
+        .sticky-nav {{
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--brown-dark);
+            border-bottom: 3px solid var(--text-dark);
+            padding: 0.75rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }}
+        
+        .sticky-nav a {{
+            color: var(--cream);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            border: 2px solid var(--text-dark);
+            background: var(--brown-dark);
+            transition: all 0.1s;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }}
+        
+        .sticky-nav a:hover {{
+            background: var(--turquoise);
+            color: var(--text-dark);
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+        }}
+        
+        .sticky-nav a.active {{
+            background: var(--turquoise);
+            color: var(--text-dark);
+            font-weight: 700;
+        }}
+        
+        .content-wrapper {{
             padding: 20px;
-            background: {COLORS['cream']};
+        }}
+        
+        /* Section Headers with Number Badges */
+        section {{
+            scroll-margin-top: 80px;
+            margin-bottom: 3rem;
+        }}
+        
+        .section-header {{
+            background: var(--text-dark);
+            color: var(--cream);
+            padding: 1rem 1.5rem 1rem 3.5rem;
+            position: relative;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+            margin: 2.5rem 0 1.5rem 0;
+        }}
+        
+        .section-number {{
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--turquoise);
+            color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            border: 3px solid var(--text-dark);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
         }}
         
         h1 {{
-            font-family: 'Courier New', monospace;
-            font-size: 24pt;
-            color: {COLORS['brown_dark']};
-            border-bottom: 4px solid {COLORS['turquoise']};
-            border-left: 4px solid {COLORS['turquoise']};
-            padding: 10px 15px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
-            border-radius: 0;
+            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin: 0;
+            font-weight: 700;
         }}
         
         h2 {{
-            font-family: 'Courier New', monospace;
-            font-size: 16pt;
-            color: {COLORS['brown_dark']};
-            margin-top: 30px;
-            border-left: 4px solid {COLORS['turquoise']};
-            border-bottom: 2px solid {COLORS['turquoise']};
-            padding: 8px 12px;
-            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-            border-radius: 0;
+            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
+            font-size: 1.25rem;
+            color: var(--brown-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--turquoise);
+            padding-left: 1rem;
+            font-weight: 500;
         }}
         
         h3 {{
@@ -316,130 +418,210 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             margin-bottom: 10px;
         }}
         
+        /* Header Design */
         .header-box {{
-            background: {COLORS['brown_dark']};
-            color: {COLORS['cream']};
-            padding: 20px;
+            background: var(--brown-dark);
+            color: var(--cream);
+            padding: 3rem 2rem;
             text-align: center;
-            font-family: 'Courier New', monospace;
-            margin: 20px 0;
+            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
+            margin: 0;
+            border-bottom: 3px solid var(--text-dark);
+            position: relative;
+            overflow: hidden;
+        }}
+        
+        .header-box::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(78, 205, 196, 0.1) 10px,
+                rgba(78, 205, 196, 0.1) 20px
+            );
+            pointer-events: none;
         }}
         
         .header-box h1 {{
-            color: {COLORS['cream']};
-            border: none;
-            margin: 0;
+            color: var(--turquoise);
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 0.5rem 0;
+            text-shadow: 
+                3px 3px 0 var(--yellow),
+                6px 6px 0 var(--text-dark);
+            position: relative;
+            z-index: 1;
         }}
         
         .header-box .tagline {{
-            color: {COLORS['turquoise']};
-            font-size: 14pt;
-            margin-top: 10px;
+            color: var(--cream);
+            font-size: 1.125rem;
+            margin-top: 0.5rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
         }}
         
-        /* Neo-Brutalist: No rounded corners, hard borders, strong shadows */
+        .race-badge {{
+            display: inline-block;
+            background: var(--turquoise);
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            border: 3px solid var(--text-dark);
+            font-weight: 700;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }}
+        
+        /* Callout Boxes - Four Types */
+        .callout {{
+            border: 3px solid var(--text-dark);
+            border-left-width: 6px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+        }}
+        
+        .callout-warning {{
+            border-left-color: var(--yellow);
+            background: #fef9e7;
+        }}
+        
+        .callout-info {{
+            border-left-color: var(--turquoise);
+            background: #e8f8f5;
+        }}
+        
+        .callout-danger {{
+            border-left-color: var(--red);
+            background: #fdedec;
+        }}
+        
+        .callout-success {{
+            border-left-color: var(--green);
+            background: #e9f7ef;
+        }}
+        
+        /* Legacy class support */
         .callout-box {{
-            background: {COLORS['cream']};
-            border: 3px solid {COLORS['text_dark']};
-            padding: 15px;
-            margin: 20px 0;
-            box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
-            border-radius: 0;
+            border: 3px solid var(--text-dark);
+            border-left-width: 6px;
+            border-left-color: var(--turquoise);
+            background: var(--cream);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
         }}
         
         .callout-turquoise {{
-            border: 3px solid {COLORS['turquoise']};
-            box-shadow: 6px 6px 0 {COLORS['turquoise']};
-            border-radius: 0;
+            border-left-color: var(--turquoise);
+            background: #e8f8f5;
         }}
         
         .warning-box {{
-            background: #FFF3CD;
-            border: 3px solid #FFC107;
-            padding: 15px;
-            margin: 20px 0;
-            box-shadow: 6px 6px 0 rgba(255, 193, 7, 0.3);
-            border-radius: 0;
+            border-left-color: var(--yellow);
+            background: #fef9e7;
+            border: 3px solid var(--text-dark);
+            border-left-width: 6px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
         }}
         
-        .zone-table {{
+        /* Tables - Neo-Brutalist */
+        table, .zone-table {{
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            border: 3px solid {COLORS['text_dark']};
+            margin: 1.5rem 0;
+            border: 3px solid var(--text-dark);
             box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
-            border-radius: 0;
-        }}
-        
-        .zone-table th {{
-            background: {COLORS['brown_dark']};
-            color: {COLORS['cream']};
-            padding: 10px;
-            text-align: left;
-            font-family: 'Courier New', monospace;
-            border: 2px solid {COLORS['text_dark']};
-        }}
-        
-        .zone-table td {{
-            border: 2px solid {COLORS['text_dark']};
-            padding: 10px;
-        }}
-        
-        .zone-table tr:nth-child(even) {{
-            background: #f9f9f9;
-        }}
-        
-        .zone-table tr:nth-child(odd) {{
             background: white;
         }}
         
-        /* G Spot highlighting */
+        th {{
+            background: var(--brown-dark);
+            color: var(--cream);
+            padding: 0.75rem;
+            text-align: left;
+            border: 2px solid var(--text-dark);
+            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
+            font-weight: 700;
+        }}
+        
+        td {{
+            padding: 0.75rem;
+            border: 1px solid var(--text-dark);
+        }}
+        
+        tr:nth-child(even) {{
+            background: rgba(0,0,0,0.03);
+        }}
+        
+        tr:hover {{
+            background: rgba(78, 205, 196, 0.1);
+        }}
+        
+        /* G Spot row highlight */
+        tr.g-spot-row,
         .zone-table tr:has(td:contains("G Spot")) {{
-            background: #E8F5E9 !important;
+            background: rgba(78, 205, 196, 0.2) !important;
+            font-weight: 500;
         }}
         
         /* Table of Contents */
         .toc {{
-            background: {COLORS['cream']};
-            border: 3px solid {COLORS['text_dark']};
-            padding: 20px;
-            margin: 30px 0;
+            background: var(--cream);
+            border: 3px solid var(--text-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
             box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
-            border-radius: 0;
         }}
         
         .toc h2 {{
             margin-top: 0;
             border: none;
             padding: 0;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }}
         
         .toc-buttons {{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
         }}
         
         .toc-button {{
-            background: {COLORS['brown_dark']};
-            color: {COLORS['cream']};
-            border: 3px solid {COLORS['text_dark']};
-            padding: 12px 16px;
+            background: var(--brown-dark);
+            color: var(--cream);
+            border: 3px solid var(--text-dark);
+            padding: 0.75rem 1rem;
             text-decoration: none;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
+            font-family: 'JetBrains Mono', 'Sometype Mono', 'Courier New', monospace;
+            font-weight: 500;
             text-align: center;
             display: block;
             box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
             transition: transform 0.1s, box-shadow 0.1s;
-            border-radius: 0;
+            font-size: 0.875rem;
         }}
         
         .toc-button:hover {{
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+            background: var(--turquoise);
+            color: var(--text-dark);
         }}
         
         .toc-button:active {{
@@ -452,31 +634,77 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         }}
         
         /* Neo-brutalist lists */
+        /* Lists */
         ul, ol {{
-            margin: 15px 0;
-            padding: 15px 20px 15px 30px;
-            border-left: 3px solid {COLORS['turquoise']};
-            border: 2px solid {COLORS['text_dark']};
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem 1rem 2.5rem;
+            border-left: 3px solid var(--turquoise);
+            border: 2px solid var(--text-dark);
             background: white;
             box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-            border-radius: 0;
             margin-left: 0;
         }}
         
         li {{
-            margin: 8px 0;
+            margin: 0.5rem 0;
         }}
         
-        /* Section IDs for anchor links */
-        section {{
-            scroll-margin-top: 20px;
+        /* Responsive Design */
+        @media (max-width: 768px) {{
+            body {{
+                font-size: 14px;
+            }}
+            
+            .header-box h1 {{
+                font-size: 2rem;
+            }}
+            
+            .sticky-nav {{
+                flex-wrap: wrap;
+                gap: 0.25rem;
+                padding: 0.5rem;
+            }}
+            
+            .sticky-nav a {{
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
+            }}
+            
+            .toc-buttons {{
+                grid-template-columns: 1fr;
+            }}
+            
+            table {{
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }}
+            
+            .section-header {{
+                padding: 0.75rem 1rem 0.75rem 3rem;
+            }}
+            
+            .section-number {{
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }}
         }}
         
         @media print {{
+            .sticky-nav {{
+                display: none;
+            }}
+            
             body {{
                 background: white;
             }}
-            .callout-box {{
+            
+            .callout-box, .callout {{
+                page-break-inside: avoid;
+            }}
+            
+            section {{
                 page-break-inside: avoid;
             }}
         }}
@@ -488,11 +716,40 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
     race_name = race_data.get('race', {}).get('name', 'Gravel God Training Guide')
     tagline = race_data.get('race', {}).get('tagline', 'Your Complete Training Resource')
     
+    # Get location for race badge
+    location = race_data.get('race', {}).get('vitals', {}).get('location', {})
+    location_str = f"{location.get('city', '')}, {location.get('state', '')}".strip(', ')
+    
     html_parts.append(f'''    <div class="header-box">
         <h1>{race_name}</h1>
         <p class="tagline">{tagline}</p>
-        <p class="tagline">{race_data.get('ability_level', 'Training Guide')} | {race_data.get('tier_name', 'Tier')}</p>
+        <div class="race-badge">{location_str if location_str else race_data.get('ability_level', 'Training Guide')}</div>
+        <p class="tagline" style="margin-top: 1rem;">{race_data.get('ability_level', 'Training Guide')} | {race_data.get('tier_name', 'Tier')}</p>
     </div>''')
+    
+    # Build sticky navigation
+    nav_sections = [
+        ('brief', 'Brief'),
+        ('before', 'Before'),
+        ('fundamentals', 'Fundamentals'),
+        ('arc', '12-Week Arc'),
+        ('zones', 'Zones'),
+        ('workouts', 'Workouts'),
+        ('skills', 'Skills'),
+        ('fuel', 'Fuel'),
+        ('mental', 'Mental'),
+        ('tactics', 'Tactics'),
+        ('prep', 'Prep'),
+        ('race-day', 'Race Day'),
+        ('reference', 'Ref'),
+        ('glossary', 'Glossary'),
+    ]
+    
+    html_parts.append('    <nav class="sticky-nav">')
+    for nav_id, nav_label in nav_sections:
+        html_parts.append(f'        <a href="#{nav_id}" class="nav-link">{nav_label}</a>')
+    html_parts.append('    </nav>')
+    html_parts.append('    <div class="content-wrapper">')
     
     # Define section order
     section_order = [
@@ -565,11 +822,60 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         
         content = processed_sections[matching_section]
         
-        # Format section header with ID for anchor links
+        # Format section header with ID and number badge
         section_title = matching_section.replace('SECTION ', '').replace(':', '')
         section_id = section_title.lower().replace(' ', '-').replace('&', 'and')
-        html_parts.append(f'    <section id="{section_id}">')
-        html_parts.append(f'    <h1>{section_title}</h1>')
+        
+        # Extract section number for badge
+        section_num = None
+        if section_title[0].isdigit():
+            section_num = section_title.split()[0]
+        elif 'CLOSING' in section_title.upper():
+            section_num = '✓'
+        elif 'ALTITUDE' in section_title.upper():
+            section_num = 'A'
+        
+        # Map to nav IDs - check for partial matches too
+        nav_id_map = {
+            '1-training-plan-brief': 'brief',
+            '2-before-you-start': 'before',
+            '3-training-fundamentals': 'fundamentals',
+            '4-your-12-week-arc': 'arc',
+            '5-training-zones': 'zones',
+            '6-workout-execution': 'workouts',
+            '7-technical-skills-for': 'skills',
+            '8-fueling-and-hydration': 'fuel',
+            '9-mental-training': 'mental',
+            '10-race-tactics-for': 'tactics',
+            '11-race-specific-preparation-for': 'prep',
+            '12-race-week-protocol': 'race-day',
+            '13-quick-reference': 'reference',
+            '14-glossary': 'glossary',
+        }
+        
+        # Try exact match first, then partial match
+        nav_id = nav_id_map.get(section_id)
+        if not nav_id:
+            # Check for partial matches (e.g., "7-technical-skills-for-unbound-gravel-200" -> "skills")
+            for key, value in nav_id_map.items():
+                if key in section_id or section_id.startswith(key.split('-')[0]):
+                    nav_id = value
+                    break
+        
+        # Fallback to section_id if no match
+        if not nav_id:
+            nav_id = section_id
+        
+        html_parts.append(f'    <section id="{nav_id}">')
+        if section_num:
+            html_parts.append(f'    <div class="section-header">')
+            html_parts.append(f'        <div class="section-number">{section_num}</div>')
+            html_parts.append(f'        <h1>{section_title}</h1>')
+            html_parts.append(f'    </div>')
+        else:
+            html_parts.append(f'    <div class="section-header">')
+            html_parts.append(f'        <h1>{section_title}</h1>')
+            html_parts.append(f'    </div>')
         
         # Process content - process EVERY line to capture all content
         paragraphs = content.split('\n')
@@ -636,6 +942,53 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         
         # Close section
         html_parts.append('    </section>')
+    
+    # Close content wrapper
+    html_parts.append('    </div>')
+    
+    # Add scroll spy JavaScript
+    html_parts.append('''    <script>
+        // Scroll spy for sticky navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function updateActiveNav() {
+            let current = '';
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = sectionId;
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', updateActiveNav);
+        
+        // Smooth scroll for nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>''')
     
     # Close HTML
     html_parts.append('</body>\n</html>')

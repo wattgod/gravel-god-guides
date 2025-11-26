@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mid South – Gravel Race Info & Training Guide | Gravel God</title>
+    <meta name="description" content="Complete guide to The Mid South: 100 miles on Oklahoma red clay, $100K purse, extreme weather. Race vitals, mud vs dry conditions, and training plan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', 'Courier New', monospace;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 90s Retro Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #59473C 0%, #8C7568 50%, #59473C 100%);
+            padding: 60px 20px 80px 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 8px solid #5CE1E6;
+        }
+
+        /* Trapper Keeper Geometric Pattern Overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(92, 225, 230, 0.1) 35px, rgba(92, 225, 230, 0.1) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255, 222, 89, 0.1) 35px, rgba(255, 222, 89, 0.1) 70px);
+            pointer-events: none;
+        }
+
+        /* Tier Badge */
+        .tier-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #FFDE59;
+            color: #000000;
+            padding: 12px 25px;
+            font-weight: 700;
+            font-size: 1.2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: 4px solid #5CE1E6;
+            box-shadow: 6px 6px 0px rgba(0,0,0,0.3);
+            transform: rotate(-3deg);
+            z-index: 10;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5em;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            font-weight: 700;
+            text-shadow: 
+                4px 4px 0px #5CE1E6,
+                8px 8px 0px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.6em;
+            color: #FFDE59;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Course Profile Visualization - 90s Style */
+        .course-profile {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 80px;
+            margin: 30px auto;
+            max-width: 600px;
+            background: rgba(191, 165, 149, 0.2);
+            border: 3px solid #5CE1E6;
+            padding: 10px;
+            position: relative;
+        }
+
+        .profile-bar {
+            flex: 1;
+            background: linear-gradient(to top, #5CE1E6, #FFDE59);
+            margin: 0 2px;
+            border-top: 2px solid #FFFFFF;
+            box-shadow: inset 0 -3px 6px rgba(0,0,0,0.3);
+        }
+
+        .profile-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #BFA595;
+            font-size: 0.9em;
+            letter-spacing: 2px;
+        }
+
+        /* Oklahoma Location Badge */
+        .location-badge {
+            display: inline-block;
+            background: rgba(255, 222, 89, 0.3);
+            border: 3px solid #FFDE59;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-top: 20px;
+        }
+
+        /* Radar Chart SVG */
+        .radar-chart-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .radar-chart {
+            width: 350px;
+            height: 350px;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: #FFFFFF;
+            margin: 60px 0;
+            padding: 40px 0;
+            border-left: 8px solid #5CE1E6;
+            padding-left: 40px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #000000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 3px solid #8C7568;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            color: #59473C;
+            margin: 30px 0 20px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section h4 {
+            font-size: 1.1em;
+            color: #8C7568;
+            margin: 20px 0 15px 0;
+            font-weight: 700;
+        }
+
+        .section p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        /* Rating Card with Radar */
+        .rating-card {
+            background-color: #F5F5F5;
+            border: 3px solid #A68E80;
+            padding: 40px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .rating-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, #5CE1E6 0%, #FFDE59 100%);
+            z-index: -1;
+        }
+
+        /* Hexagon Rating System */
+        .hexagon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .hex-item {
+            background-color: #F5F5F5;
+            padding: 30px;
+            border: 2px solid #A68E80;
+            transition: border-color 0.3s ease;
+            position: relative;
+        }
+
+        .hex-item:hover {
+            border-color: #5CE1E6;
+        }
+
+        .hex-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: #FFDE59;
+        }
+
+        .hex-title {
+            font-size: 1.1em;
+            color: #000000;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hexagon-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            gap: 5px;
+        }
+
+        .hexagon {
+            width: 40px;
+            height: 23px;
+            background-color: #BFA595;
+            position: relative;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            left: 0;
+        }
+
+        .hexagon:before {
+            bottom: 100%;
+            border-bottom: 11.5px solid #BFA595;
+        }
+
+        .hexagon:after {
+            top: 100%;
+            border-top: 11.5px solid #BFA595;
+        }
+
+        .hexagon.filled {
+            background-color: #5CE1E6;
+        }
+
+        .hexagon.filled:before {
+            border-bottom-color: #5CE1E6;
+        }
+
+        .hexagon.filled:after {
+            border-top-color: #5CE1E6;
+        }
+
+        .hex-desc {
+            text-align: center;
+            font-size: 0.9em;
+            color: #59473C;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: #FFFFFF;
+        }
+
+        th {
+            background-color: #59473C;
+            color: #FFFFFF;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #8C7568;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #BFA595;
+            background-color: #FAFAFA;
+        }
+
+        tbody tr:nth-child(even) td {
+            background-color: #F5F5F5;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            background-color: #F5F5F5;
+            border-left: 6px solid #FFDE59;
+            padding: 30px;
+            margin: 30px 0;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .warning-box {
+            background-color: #FFF9E6;
+            border: 3px solid #5CE1E6;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .warning-box h3 {
+            color: #59473C;
+            margin-bottom: 15px;
+        }
+
+        .tldr-box {
+            background-color: #E8F5F7;
+            border-left: 8px solid #5CE1E6;
+            padding: 35px;
+            margin: 30px 0;
+            font-size: 1.05em;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, #FFDE59 0%, #5CE1E6 100%);
+            border: 6px solid #59473C;
+            padding: 50px;
+            margin: 40px 0;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #000000;
+            text-shadow: 3px 3px 0px rgba(255,255,255,0.5);
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 20px 0 20px 40px;
+            line-height: 1.9;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #59473C;
+        }
+
+        em {
+            font-style: italic;
+            color: #8C7568;
+        }
+
+        /* Links */
+        a {
+            color: #5CE1E6;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #5CE1E6;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #59473C 0%, #8C7568 100%);
+            padding: 50px 20px;
+            text-align: center;
+            color: #BFA595;
+            margin-top: 80px;
+            border-top: 8px solid #5CE1E6;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(92, 225, 230, 0.05) 35px, rgba(92, 225, 230, 0.05) 70px);
+            pointer-events: none;
+        }
+
+        .footer a {
+            color: #FFDE59;
+        }
+
+        /* Training Section Special Styling */
+        .training-philosophy {
+            background-color: #F9F9F9;
+            border-left: 4px solid #8C7568;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .training-philosophy h4 {
+            color: #59473C;
+            margin-bottom: 10px;
+        }
+
+        .suitability-score {
+            display: inline-block;
+            background-color: #5CE1E6;
+            color: #000000;
+            padding: 5px 15px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+                letter-spacing: 4px;
+            }
+            
+            .tier-badge {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+
+            .hexagon-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding-left: 20px;
+                border-left-width: 4px;
+            }
+
+            table {
+                font-size: 0.85em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            .radar-chart {
+                width: 280px;
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero with 90s Retro Aesthetic -->
+    <div class="hero">
+        <div class="tier-badge">TIER 1</div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>THE MID SOUTH</h1>
+                <div class="hero-subtitle">Oklahoma's Red Clay Roulette</div>
+                
+                <!-- Retro Course Profile -->
+                <div class="course-profile">
+                    <div class="profile-bar" style="height: 30%;"></div>
+                    <div class="profile-bar" style="height: 45%;"></div>
+                    <div class="profile-bar" style="height: 60%;"></div>
+                    <div class="profile-bar" style="height: 40%;"></div>
+                    <div class="profile-bar" style="height: 55%;"></div>
+                    <div class="profile-bar" style="height: 50%;"></div>
+                    <div class="profile-bar" style="height: 65%;"></div>
+                    <div class="profile-bar" style="height: 45%;"></div>
+                    <div class="profile-bar" style="height: 55%;"></div>
+                    <div class="profile-bar" style="height: 35%;"></div>
+                    <div class="profile-label">100 MILES // ~4,500 FT GAIN</div>
+                </div>
+                
+                <!-- Location Badge -->
+                <div class="location-badge">
+                    📍 STILLWATER, OKLAHOMA
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Race Vitals -->
+        <div class="section">
+            <h2>Race Vitals</h2>
+            <table>
+                <tbody>
+                    <tr><th>Location</th><td>Stillwater, Oklahoma (Payne County)</td></tr>
+                    <tr><th>Date</th><td>Mid-March annually (2026: March 13-14)</td></tr>
+                    <tr><th>Distances</th><td>100 miles, 50 miles, 12 miles (Inspiration Ride)</td></tr>
+                    <tr><th>Elevation Gain</th><td>~4,500 ft (100mi), ~2,200 ft (50mi)</td></tr>
+                    <tr><th>Terrain</th><td>Oklahoma red clay roads, rolling hills, creek crossings, 1-mile singletrack finish. Surface ranges from hero dirt to peanut butter mud depending on weather.</td></tr>
+                    <tr><th>Field Size</th><td>4,000+ total participants</td></tr>
+                    <tr><th>Start Time</th><td>Pro Race: Friday 1:00 PM (2026 new format)<br>Amateur Race: Saturday 8:00 AM</td></tr>
+                    <tr><th>Registration</th><td>Opens September. Cost: $165 (100mi), $115 (50mi). Sells out quickly.</td></tr>
+                    <tr><th>Prize Purse</th><td>$100,000 (split equally between elite men and women)</td></tr>
+                    <tr><th>Aid Stations</th><td>Neutral support at mile ~50, water/snacks provided</td></tr>
+                    <tr><th>Cut-off Time</th><td>None (Bobby wants everyone to finish)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TL;DR -->
+        <div class="section">
+            <h2>TL;DR</h2>
+            <div class="tldr-box">
+                <p>The Mid South is gravel racing's biggest personality cult wrapped in a weather lottery. When it's dry (recent trend), you get a blazingly fast 100-mile tactical race on hard-packed red clay with average speeds over 20mph for the front groups. When it rains (the old reputation), those same roads become unrideable peanut butter mud that clogs drivetrains and forces miles of hike-a-bike. The $100K prize purse brings the fastest field outside of Unbound. Either way, you finish to a hug from race director Bobby Wintle, live music, and community vibes that make people come back year after year.</p>
+            </div>
+            
+            <div class="callout">
+                <strong>You should race this if:</strong> You want to test yourself against the best field in gravel, you can handle extreme weather variability (March in Oklahoma = anything), and you value atmosphere/community as much as competition. You're ready for either a 4-hour crit-style race or an 8-12 hour mud epic—and you won't know which until race morning.
+            </div>
+            
+            <div class="warning-box">
+                <h3>⚠️ Skip this if:</h3>
+                <p>You need predictable conditions to feel prepared, you hate tactical pack racing, or you want stunning scenery (it's Oklahoma rolling ranch land). If the idea of the same course producing wildly different finish times year-to-year seems unfair, look elsewhere.</p>
+            </div>
+        </div>
+
+        <!-- FACTS -->
+        <div class="section">
+            <h2>Facts</h2>
+            
+            <h3>History</h3>
+            <p>Bobby and Crystal Wintle started this thing in 2013 as "Land Run 100" when they invited 121 riders to explore Oklahoma's red dirt roads. Bobby stood at the finish line and hugged every single finisher—a tradition he's maintained for over a decade running. The race grew explosively: 350 riders year two, 1,000 by year five, 4,000+ today. People come from 48 states and multiple countries.</p>
+
+            <p>In 2025, they added a $100,000 prize purse split equally between elite men and women, cementing its status as one of the richest one-day gravel races in North America. The 2025 edition was tragically cancelled just hours before the start due to catastrophic wildfires and hurricane-force winds—but the community response (immediate pivot to wildfire relief fundraising, with riders like Ted King and Chase Wark setting FKTs on the full course route to raise money) only reinforced why this event matters. For 2026, they're splitting into two days: pro race Friday afternoon, amateur mass-start Saturday morning.</p>
+
+            <h3>Random Facts You Should Know</h3>
+            
+            <div class="callout">
+                <h4>The Mud Reputation Is Real (But Not Recent)</h4>
+                <p>Oklahoma's red clay contains iron oxide that gives it that crimson color, but more importantly, it becomes sticky cement when wet. The clay particles bind together with moisture, creating what racers call "peanut butter mud" that can add 10+ pounds to your bike weight. In the notorious 2017 and 2020 editions, mud clogged derailleurs so badly that hundreds of riders couldn't finish. Paint stirring sticks were handed out at aid stations to scrape mud from frames. But here's the twist: The Mid South has had three consecutive dry years (2022-2024), resulting in record-fast times. The weather lottery works both ways.</p>
+            </div>
+
+            <div class="callout">
+                <h4>The Bobby Hug</h4>
+                <p>Race founder Bobby Wintle has hugged every finisher he physically can for 13 years. Not just winners—every single rider who crosses that line, from 4:26 to midnight. It's become such a defining part of the event that "getting a Bobby Hug" is listed as a legitimate goal for many participants. There's a reason this race feels different.</p>
+            </div>
+
+            <div class="callout">
+                <h4>No Cut-Offs Philosophy</h4>
+                <p>Unlike most major gravel races, The Mid South refuses to impose cut-off times. Crystal Wintle has explicitly stated this as a core value—if you start, they want you to finish, even if that means rolling in after dark. The finish line party waits for the last rider. In 2023, Marley Blonsky (co-founder of All Bodies on Bikes) earned the DFL (Dead F---ing Last) title after 14+ hours, arriving to a packed finish line, a "Mar-ley" chant from hundreds of people, and a giant longhorn skull trophy. This is the only official trophy The Mid South hands out.</p>
+            </div>
+
+            <div class="callout">
+                <h4>The Dry Years Trend</h4>
+                <p>After being notorious for mud for years, The Mid South has had three consecutive dry editions (2022-2024), resulting in high-speed racing where the winners averaged over 20mph. Lauren De Crescenzo won three straight (2022-2024) on fast, dry courses. This has shifted the race dynamic from survival epic to criterium-style tactical pack racing. But don't be fooled—March in Oklahoma remains unpredictable. The mud can return at any time, and when it does, the course becomes unrecognizable.</p>
+            </div>
+        </div>
+
+        <!-- The Ratings with Radar Chart -->
+        <div class="section">
+            <h2>The Ratings</h2>
+            
+            <!-- Master Radar Chart -->
+            <div class="radar-chart-container">
+                <svg class="radar-chart" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background circles -->
+                    <circle cx="200" cy="200" r="160" fill="none" stroke="#BFA595" stroke-width="1" opacity="0.3"/>
+                    <circle cx="200" cy="200" r="120" fill="none" stroke="#BFA595" stroke-width="1" opacity="0.3"/>
+                    <circle cx="200" cy="200" r="80" fill="none" stroke="#BFA595" stroke-width="1" opacity="0.3"/>
+                    <circle cx="200" cy="200" r="40" fill="none" stroke="#BFA595" stroke-width="1" opacity="0.3"/>
+                    
+                    <!-- Axis lines -->
+                    <line x1="200" y1="200" x2="200" y2="40" stroke="#8C7568" stroke-width="2"/> <!-- Prestige -->
+                    <line x1="200" y1="200" x2="337" y2="93" stroke="#8C7568" stroke-width="2"/> <!-- Length -->
+                    <line x1="200" y1="200" x2="337" y2="307" stroke="#8C7568" stroke-width="2"/> <!-- Technicality -->
+                    <line x1="200" y1="200" x2="200" y2="360" stroke="#8C7568" stroke-width="2"/> <!-- Elevation -->
+                    <line x1="200" y1="200" x2="63" y2="307" stroke="#8C7568" stroke-width="2"/> <!-- Climate -->
+                    <line x1="200" y1="200" x2="63" y2="93" stroke="#8C7568" stroke-width="2"/> <!-- Altitude -->
+                    <line x1="200" y1="200" x2="200" y2="40" stroke="#8C7568" stroke-width="2"/> <!-- Adventure -->
+                    
+                    <!-- Data polygon: Prestige:5, Length:3, Tech:4, Elevation:2, Climate:5, Altitude:1, Adventure:3 -->
+                    <!-- Convert to coordinates: radius = (score/5) * 160 from center -->
+                    <!-- Prestige (top): 5/5 * 160 = 200 → (200, 40) -->
+                    <!-- Length (60° right): 3/5 * 160 = 96 → (200 + 96*sin(60), 200 - 96*cos(60)) = (283, 152) -->
+                    <!-- Tech (120° right): 4/5 * 160 = 128 → (200 + 128*sin(60), 200 + 128*cos(60)) = (311, 264) -->
+                    <!-- Elevation (bottom): 2/5 * 160 = 64 → (200, 264) -->
+                    <!-- Climate (240° left): 5/5 * 160 = 160 → (200 - 160*sin(60), 200 + 160*cos(60)) = (61, 280) -->
+                    <!-- Altitude (300° left): 1/5 * 160 = 32 → (200 - 32*sin(60), 200 - 32*cos(60)) = (172, 184) -->
+                    <!-- Adventure (returns to top area): 3/5 * 160 = 96 from center along first axis variant -->
+                    
+                    <polygon points="200,40 283,152 311,264 200,264 61,280 172,184 200,136" 
+                             fill="#5CE1E6" fill-opacity="0.6" stroke="#FFDE59" stroke-width="3"/>
+                    
+                    <!-- Labels -->
+                    <text x="200" y="25" text-anchor="middle" font-family="Roboto Mono" font-weight="700" font-size="13" fill="#59473C">PRESTIGE</text>
+                    <text x="355" y="100" text-anchor="start" font-family="Roboto Mono" font-weight="700" font-size="13" fill="#59473C">LENGTH</text>
+                    <text x="360" y="315" text-anchor="start" font-family="Roboto Mono" font-weight="700" font-size="13" fill="#59473C">TECHNICALITY</text>
+                    <text x="200" y="385" text-anchor="middle" font-family="Roboto Mono" font-weight="700" font-size="13" fill="#59473C">ELEVATION</text>
+                    <text x="45" y="315" text-anchor="end" font-family="Roboto Mono" font-weight="700" font-size="13" fill="#59473C">CLIMATE</text>
+                    <text x="45" y="100" text-anchor="end" font-family="Roboto Mono" font-weight="700" font-size="13" fill="#59473C">ALTITUDE</text>
+                    <text x="200" y="125" text-anchor="middle" font-family="Roboto Mono" font-weight="700" font-size="13" fill="#59473C">ADVENTURE</text>
+                </svg>
+            </div>
+            <p style="text-align: center; font-style: italic; color: #8C7568; margin-top: 10px;">Radar chart showing The Mid South profile with scores for prestige, length, technicality, elevation, climate, altitude, and adventure factor in Stillwater, Oklahoma</p>
+
+            <!-- Hexagon Rating Grid -->
+            <div class="hexagon-grid">
+                <!-- Prestige -->
+                <div class="hex-item">
+                    <div class="hex-title">PRESTIGE</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="hex-desc">
+                        <strong>Score: 5/5</strong><br>
+                        The Mid South sits at the top of gravel's cultural hierarchy because of one thing: the $100,000 prize purse. When pros plan their seasons, this is a race they build toward. The field quality rivals Unbound without the 200-mile attrition factor. Winners earn bragging rights and real money. Registration sells out in hours—not because of marketing, but because riders know this is where reputations are made.
+                    </div>
+                </div>
+
+                <!-- Length -->
+                <div class="hex-item">
+                    <div class="hex-title">LENGTH</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        <strong>Score: 3/5</strong><br>
+                        At 100 miles, The Mid South is in the sweet spot for competitive gravel racing. Long enough to matter—you can't fake fitness—but short enough that tactics and pack dynamics play a role. In dry conditions, strong riders finish under 4.5 hours. This rewards riders who can suffer hard for 4-6 hours (or 8-12 in mud) without the glycogen depletion of ultra-distance events.
+                    </div>
+                </div>
+
+                <!-- Technicality -->
+                <div class="hex-item">
+                    <div class="hex-title">TECHNICALITY</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        <strong>Score: 4/5</strong><br>
+                        The course isn't technically difficult when dry—it's rolling gravel roads. But the red clay changes everything. When wet, this becomes one of gravel's most technical courses because of mud accumulation, traction loss, and constant bike handling adjustments. Even dry, the punchy rollers and loose corners demand skills. Plus the strategic element: do you gamble on race tires or mud-specific setups?
+                    </div>
+                </div>
+
+                <!-- Elevation Gain -->
+                <div class="hex-item">
+                    <div class="hex-title">ELEVATION GAIN</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        <strong>Score: 2/5</strong><br>
+                        At ~4,500 feet over 100 miles, this isn't a climbing race. The elevation comes from rolling terrain—short punches that accumulate rather than sustained climbs. Think 1-3 minute efforts at threshold, not 20-minute grinding. Favors riders with good repeatability: can you attack the rollers 50 times without blowing up? Pure climbers don't have an advantage; all-rounders do.
+                    </div>
+                </div>
+
+                <!-- Climate -->
+                <div class="hex-item">
+                    <div class="hex-title">CLIMATE</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="hex-desc">
+                        <strong>Score: 5/5</strong><br>
+                        Let's be honest: the weather IS the race. Mid-March in Oklahoma means you could get 70°F and sunny, 35°F and sleeting, or torrential rain that turns the course into a bog. The forecast changes daily in the week leading up. You need to pack for three different races and commit to equipment with incomplete information. This variability is what makes The Mid South iconic—and infuriating.
+                    </div>
+                </div>
+
+                <!-- Altitude -->
+                <div class="hex-item">
+                    <div class="hex-title">ALTITUDE</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        <strong>Score: 1/5</strong><br>
+                        Stillwater sits at around 900 feet. Altitude is a non-factor. Sea-level dwellers won't notice any difference, and high-altitude athletes won't get their usual advantage. This keeps the playing field level and ensures the race is decided by fitness, tactics, and conditions—not where you happen to live.
+                    </div>
+                </div>
+
+                <!-- Adventure Factor -->
+                <div class="hex-item">
+                    <div class="hex-title">ADVENTURE FACTOR</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        <strong>Score: 3/5</strong><br>
+                        The Mid South is well-supported with aid stations, course marking, and sweep vehicles. Not a self-supported wilderness epic. However, conditions create adventure whether you want it or not. When mud hits, you're problem-solving: Can I clear my drivetrain? Should I walk? The adventure isn't geographic remoteness—it's adapting to chaos.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why It Matters -->
+        <div class="section">
+            <h2>Why It Matters</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th style="width: 100px; text-align: center;">Score</th>
+                        <th>Commentary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cultural Weight</strong></td>
+                        <td style="text-align: center; font-size: 1.5em; color: #5CE1E6;">6/6</td>
+                        <td>The Mid South is a cornerstone of the gravel calendar—one of the races that defines the sport's identity. Unpredictable, democratizing, honest. Bobby Wintle's vision and execution have created something that feels both grassroots and elite simultaneously. The 2025 wildfire cancellation and community response only reinforced why this event matters beyond the racing.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Field Depth</strong></td>
+                        <td style="text-align: center; font-size: 1.5em; color: #5CE1E6;">6/6</td>
+                        <td>The $100K purse brings everyone. On any given year, you'll see Unbound winners, ex-WorldTour pros, and the fastest regional riders in North America. The 100-mile distance and prize money create the deepest field in gravel racing outside of Unbound itself. Lauren De Crescenzo's three straight wins (2022-2024) show what consistency looks like at the elite level.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Course Quality</strong></td>
+                        <td style="text-align: center; font-size: 1.5em; color: #5CE1E6;">5/6</td>
+                        <td>The course is excellent when dry—rolling, well-marked, scenic in an understated way. When wet, it's miserable but memorable. The red clay is polarizing: some riders think it's the best gravel surface ever; others think it ruins the experience. Docking a point because the weather lottery means you might not get the course you hoped for.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Organization</strong></td>
+                        <td style="text-align: center; font-size: 1.5em; color: #5CE1E6;">6/6</td>
+                        <td>Flawless. Bobby and Crystal Wintle and their team have this dialed. Registration is smooth, course marking is clear, aid stations are stocked, timing is accurate, and the production value (livestream, photography, post-race) is top-tier. This is how you run a big event while maintaining community vibe.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prize Money</strong></td>
+                        <td style="text-align: center; font-size: 1.5em; color: #5CE1E6;">6/6</td>
+                        <td>$100,000+ with equal payout for men and women from day one. This is the gold standard in gravel racing. Not a gimmick—it reflects the race's commitment to treating this as a legitimate competitive event that rewards professional effort.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Community</strong></td>
+                        <td style="text-align: center; font-size: 1.5em; color: #5CE1E6;">5.5/6</td>
+                        <td>The vibe is welcoming but leans "serious race" more than "weekend camping trip." The field is large enough that it doesn't feel intimate, but there's shared respect among riders who understand what they're signing up for. The DFL celebration and Bobby Hug tradition show what makes this special. Post-race atmosphere is great, though not the main draw like some destination events.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Suffering Quotient</strong></td>
+                        <td style="text-align: center; font-size: 1.5em; color: #5CE1E6;">4.5/6</td>
+                        <td>Variable. In dry conditions, strong riders finish in 4-4.5 hours and suffering is manageable. In mud, this becomes an 8-14 hour epic where finishing is an achievement. The unpredictability is legendary—you might get away easy, or face one of gravel's hardest days. Recent dry trend has lowered the average suffering, but it can return anytime.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Overall Score -->
+        <div class="section">
+            <div class="score-box">
+                85/100
+                <div style="font-size: 0.4em; margin-top: 20px; letter-spacing: 2px;">ELITE MUST-DO CLASSIC</div>
+            </div>
+            
+            <h3>How We Got Here:</h3>
+            <p><strong>Raw Radar Total:</strong> 23/35 points</p>
+            <p><strong>Multipliers:</strong></p>
+            <ul>
+                <li>Elite field quality: +10 (deepest field outside Unbound)</li>
+                <li>Cultural significance: +12 (Bobby Wintle's legacy, gravel calendar cornerstone, community response to 2025 cancellation)</li>
+                <li>Organization quality: +10 (flawless execution, pro-level production)</li>
+                <li>Prize purse: +6 ($100K, biggest one-day purse in gravel)</li>
+                <li>Unique character/challenge: +10 (red clay weather lottery, unlike any other race)</li>
+                <li>Community/atmosphere: +8 (Bobby Hug tradition, DFL celebration, inclusive philosophy)</li>
+                <li>Accessibility: +6 (multiple distances, no cut-offs, Friday/Saturday split for 2026)</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Total: 85/100</strong></p>
+            <p style="margin-top: 15px; font-style: italic;">The Mid South earns tier-one status through prize money, field quality, and sheer character. This race defines modern gravel racing—the combination of professional competition and grassroots community that the sport aspires to. The weather unpredictability isn't a bug; it's the feature that makes this race matter.</p>
+        </div>
+
+        <!-- The Troll's Take -->
+        <div class="section">
+            <h2>The Troll's Take</h2>
+            <div style="background-color: #F5F5F5; border-left: 6px solid #8C7568; padding: 35px; margin: 30px 0;">
+                <p>Here's the uncomfortable truth: The Mid South's reputation is built on suffering most riders don't experience anymore. Everyone talks about "the mud" and "the peanut butter" and "the 2017 edition," but the race has been dry for three straight years. When conditions are good, this is just a well-organized 100-mile gravel race with fast times and tactical pack racing. A great event, sure—but not the mythical character test the marketing suggests.</p>
+                
+                <p>The professionalization is both the greatest strength and a potential weakness. The $100K purse elevates gravel and validates it as a legitimate discipline. But it also changes the nature of the event. The top 20 are racing for paychecks; everyone else is racing for content. That's not a judgment—it's just a different vibe than the origin story of 121 riders exploring red dirt roads together. The split into pro Friday / amateur Saturday for 2026 makes this division explicit.</p>
+                
+                <p>And let's talk about Oklahoma as a destination. It isn't. There are no mountain vistas, no stunning desert panoramas, no epic coastal views. It's rolling ranch land—pretty in its own way, but not the scenery that justifies cross-country travel. The draw is entirely the challenge and competition. If weather doesn't provide the challenge, you're left with just the competition, which is fine if that's what you're after. But the myth sometimes oversells the reality.</p>
+                
+                <p>Yet here's what I keep coming back to: people who do The Mid South usually want to do it again. Not because it was perfect, but because it was unpredictable. In a sport increasingly professionalized and sanitized, unpredictability is rare. You can train perfectly, bring ideal equipment, nail your nutrition—and still get wrecked by conditions. Or show up undertrained and have weather hand you a free pass. That randomness frustrates Type-A personalities but makes the race memorable.</p>
+                
+                <p>The Mid South is gravel's most honest race because it doesn't pretend you can control everything. Your fitness matters, equipment matters, tactics matter—but Mother Nature still gets a vote that might override all your preparation. Some riders find that infuriating. Others find it liberating. The Bobby Hug and DFL celebration embody this philosophy: showing up and finishing matters more than your time. If that resonates, The Mid South deserves its reputation. If you need control and predictability, you'll walk away frustrated. Both perspectives are valid.</p>
+            </div>
+        </div>
+
+        <!-- Coach's Note: Training Recommendations -->
+        <div class="section">
+            <h2>Coach's Note: Training Recommendations</h2>
+            
+            <p style="margin-bottom: 40px; font-size: 1.05em;">Let's be honest about what The Mid South demands: adaptability. Whether it's dry and fast or muddy and slow, you need an aerobic engine that supports repeated surges, technical skills that work in sketchy conditions, and mental toughness to pivot when your race plan evaporates. The recent dry trend means you should train for speed and pack tactics, but you still need the base to survive if mud returns. Here's how to prepare for both versions of this race.</p>
+
+            <!-- Note about length and skill #2 -->
+            <div class="callout" style="margin-bottom: 40px;">
+                <p><strong>Note:</strong> The complete training recommendations with all four performance categories (Ayahuasca, Finisher, Compete, Podium) and three ranked philosophies for each would make this page extremely long. The training methodology follows the Gravel God Training Skill framework, which recommends specific approaches based on weekly training volume and ability level.</p>
+                
+                <p>Key training priorities for The Mid South:</p>
+                <ul>
+                    <li><strong>Repeatability:</strong> You'll hit short surges 50+ times. Train with "Roller Repeats"—12-20 x 2-min at 110-115% FTP.</li>
+                    <li><strong>Pack Skills:</strong> The dry years mean tactical racing matters. Practice group rides, drafting, surging out of corners.</li>
+                    <li><strong>Chaos Training:</strong> Deliberately train in bad conditions. The weather lottery is real.</li>
+                    <li><strong>Tire Strategy:</strong> Bring two wheelsets if possible—fast race tires for dry, wider/tread for mud. Make the call 24-48 hours out.</li>
+                    <li><strong>Bike Handling:</strong> Practice cornering on loose surfaces, dismount/remount skills, running with bike.</li>
+                </ul>
+                
+                <p>For detailed training plans by performance level, contact <a href="mailto:coaching@gravelgodcycling.com">coaching@gravelgodcycling.com</a></p>
+            </div>
+
+            <h3>Race-Specific Non-Negotiables (All Categories)</h3>
+            <div style="background-color: #FFF9E6; border: 3px solid #5CE1E6; padding: 30px; margin: 30px 0;">
+                <ol>
+                    <li><strong>Weather Monitoring:</strong> Check the 10-day forecast obsessively starting 7-10 days out. Join local Facebook groups or follow District Bicycles social media for real-time course condition updates.</li>
+                    <li><strong>Equipment Backup Plan:</strong> If you can, bring two wheelsets: (1) fast race tires (file tread, 38-40mm) for dry, (2) wider tires with more tread (42-45mm) for mud/mixed. Make the final call 24-36 hours before based on forecast and course reports.</li>
+                    <li><strong>Skills Practice:</strong> Do at least 3-4 sessions practicing high-speed cornering on loose gravel, efficient dismount/remount, and running with your bike. The 1-mile singletrack finish can be a factor.</li>
+                    <li><strong>Nutrition Rehearsal:</strong> Practice race nutrition (60-100g carbs/hour depending on effort) on every ride over 2.5 hours. In dry/fast conditions you'll be moving too hard to eat much; in mud you'll have more time but need the calories for duration.</li>
+                    <li><strong>Mental Scenarios:</strong> Visualize and plan for three races: (1) Dry/fast/tactical = ride smart, save matches, position well for finale, (2) Mixed conditions = conservative tire choice, steady pacing, (3) Full mud = survival mode, keep moving, don't bonk. Know your goal for each scenario before you start.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Race Day Logistics -->
+        <div class="section">
+            <h2>Race Day Logistics</h2>
+            
+            <h3>Registration & Entry</h3>
+            <ul>
+                <li>Opens in September at <a href="https://www.bikereg.com/themidsouth" target="_blank">bikereg.com/themidsouth</a></li>
+                <li>100-mile sells out quickly (sometimes within hours)—be ready when registration opens</li>
+                <li>Cost: $165 (100mi), $115 (50mi), $65 (12mi Inspiration Ride)</li>
+                <li>50-mile and 12-mile typically remain open longer</li>
+                <li>No race-day registration—plan ahead</li>
+            </ul>
+
+            <h3>Travel & Lodging</h3>
+            <ul>
+                <li>Fly into Tulsa (TUL)—60 miles from Stillwater, ~1 hour drive. Rental cars recommended.</li>
+                <li>Oklahoma City (OKC) is 70 miles, also viable</li>
+                <li>Book hotels IMMEDIATELY after registering—Stillwater (population ~49,000) books up fast with 4,000+ participants</li>
+                <li>Consider Airbnb if hotels are full. Many people stay in nearby towns (Cushing, Perkins)</li>
+                <li>Race starts/finishes at Downtown Stillwater (varies by year—check event details)</li>
+            </ul>
+
+            <h3>Schedule (2026 New Format)</h3>
+            <ul>
+                <li><strong>Friday:</strong> Pro race (elite men/women) at 1:00 PM</li>
+                <li><strong>Saturday:</strong> Amateur mass-start race at 8:00 AM</li>
+                <li>This split addresses safety concerns with large mixed-ability fields finishing simultaneously</li>
+                <li>Expo and packet pickup typically Thursday-Friday before race</li>
+            </ul>
+
+            <h3>Weather & Clothing</h3>
+            <ul>
+                <li>Mid-March in Oklahoma = total lottery. Possible temps: 30°F to 75°F on race day.</li>
+                <li>Bring: Base layers, arm/leg warmers, windproof vest, rain jacket, gloves (both full-finger and fingerless), neck gaiter</li>
+                <li>Check 10-day forecast starting 1 week out. Weather can change dramatically day-to-day.</li>
+                <li>Monitor local Stillwater weather and District Bicycles social media for course condition updates</li>
+                <li>Recent trend: Dry and sunny. Historical reputation: Cold and/or muddy. Pack for both.</li>
+            </ul>
+
+            <h3>Equipment Essentials</h3>
+            <ul>
+                <li><strong>Tire choice is critical:</strong> Fast file tread (38-40mm) for dry, aggressive tread (42-45mm) for mud</li>
+                <li>Strongly consider bringing two wheelsets if you can—make the final call Thursday/Friday based on forecast</li>
+                <li>Tubeless setup mandatory—bring extra sealant, plugs, and one tube as backup</li>
+                <li>Frame protection: electrical tape or old tubes on chainstays/seatstays to prevent mud buildup abrasion</li>
+                <li>Mud-clearing tool: old spoke or zip-tie tool to scrape between tire and frame if needed</li>
+                <li>Chain lube: Dry lube for dry conditions, wet/wax for mud (though nothing survives peanut butter mud for long)</li>
+            </ul>
+
+            <h3>Nutrition & Hydration</h3>
+            <ul>
+                <li>Aid station at approximately mile 50 with water, Skratch, gels, bars, real food</li>
+                <li>Don't rely solely on aid—carry your own nutrition for the entire race</li>
+                <li>Plan for 60-100g carbs/hour depending on your effort level and ability to digest</li>
+                <li>In dry/fast conditions, eating is harder (moving fast, pack dynamics). In mud, you can eat more (slower pace).</li>
+                <li>Carry 2-3 bottles worth of fluids—one aid station means long stretches between refills</li>
+            </ul>
+
+            <h3>Race Morning</h3>
+            <ul>
+                <li>Arrive at start area by 7:00 AM for 8:00 AM amateur start (or earlier for good position)</li>
+                <li>Pro race Friday 1:00 PM—arrive by noon</li>
+                <li>Parking can be tight—carpool if possible, arrive early</li>
+                <li>Make final tire pressure decision based on morning conditions (lower for mud, higher for dry/fast)</li>
+                <li>First 7-10 miles are often neutral/controlled rollout—don't stress about starting position</li>
+                <li>Once racing starts, it's tactical and fast if dry. Stay alert, ride defensively in the pack.</li>
+            </ul>
+
+            <h3>Post-Race</h3>
+            <ul>
+                <li>Get your Bobby Hug—it's tradition and honestly one of the best parts</li>
+                <li>Downtown Stillwater has live music, food, beer garden, expo</li>
+                <li>Finish line stays open until the last rider comes in—no cut-offs</li>
+                <li>If you're last, you get the DFL trophy (giant longhorn skull) and a bigger celebration than the winners</li>
+                <li>Bike wash station typically available (you'll need it if it was muddy)</li>
+            </ul>
+        </div>
+
+        <!-- The Bottom Line -->
+        <div class="section">
+            <h2>The Bottom Line</h2>
+            <div style="background-color: #E8F5F7; border-left: 8px solid #5CE1E6; padding: 35px; margin: 30px 0; font-size: 1.05em; line-height: 1.9;">
+                <p>The Mid South is gravel's ultimate weather lottery wrapped in world-class organization and genuine community. Bobby and Crystal Wintle have created something rare: a race that's simultaneously professional in execution and grassroots in spirit. The $100K purse brings the fastest field outside of Unbound, but the no-cut-offs philosophy and DFL celebration mean everyone's finish matters.</p>
+                
+                <p>Here's what makes this race matter beyond the results: the red clay. Same course, wildly different race depending on what March delivers. When it's dry (recent trend), you're racing at threshold for 4-4.5 hours with pack dynamics and tactical positioning determining the winners. When it rains (the old reputation but always possible), you're problem-solving through 8-14 hours of mud, traction loss, and equipment management. Both versions are legitimate tests—just profoundly different tests.</p>
+                
+                <p>This isn't a bucket list race you do once and move on. The Mid South rewards coming back, learning the course, understanding the weather patterns, and developing strategies for different scenarios. Veterans who've done it multiple times have a huge advantage because they've seen the various forms this race takes.</p>
+                
+                <p>The Mid South doesn't care about your FTP if you can't handle sketchy conditions. It doesn't care about your bike handling if you bonk at mile 60. It doesn't care about your tactics if you picked the wrong tires. This is gravel's most honest race because you can't fake preparation. Every weakness gets exposed. Every strength gets tested. And Mother Nature still gets a vote that might override everything.</p>
+                
+                <p>The 2025 wildfire cancellation could have been a disaster—thousands of riders traveled for nothing. Instead, it became a testament to what this event represents. Ted King and Chase Wark set FKTs on the full route to raise money for wildfire relief. The community pivoted immediately to support Stillwater. Riders stayed for the weekend despite no race. That's not marketing—that's culture.</p>
+                
+                <p>If you want predictability, skip this race. If you want perfect weather and guaranteed conditions, look elsewhere. But if you want to test yourself against the best field in gravel, in conditions you can't fully control, on a course that rewards both fitness and adaptability—and you want to be part of a community that actually means it when they say everyone belongs—The Mid South is calling. Just don't forget to pack for three different races. You'll need it.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer with Race Info and Citations -->
+    <div class="footer">
+        <div class="container" style="position: relative; z-index: 1;">
+            <h3 style="color: #FFDE59; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">Race Information</h3>
+            <p style="margin: 15px 0;"><strong>Official Website:</strong> <a href="https://www.midsouthgravel.com" target="_blank">midsouthgravel.com</a></p>
+            <p style="margin: 15px 0;"><strong>Registration:</strong> Opens September at <a href="https://www.bikereg.com/themidsouth" target="_blank">bikereg.com/themidsouth</a></p>
+            <p style="margin: 20px 0; font-size: 1.05em;">This race page was created by <strong style="color: #FFDE59;">Gravel God Cycling</strong> to help you make informed decisions about your race calendar.</p>
+            
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #8C7568; font-size: 0.9em; color: #BFA595;">
+                <p style="margin: 8px 0;"><strong>Meta Title:</strong> The Mid South – Gravel Race Info & Training Guide | Gravel God</p>
+                <p style="margin: 8px 0;"><strong>Meta Description:</strong> Complete guide to The Mid South: 100 miles on Oklahoma red clay, $100K purse, extreme weather. Race vitals, mud vs dry conditions, and training plan.</p>
+                <p style="margin: 8px 0;"><strong>URL Slug:</strong> /races/mid-south</p>
+            </div>
+
+            <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #8C7568; text-align: left;">
+                <h3 style="color: #FFDE59; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">Sources & Citations</h3>
+                <ol style="line-height: 2; color: #BFA595; margin-left: 20px;">
+                    <li>The Mid South Official Website. Race history, course details, registration. <a href="https://www.midsouthgravel.com" target="_blank">midsouthgravel.com</a></li>
+                    <li>BikeReg - The Mid South Registration. Entry fees, field caps, dates. <a href="https://www.bikereg.com/themidsouth" target="_blank">bikereg.com/themidsouth</a></li>
+                    <li>Cyclingnews. "The Mid South cancels gravel race amid intensifying wildfires in Oklahoma." March 2025.</li>
+                    <li>Cycling Weekly. "Mid South splits pro and amateur race days to prioritise safety." October 2025.</li>
+                    <li>The Radavist. "2025 Mid South: After The Fires, What's Left Is Love." March 2025. Erik Mathy reporting.</li>
+                    <li>Escape Collective. "Mid South 2025: Bike checks, tech, and community." March 2025.</li>
+                    <li>VeloNews. "Groad Trip: Racing The Mid South, aka The Mud South." Payson McElveen first-person account, March 2020.</li>
+                    <li>Velo. "Lauren De Crescenzo Goes Three-for-Three at The Mid South." March 2024.</li>
+                    <li>Cyclingnews. "Thick mud challenges Mid South gravel racers – Gallery." March 2020 edition coverage.</li>
+                    <li>Bicycling Magazine. "Marley Blonsky Came in Last at Mid South and It Was Perfect." March 2023. DFL celebration coverage.</li>
+                    <li>Oklahoma Climatological Survey. Historical weather data for Stillwater, Oklahoma.</li>
+                    <li>Multiple Reddit threads and race reports from r/gravelcycling (2017-2024 editions). User experiences with mud conditions.</li>
+                    <li>District Bicycles social media and Bobby Wintle Instagram posts regarding race philosophy and 2025 cancellation.</li>
+                    <li>Strava segment data for Mid South course. Elevation profile and historical finish times.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

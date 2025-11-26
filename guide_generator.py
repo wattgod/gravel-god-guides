@@ -243,13 +243,19 @@ def format_table(text: str) -> str:
                 rows.append(cells)
         
         if len(rows) > 1:
-            html = '<table class="zone-table">\n'
+            html = '<div class="table-wrapper">\n'
+            html += '<table>\n'
             # First row as header
-            html += '<tr>' + ''.join(f'<th>{cell}</th>' for cell in rows[0] if cell) + '</tr>\n'
+            html += '<thead>\n<tr>' + ''.join(f'<th>{cell}</th>' for cell in rows[0] if cell) + '</tr>\n</thead>\n'
             # Rest as data rows
+            html += '<tbody>\n'
             for row in rows[1:]:
-                html += '<tr>' + ''.join(f'<td>{cell}</td>' for cell in row if cell) + '</tr>\n'
-            html += '</table>'
+                # Check if this is a G Spot row
+                g_spot_class = ' class="g-spot-row"' if any('g spot' in str(cell).lower() for cell in row) else ''
+                html += f'<tr{g_spot_class}>' + ''.join(f'<td>{cell}</td>' for cell in row if cell) + '</tr>\n'
+            html += '</tbody>\n'
+            html += '</table>\n'
+            html += '</div>'
             return html
     
     return f'<p>{text}</p>'
@@ -259,8 +265,28 @@ def load_neo_brutalist_css() -> str:
     css_path = Path(__file__).parent / 'neo_brutalist_css.txt'
     if css_path.exists():
         with open(css_path, 'r', encoding='utf-8') as f:
-            return f.read()
-    # Fallback: return inline CSS if file doesn't exist
+            css = f.read().strip()  # Remove leading/trailing whitespace
+            # Ensure it starts properly
+            if not css.startswith('/*'):
+                # Try to extract from template_styled.html as fallback
+                template_path = Path(__file__).parent / 'template_styled.html'
+                if template_path.exists():
+                    import re
+                    with open(template_path, 'r', encoding='utf-8') as tf:
+                        template_content = tf.read()
+                        css_match = re.search(r'<style>(.*?)</style>', template_content, re.DOTALL)
+                        if css_match:
+                            return css_match.group(1).strip()
+            return css
+    # Fallback: try to extract from template_styled.html
+    template_path = Path(__file__).parent / 'template_styled.html'
+    if template_path.exists():
+        import re
+        with open(template_path, 'r', encoding='utf-8') as f:
+            template_content = f.read()
+            css_match = re.search(r'<style>(.*?)</style>', template_content, re.DOTALL)
+            if css_match:
+                return css_match.group(1).strip()
     return ""
 
 def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None) -> str:
@@ -924,12 +950,34 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
         
         # Process content - process EVERY line to capture all content
         paragraphs = content.split('\n')
+        
+        # Track if we're in intro section (first section)
+        is_intro_section = (nav_id == 'welcome' or '1' in section_title or 'TRAINING PLAN BRIEF' in section_title.upper())
+        intro_paragraphs_collected = []
+        intro_collected = False
+        processed_paragraphs = set()  # Track paragraphs we've already processed
         in_list = False
         list_items = []
         current_list_type = None
         
         for para in paragraphs:
             stripped = para.strip()
+            
+            # Collect intro paragraphs for intro-box (first 3-4 paragraphs of welcome section)
+            if is_intro_section and not intro_collected and stripped:
+                if not stripped.startswith('-') and not stripped.startswith('•') and not re.match(r'^\d+[\.\)]', stripped):
+                    if 'This plan isn' in stripped or 'Welcome' in stripped or 'By the time you roll' in stripped or '200 miles' in stripped:
+                        intro_paragraphs_collected.append(para)
+                        if len(intro_paragraphs_collected) >= 3:
+                            # Output intro box
+                            html_parts.append('        <div class="intro-box">')
+                            for intro_para in intro_paragraphs_collected:
+                                formatted = format_paragraph(intro_para)
+                                if formatted and '<p>' in formatted:
+                                    html_parts.append('        ' + formatted)
+                            html_parts.append('        </div>')
+                            intro_collected = True
+                            continue  # Skip this paragraph, already added
             
             # Replace infographic placeholders
             if 'INFOGRAPHIC_PHASE_BARS' in stripped:
@@ -951,7 +999,7 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
                 # Table placeholder - skip
                 continue
             
-            # Handle lists
+            # Handle lists - use checklist class for "Non-negotiables" or similar
             if stripped.startswith('-') or stripped.startswith('•') or re.match(r'^\d+[\.\)]\s+', stripped):
                 if not in_list:
                     in_list = True
@@ -961,18 +1009,144 @@ def generate_html(race_data: Dict[str, Any], output_path: Optional[Path] = None)
             else:
                 # Close list if we were in one
                 if in_list and list_items:
-                    html_parts.append('    <ul>')
+                    # Check if this should be a checklist (for "Non-negotiables", equipment lists, etc.)
+                    use_checklist = any(keyword in ' '.join(list_items).lower() for keyword in ['non-negotiable', 'equipment', 'required', 'checklist'])
+                    list_class = ' class="checklist"' if use_checklist else ''
+                    html_parts.append(f'        <ul{list_class}>')
                     for item in list_items:
                         content = item.lstrip('-•').strip()
                         if re.match(r'^\d+[\.\)]\s+', item):
                             num_part = re.match(r'^(\d+[\.\)])\s+', item).group(1)
                             content = item[len(num_part):].strip()
-                            html_parts.append(f'    <li><strong>{num_part}</strong> {content}</li>')
+                            html_parts.append(f'            <li><strong>{num_part}</strong> {content}</li>')
                         else:
-                            html_parts.append(f'    <li>{content}</li>')
-                    html_parts.append('    </ul>')
+                            html_parts.append(f'            <li>{content}</li>')
+                    html_parts.append('        </ul>')
                     list_items = []
                     in_list = False
+            
+            # Skip if this was already added to intro-box
+            if is_intro_section and para in intro_paragraphs_collected:
+                continue
+            
+            # Skip if this was already added to intro-box
+            if is_intro_section and para in intro_paragraphs_collected:
+                continue
+            
+            # Detect "What Makes This Plan Different" section - use card-grid
+            if 'What Makes This Plan Different' in stripped:
+                # Look ahead for card content
+                card_content = []
+                idx = paragraphs.index(para)
+                for next_para in paragraphs[idx+1:idx+15]:
+                    next_stripped = next_para.strip()
+                    if 'Built for' in next_stripped and len(next_stripped) < 200:
+                        card_content.append(next_para)
+                    if len(card_content) >= 3:
+                        break
+                
+                if len(card_content) >= 3:
+                    html_parts.append('        <h3>What Makes This Plan Different</h3>')
+                    html_parts.append('        <div class="card-grid">')
+                    for i, card_para in enumerate(card_content, 1):
+                        card_text = card_para.strip()
+                        if 'Built for' in card_text:
+                            # Extract title and description
+                            if '.' in card_text:
+                                parts = card_text.split('.', 1)
+                                title = parts[0].replace('Built for', '').strip()
+                                desc = parts[1].strip() if len(parts) > 1 else ''
+                            else:
+                                title = card_text.replace('Built for', '').strip()
+                                desc = ''
+                            
+                            # Get description from next paragraph if available
+                            if not desc and i < len(card_content):
+                                next_idx = paragraphs.index(card_para) + 1
+                                if next_idx < len(paragraphs):
+                                    next_text = paragraphs[next_idx].strip()
+                                    if next_text and not next_text.startswith('Built for'):
+                                        desc = next_text
+                            
+                            html_parts.append('            <div class="card">')
+                            html_parts.append(f'                <div class="card-number">{i}</div>')
+                            html_parts.append(f'                <h4>Built for {title}</h4>')
+                            if desc:
+                                html_parts.append(f'                <p>{desc}</p>')
+                            html_parts.append('            </div>')
+                    html_parts.append('        </div>')
+                    # Mark these paragraphs as processed
+                    processed_paragraphs = set(card_content)
+                    continue
+            
+            # Detect "12 Weeks, 4 Phases" - use phase-list
+            if '12 Weeks, 4 Phases' in stripped:
+                phase_items = []
+                idx = paragraphs.index(para)
+                for next_para in paragraphs[idx+1:idx+10]:
+                    next_stripped = next_para.strip()
+                    if re.search(r'Weeks \d+-\d+:', next_stripped):
+                        phase_items.append(next_para)
+                    if len(phase_items) >= 4:
+                        break
+                
+                if len(phase_items) >= 4:
+                    html_parts.append('        <h3>12 Weeks, 4 Phases</h3>')
+                    html_parts.append('        <div class="phase-list">')
+                    phase_classes = ['phase-base', 'phase-build', 'phase-peak', 'phase-taper']
+                    phase_names = ['BASE', 'BUILD', 'PEAK', 'TAPER']
+                    for i, phase_para in enumerate(phase_items[:4]):
+                        phase_text = phase_para.strip()
+                        # Extract weeks and description
+                        weeks_match = re.search(r'Weeks (\d+-\d+)', phase_text)
+                        weeks = weeks_match.group(1) if weeks_match else ''
+                        # Extract description after em dash or colon
+                        desc_match = re.search(r'[—:] (.+)$', phase_text)
+                        desc = desc_match.group(1).strip() if desc_match else phase_text.split('—', 1)[-1].strip() if '—' in phase_text else phase_text.split(':', 1)[-1].strip() if ':' in phase_text else ''
+                        
+                        html_parts.append(f'            <div class="phase-item {phase_classes[i]}">')
+                        html_parts.append(f'                <span class="phase-weeks">Weeks {weeks}</span>')
+                        html_parts.append(f'                <span class="phase-name">{phase_names[i]}</span>')
+                        html_parts.append(f'                <span class="phase-desc">{desc}</span>')
+                        html_parts.append('            </div>')
+                    html_parts.append('        </div>')
+                    # Mark as processed
+                    processed_paragraphs.update(phase_items[:4])
+                    continue
+            
+            # Detect callout boxes (warning, danger, info, success patterns)
+            callout_type = None
+            if '⚠️' in stripped or 'Important' in stripped or 'WARNING' in stripped.upper() or 'DANGER' in stripped.upper():
+                callout_type = 'warning'
+            elif 'CYCLING IS DANGEROUS' in stripped.upper() or 'danger' in stripped.lower():
+                callout_type = 'danger'
+            elif 'INFO' in stripped.upper() or 'NOTE' in stripped.upper() or 'TIP' in stripped.upper():
+                callout_type = 'info'
+            elif 'SUCCESS' in stripped.upper() or '✓' in stripped:
+                callout_type = 'success'
+            
+            if callout_type:
+                # Collect callout content
+                callout_title = stripped.replace('⚠️', '').replace('Important:', '').replace('WARNING:', '').strip()
+                callout_content = []
+                idx = paragraphs.index(para)
+                for next_para in paragraphs[idx+1:idx+5]:
+                    next_stripped = next_para.strip()
+                    if next_stripped and not next_stripped.startswith('-') and not next_stripped.startswith('•'):
+                        callout_content.append(next_para)
+                    if len(callout_content) >= 2:
+                        break
+                
+                html_parts.append(f'        <div class="callout callout-{callout_type}">')
+                if callout_title:
+                    html_parts.append(f'            <div class="callout-title">{callout_title}</div>')
+                for callout_para in callout_content:
+                    formatted = format_paragraph(callout_para)
+                    if formatted and '<p>' in formatted:
+                        html_parts.append('        ' + formatted.replace('<p>', '<p>').replace('</p>', '</p>'))
+                html_parts.append('        </div>')
+                processed_paragraphs.update([para] + callout_content)
+                continue
             
             # Format as paragraph (including empty lines for spacing)
             formatted = format_paragraph(para)

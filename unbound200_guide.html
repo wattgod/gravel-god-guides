@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unbound 200 Training Guide | Gravel God</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ============================================
+
+           GRAVEL GOD NEO-BRUTALIST DESIGN SYSTEM
+
+           ============================================ */
+
+        
+
+        :root {
+
+            --cream: #f5f5dc;
+
+            --cream-dark: #ede5d0;
+
+            --turquoise: #4ecdc4;
+
+            --turquoise-light: rgba(78, 205, 196, 0.15);
+
+            --yellow: #f4d03f;
+
+            --yellow-light: #fef9e7;
+
+            --brown-dark: #59473C;
+
+            --text-dark: #2c2c2c;
+
+            --red: #e74c3c;
+
+            --red-light: #fdedec;
+
+            --green: #27ae60;
+
+            --green-light: #e9f7ef;
+
+            --border-width: 3px;
+
+            --shadow-offset: 6px;
+
+            --shadow-color: rgba(0,0,0,0.2);
+
+        }
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+        body {
+
+            font-family: 'Sometype Mono', monospace;
+
+            background: var(--cream);
+
+            color: var(--text-dark);
+
+            line-height: 1.7;
+
+            font-size: 16px;
+
+        }
+
+        /* ============================================
+
+           STICKY NAVIGATION
+
+           ============================================ */
+
+        
+
+        .sticky-nav {
+
+            position: sticky;
+
+            top: 0;
+
+            background: var(--brown-dark);
+
+            padding: 0.75rem 1rem;
+
+            display: flex;
+
+            gap: 0.5rem;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            z-index: 1000;
+
+            border-bottom: var(--border-width) solid var(--text-dark);
+
+        }
+
+        .sticky-nav a {
+
+            color: var(--cream);
+
+            text-decoration: none;
+
+            padding: 0.4rem 0.8rem;
+
+            font-size: 0.75rem;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            border: 2px solid transparent;
+
+            transition: all 0.2s ease;
+
+        }
+
+        .sticky-nav a:hover {
+
+            background: var(--turquoise);
+
+            color: var(--text-dark);
+
+        }
+
+        .sticky-nav a.active {
+
+            background: var(--turquoise);
+
+            color: var(--text-dark);
+
+            border-color: var(--text-dark);
+
+        }
+
+        /* ============================================
+
+           HEADER
+
+           ============================================ */
+
+        
+
+        .header {
+
+            background: var(--brown-dark);
+
+            color: var(--cream);
+
+            padding: 3rem 2rem;
+
+            text-align: center;
+
+            border-bottom: var(--border-width) solid var(--text-dark);
+
+        }
+
+        .header-brand {
+
+            font-size: 0.9rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            color: var(--turquoise);
+
+            margin-bottom: 1rem;
+
+        }
+
+        .header h1 {
+
+            font-size: 3rem;
+
+            font-weight: 700;
+
+            margin-bottom: 0.5rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+        }
+
+        .header-subtitle {
+
+            font-size: 1.1rem;
+
+            color: var(--cream);
+
+            opacity: 0.9;
+
+        }
+
+        .header-meta {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 2rem;
+
+            margin-top: 1.5rem;
+
+            flex-wrap: wrap;
+
+        }
+
+        .header-meta-item {
+
+            background: rgba(255,255,255,0.1);
+
+            padding: 0.5rem 1rem;
+
+            border: 2px solid var(--turquoise);
+
+        }
+
+        .header-meta-item strong {
+
+            color: var(--turquoise);
+
+        }
+
+        /* ============================================
+
+           SECTIONS
+
+           ============================================ */
+
+        
+
+        .section {
+
+            padding: 3rem 2rem;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            border-bottom: 2px dashed var(--brown-dark);
+
+        }
+
+        .section:last-of-type {
+
+            border-bottom: none;
+
+        }
+
+        .section-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 1rem;
+
+            margin-bottom: 2rem;
+
+            padding-bottom: 1rem;
+
+            border-bottom: var(--border-width) solid var(--text-dark);
+
+        }
+
+        .section-number {
+
+            background: var(--turquoise);
+
+            color: var(--text-dark);
+
+            width: 50px;
+
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 1.2rem;
+
+            font-weight: 700;
+
+            border: var(--border-width) solid var(--text-dark);
+
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark);
+
+        }
+
+        .section-header h2 {
+
+            font-size: 1.8rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+        .section-content h3 {
+
+            font-size: 1.3rem;
+
+            margin: 2rem 0 1rem;
+
+            color: var(--brown-dark);
+
+            border-left: 4px solid var(--turquoise);
+
+            padding-left: 1rem;
+
+        }
+
+        .section-content h4 {
+
+            font-size: 1.1rem;
+
+            margin: 1.5rem 0 0.75rem;
+
+            color: var(--text-dark);
+
+        }
+
+        .section-content p {
+
+            margin-bottom: 1rem;
+
+        }
+
+        .section-content ul, .section-content ol {
+
+            margin: 1rem 0 1rem 1.5rem;
+
+        }
+
+        .section-content li {
+
+            margin-bottom: 0.5rem;
+
+        }
+
+        /* ============================================
+
+           TABLES
+
+           ============================================ */
+
+        
+
+        .table-wrapper {
+
+            overflow-x: auto;
+
+            margin: 1.5rem 0;
+
+            border: var(--border-width) solid var(--text-dark);
+
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark);
+
+        }
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            background: white;
+
+        }
+
+        th {
+
+            background: var(--brown-dark);
+
+            color: var(--cream);
+
+            padding: 1rem;
+
+            text-align: left;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            font-size: 0.85rem;
+
+            letter-spacing: 0.5px;
+
+        }
+
+        td {
+
+            padding: 0.875rem 1rem;
+
+            border-bottom: 1px solid var(--cream-dark);
+
+            font-size: 0.9rem;
+
+        }
+
+        tr:hover {
+
+            background: var(--cream-dark);
+
+        }
+
+        tr.g-spot-row {
+
+            background: var(--turquoise-light);
+
+        }
+
+        tr.g-spot-row:hover {
+
+            background: rgba(78, 205, 196, 0.25);
+
+        }
+
+        /* ============================================
+
+           CALLOUTS
+
+           ============================================ */
+
+        
+
+        .callout {
+
+            padding: 1.5rem;
+
+            margin: 1.5rem 0;
+
+            border: var(--border-width) solid var(--text-dark);
+
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark);
+
+        }
+
+        .callout-title {
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            font-size: 0.9rem;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 0.75rem;
+
+        }
+
+        .callout-info {
+
+            background: var(--turquoise-light);
+
+            border-color: var(--turquoise);
+
+        }
+
+        .callout-info .callout-title {
+
+            color: var(--brown-dark);
+
+        }
+
+        .callout-warning {
+
+            background: var(--yellow-light);
+
+            border-color: var(--yellow);
+
+        }
+
+        .callout-warning .callout-title {
+
+            color: var(--brown-dark);
+
+        }
+
+        .callout-danger {
+
+            background: var(--red-light);
+
+            border-color: var(--red);
+
+        }
+
+        .callout-danger .callout-title {
+
+            color: var(--red);
+
+        }
+
+        .callout-success {
+
+            background: var(--green-light);
+
+            border-color: var(--green);
+
+        }
+
+        .callout-success .callout-title {
+
+            color: var(--green);
+
+        }
+
+        /* ============================================
+
+           CARDS
+
+           ============================================ */
+
+        
+
+        .card-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 1.5rem;
+
+            margin: 1.5rem 0;
+
+        }
+
+        .card {
+
+            background: white;
+
+            padding: 1.5rem;
+
+            border: var(--border-width) solid var(--text-dark);
+
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark);
+
+        }
+
+        .card h4 {
+
+            color: var(--brown-dark);
+
+            margin-bottom: 0.75rem;
+
+            font-size: 1rem;
+
+        }
+
+        .card p {
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+        /* ============================================
+
+           GRAPHICS
+
+           ============================================ */
+
+        
+
+        .graphic-container {
+
+            background: white;
+
+            border: var(--border-width) solid var(--text-dark);
+
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark);
+
+            padding: 1.5rem;
+
+            margin: 1.5rem 0;
+
+            text-align: center;
+
+        }
+
+        .graphic-title {
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            font-size: 0.9rem;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 1rem;
+
+            color: var(--brown-dark);
+
+        }
+
+        .graphic-container svg {
+
+            max-width: 100%;
+
+            height: auto;
+
+        }
+
+        /* ============================================
+
+           GLOSSARY
+
+           ============================================ */
+
+        
+
+        .glossary-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 1rem;
+
+            margin: 1.5rem 0;
+
+        }
+
+        .glossary-item {
+
+            background: white;
+
+            padding: 1rem;
+
+            border: 2px solid var(--cream-dark);
+
+        }
+
+        .glossary-item dt {
+
+            font-weight: 700;
+
+            color: var(--turquoise);
+
+            margin-bottom: 0.25rem;
+
+        }
+
+        .glossary-item dd {
+
+            font-size: 0.85rem;
+
+            margin: 0;
+
+        }
+
+        /* ============================================
+
+           SKILLS
+
+           ============================================ */
+
+        
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 1.5rem;
+
+            margin: 1.5rem 0;
+
+        }
+
+        .skill-item {
+
+            background: white;
+
+            padding: 1.25rem;
+
+            border: var(--border-width) solid var(--text-dark);
+
+            box-shadow: 4px 4px 0 var(--text-dark);
+
+        }
+
+        .skill-item h4 {
+
+            color: var(--brown-dark);
+
+            margin-bottom: 0.5rem;
+
+            font-size: 1rem;
+
+            border-bottom: 2px solid var(--turquoise);
+
+            padding-bottom: 0.5rem;
+
+        }
+
+        .skill-item p {
+
+            font-size: 0.9rem;
+
+            margin: 0;
+
+        }
+
+        /* ============================================
+
+           FOOTER
+
+           ============================================ */
+
+        
+
+        .footer {
+
+            background: var(--brown-dark);
+
+            color: var(--cream);
+
+            text-align: center;
+
+            padding: 4rem 2rem;
+
+            border-top: var(--border-width) solid var(--text-dark);
+
+        }
+
+        .footer-tagline {
+
+            font-size: 2rem;
+
+            font-weight: 700;
+
+            color: var(--turquoise);
+
+            margin-bottom: 2rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+        }
+
+        .footer-content {
+
+            max-width: 700px;
+
+            margin: 0 auto 2rem;
+
+        }
+
+        .footer-content p {
+
+            margin-bottom: 1.25rem;
+
+            line-height: 1.8;
+
+        }
+
+        .footer-emphasis {
+
+            font-size: 1.1rem;
+
+            font-weight: 700;
+
+            color: var(--turquoise);
+
+        }
+
+        .footer-contact {
+
+            margin-top: 3rem;
+
+            padding-top: 2rem;
+
+            border-top: 1px solid rgba(255,255,255,0.2);
+
+        }
+
+        .footer-email {
+
+            font-size: 0.95rem;
+
+            margin-bottom: 0.5rem;
+
+        }
+
+        .footer-motto {
+
+            font-size: 1rem;
+
+            font-style: italic;
+
+            color: var(--turquoise);
+
+            margin-top: 1rem;
+
+        }
+
+        /* ============================================
+
+           RESPONSIVE
+
+           ============================================ */
+
+        
+
+        @media (max-width: 768px) {
+
+            .header h1 {
+
+                font-size: 2rem;
+
+            }
+
+            
+
+            .sticky-nav {
+
+                padding: 0.5rem;
+
+            }
+
+            
+
+            .sticky-nav a {
+
+                font-size: 0.65rem;
+
+                padding: 0.3rem 0.5rem;
+
+            }
+
+            
+
+            .section {
+
+                padding: 2rem 1rem;
+
+            }
+
+            
+
+            .section-header h2 {
+
+                font-size: 1.4rem;
+
+            }
+
+            
+
+            th, td {
+
+                padding: 0.5rem;
+
+                font-size: 0.8rem;
+
+            }
+
+        }
+
+        /* Horizontal rule */
+
+        hr {
+
+            border: none;
+
+            border-top: 2px dashed var(--text-dark);
+
+            margin: 2rem 0;
+
+            opacity: 0.3;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- STICKY NAVIGATION -->
+
+<nav class="sticky-nav">
+
+    <a href="#welcome" class="active">Welcome</a>
+
+    <a href="#structure">Structure</a>
+
+    <a href="#zones">Zones</a>
+
+    <a href="#glossary">Glossary</a>
+
+    <a href="#skills">Skills</a>
+
+    <a href="#race-day">Race Day</a>
+
+</nav>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-brand">Gravel God Coaching</div>
+
+    <h1>Unbound 200</h1>
+
+    <p class="header-subtitle">Training Guide</p>
+
+    <div class="header-meta">
+
+        <div class="header-meta-item"><strong>Finisher</strong> Tier</div>
+
+        <div class="header-meta-item"><strong>Intermediate</strong> Level</div>
+
+        <div class="header-meta-item"><strong>10</strong> hrs/week</div>
+
+        <div class="header-meta-item"><strong>12</strong> weeks</div>
+
+    </div>
+
+</header>
+
+<!-- SECTION 1: WELCOME -->
+
+<section class="section" id="welcome">
+
+    <div class="section-header">
+
+        <span class="section-number">01</span>
+
+        <h2>Welcome</h2>
+
+    </div>
+
+    <div class="section-content">
+
+        <p><strong>Unbound 200</strong> is 200 miles of Flint Hills gravel. Emporia, Kansas. June 2025.</p>
+
+        
+
+        <p>This plan targets the key demands of the race: <strong>extreme heat</strong>, <strong>distance</strong>, <strong>wind</strong>, <strong>cumulative fatigue</strong>.</p>
+
+        <h3>Race Profile</h3>
+
+        <div class="graphic-container">
+
+            <div class="graphic-title">Course Demands</div>
+
+            <svg viewBox="0 0 400 350" width="400" height="350">
+
+                <!-- Background -->
+
+                <rect x="0" y="0" width="400" height="350" fill="white"/>
+
+                
+
+                <!-- Grid circles (5 levels) -->
+
+                <circle cx="200" cy="160" r="120" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+                <circle cx="200" cy="160" r="96" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+                <circle cx="200" cy="160" r="72" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+                <circle cx="200" cy="160" r="48" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+                <circle cx="200" cy="160" r="24" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+
+                
+
+                <!-- Axis lines -->
+
+                <line x1="200" y1="160" x2="200" y2="40" stroke="#ccc" stroke-width="1"/>
+
+                <line x1="200" y1="160" x2="304" y2="100" stroke="#ccc" stroke-width="1"/>
+
+                <line x1="200" y1="160" x2="304" y2="220" stroke="#ccc" stroke-width="1"/>
+
+                <line x1="200" y1="160" x2="200" y2="280" stroke="#ccc" stroke-width="1"/>
+
+                <line x1="200" y1="160" x2="96" y2="220" stroke="#ccc" stroke-width="1"/>
+
+                <line x1="200" y1="160" x2="96" y2="100" stroke="#ccc" stroke-width="1"/>
+
+                
+
+                <!-- Data polygon -->
+
+                <polygon 
+
+                    points="200,88 304,100 242,184 200,280 179,172 138,124"
+
+                    fill="rgba(78, 205, 196, 0.3)"
+
+                    stroke="#4ecdc4"
+
+                    stroke-width="3"/>
+
+                
+
+                <!-- Data points -->
+
+                <circle cx="200" cy="88" r="6" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+                <circle cx="304" cy="100" r="6" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+                <circle cx="242" cy="184" r="6" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+                <circle cx="200" cy="280" r="6" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+                <circle cx="179" cy="172" r="6" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+                <circle cx="138" cy="124" r="6" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+
+                
+
+                <!-- Labels -->
+
+                <text x="200" y="25" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700">ELEVATION (3/5)</text>
+
+                <text x="330" y="95" text-anchor="start" font-family="Sometype Mono, monospace" font-size="12" font-weight="700">LENGTH (5/5)</text>
+
+                <text x="330" y="230" text-anchor="start" font-family="Sometype Mono, monospace" font-size="12" font-weight="700">TECHNICAL (2/5)</text>
+
+                <text x="200" y="305" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700">CLIMATE (5/5)</text>
+
+                <text x="70" y="230" text-anchor="end" font-family="Sometype Mono, monospace" font-size="12" font-weight="700">ALTITUDE (1/5)</text>
+
+                <text x="70" y="95" text-anchor="end" font-family="Sometype Mono, monospace" font-size="12" font-weight="700">ADVENTURE (3/5)</text>
+
+            </svg>
+
+        </div>
+
+        <h3>What Makes This Plan Different</h3>
+
+        
+
+        <div class="card-grid">
+
+            <div class="card">
+
+                <h4>Built for Your Ability Level</h4>
+
+                <p>You're on the <strong>Intermediate</strong> version. The load and intensity match where you are right now.</p>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Built for Your Schedule</h4>
+
+                <p>This is the <strong>Finisher</strong> tier, designed around <strong>10 hours/week</strong>.</p>
+
+            </div>
+
+            <div class="card">
+
+                <h4>Built for This Race</h4>
+
+                <p>The sessions target the key demands of Unbound 200: <strong>extreme heat</strong>, <strong>distance</strong>, <strong>wind</strong>, <strong>cumulative fatigue</strong>.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 2: STRUCTURE -->
+
+<section class="section" id="structure">
+
+    <div class="section-header">
+
+        <span class="section-number">02</span>
+
+        <h2>Plan Structure</h2>
+
+    </div>
+
+    <div class="section-content">
+
+        <h3>12 Weeks, 4 Phases</h3>
+
+        
+
+        <div class="graphic-container">
+
+            <div class="graphic-title">Training Phases</div>
+
+            <svg viewBox="0 0 600 120" width="600" height="120">
+
+                <rect x="0" y="0" width="600" height="120" fill="white"/>
+
+                <rect x="50" y="30" width="100" height="50" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+
+                <text x="100" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">BASE</text>
+
+                <text x="100" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 1-3</text>
+                <rect x="175" y="30" width="100" height="50" fill="#f4d03f" stroke="#2c2c2c" stroke-width="2"/>
+
+                <text x="225" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">BUILD</text>
+
+                <text x="225" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 4-6</text>
+                <rect x="300" y="30" width="100" height="50" fill="#e74c3c" stroke="#2c2c2c" stroke-width="2"/>
+
+                <text x="350" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">PEAK</text>
+
+                <text x="350" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 7-9</text>
+                <rect x="425" y="30" width="100" height="50" fill="#27ae60" stroke="#2c2c2c" stroke-width="2"/>
+
+                <text x="475" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">TAPER</text>
+
+                <text x="475" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 10-12</text>
+
+            </svg>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 3: ZONES -->
+
+<section class="section" id="zones">
+
+    <div class="section-header">
+
+        <span class="section-number">03</span>
+
+        <h2>Training Zones</h2>
+
+    </div>
+
+    <div class="section-content">
+
+        <p>These zones are based on your FTP. If you don't know your FTP, do a 20-minute test and multiply by 0.95.</p>
+
+        
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Zone</th>
+
+                        <th>Name</th>
+
+                        <th>% FTP</th>
+
+                        <th>RPE</th>
+
+                        <th>Description</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td><strong>Z1</strong></td>
+
+                        <td>Active Recovery</td>
+
+                        <td><55%</td>
+
+                        <td>1-2</td>
+
+                        <td>Easy spinning. Conversation flows effortlessly. Use for recovery rides and warm-ups.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Z2</strong></td>
+
+                        <td>Endurance</td>
+
+                        <td>55-75%</td>
+
+                        <td>3-4</td>
+
+                        <td>All-day pace. Can speak in full sentences. This is where aerobic base is built.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Z3</strong></td>
+
+                        <td>Tempo</td>
+
+                        <td>76-87%</td>
+
+                        <td>5-6</td>
+
+                        <td>Comfortably hard. Conversation limited to short phrases. Sustainable for 1-3 hours.</td>
+
+                    </tr>
+                    <tr class="g-spot-row">
+
+                        <td><strong>G</strong></td>
+
+                        <td>G Spot</td>
+
+                        <td>88-92%</td>
+
+                        <td>6-7</td>
+
+                        <td>The money zone for gravel. Hard but sustainable. Where races are won.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Z4</strong></td>
+
+                        <td>Threshold</td>
+
+                        <td>93-105%</td>
+
+                        <td>7-8</td>
+
+                        <td>Race pace for shorter events. Sustainable for 20-60 minutes max.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Z5</strong></td>
+
+                        <td>VO2max</td>
+
+                        <td>106-120%</td>
+
+                        <td>9</td>
+
+                        <td>Hard breathing. 3-8 minute intervals. Builds top-end power.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Z6</strong></td>
+
+                        <td>Anaerobic</td>
+
+                        <td>>120%</td>
+
+                        <td>10</td>
+
+                        <td>All-out efforts. 30 seconds to 2 minutes. Sprints and attacks.</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="callout callout-info">
+
+            <div class="callout-title">The G Spot</div>
+
+            <p>The "G Spot" (88-92% FTP) is our signature zone for gravel racing. Hard enough to be race-relevant, sustainable enough for long efforts. This is where gravel races are won.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 4: GLOSSARY -->
+
+<section class="section" id="glossary">
+
+    <div class="section-header">
+
+        <span class="section-number">04</span>
+
+        <h2>TrainingPeaks Glossary</h2>
+
+    </div>
+
+    <div class="section-content">
+
+        <p>These are the metrics and terms you'll encounter in TrainingPeaks.</p>
+
+        
+
+        <div class="glossary-grid">
+
+            <div class="glossary-item">
+
+                <dt>FTP</dt>
+
+                <dd>Functional Threshold Power. The highest power you can sustain for approximately one hour. All training zones are based on this number.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>TSS</dt>
+
+                <dd>Training Stress Score. A measure of workout load based on duration and intensity. 1 hour at FTP = 100 TSS.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>CTL</dt>
+
+                <dd>Chronic Training Load. 42-day rolling average of daily TSS. Proxy for 'fitness.' Good amateurs: 60-80. Pros: 140+.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>ATL</dt>
+
+                <dd>Acute Training Load. 7-day rolling average of daily TSS. Proxy for 'fatigue.'</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>TSB</dt>
+
+                <dd>Training Stress Balance. Yesterday's CTL minus yesterday's ATL. Proxy for 'form' or freshness. Negative = fatigued, positive = fresh. Race best at +5 to +20.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>NP</dt>
+
+                <dd>Normalized Power. Estimate of the constant power that would produce the same physiological cost as your variable power output.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>IF</dt>
+
+                <dd>Intensity Factor. Ratio of Normalized Power to FTP (IF = NP ÷ FTP). IF of 1.0 means you averaged FTP.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>W/kg</dt>
+
+                <dd>Watts per kilogram. Power relative to body weight. Good amateurs ~4 W/kg, elite pros 6+ W/kg.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>VI</dt>
+
+                <dd>Variability Index. NP divided by Average Power. Shows how variable your power was. 1.0 = perfectly steady.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>EF</dt>
+
+                <dd>Efficiency Factor. NP divided by Average HR. Higher = better aerobic efficiency. Track over time.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Pw:Hr</dt>
+
+                <dd>Aerobic Decoupling. Compares first-half to second-half power-to-HR ratio. <5% = good aerobic fitness.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>PMC</dt>
+
+                <dd>Performance Management Chart. Graph showing CTL, ATL, and TSB over time. The main planning tool in TrainingPeaks.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>RPE</dt>
+
+                <dd>Rate of Perceived Exertion. Subjective 1-10 scale of how hard an effort feels. Essential when power isn't available.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Z2</dt>
+
+                <dd>Zone 2, Endurance zone. 55-75% FTP. The foundation of aerobic training.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>FatMax</dt>
+
+                <dd>Fat oxidation maximum. The intensity where your body burns the most fat per minute. Usually upper Z2.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>VO2max</dt>
+
+                <dd>Maximum oxygen uptake. Your aerobic ceiling. Improved with high-intensity intervals.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Anaerobic Capacity</dt>
+
+                <dd>Your ability to produce power above threshold. Like a matches—burn them wisely.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>HRV</dt>
+
+                <dd>Heart Rate Variability. Variation in time between heartbeats. Higher generally = better recovered.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Periodization</dt>
+
+                <dd>Systematic variation of training load over time. Prevents plateaus and manages fatigue.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Polarized Training</dt>
+
+                <dd>80% easy (Z1-Z2) / 20% hard (Z4+). Minimal time in the middle. Research-backed approach.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Block Periodization</dt>
+
+                <dd>Concentrated training blocks focusing on one quality at a time.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Traditional Pyramidal</dt>
+
+                <dd>Most volume at low intensity, progressively less at higher intensities. Classic endurance approach.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Taper</dt>
+
+                <dd>Planned reduction in training load before a race. Maintains intensity, drops volume.</dd>
+
+            </div>
+            <div class="glossary-item">
+
+                <dt>Openers</dt>
+
+                <dd>Short, sharp efforts 1-2 days before race. Activates systems without creating fatigue.</dd>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 5: SKILLS -->
+
+<section class="section" id="skills">
+
+    <div class="section-header">
+
+        <span class="section-number">05</span>
+
+        <h2>Gravel Skills</h2>
+
+    </div>
+
+    <div class="section-content">
+
+        <p>These skills separate good gravel racers from everyone else.</p>
+
+        
+
+        <div class="skills-grid">
+
+            <div class="skill-item">
+
+                <h4>Loose Surface Cornering</h4>
+
+                <p>Lean the bike, not your body. Weight the outside pedal. Look through the turn, not at the ground. Enter wide, apex late, exit wide. Scrub speed before the turn, not during.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Cadence Control</h4>
+
+                <p>Slow twitch fibers (<80 rpm) for maintaining speed on flats. Fast twitch fibers (>95 rpm) for changing speed and steep hills. Practice varying cadence to develop feel for what works when.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Braking Technique</h4>
+
+                <p>Feather brakes gradually—never grab. Front brake does most of the stopping. Rear brake for fine adjustments. Brake before turns, not during. Practice controlled rear-wheel skidding on low-risk gravel to learn limits.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Steep Climbs (15-25%)</h4>
+
+                <p>Keep momentum going in—you won't get it back. Stay seated for rear wheel traction. Weight over rear wheel, hands light on bars. Standing shifts weight forward and loses traction. Lower gear than you think you need.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Track Standing</h4>
+
+                <p>Develops balance and handling ability. Start on slight uphill, front wheel turned slightly uphill. Gentle pedal pressure forward, handlebar corrections for balance. Practice until you can hold 30+ seconds.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Bunny Hopping</h4>
+
+                <p>For obstacles you can't avoid. Compress down → pull up on bars → scoop back with feet → level out in air. Start with small obstacles. Even a 2-inch hop saves your wheels from impacts.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Eating While Riding</h4>
+
+                <p>Practice unwrapping bars, opening bottles, and eating at pace. Find what foods you can eat at threshold. Never try new nutrition on race day.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Group Riding & Pace Lines</h4>
+
+                <p>Hold your line. No sudden movements. Point out hazards. Pull through smoothly, peel off into the wind. Take shorter pulls into headwinds. Communication is everything.</p>
+
+            </div>
+            <div class="skill-item">
+
+                <h4>Mechanical Self-Sufficiency</h4>
+
+                <p>Practice fixing flats until it's automatic (target: under 5 minutes). Know how to adjust brakes and derailleurs. Carry the right tools. The race ends when you can't fix it.</p>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="callout callout-success">
+
+            <div class="callout-title">Practice Recommendations</div>
+
+            <p>Take your gravel bike on MTB trails (green/blue difficulty). Set up obstacle courses in grassy fields. <strong>30 minutes of focused practice builds skills faster than 3 hours of just riding.</strong></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 6: RACE DAY TACTICS -->
+
+<section class="section" id="race-day">
+
+    <div class="section-header">
+
+        <span class="section-number">06</span>
+
+        <h2>Race Day Tactics</h2>
+
+    </div>
+
+    <div class="section-content">
+
+        <p>It turns out racing is much more pleasant if you employ something called "tactics." Tactics just mean having a plan for how you're going to use your energy over the course.</p>
+
+        
+
+        <h3>The Three-Act Structure</h3>
+
+        <p>Every long gravel race follows a predictable three-act structure.</p>
+
+        
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Phase</th>
+
+                        <th>When</th>
+
+                        <th>What's Happening</th>
+
+                        <th>Your Job</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td><strong>THE MADNESS</strong></td>
+
+                        <td>0-90 min</td>
+
+                        <td>Fresh legs, nervous energy, crowded course. Attacks fly. Adrenaline-fueled decisions.</td>
+
+                        <td>Go hard enough to find your group. Don't panic. Start eating immediately.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>FALSE DAWN</strong></td>
+
+                        <td>90 min - 3 hrs</td>
+
+                        <td>Order returns. Groups stabilize. Pace becomes predictable. Feels manageable.</td>
+
+                        <td>Stay fueled and hydrated. Contribute to your group without overworking. Bank energy.</td>
+
+                    </tr>
+                    <tr class="g-spot-row">
+
+                        <td><strong>THE PIPER</strong></td>
+
+                        <td>3+ hrs to finish</td>
+
+                        <td>The bill comes due. Under-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders check out.</td>
+
+                        <td>Execute your plan while others fall apart. This is where the race happens.</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <hr>
+
+        <h3>Tactical Principles</h3>
+
+        <h4>Be Efficient</h4>
+
+        <p>Keep asking yourself this question:</p>
+
+        
+
+        <div class="callout callout-success">
+
+            <div class="callout-title">The Key Question</div>
+
+            <p style="font-size: 1.2rem; font-weight: 700;">"How could I keep going at this speed for less effort?"</p>
+
+        </div>
+
+        <p><strong>The goal of racing, unlike training, is not putting up big power numbers—it's to go from A to B as fast as possible using the least amount of energy.</strong></p>
+
+        
+
+        <h4>Draft Smart</h4>
+
+        <p>Even on gravel, drafting helps. Don't be a hero. Take pulls, but don't try to show anyone how strong you are. Every minute at the front is energy you're not saving. Every minute in the draft is energy you're banking for later.</p>
+
+        
+
+        <h4>Read the Course</h4>
+
+        <p>Always pick the best possible line. If the right line is packed down and smooth, why are you riding in potholes? Look ahead. Pick lines. Save watts.</p>
+
+        
+
+        <h4>Read the Wind</h4>
+
+        <p>Headwind? Worth putting out more energy to put time on people. Tailwind? Your speed will be higher but you won't gain as much time for proportional power output. Don't hammer with a tailwind—save that for when it turns into a slog.</p>
+
+        
+
+        <h3>The 7-Day Countdown</h3>
+
+        
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Day</th>
+
+                        <th>Training</th>
+
+                        <th>Focus</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td><strong>Day 7</strong></td>
+
+                        <td>2 hours Z2 + 3x3 min Z3</td>
+
+                        <td>Last moderate ride. Final bike check.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Day 6</strong></td>
+
+                        <td>45 min easy or rest</td>
+
+                        <td>Pack gear. Finalize nutrition plan.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Day 5</strong></td>
+
+                        <td>Rest or 30 min Z1</td>
+
+                        <td>Travel day if needed. Stay hydrated.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Day 4</strong></td>
+
+                        <td>45 min Z2 + 3x30 sec Z4</td>
+
+                        <td>Shake out travel. Course recon if possible.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Day 3</strong></td>
+
+                        <td>20 min Z2 + 3x30 sec hard</td>
+
+                        <td>Openers. Packet pickup. Final bike check.</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Day 2</strong></td>
+
+                        <td>Complete rest</td>
+
+                        <td>Hydrate. Carb loading begins (+200-300g).</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><strong>Day 1</strong></td>
+
+                        <td>Complete rest</td>
+
+                        <td>Prep drop bags. Lay out kit. Visualize. Early to bed.</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-tagline">See You at the Finish</div>
+
+    <div class="footer-content">
+
+        <p>You have the plan. You understand how training works, how to execute the workouts, how to fuel and hydrate, how to manage your mental game, and how to approach race day.</p>
+
+        <p class="footer-emphasis">Now do the work.</p>
+
+        <p><em>Not perfectly. Not heroically. Consistently. Intelligently. Over 12 weeks.</em></p>
+
+        <p>On race morning, you'll stand at the start line knowing you did everything you could to prepare. That confidence—not hope, not optimism, but confidence based on completed work—is what this plan builds.</p>
+
+        <p class="footer-emphasis">The race will be hard. You trained for hard.</p>
+
+    </div>
+
+    <div class="footer-contact">
+
+        <p class="footer-email">gravelgodcoaching@gmail.com</p>
+
+        <p class="footer-motto">Become what you could be.</p>
+
+    </div>
+
+</footer>
+
+<!-- SCROLL SPY JAVASCRIPT -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const sections = document.querySelectorAll('.section');
+
+    const navLinks = document.querySelectorAll('.sticky-nav a');
+
+    
+
+    function updateActiveLink() {
+
+        let current = '';
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop - 100;
+
+            if (scrollY >= sectionTop) {
+
+                current = section.getAttribute('id');
+
+            }
+
+        });
+
+        
+
+        navLinks.forEach(link => {
+
+            link.classList.remove('active');
+
+            if (link.getAttribute('href') === '#' + current) {
+
+                link.classList.add('active');
+
+            }
+
+        });
+
+    }
+
+    
+
+    window.addEventListener('scroll', updateActiveLink);
+
+    updateActiveLink();
+
+});
+
+</script>
+
+</body>
+
+</html>

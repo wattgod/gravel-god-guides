@@ -3,725 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Unbound Gravel 200 Training Guide | Finisher - Intermediate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* ============================================
-           GRAVEL GOD NEO-BRUTALIST DESIGN SYSTEM
-           ============================================ */
-        
-        :root {
-            --cream: #f5f5dc;
-            --cream-dark: #ede5d0;
-            --turquoise: #4ecdc4;
-            --turquoise-light: rgba(78, 205, 196, 0.15);
-            --yellow: #f4d03f;
-            --yellow-light: #fef9e7;
-            --brown-dark: #59473C;
-            --text-dark: #2c2c2c;
-            --red: #e74c3c;
-            --red-light: #fdedec;
-            --green: #27ae60;
-            --green-light: #e9f7ef;
-            --border-width: 3px;
-            --shadow-offset: 6px;
-            --shadow-color: rgba(0,0,0,0.2);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-        body {
-            font-family: 'Sometype Mono', 'Courier New', Courier, monospace;
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-            min-height: 100vh;
-        }
-
-        /* ============================================
-           STICKY NAVIGATION
-           ============================================ */
-        
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--brown-dark);
-            border-bottom: var(--border-width) solid var(--text-dark);
-            box-shadow: 0 var(--shadow-offset) 0 var(--shadow-color);
-            padding: 0.75rem 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-
-        .sticky-nav a {
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 0.35rem 0.6rem;
-            border: 2px solid transparent;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .sticky-nav a:hover {
-            color: var(--turquoise);
-            border-color: var(--turquoise);
-        }
-
-        .sticky-nav a.active {
-            background: var(--turquoise);
-            color: var(--text-dark);
-            border-color: var(--text-dark);
-        }
-
-        /* ============================================
-           HEADER
-           ============================================ */
-        
-        .header {
-            background: var(--brown-dark);
-            background-image: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0,0,0,0.1) 10px,
-                rgba(0,0,0,0.1) 20px
-            );
-            padding: 3rem 2rem;
-            text-align: center;
-            border-bottom: var(--border-width) solid var(--text-dark);
-        }
-
-        .race-badge {
-            display: inline-block;
-            background: var(--turquoise);
-            color: var(--text-dark);
-            padding: 0.5rem 1.5rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .header h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            color: var(--turquoise);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 
-                3px 3px 0 var(--yellow),
-                6px 6px 0 var(--text-dark);
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-
-        .header-subtitle {
-            color: var(--cream);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .tier-badges {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .tier-badge {
-            background: var(--yellow);
-            color: var(--text-dark);
-            padding: 0.5rem 1.25rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-        }
-
-        .level-badge {
-            background: var(--cream);
-            color: var(--text-dark);
-            padding: 0.5rem 1.25rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-        }
-
-        /* ============================================
-           MAIN CONTENT
-           ============================================ */
-        
-        .main-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
-        }
-
-        /* ============================================
-           SECTIONS
-           ============================================ */
-        
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section-header {
-            background: var(--text-dark);
-            color: var(--cream);
-            padding: 1rem 1.5rem 1rem 4rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            border: var(--border-width) solid var(--text-dark);
-        }
-
-        .section-header h2 {
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-
-        .section-number {
-            position: absolute;
-            left: -12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--turquoise);
-            color: var(--text-dark);
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 3px 3px 0 var(--shadow-color);
-        }
-
-        .section-content {
-            padding: 0 0.5rem;
-        }
-
-        .section-content h3 {
-            font-size: 1.2rem;
-            margin: 2rem 0 1rem;
-            color: var(--brown-dark);
-            border-bottom: 2px solid var(--turquoise);
-            padding-bottom: 0.5rem;
-        }
-
-        .section-content h4 {
-            font-size: 1rem;
-            margin: 1.5rem 0 0.75rem;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .section-content p {
-            margin-bottom: 1rem;
-        }
-
-        .section-content ul, .section-content ol {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .section-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* ============================================
-           CALLOUT BOXES
-           ============================================ */
-        
-        .callout {
-            border: var(--border-width) solid var(--text-dark);
-            border-left-width: 6px;
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-            box-shadow: 4px 4px 0 var(--shadow-color);
-        }
-
-        .callout-title {
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .callout-warning {
-            border-left-color: var(--yellow);
-            background: var(--yellow-light);
-        }
-
-        .callout-warning .callout-title {
-            color: #b7950b;
-        }
-
-        .callout-info {
-            border-left-color: var(--turquoise);
-            background: rgba(78, 205, 196, 0.1);
-        }
-
-        .callout-info .callout-title {
-            color: #1a8a82;
-        }
-
-        .callout-danger {
-            border-left-color: var(--red);
-            background: var(--red-light);
-        }
-
-        .callout-danger .callout-title {
-            color: var(--red);
-        }
-
-        .callout-success {
-            border-left-color: var(--green);
-            background: var(--green-light);
-        }
-
-        .callout-success .callout-title {
-            color: var(--green);
-        }
-
-        /* ============================================
-           TABLES
-           ============================================ */
-        
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            background: white;
-        }
-
-        th {
-            background: var(--brown-dark);
-            color: var(--cream);
-            padding: 0.75rem 1rem;
-            text-align: left;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid var(--text-dark);
-        }
-
-        td {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--text-dark);
-            font-size: 0.9rem;
-        }
-
-        tr:nth-child(even) {
-            background: rgba(0,0,0,0.03);
-        }
-
-        tr:hover {
-            background: var(--turquoise-light);
-        }
-
-        tr.g-spot-row {
-            background: rgba(78, 205, 196, 0.25) !important;
-            font-weight: 600;
-        }
-
-        tr.g-spot-row td {
-            border-color: var(--turquoise);
-        }
-
-        /* ============================================
-           SVG GRAPHICS CONTAINERS
-           ============================================ */
-        
-        .graphic-container {
-            background: white;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .graphic-title {
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: var(--brown-dark);
-            text-align: center;
-        }
-
-        .graphic-container svg {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* ============================================
-           CARDS (Non-negotiables, Workouts)
-           ============================================ */
-        
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.25rem;
-            margin: 1.5rem 0;
-        }
-
-        .card {
-            background: var(--cream);
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-            padding: 1.25rem;
-            position: relative;
-        }
-
-        .card-number {
-            position: absolute;
-            top: -12px;
-            left: -12px;
-            background: var(--turquoise);
-            color: var(--text-dark);
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: 2px solid var(--text-dark);
-        }
-
-        .card h4 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: var(--brown-dark);
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        /* ============================================
-           CHECKLISTS
-           ============================================ */
-        
-        .checklist {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-
-        .checklist li {
-            padding: 0.5rem 0 0.5rem 2rem;
-            position: relative;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
-        }
-
-        .checklist li::before {
-            content: "☐";
-            position: absolute;
-            left: 0;
-            font-size: 1.1rem;
-        }
-
 /* ============================================
-   FOOTER
+   GRAVEL GOD NEO-BRUTALIST DESIGN SYSTEM
    ============================================ */
 
-.footer {
+:root {
+    --cream: #f5f5dc;
+    --cream-dark: #ede5d0;
+    --turquoise: #4ecdc4;
+    --turquoise-light: rgba(78, 205, 196, 0.15);
+    --yellow: #f4d03f;
+    --yellow-light: #fef9e7;
+    --brown-dark: #59473C;
+    --text-dark: #2c2c2c;
+    --red: #e74c3c;
+    --red-light: #fdedec;
+    --green: #27ae60;
+    --green-light: #e9f7ef;
+    --border-width: 3px;
+    --shadow-offset: 6px;
+    --shadow-color: rgba(0,0,0,0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+    font-family: 'Sometype Mono', 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+    min-height: 100vh;
+}
+
+/* Navigation */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--brown-dark);
+    border-bottom: var(--border-width) solid var(--text-dark);
+    box-shadow: 0 var(--shadow-offset) 0 var(--shadow-color);
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.sticky-nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.6rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sticky-nav a:hover { color: var(--turquoise); border-color: var(--turquoise); }
+.sticky-nav a.active { background: var(--turquoise); color: var(--text-dark); border-color: var(--text-dark); }
+
+/* Header */
+.header {
     background: var(--brown-dark);
     color: var(--cream);
+    padding: 3rem 2rem;
     text-align: center;
-    padding: 4rem 2rem;
-    border-top: var(--border-width) solid var(--text-dark);
+    border-bottom: var(--border-width) solid var(--text-dark);
 }
 
-.footer-tagline {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--turquoise);
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.header-brand { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: var(--turquoise); margin-bottom: 0.5rem; }
+.header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 2px; }
+.header-subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1rem; }
+.header-meta { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.header-meta-item { background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border: 2px solid var(--turquoise); }
+.header-meta-item strong { color: var(--turquoise); }
+
+/* Sections */
+.section { padding: 3rem 2rem; max-width: 900px; margin: 0 auto; border-bottom: 2px dashed var(--brown-dark); }
+.section:last-of-type { border-bottom: none; }
+.section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: var(--border-width) solid var(--text-dark); }
+.section-number { background: var(--turquoise); color: var(--text-dark); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
+.section-header h2 { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
+.section-content h3 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--brown-dark); border-left: 4px solid var(--turquoise); padding-left: 1rem; }
+.section-content h4 { font-size: 1.1rem; margin: 1.5rem 0 0.75rem; color: var(--text-dark); }
+.section-content p { margin-bottom: 1rem; }
+.section-content ul, .section-content ol { margin: 1rem 0 1rem 1.5rem; }
+.section-content li { margin-bottom: 0.5rem; }
+
+/* Intro Box */
+.intro-box { background: white; padding: 1.5rem; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); margin-bottom: 2rem; }
+
+/* Tables */
+.table-wrapper { overflow-x: auto; margin: 1.5rem 0; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
+table { width: 100%; border-collapse: collapse; background: white; }
+th { background: var(--brown-dark); color: var(--cream); padding: 1rem; text-align: left; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+td { padding: 0.875rem 1rem; border-bottom: 1px solid var(--cream-dark); font-size: 0.9rem; }
+tr:hover { background: var(--cream-dark); }
+tr.g-spot-row { background: var(--turquoise-light); }
+tr.g-spot-row:hover { background: rgba(78, 205, 196, 0.25); }
+
+/* Callouts */
+.callout { padding: 1.5rem; margin: 1.5rem 0; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
+.callout-title { font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
+.callout-info { background: var(--turquoise-light); border-color: var(--turquoise); }
+.callout-info .callout-title { color: var(--brown-dark); }
+.callout-warning { background: var(--yellow-light); border-color: var(--yellow); }
+.callout-warning .callout-title { color: var(--brown-dark); }
+.callout-danger { background: var(--red-light); border-color: var(--red); }
+.callout-danger .callout-title { color: var(--red); }
+.callout-success { background: var(--green-light); border-color: var(--green); }
+.callout-success .callout-title { color: var(--green); }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.card { background: white; padding: 1.5rem; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); }
+.card h4 { color: var(--brown-dark); margin-bottom: 0.75rem; font-size: 1rem; }
+.card p { font-size: 0.9rem; margin: 0; }
+
+/* Graphics */
+.graphic-container { background: white; border: var(--border-width) solid var(--text-dark); box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--text-dark); padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
+.graphic-title { font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 1rem; color: var(--brown-dark); }
+.graphic-container svg { max-width: 100%; height: auto; }
+
+/* Skills Grid */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.skill-item { background: white; padding: 1.25rem; border: var(--border-width) solid var(--text-dark); box-shadow: 4px 4px 0 var(--text-dark); }
+.skill-item h4 { color: var(--brown-dark); margin-bottom: 0.5rem; font-size: 1rem; border-bottom: 2px solid var(--turquoise); padding-bottom: 0.5rem; }
+.skill-item p { font-size: 0.9rem; margin: 0; }
+.skill-cue { font-style: italic; color: var(--turquoise); margin-top: 0.5rem; font-weight: 600; }
+
+/* Glossary */
+.glossary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.glossary-item { background: white; padding: 1rem; border: 2px solid var(--cream-dark); }
+.glossary-term { font-weight: 700; color: var(--turquoise); margin-bottom: 0.25rem; }
+.glossary-def { font-size: 0.85rem; }
+
+/* Phase List */
+.phase-list { margin: 1.5rem 0; }
+.phase-item { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem; margin-bottom: 0.5rem; background: white; border: 2px solid var(--text-dark); }
+.phase-weeks { font-size: 0.85rem; font-weight: 600; min-width: 80px; }
+.phase-name { font-weight: 700; min-width: 80px; }
+.phase-desc { font-size: 0.9rem; }
+.phase-base { border-left: 4px solid #4ecdc4; }
+.phase-build { border-left: 4px solid #f4d03f; }
+.phase-peak { border-left: 4px solid #e74c3c; }
+.phase-taper { border-left: 4px solid #27ae60; }
+
+/* Footer */
+.footer { background: var(--brown-dark); color: var(--cream); text-align: center; padding: 4rem 2rem; border-top: var(--border-width) solid var(--text-dark); }
+.footer-tagline { font-size: 2rem; font-weight: 700; color: var(--turquoise); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px; }
+.footer-content { max-width: 700px; margin: 0 auto 2rem; }
+.footer-content p { margin-bottom: 1.25rem; line-height: 1.8; }
+.footer-emphasis { font-size: 1.1rem; font-weight: 700; color: var(--turquoise); }
+.footer-contact { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); }
+.footer-email { font-size: 0.95rem; margin-bottom: 0.5rem; }
+.footer-motto { font-size: 1rem; font-style: italic; color: var(--turquoise); margin-top: 1rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 { font-size: 1.8rem; }
+    .sticky-nav { padding: 0.5rem; }
+    .sticky-nav a { font-size: 0.65rem; padding: 0.3rem 0.5rem; }
+    .section { padding: 2rem 1rem; }
+    .section-header h2 { font-size: 1.4rem; }
+    th, td { padding: 0.5rem; font-size: 0.8rem; }
 }
 
-.footer-content {
-    max-width: 700px;
-    margin: 0 auto 2rem;
-}
-
-.footer-content p {
-    margin-bottom: 1.25rem;
-    line-height: 1.8;
-}
-
-.footer-emphasis {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--turquoise);
-}
-
-.footer-contact {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.footer-email {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-}
-
-.footer-motto {
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--turquoise);
-    margin-top: 1rem;
-}
-
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        
-        @media (max-width: 768px) {
-            .sticky-nav {
-                padding: 0.5rem;
-                gap: 0.25rem;
-            }
-
-            .sticky-nav a {
-                font-size: 0.65rem;
-                padding: 0.25rem 0.4rem;
-            }
-
-            .header {
-                padding: 2rem 1rem;
-            }
-
-            .header h1 {
-                font-size: 2rem;
-                letter-spacing: 1px;
-            }
-
-            .section-header {
-                padding: 0.75rem 1rem 0.75rem 3.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.1rem;
-            }
-
-            .section-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .main-content {
-                padding: 1rem 1rem 3rem;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ============================================
-           PRINT STYLES
-           ============================================ */
-        
-        @media print {
-            .sticky-nav {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-
-            .section-header {
-                page-break-after: avoid;
-            }
-
-            body {
-                background: white;
-            }
-
-            .header {
-                background: var(--brown-dark) !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
-
-        /* ============================================
-           INTRO BOX
-           ============================================ */
-        
-        .intro-box {
-            background: white;
-            border: var(--border-width) solid var(--text-dark);
-            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .intro-box p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .intro-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ============================================
-           DEFINITION LISTS (Glossary)
-           ============================================ */
-        
-        .glossary-list {
-            margin: 1rem 0;
-        }
-
-        .glossary-item {
-            background: white;
-            border: var(--border-width) solid var(--text-dark);
-            margin-bottom: 1rem;
-            box-shadow: 3px 3px 0 var(--shadow-color);
-        }
-
-        .glossary-term {
-            background: var(--brown-dark);
-            color: var(--turquoise);
-            padding: 0.75rem 1rem;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .glossary-def {
-            padding: 1rem;
-            font-size: 0.95rem;
-        }
-
-        /* ============================================
-           PHASE INDICATOR
-           ============================================ */
-        
-        .phase-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin: 1rem 0;
-        }
-
-        .phase-item {
-            display: flex;
-            align-items: stretch;
-            border: 2px solid var(--text-dark);
-            box-shadow: 3px 3px 0 var(--shadow-color);
-        }
-
-        .phase-weeks {
-            background: var(--text-dark);
-            color: var(--cream);
-            padding: 0.75rem 1rem;
-            font-weight: 700;
-            font-size: 0.85rem;
-            min-width: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .phase-name {
-            padding: 0.75rem 1rem;
-            font-weight: 700;
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .phase-base .phase-name { background: var(--turquoise); }
-        .phase-build .phase-name { background: var(--yellow); }
-        .phase-peak .phase-name { background: var(--red); color: white; }
-        .phase-taper .phase-name { background: var(--green); color: white; }
-
-        .phase-desc {
-            padding: 0.75rem 1rem;
-            background: white;
-            flex: 2;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Strong text styling */
-        strong, b {
-            font-weight: 700;
-            color: var(--brown-dark);
-        }
-
-        /* Inline code */
-        code {
-            background: rgba(0,0,0,0.05);
-            padding: 0.15rem 0.4rem;
-            border: 1px solid rgba(0,0,0,0.1);
-            font-size: 0.9em;
-        }
-
-        /* Horizontal rule */
-        hr {
-            border: none;
-            border-top: 2px dashed var(--text-dark);
-            margin: 2rem 0;
-            opacity: 0.3;
-        }
-
-        /* Blockquote */
-        blockquote {
-            border-left: 4px solid var(--turquoise);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: var(--brown-dark);
-        }
-    </style>
+hr { border: none; border-top: 2px dashed var(--text-dark); margin: 2rem 0; opacity: 0.3; }
+</style>
 </head>
 <body>
 
@@ -735,7 +195,7 @@
     <a href="#recovery">Recovery</a>
     <a href="#strength">Strength</a>
     <a href="#skills">Skills</a>
-    <a href="#fueling">Fuel</a>
+    <a href="#fueling">Fueling</a>
     <a href="#mental">Mental</a>
     <a href="#race-day">Race Day</a>
     <a href="#tires">Tires</a>
@@ -743,30 +203,32 @@
 </nav>
 
 <header class="header">
-    <div class="race-badge">Emporia, Kansas</div>
+    <div class="header-brand">Gravel God Coaching</div>
     <h1>Unbound Gravel 200</h1>
     <p class="header-subtitle">Training Guide</p>
-    <div class="tier-badges">
-        <span class="tier-badge">Finisher Tier</span>
-        <span class="level-badge">Intermediate</span>
+    <div class="header-meta">
+        <div class="header-meta-item"><strong>Finisher</strong> Tier</div>
+        <div class="header-meta-item"><strong>Intermediate</strong> Level</div>
+        <div class="header-meta-item"><strong>10</strong> hrs/week</div>
+        <div class="header-meta-item"><strong>12</strong> weeks</div>
     </div>
 </header>
 
-<main class="main-content">
-<!-- SECTION 01: WELCOME TO YOUR TRAINING -->
+<main>
 <section class="section" id="welcome">
     <div class="section-header">
         <span class="section-number">01</span>
         <h2>Welcome to Your Training</h2>
     </div>
-    <div class="section-content">        <div class="intro-box">
+    <div class="section-content">
+        <div class="intro-box">
             <p>This plan isn't generic. It's built for <strong>Unbound Gravel 200</strong>—its 200 miles, mostly hard-packed gravel with some loose sections, 11,000 feet of elevation, and what it'll take to be out there for 10-14 hours.</p>
-            <p>200 miles of Kansas gravel. Heat. Wind. Distance. This is the race that defines gravel racing. Finishing Unbound 200 puts you in an elite club of athletes who've conquered one of the most demanding events in cycling.</p>
-            <p><strong>By the time you roll to the start, you'll know you're ready.</strong></p>
+<p>200 miles of Kansas gravel. Heat. Wind. Distance. This is the race that defines gravel racing. Finishing Unbound 200 puts you in an elite club of athletes who've conquered one of the most demanding events in cycling.</p>
+<p><strong>By the time you roll to the start, you'll know you're ready.</strong></p>
         </div>
-        <h3>Race Profile</h3>
+        
         <div class="graphic-container">
-            <div class="graphic-title">Course Demands</div>
+            <div class="graphic-title">Race Difficulty Profile</div>
             <svg viewBox="0 0 400 350" width="400" height="350">
                 <rect x="0" y="0" width="400" height="350" fill="white"/>
                 <circle cx="200" cy="160" r="120" fill="none" stroke="#e0e0e0" stroke-width="1"/>
@@ -795,1071 +257,1272 @@
                 <text x="70" y="95" text-anchor="end" font-family="Sometype Mono, monospace" font-size="12" font-weight="700">ADVENTURE (3/5)</text>
             </svg>
         </div>
+        
+        <h3>What Makes This Plan Different</h3>
         <div class="card-grid">
             <div class="card">
-                <h4>Built for Your Ability Level</h4>
-                <p>You're on the <strong>Intermediate</strong> version. The load and intensity match where you are right now.</p>
-            </div>
-            <div class="card">
-                <h4>Built for Your Schedule</h4>
-                <p>This is the <strong>Finisher</strong> tier, designed around <strong>10 hours/week</strong>. The week fits into your life so you can actually complete it.</p>
-            </div>
-            <div class="card">
-                <h4>Built for This Race</h4>
-                <p>The sessions target the key demands of Unbound: <strong>extreme heat, distance, wind, cumulative fatigue</strong>.</p>
-            </div>
+    <h4>Built for Your Ability Level</h4>
+    <p>You're on the <strong>Intermediate</strong> version. The load and intensity match where you are right now.</p>
+</div>
+<div class="card">
+    <h4>Built for Your Schedule</h4>
+    <p>This is the <strong>Finisher</strong> tier, designed around <strong>10 hours/week</strong>. The week fits into your life so you can actually complete it.</p>
+</div>
+<div class="card">
+    <h4>Built for This Race</h4>
+    <p>The sessions target the key demands of Unbound: <strong>extreme heat, distance, wind, cumulative fatigue</strong>.</p>
+</div>
         </div>
-
     </div>
 </section>
 
-<!-- SECTION 02: PLAN STRUCTURE -->
 <section class="section" id="structure">
     <div class="section-header">
         <span class="section-number">02</span>
         <h2>Plan Structure</h2>
     </div>
-    <div class="section-content">        <div class="graphic-container">
+    <div class="section-content">
+        <h3>12 Weeks, 4 Phases</h3>
+        
+        <div class="graphic-container">
             <div class="graphic-title">Training Phases</div>
             <svg viewBox="0 0 600 120" width="600" height="120">
-                <rect x="0" y="0" width="600" height="120" fill="white"/>
-                <rect x="50" y="30" width="100" height="50" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
-                <text x="100" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">BASE</text>
-                <text x="100" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 1-3</text>
-                <rect x="175" y="30" width="100" height="50" fill="#f4d03f" stroke="#2c2c2c" stroke-width="2"/>
-                <text x="225" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">BUILD</text>
-                <text x="225" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 4-7</text>
-                <rect x="300" y="30" width="100" height="50" fill="#e74c3c" stroke="#2c2c2c" stroke-width="2"/>
-                <text x="350" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">PEAK</text>
-                <text x="350" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 8-10</text>
-                <rect x="425" y="30" width="100" height="50" fill="#27ae60" stroke="#2c2c2c" stroke-width="2"/>
-                <text x="475" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="14" font-weight="700">TAPER</text>
-                <text x="475" y="100" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="11">Weeks 11-12</text>
+                <text x="10" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#666">WEEK</text>
+                <text x="70" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">1</text>
+                <text x="110" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">2</text>
+                <text x="150" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">3</text>
+                <text x="190" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">4</text>
+                <text x="230" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">5</text>
+                <text x="270" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">6</text>
+                <text x="310" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">7</text>
+                <text x="350" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">8</text>
+                <text x="390" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">9</text>
+                <text x="430" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">10</text>
+                <text x="470" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">11</text>
+                <text x="510" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#2c2c2c">12</text>
+                <text x="555" y="20" font-family="Sometype Mono, monospace" font-size="10" fill="#e74c3c" font-weight="700">RACE</text>
+                <rect x="55" y="35" width="120" height="40" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="2"/>
+                <text x="115" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="#2c2c2c">BASE</text>
+                <rect x="175" y="35" width="160" height="40" fill="#f4d03f" stroke="#2c2c2c" stroke-width="2"/>
+                <text x="255" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="#2c2c2c">BUILD</text>
+                <rect x="335" y="35" width="120" height="40" fill="#e74c3c" stroke="#2c2c2c" stroke-width="2"/>
+                <text x="395" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="white">PEAK</text>
+                <rect x="455" y="35" width="80" height="40" fill="#27ae60" stroke="#2c2c2c" stroke-width="2"/>
+                <text x="495" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="12" font-weight="700" fill="white">TAPER</text>
+                <rect x="545" y="30" width="40" height="50" fill="none" stroke="#e74c3c" stroke-width="3" stroke-dasharray="5,3"/>
+                <text x="565" y="60" text-anchor="middle" font-family="Sometype Mono, monospace" font-size="10" font-weight="700" fill="#e74c3c">🏁</text>
+                <rect x="55" y="95" width="15" height="15" fill="#4ecdc4" stroke="#2c2c2c" stroke-width="1"/>
+                <text x="75" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Aerobic Foundation</text>
+                <rect x="180" y="95" width="15" height="15" fill="#f4d03f" stroke="#2c2c2c" stroke-width="1"/>
+                <text x="200" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Race-Specific Fitness</text>
+                <rect x="320" y="95" width="15" height="15" fill="#e74c3c" stroke="#2c2c2c" stroke-width="1"/>
+                <text x="340" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Maximum Load</text>
+                <rect x="440" y="95" width="15" height="15" fill="#27ae60" stroke="#2c2c2c" stroke-width="1"/>
+                <text x="460" y="106" font-family="Sometype Mono, monospace" font-size="9" fill="#2c2c2c">Fresh for Race Day</text>
             </svg>
         </div>
+        
+        <div class="phase-list">
+            <div class="phase-item phase-base">
+    <span class="phase-weeks">Weeks 1-3</span>
+    <span class="phase-name">BASE</span>
+    <span class="phase-desc">Building aerobic foundation and endurance</span>
+</div>
+<div class="phase-item phase-build">
+    <span class="phase-weeks">Weeks 4-7</span>
+    <span class="phase-name">BUILD</span>
+    <span class="phase-desc">Adding intensity, developing race-specific fitness</span>
+</div>
+<div class="phase-item phase-peak">
+    <span class="phase-weeks">Weeks 8-10</span>
+    <span class="phase-name">PEAK</span>
+    <span class="phase-desc">Maximum training load and sharpening</span>
+</div>
+<div class="phase-item phase-taper">
+    <span class="phase-weeks">Weeks 11-12</span>
+    <span class="phase-name">TAPER</span>
+    <span class="phase-desc">Reducing volume while maintaining intensity</span>
+</div>
+        </div>
+        
         <h3>Weekly Structure</h3>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Day</th><th>Session</th><th>Duration</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Monday</strong></td>
-                        <td>Rest</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tuesday</strong></td>
-                        <td>Intensity</td>
-                        <td>60-75 min</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Wednesday</strong></td>
-                        <td>Endurance Z2</td>
-                        <td>60-90 min</td>
-                    </tr>
-                    <tr class="g-spot-row">
-                        <td><strong>Thursday</strong></td>
-                        <td>G Spot Work</td>
-                        <td>60-75 min</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Friday</strong></td>
-                        <td>Rest/Recovery</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Saturday</strong></td>
-                        <td>Long Ride</td>
-                        <td>2.5-4 hours</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sunday</strong></td>
-                        <td>Recovery/Skills</td>
-                        <td>45-60 min</td>
-                    </tr>
-                </tbody>
+                <thead><tr><th>Day</th><th>Session</th><th>Duration</th></tr></thead>
+                <tbody><tr>
+    <td><strong>Monday</strong></td>
+    <td>Rest</td>
+    <td>—</td>
+</tr>
+<tr>
+    <td><strong>Tuesday</strong></td>
+    <td>Intensity</td>
+    <td>60-75 min</td>
+</tr>
+<tr>
+    <td><strong>Wednesday</strong></td>
+    <td>Endurance Z2</td>
+    <td>60-90 min</td>
+</tr>
+<tr class="g-spot-row">
+    <td><strong>Thursday</strong></td>
+    <td>G Spot Work</td>
+    <td>60-75 min</td>
+</tr>
+<tr>
+    <td><strong>Friday</strong></td>
+    <td>Rest/Recovery</td>
+    <td>—</td>
+</tr>
+<tr>
+    <td><strong>Saturday</strong></td>
+    <td>Long Ride</td>
+    <td>2.5-4 hours</td>
+</tr>
+<tr>
+    <td><strong>Sunday</strong></td>
+    <td>Recovery/Skills</td>
+    <td>45-60 min</td>
+</tr></tbody>
             </table>
         </div>
-        <p>Recovery Weeks</p>
-        <p>Every third or fourth week is a recovery week with 30-40% reduced volume. <strong>Recovery makes you fast.</strong> Don't skip these.</p>
-        <p>A Note on Compliance vs. Perfection</p>
-        <p>You won't execute this plan perfectly. No one does.</p>
-        <p>Life happens. Work intrudes. Illness strikes. Weather doesn't cooperate. Kids need attention. That's reality.</p>
-        <p>The goal isn't perfection—it's <strong>consistency</strong>. Complete 85-90% of the prescribed workouts, and you'll arrive at Unbound Gravel 200 prepared. Complete 95%+, and you'll be exceptionally prepared.</p>
-        <p>Miss multiple weeks, skip the hard workouts, or constantly substitute 'easier' options, and the plan won't work. Not because the plan failed—because you didn't do it.</p>
-        <p><strong>Be honest with yourself about compliance.</strong></p>
-
+        
+        <div class="callout callout-info">
+    <div class="callout-title">Recovery Weeks</div>
+    <p>Every third or fourth week is a recovery week with 30-40% reduced volume. <strong>Recovery makes you fast.</strong> Don't skip these.</p>
+</div>
+        
+        <h3>A Note on Compliance vs. Perfection</h3>
+<p>You won't execute this plan perfectly. No one does.</p>
+<p>Life happens. Work intrudes. Illness strikes. Weather doesn't cooperate. Kids need attention. That's reality.</p>
+<p>The goal isn't perfection—it's <strong>consistency</strong>. Complete 85-90% of the prescribed workouts, and you'll arrive at Unbound Gravel 200 prepared. Complete 95%+, and you'll be exceptionally prepared.</p>
+<p>Miss multiple weeks, skip the hard workouts, or constantly substitute 'easier' options, and the plan won't work. Not because the plan failed—because you didn't do it.</p>
+<p><strong>Be honest with yourself about compliance.</strong></p>
     </div>
 </section>
 
-<!-- SECTION 03: BEFORE YOU START -->
 <section class="section" id="before">
     <div class="section-header">
         <span class="section-number">03</span>
         <h2>Before You Start</h2>
     </div>
-    <div class="section-content">        <div class="callout callout-danger">
-            <div class="callout-title">⚠️ Important</div>
-            <p>This should go without saying, but we'll say it anyway: <strong>training is hard</strong>. It puts considerable stress on your cardiovascular system, your musculoskeletal system, and your body's ability to recover and adapt.</p>
-        </div>
+    <div class="section-content">
         <div class="callout callout-danger">
-            <div class="callout-title">Cycling is Dangerous</div>
-            <p>Let's be clear: cycling is dangerous. People die every day riding their bikes. Cars hit cyclists. Cyclists crash on descents. Mechanical failures happen at speed. Group rides go wrong.
+    <div class="callout-title">⚠️ Important</div>
+    <p>This should go without saying, but we'll say it anyway: <strong>training is hard</strong>. It puts considerable stress on your cardiovascular system, your musculoskeletal system, and your body's ability to recover and adapt.</p>
+</div>
+<div class="callout callout-danger">
+    <div class="callout-title">Cycling is Dangerous</div>
+    <p>Let's be clear: cycling is dangerous. People die every day riding their bikes. Cars hit cyclists. Cyclists crash on descents. Mechanical failures happen at speed. Group rides go wrong.
 
 The risk is real. You're accepting that risk by choosing to train and race. We're not going to pretend otherwise or sugarcoat it.</p>
-        </div>
-        <h3>Health & Safety Check</h3>
+</div>
         <p>Ideally, you should get a physical before starting this plan. Have regular blood work done. Be confident you're healthy enough to handle the training load prescribed here.</p>
-        <p>If you have any concerns—chest pain, unusual shortness of breath, joint issues that worsen with activity, family history of heart problems—<strong>talk to a doctor before Week 1.</strong></p>
-        <p>If you're injured, sick, or compromised in some way, don't train. Fix the problem first, then train. Training through injury doesn't make you tough—it makes you stupid. You can't out-train a broken body.</p>
-        <h3>Safety Guidelines</h3>
-        <ul class="checklist">
-            <li><strong>Don't take stupid risks.</strong> That gravel descent at 40mph? Maybe slow down. That car approaching an intersection? Assume they don't see you.</li>
-            <li><strong>Don't antagonize vehicles.</strong> You might technically have the right of way. You're also on a 20-pound bike versus a 4,000-pound vehicle. Physics doesn't care about traffic law.</li>
-            <li><strong>Wear a helmet.</strong> Always. No exceptions. Get a good one. Replace it after any crash.</li>
-            <li><strong>Use lights.</strong> Front and rear, even during daylight. Visibility = survival.</li>
-            <li><strong>Ride predictably.</strong> Signal turns. Hold your line. Don't make sudden movements.</li>
-        </ul>
+<p>If you have any concerns—chest pain, unusual shortness of breath, joint issues that worsen with activity, family history of heart problems—<strong>talk to a doctor before Week 1.</strong></p>
+<p>If you're injured, sick, or compromised in some way, don't train. Fix the problem first, then train. Training through injury doesn't make you tough—it makes you stupid. You can't out-train a broken body.</p>
+        <p>That said, you can manage the risk. Here's how:</p>
+        <ul>
+<li><strong>Don't take stupid risks.</strong> That gravel descent at 40mph? Maybe slow down. That car approaching an intersection? Assume they don't see you.</li>
+<li><strong>Don't antagonize vehicles.</strong> You might technically have the right of way. You're also on a 20-pound bike versus a 4,000-pound vehicle. Physics doesn't care about traffic law.</li>
+<li><strong>Wear a helmet.</strong> Always. No exceptions. Get a good one. Replace it after any crash.</li>
+<li><strong>Use lights.</strong> Front and rear, even during daylight. Visibility = survival.</li>
+<li><strong>Ride predictably.</strong> Signal turns. Hold your line. Don't make sudden movements.</li>
+</ul>
+        <p>We can't make cycling safe. We can only make you aware that it isn't, and encourage you to ride accordingly.</p>
+        
         <h3>What You Need to Succeed</h3>
         <h4>Non-Negotiables:</h4>
-        <ul class="checklist">
-            <li>A power meter</li>
-            <li>A heart rate monitor</li>
-            <li>A bike set up correctly for gravel racing</li>
-            <li>Commitment to the full 12 weeks</li>
-            <li>Willingness to follow the plan as written</li>
-            <li>TrainingPeaks Premium (so your workouts sync to your device)</li>
-            <li>Smart trainer for indoor workouts</li>
-        </ul>
-        <h3>Equipment Requirements</h3>
+        <ul>
+<li>A power meter</li>
+<li>A heart rate monitor</li>
+<li>A bike set up correctly for gravel racing</li>
+<li>Commitment to the full 12 weeks</li>
+<li>Willingness to follow the plan as written</li>
+<li>TrainingPeaks Premium (so your workouts sync to your device)</li>
+<li>Smart trainer for indoor workouts</li>
+</ul>
+        
+        <h4>Equipment Requirements</h4>
         <p><strong>Mandatory:</strong></p>
         <ul>
-            <li><strong>GPS bike computer</strong> — For tracking outdoor workouts, following routes, and displaying structured workouts from TrainingPeaks.</li>
-            <li><strong>Power meter or heart rate monitor</strong> — You need objective data to execute the workouts correctly. Power is preferred (more precise, immediate feedback). Heart rate works but lags by 1-3 minutes.</li>
-            <li><strong>Bike fit</strong> — A poorly fitting bike will break you over 12 weeks of training and 200 miles of racing. Invest in a professional fit if you haven't already.</li>
-            <li><strong>Indoor training setup</strong> — At minimum: a basic trainer and a fan. Ideally: a smart trainer that controls resistance automatically.</li>
-            <li><strong>Reliable bike</strong> — Your race bike should be mechanically sound. Shifting should be crisp. Brakes should be powerful. Don't wait until race week to discover problems.</li>
-        </ul>
-        <p><strong>Week 1:</strong> Establish baseline FTP before training begins</p>
-        <p><strong>Week 6-7 (optional):</strong> Check progress if curious, but not required</p>
-        <p><strong>Week 11:</strong> Final test during taper to confirm fitness gains</p>
-        <p>Warm up thoroughly: 15-20 minutes progressive from Z1 to Z3</p>
-        <p>Include 3×1 minute at Z4-Z5 to open the legs</p>
-        <p>5 minutes easy recovery spin</p>
-        <p><strong>20 minutes all-out</strong>, best average power you can hold</p>
-        <p>Cool down 10-15 minutes easy</p>
-        <p>FTP = 20-minute average power × 0.95</p>
-
+<li><strong>GPS bike computer</strong> — For tracking outdoor workouts, following routes, and displaying structured workouts from TrainingPeaks.</li>
+<li><strong>Power meter or heart rate monitor</strong> — You need objective data to execute the workouts correctly. Power is preferred (more precise, immediate feedback). Heart rate works but lags by 1-3 minutes.</li>
+<li><strong>Bike fit</strong> — A poorly fitting bike will break you over 12 weeks of training and 200 miles of racing. Invest in a professional fit if you haven't already.</li>
+<li><strong>Indoor training setup</strong> — At minimum: a basic trainer and a fan. Ideally: a smart trainer that controls resistance automatically.</li>
+<li><strong>Reliable bike</strong> — Your race bike should be mechanically sound. Shifting should be crisp. Brakes should be powerful. Don't wait until race week to discover problems.</li>
+</ul>
+        
+        <h3>FTP Testing</h3>
+        <p><strong>Functional Threshold Power (FTP)</strong> is the cornerstone of this training plan. All your training zones are calculated as percentages of FTP. <strong>Wrong FTP = wrong zones = ineffective training.</strong></p>
+        
+        <h4>When to test:</h4>
+        <ul>
+<li><strong>Week 1:</strong> Establish baseline FTP before training begins</li>
+<li><strong>Week 6-7 (optional):</strong> Check progress if curious, but not required</li>
+<li><strong>Week 11:</strong> Final test during taper to confirm fitness gains</li>
+</ul>
+        
+        <h4>How to test (20-Minute Test):</h4>
+        <ol>
+<li>Warm up thoroughly: 15-20 minutes progressive from Z1 to Z3</li>
+<li>Include 3×1 minute at Z4-Z5 to open the legs</li>
+<li>5 minutes easy recovery spin</li>
+<li><strong>20 minutes all-out</strong>, best average power you can hold</li>
+<li>Cool down 10-15 minutes easy</li>
+</ol>
+        <p><strong>FTP = 20-minute average power × 0.95</strong></p>
+        
+        <div class="callout callout-warning">
+    <div class="callout-title">Execute the Test Correctly</div>
+    <p>Start conservatively in the first 5 minutes. Build into your effort. The last 5 minutes should be agonizing but sustainable. If you blow up at 15 minutes, you started too hard. The goal isn't heroics—it's an accurate number you can use for 6+ weeks of training.</p>
+</div>
     </div>
 </section>
 
-<!-- SECTION 04: HOW TRAINING WORKS -->
 <section class="section" id="how-training-works">
     <div class="section-header">
         <span class="section-number">04</span>
         <h2>How Training Works</h2>
     </div>
-    <div class="section-content">        <p>Before you start executing workouts, you need to understand how training works at a mechanical level. Not theory for theory's sake—practical understanding that changes how you approach every session.</p>
+    <div class="section-content">
+        <p>Before you start executing workouts, you need to understand how training works at a mechanical level. Not theory for theory's sake—practical understanding that changes how you approach every session.</p>
+        
         <h3>The Foundational Model: How Adaptation Works</h3>
         <h4>Step 1: Stress</h4>
-        <p>You apply training stress—a hard workout that exceeds your current capacity. This creates disruption: muscle fibers develop microtears, glycogen stores deplete, metabolic waste accumulates, cellular damage occurs. Your body registers this as a problem that needs solving.</p>
-        <h4>Step 2: Fatigue</h4>
-        <p>Immediately after training, you're weaker than before you started. Your muscles are damaged. Your fuel tanks are empty. Your nervous system is taxed. <strong>This is normal.</strong> Fatigue is the signal that triggers adaptation.</p>
-        <h4>Step 3: Recovery</h4>
-        <p>Given adequate rest, nutrition, and time, your body initiates repair: muscle fibers rebuild, mitochondria multiply, capillary density increases, glycogen storage expands, neurological efficiency improves.</p>
-        <h4>Step 4: Adaptation (Supercompensation)</h4>
-        <p>If recovery is complete, your body doesn't just return to baseline—it <strong>overshoots</strong>. This is called supercompensation: your body builds slightly more capacity than it had before.</p>
-        <h4>Step 5: Apply New Stress</h4>
-        <p>Once you've adapted, you apply a slightly larger stress. The cycle repeats. Over weeks and months, these small adaptations compound into meaningful fitness gains.</p>
+<p>You apply training stress—a hard workout that exceeds your current capacity. This creates disruption: muscle fibers develop microtears, glycogen stores deplete, metabolic waste accumulates, cellular damage occurs. Your body registers this as a problem that needs solving.</p>
+<h4>Step 2: Fatigue</h4>
+<p>Immediately after training, you're weaker than before you started. Your muscles are damaged. Your fuel tanks are empty. Your nervous system is taxed. <strong>This is normal.</strong> Fatigue is the signal that triggers adaptation.</p>
+<h4>Step 3: Recovery</h4>
+<p>Given adequate rest, nutrition, and time, your body initiates repair: muscle fibers rebuild, mitochondria multiply, capillary density increases, glycogen storage expands, neurological efficiency improves.</p>
+<h4>Step 4: Adaptation (Supercompensation)</h4>
+<p>If recovery is complete, your body doesn't just return to baseline—it <strong>overshoots</strong>. This is called supercompensation: your body builds slightly more capacity than it had before.</p>
+<h4>Step 5: Apply New Stress</h4>
+<p>Once you've adapted, you apply a slightly larger stress. The cycle repeats. Over weeks and months, these small adaptations compound into meaningful fitness gains.</p>
+        
         <h3>Where It Goes Wrong</h3>
         <div class="callout callout-warning">
-            <div class="callout-title">Insufficient Stress</div>
-            <p>If the workout is too easy, there's no disruption. No problem to solve. No adaptation triggered. You're just riding around.</p>
-        </div>
-        <div class="callout callout-danger">
-            <div class="callout-title">Insufficient Recovery</div>
-            <p>If you apply new stress before recovery is complete, you accumulate fatigue without adaptation. You're digging a hole, not building fitness.</p>
-        </div>
-        <div class="callout callout-warning">
-            <div class="callout-title">Inconsistent Stress</div>
-            <p>If you train sporadically—heroic efforts followed by weeks off—you never compound adaptations. You're starting over every time.</p>
-        </div>
-        <p><strong>Hard enough to trigger adaptation.</strong> Not so hard you can't recover.</p>
-        <p><strong>Sleep, nutrition, stress management</strong>—these aren't optional. They're where adaptation happens.</p>
-        <p><strong>Ten weeks of steady training</strong> beats four weeks of heroics followed by injury or burnout.</p>
-        <p><strong>Every completed workout adds to the total.</strong> Missed workouts don't just subtract—they prevent compounding.</p>
-        <p><strong>Meaningful adaptation takes weeks and months</strong>, not days. Trust the process.</p>
+    <div class="callout-title">Insufficient Stress</div>
+    <p>If the workout is too easy, there's no disruption. No problem to solve. No adaptation triggered. You're just riding around.</p>
+</div>
+<div class="callout callout-danger">
+    <div class="callout-title">Insufficient Recovery</div>
+    <p>If you apply new stress before recovery is complete, you accumulate fatigue without adaptation. You're digging a hole, not building fitness.</p>
+</div>
+<div class="callout callout-warning">
+    <div class="callout-title">Inconsistent Stress</div>
+    <p>If you train sporadically—heroic efforts followed by weeks off—you never compound adaptations. You're starting over every time.</p>
+</div>
+        
+        <h3>The Practical Rules</h3>
+        <ol>
+<li><strong>Hard enough to trigger adaptation.</strong> Not so hard you can't recover.</li>
+<li><strong>Sleep, nutrition, stress management</strong>—these aren't optional. They're where adaptation happens.</li>
+<li><strong>Ten weeks of steady training</strong> beats four weeks of heroics followed by injury or burnout.</li>
+<li><strong>Every completed workout adds to the total.</strong> Missed workouts don't just subtract—they prevent compounding.</li>
+<li><strong>Meaningful adaptation takes weeks and months</strong>, not days. Trust the process.</li>
+</ol>
+        
         <h3>Understanding the Phases</h3>
         <h4>Base (Weeks 1-3)</h4>
-        <p><strong>Goal:</strong> Build aerobic foundation and prepare for higher intensity work</p>
-        <p><strong>What you're doing:</strong> Long, steady endurance rides at Z2. Some tempo work to maintain feel for harder efforts. Focus on consistency and volume.</p>
-        <p><strong>Why:</strong> Before adding intensity, you need aerobic capacity. Z2 work builds mitochondria, capillary density, and fat-burning efficiency.</p>
-        <p><strong>How it feels:</strong> Manageable. You're not exhausted. If you feel crushed, you're going too hard.</p>
-        <h4>Build (Weeks 4-7)</h4>
-        <p><strong>Goal:</strong> Develop race-specific fitness at G Spot intensity</p>
-        <p><strong>What you're doing:</strong> Sustained efforts at 88-92% FTP. Long rides with embedded race-pace intervals. Some threshold work to raise FTP.</p>
-        <p><strong>Why:</strong> This is where you build the ability to hold 'uncomfortably sustainable' pace for hours. This is the core of gravel racing fitness.</p>
-        <p><strong>How it feels:</strong> Hard but purposeful. You're tired but recovering. Week 6 is a recovery week—use it.</p>
-        <h4>Peak (Weeks 8-10)</h4>
-        <p><strong>Goal:</strong> Maximum training load and race simulation</p>
-        <p><strong>What you're doing:</strong> Long rides approaching race distance. Big gear work. Some VO2max to maintain top-end. Week 9 recovery week.</p>
-        <p><strong>Why:</strong> This is where fitness peaks. You're simulating race demands to prove you can handle them.</p>
-        <p><strong>How it feels:</strong> This is the hardest stretch. You should feel the load. Week 9 gives you a breather before Week 10's final big push.</p>
-        <h4>Taper (Weeks 11-12)</h4>
-        <p><strong>Goal:</strong> Reduce fatigue while maintaining fitness</p>
-        <p><strong>What you're doing:</strong> Volume drops 30-50%. Intensity stays present but shortened. Final race prep.</p>
-        <p><strong>Why:</strong> Arrive at the start line fresh, not fatigued from training. Let your body express the fitness you built.</p>
-        <p><strong>How it feels:</strong> Restless. Anxious. Like you should be doing more. Resist. Trust the process.</p>
-
+<p><strong>Goal:</strong> Build aerobic foundation and prepare for higher intensity work</p>
+<p><strong>What you're doing:</strong> Long, steady endurance rides at Z2. Some tempo work to maintain feel for harder efforts. Focus on consistency and volume.</p>
+<p><strong>Why:</strong> Before adding intensity, you need aerobic capacity. Z2 work builds mitochondria, capillary density, and fat-burning efficiency.</p>
+<p><strong>How it feels:</strong> Manageable. You're not exhausted. If you feel crushed, you're going too hard.</p>
+<h4>Build (Weeks 4-7)</h4>
+<p><strong>Goal:</strong> Develop race-specific fitness at G Spot intensity</p>
+<p><strong>What you're doing:</strong> Sustained efforts at 88-92% FTP. Long rides with embedded race-pace intervals. Some threshold work to raise FTP.</p>
+<p><strong>Why:</strong> This is where you build the ability to hold 'uncomfortably sustainable' pace for hours. This is the core of gravel racing fitness.</p>
+<p><strong>How it feels:</strong> Hard but purposeful. You're tired but recovering. Week 6 is a recovery week—use it.</p>
+<h4>Peak (Weeks 8-10)</h4>
+<p><strong>Goal:</strong> Maximum training load and race simulation</p>
+<p><strong>What you're doing:</strong> Long rides approaching race distance. Big gear work. Some VO2max to maintain top-end. Week 9 recovery week.</p>
+<p><strong>Why:</strong> This is where fitness peaks. You're simulating race demands to prove you can handle them.</p>
+<p><strong>How it feels:</strong> This is the hardest stretch. You should feel the load. Week 9 gives you a breather before Week 10's final big push.</p>
+<h4>Taper (Weeks 11-12)</h4>
+<p><strong>Goal:</strong> Reduce fatigue while maintaining fitness</p>
+<p><strong>What you're doing:</strong> Volume drops 30-50%. Intensity stays present but shortened. Final race prep.</p>
+<p><strong>Why:</strong> Arrive at the start line fresh, not fatigued from training. Let your body express the fitness you built.</p>
+<p><strong>How it feels:</strong> Restless. Anxious. Like you should be doing more. Resist. Trust the process.</p>
     </div>
 </section>
 
-<!-- SECTION 05: TRAINING ZONES -->
 <section class="section" id="zones">
     <div class="section-header">
         <span class="section-number">05</span>
         <h2>Training Zones</h2>
     </div>
-    <div class="section-content">        <p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
+    <div class="section-content">
+        <p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
+        
+        <h3>The Point of Zones</h3>
         <p>Zones exist to quantify intensity and give you a common language for prescribing workouts.</p>
-        <p>But here's the paradox: <strong>the end goal of measuring intensity is to help you develop a feeling for intensity.</strong></p>
-        <p>You use power meters, heart rate monitors, and zone charts to develop an intuitive sense of effort.</p>
-        <p>Your subjective feeling is infinitely more valuable than numbered outputs based on incomplete data collection.</p>
-        <p><em>You're a special snowflake. Learn your snowflake.</em></p>
+<p>But here's the paradox: <strong>the end goal of measuring intensity is to help you develop a feeling for intensity.</strong></p>
+<p>You use power meters, heart rate monitors, and zone charts to develop an intuitive sense of effort.</p>
+<p>Your subjective feeling is infinitely more valuable than numbered outputs based on incomplete data collection.</p>
+<p><em>You're a special snowflake. Learn your snowflake.</em></p>
+        
         <h3>The Three Measurement Systems</h3>
         <h4>Power (% of FTP)</h4>
-        <p>Most precise system. Measures actual work output in watts. Immediate feedback. Not affected by heat, hydration, caffeine, or fatigue. <strong>This is the gold standard.</strong></p>
-        <h4>Heart Rate (% of HRmax)</h4>
-        <p>Secondary system. Lags behind power by 1-3 minutes. Affected by heat, hydration, caffeine, stress, illness, fatigue. Still useful for pacing long efforts.</p>
-        <h4>RPE (Rate of Perceived Exertion, 1-10 scale)</h4>
-        <p>Subjective. Your body's experience of the effort. Not precise. Always available. Sometimes more important than devices.</p>
+<p>Most precise system. Measures actual work output in watts. Immediate feedback. Not affected by heat, hydration, caffeine, or fatigue. <strong>This is the gold standard.</strong></p>
+<h4>Heart Rate (% of HRmax)</h4>
+<p>Secondary system. Lags behind power by 1-3 minutes. Affected by heat, hydration, caffeine, stress, illness, fatigue. Still useful for pacing long efforts.</p>
+<h4>RPE (Rate of Perceived Exertion, 1-10 scale)</h4>
+<p>Subjective. Your body's experience of the effort. Not precise. Always available. Sometimes more important than devices.</p>
+        
+        <div class="callout callout-info">
+    <div class="callout-title">The Ultimate Arbiter</div>
+    <p>If the numbers say one thing but your body says another, <strong>trust your body.</strong></p>
+</div>
+        
         <h3>The Zone Chart</h3>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Zone</th><th>Name</th><th>% FTP</th><th>% HRmax</th><th>RPE</th><th>Feel</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Z1</strong></td>
-                        <td>Active Recovery</td>
-                        <td><55%</td>
-                        <td><68%</td>
-                        <td>1-2</td>
-                        <td>Very easy, barely pedaling</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Z2</strong></td>
-                        <td>Endurance</td>
-                        <td>56-75%</td>
-                        <td>69-83%</td>
-                        <td>3-4</td>
-                        <td>Conversational, all day pace</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Z3</strong></td>
-                        <td>Tempo</td>
-                        <td>76-87%</td>
-                        <td>84-94%</td>
-                        <td>5-6</td>
-                        <td>Moderate effort, focused</td>
-                    </tr>
-                    <tr class="g-spot-row">
-                        <td><strong>G</strong></td>
-                        <td>G Spot</td>
-                        <td>88-92%</td>
-                        <td>92-96%</td>
-                        <td>6-7</td>
-                        <td>Uncomfortably sustainable</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Z4</strong></td>
-                        <td>Threshold</td>
-                        <td>93-105%</td>
-                        <td>95-100%</td>
-                        <td>7-8</td>
-                        <td>Hard, time-limited</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Z5</strong></td>
-                        <td>VO2max</td>
-                        <td>106-120%</td>
-                        <td>100%+</td>
-                        <td>9</td>
-                        <td>Very hard, gasping</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Z6</strong></td>
-                        <td>Anaerobic</td>
-                        <td>>120%</td>
-                        <td>N/A*</td>
-                        <td>10</td>
-                        <td>Maximal, unsustainable</td>
-                    </tr>
-                </tbody>
+                <thead><tr><th>Zone</th><th>Name</th><th>% FTP</th><th>% HRmax</th><th>RPE</th><th>Feel</th></tr></thead>
+                <tbody><tr>
+    <td><strong>Z1</strong></td>
+    <td>Active Recovery</td>
+    <td><55%</td>
+    <td><68%</td>
+    <td>1-2</td>
+    <td>Very easy, barely pedaling</td>
+</tr>
+<tr>
+    <td><strong>Z2</strong></td>
+    <td>Endurance</td>
+    <td>56-75%</td>
+    <td>69-83%</td>
+    <td>3-4</td>
+    <td>Conversational, all day pace</td>
+</tr>
+<tr>
+    <td><strong>Z3</strong></td>
+    <td>Tempo</td>
+    <td>76-87%</td>
+    <td>84-94%</td>
+    <td>5-6</td>
+    <td>Moderate effort, focused</td>
+</tr>
+<tr class="g-spot-row">
+    <td><strong>G</strong></td>
+    <td>G Spot</td>
+    <td>88-92%</td>
+    <td>92-96%</td>
+    <td>6-7</td>
+    <td>Uncomfortably sustainable</td>
+</tr>
+<tr>
+    <td><strong>Z4</strong></td>
+    <td>Threshold</td>
+    <td>93-105%</td>
+    <td>95-100%</td>
+    <td>7-8</td>
+    <td>Hard, time-limited</td>
+</tr>
+<tr>
+    <td><strong>Z5</strong></td>
+    <td>VO2max</td>
+    <td>106-120%</td>
+    <td>100%+</td>
+    <td>9</td>
+    <td>Very hard, gasping</td>
+</tr>
+<tr>
+    <td><strong>Z6</strong></td>
+    <td>Anaerobic</td>
+    <td>>120%</td>
+    <td>N/A*</td>
+    <td>10</td>
+    <td>Maximal, unsustainable</td>
+</tr></tbody>
             </table>
         </div>
-        <p>The G Spot (88-92% FTP)</p>
-        <p>This is our term for the intensity zone optimized for long gravel racing. Hard enough to move fast and stay with groups. Sustainable enough to hold for extended periods. <strong>This is where you'll spend most of your race.</strong></p>
-        <p>The Most Common Mistake</p>
-        <p>Most people train too hard on easy days. Zone 2 should feel <strong>genuinely conversational</strong>. If you're breathing hard, you're in Z3. Fix this. It's the most common training mistake.</p>
+        
+        <div class="callout callout-success">
+    <div class="callout-title">The G Spot (88-92% FTP)</div>
+    <p>This is our term for the intensity zone optimized for long gravel racing. Hard enough to move fast and stay with groups. Sustainable enough to hold for extended periods. <strong>This is where you'll spend most of your race.</strong></p>
+</div>
+        
+        <h3>Critical Notes on Using Zones</h3>
+        <div class="callout callout-danger">
+    <div class="callout-title">The Most Common Mistake</div>
+    <p>Most people train too hard on easy days. Zone 2 should feel <strong>genuinely conversational</strong>. If you're breathing hard, you're in Z3. Fix this. It's the most common training mistake.</p>
+</div>
         <p><strong>Zones describe what you did, not a rigid target you must hit.</strong> You're targeting a range, not a precise number.</p>
-        <p><strong>Polarize your training.</strong> Easy days truly easy (Z1-Z2), hard days truly hard (Z4-Z6). Very little time in Z3.</p>
-        <p><strong>Cross-reference all three metrics.</strong> Power meters can lie. Heart rate can be misleading. Your body doesn't lie.</p>
-        <p><strong>When they align, you're dialed in. When they conflict, trust RPE.</strong></p>
+<p><strong>Polarize your training.</strong> Easy days truly easy (Z1-Z2), hard days truly hard (Z4-Z6). Very little time in Z3.</p>
+<p><strong>Cross-reference all three metrics.</strong> Power meters can lie. Heart rate can be misleading. Your body doesn't lie.</p>
+<p><strong>When they align, you're dialed in. When they conflict, trust RPE.</strong></p>
+        
+        <h3>The Bottom Line on Zones</h3>
         <p>Zones are tools, not masters. Learn them. Use them. But develop your intuition so you can ride by feel when devices fail. <strong>Power + Heart Rate + RPE = complete picture.</strong></p>
-
     </div>
 </section>
 
-<!-- SECTION 06: WORKOUT EXECUTION -->
 <section class="section" id="execution">
     <div class="section-header">
         <span class="section-number">06</span>
         <h2>Workout Execution</h2>
     </div>
-    <div class="section-content">        <p>You've got a plan. You understand the fundamentals. You know what the zones mean. None of that matters if you can't execute the workouts correctly.</p>
-        <p>Tuesday: 3×15 min threshold @ 95-100% FTP, 8 min recovery between intervals</p>
-        <p>You skip the warmup because you're running late</p>
-        <p>Interval 1: You go out at 105% FTP because you feel good</p>
-        <p>Interval 2: You're struggling to hold 95%, questioning your FTP</p>
-        <p>Interval 3: You bail at 10 minutes because you're cooked</p>
-        <p>You skip the cooldown and immediately start checking Instagram</p>
-        <p>Incomplete workout, accumulated fatigue, no meaningful adaptation, compromised recovery for Wednesday's ride.</p>
+    <div class="section-content">
+        <p>You've got a plan. You understand the fundamentals. You know what the zones mean. None of that matters if you can't execute the workouts correctly.</p>
+        
+        <h3>The Execution Gap</h3>
+        <p><strong>The plan says:</strong> "Tuesday: 3×15 min threshold @ 95-100% FTP, 8 min recovery between intervals"</p>
+        <p><strong>What actually happens:</strong></p>
+        <ul>
+<li>You skip the warmup because you're running late</li>
+<li>Interval 1: You go out at 105% FTP because you feel good</li>
+<li>Interval 2: You're struggling to hold 95%, questioning your FTP</li>
+<li>Interval 3: You bail at 10 minutes because you're cooked</li>
+<li>You skip the cooldown and immediately start checking Instagram</li>
+</ul>
+        <p><strong>Result:</strong> Incomplete workout, accumulated fatigue, no meaningful adaptation, compromised recovery for Wednesday's ride.</p>
+        
         <h3>Universal Execution Rules</h3>
         <h4>Always Warm Up</h4>
-        <p>For intensity sessions: 15-20 minutes Z1→Z2→Z3, include 3×1 min at Z3-Z4 to 'open the legs', 2-3 minutes easy spin before first work interval. Cold muscles don't produce power efficiently.</p>
-        <h4>Execute What's Prescribed</h4>
-        <p>Execute what's prescribed. Not more. Not less. Trust the plan. Adding volume or intensity might feel productive, but it accumulates fatigue and ruins tomorrow's workout.</p>
-        <h4>Pace for Completion</h4>
-        <p>The goal is <strong>highest average power across the entire set</strong>, not crushing the first interval then dying. Start conservatively. Finish strong. Complete the set.</p>
+<p>For intensity sessions: 15-20 minutes Z1→Z2→Z3, include 3×1 min at Z3-Z4 to 'open the legs', 2-3 minutes easy spin before first work interval. Cold muscles don't produce power efficiently.</p>
+<h4>Execute What's Prescribed</h4>
+<p>Execute what's prescribed. Not more. Not less. Trust the plan. Adding volume or intensity might feel productive, but it accumulates fatigue and ruins tomorrow's workout.</p>
+<h4>Pace for Completion</h4>
+<p>The goal is <strong>highest average power across the entire set</strong>, not crushing the first interval then dying. Start conservatively. Finish strong. Complete the set.</p>
+        
+        <div class="callout callout-warning">
+    <div class="callout-title">The Rule</div>
+    <p>Execute what's prescribed. Not more. Not less. Trust the plan. Adding volume or intensity might feel productive, but it accumulates fatigue, compromises recovery, and ruins tomorrow's workout.</p>
+</div>
+        
         <h3>Zone-Specific Execution</h3>
         <h4>Z2 (Endurance)</h4>
-        <p><strong>Target:</strong> 56-75% FTP, RPE 3-4, conversational</p>
-        <p><strong>How to:</strong></p>
-        <ul>
-            <li>Ride steady, no surges</li>
-            <li>Should feel easy enough to go for hours</li>
-            <li>Full sentences possible</li>
-            <li>Nose breathing (if you can't, you're too hard)</li>
-        </ul>
-        <p><strong>Common mistakes:</strong> Drifting into Z3 because you're bored. Turning every endurance ride into a tempo ride.</p>
-        <p><strong>Fix:</strong> Discipline. Easy means easy. This is 70-80% of your training volume. Protect it.</p>
-        <h4>G Spot (88-92% FTP)</h4>
-        <p><strong>Target:</strong> 88-92% FTP, RPE 6-7, 'uncomfortably sustainable'</p>
-        <p><strong>How to:</strong></p>
-        <ul>
-            <li>Stay seated, control breathing</li>
-            <li>Hard enough to hurt, easy enough to repeat</li>
-            <li>Could talk in short phrases but wouldn't want to</li>
-            <li>Fuel properly: 60-80g carbs/hour</li>
-        </ul>
-        <p><strong>Common mistakes:</strong> Pushing into threshold (93%+). Not fueling adequately. Letting Z2 rides drift here accidentally.</p>
-        <p><strong>Fix:</strong> This is intentional race-pace work, not your default easy ride. Do it 2-3 times per week during build phase.</p>
-        <h4>Threshold (93-105% FTP)</h4>
-        <p><strong>Target:</strong> 95-100% FTP, RPE 7-8, very hard but controlled</p>
-        <p><strong>How to:</strong></p>
-        <ul>
-            <li>Goal: 30-60 min total time-in-zone per session</li>
-            <li>Even intervals (2×20, 3×15, 4×12) beat one heroic 40-minute effort</li>
-            <li>Start at 95%, build into rhythm, settle at 97-98%</li>
-        </ul>
-        <h4>VO2max (110-120% FTP)</h4>
-        <p><strong>Target:</strong> 110-120% FTP, RPE 9, gasping, burning legs, maximal but repeatable</p>
-        <p><strong>How to:</strong></p>
-        <ul>
-            <li>Warm-up is critical: 20-25 min progressive with 3×1 min openers</li>
-            <li>Hit the target from the start</li>
-            <li>Full recovery between: 4-5 min Z1, heart rate must drop below 60% max</li>
-            <li>Stop if power drops >10% on any interval</li>
-        </ul>
-        <p>Interval sessions (G Spot, threshold, VO2max)</p>
-        <p>Short workouts (<90 minutes)</p>
-        <p>Bad weather</p>
-        <p>Time-crunched days</p>
-        <p>Long endurance rides (2+ hours)</p>
-        <p>Skills practice</p>
-        <p>Mental freshness</p>
-        <p>Terrain-specific preparation</p>
-        <p>Roughly 60% indoor, 40% outdoor during base/build. Shifts to 70% outdoor during peak phase.</p>
-        <p><strong>Illness:</strong> If sick above the neck, reduce intensity by one zone. If sick below the neck, skip entirely.</p>
-        <p><strong>Injury:</strong> If something hurts, stop.</p>
-        <p><strong>Extreme fatigue:</strong> If you're consistently unable to hit targets, you're either under-recovered or FTP is set too high.</p>
-        <p><strong>Life stress:</strong> Major work deadlines, family emergencies, sleep deprivation—these all compromise training.</p>
-        <p><strong>Reduce volume, not intensity:</strong> Cutting 90 minutes to 60 while maintaining intervals is better than doing full 90 at reduced intensity.</p>
-        <p><strong>Substitute, don't skip:</strong> If you can't do the prescribed workout, do something. Even 30 minutes easy is better than nothing.</p>
-        <p>One missed workout won't derail your plan. Two consecutive should trigger a conversation with yourself. Three consecutive means something fundamental isn't working—fix it.</p>
+<p><strong>Target:</strong> 56-75% FTP, RPE 3-4, conversational</p>
+<p><strong>How to execute:</strong></p>
+<ul>
+<li>Ride steady, no surges</li>
+<li>Should feel easy enough to go for hours</li>
+<li>Full sentences possible</li>
+<li>Nose breathing (if you can't, you're too hard)</li>
+</ul>
+<p><strong>Common mistakes:</strong> Drifting into Z3 because you're bored. Turning every endurance ride into a tempo ride.</p>
+<p><strong>The fix:</strong> Discipline. Easy means easy. This is 70-80% of your training volume. Protect it.</p>
 
+<h4>G Spot (88-92% FTP)</h4>
+<p><strong>Target:</strong> 88-92% FTP, RPE 6-7, 'uncomfortably sustainable'</p>
+<p><strong>How to execute:</strong></p>
+<ul>
+<li>Stay seated, control breathing</li>
+<li>Hard enough to hurt, easy enough to repeat</li>
+<li>Could talk in short phrases but wouldn't want to</li>
+<li>Fuel properly: 60-80g carbs/hour</li>
+</ul>
+<p><strong>Common mistakes:</strong> Pushing into threshold (93%+). Not fueling adequately. Letting Z2 rides drift here accidentally.</p>
+<p><strong>The fix:</strong> This is intentional race-pace work, not your default easy ride. Do it 2-3 times per week during build phase.</p>
+
+<h4>Threshold (93-105% FTP)</h4>
+<p><strong>Target:</strong> 95-100% FTP, RPE 7-8, very hard but controlled</p>
+<p><strong>How to execute:</strong></p>
+<ul>
+<li>Goal: 30-60 min total time-in-zone per session</li>
+<li>Even intervals (2×20, 3×15, 4×12) beat one heroic 40-minute effort</li>
+<li>Start at 95%, build into rhythm, settle at 97-98%</li>
+</ul>
+
+
+<p><strong>Success looks like:</strong> All intervals completed at target, power consistent (±3%), RPE 7-8, interval 3 felt hardest but you finished strong.</p>
+<h4>VO2max (110-120% FTP)</h4>
+<p><strong>Target:</strong> 110-120% FTP, RPE 9, gasping, burning legs, maximal but repeatable</p>
+<p><strong>How to execute:</strong></p>
+<ul>
+<li>Warm-up is critical: 20-25 min progressive with 3×1 min openers</li>
+<li>Hit the target from the start</li>
+<li>Full recovery between: 4-5 min Z1, heart rate must drop below 60% max</li>
+<li>Stop if power drops >10% on any interval</li>
+</ul>
+
+
+
+        
+        <h3>Indoor vs Outdoor Workouts</h3>
+        <p><strong>When to ride indoors:</strong></p>
+        <ul>
+<li>Interval sessions (G Spot, threshold, VO2max)</li>
+<li>Short workouts (<90 minutes)</li>
+<li>Bad weather</li>
+<li>Time-crunched days</li>
+</ul>
+        <p><strong>When to ride outdoors:</strong></p>
+        <ul>
+<li>Long endurance rides (2+ hours)</li>
+<li>Skills practice</li>
+<li>Mental freshness</li>
+<li>Terrain-specific preparation</li>
+</ul>
+        <p><strong>The balance:</strong> Roughly 60% indoor, 40% outdoor during base/build. Shifts to 70% outdoor during peak phase.</p>
+        
+        <h3>When and How to Modify Workouts</h3>
+        <p><strong>When modification is appropriate:</strong></p>
+        <ul>
+<li><strong>Illness:</strong> If sick above the neck, reduce intensity by one zone. If sick below the neck, skip entirely.</li>
+<li><strong>Injury:</strong> If something hurts, stop.</li>
+<li><strong>Extreme fatigue:</strong> If you're consistently unable to hit targets, you're either under-recovered or FTP is set too high.</li>
+<li><strong>Life stress:</strong> Major work deadlines, family emergencies, sleep deprivation—these all compromise training.</li>
+</ul>
+        <p><strong>How to modify intelligently:</strong></p>
+        <ul>
+<li><strong>Reduce volume, not intensity:</strong> Cutting 90 minutes to 60 while maintaining intervals is better than doing full 90 at reduced intensity.</li>
+<li><strong>Substitute, don't skip:</strong> If you can't do the prescribed workout, do something. Even 30 minutes easy is better than nothing.</li>
+</ul>
+        
+        <div class="callout callout-info">
+    <div class="callout-title">The Rule of Missed Workouts</div>
+    <p>One missed workout won't derail your plan. Two consecutive should trigger a conversation with yourself. Three consecutive means something fundamental isn't working—fix it.</p>
+</div>
     </div>
 </section>
 
-<!-- SECTION 07: RECOVERY & HRV -->
 <section class="section" id="recovery">
     <div class="section-header">
         <span class="section-number">07</span>
         <h2>Recovery & HRV</h2>
     </div>
-    <div class="section-content">        <p>Recovery isn't passive. It's active work that determines whether tomorrow's workout is productive or garbage.</p>
+    <div class="section-content">
+        <p>Recovery isn't passive. It's active work that determines whether tomorrow's workout is productive or garbage.</p>
+        
         <h3>Recovery Protocol</h3>
         <h4>Immediately post-workout (0-30 min)</h4>
-        <ul>
-            <li>10-15 minute cooldown spin (Z1)</li>
-            <li>Consume 20-30g protein + 60-80g carbs within 30 minutes</li>
-            <li>Rehydrate: 16-24 oz water or electrolyte drink</li>
-        </ul>
-        <h4>Within 2 hours</h4>
-        <ul>
-            <li>Full meal with protein, carbs, vegetables</li>
-            <li>Continue hydrating (urine should be pale yellow)</li>
-        </ul>
-        <h4>Same day</h4>
-        <ul>
-            <li>Light movement (walk, easy spin, stretching)</li>
-            <li>Foam rolling for hard sessions</li>
-            <li>Avoid sitting for extended periods</li>
-        </ul>
-        <h4>That night</h4>
-        <ul>
-            <li><strong>7-9 hours of sleep (non-negotiable)</strong></li>
-            <li>Keep room cool and dark</li>
-            <li>Avoid screens 30 minutes before bed</li>
-        </ul>
-        <h4>Next day</h4>
-        <ul>
-            <li>Assess readiness: resting heart rate, legs feel, motivation</li>
-            <li>Adjust today's workout if needed</li>
-        </ul>
-        <p><strong>Recovery makes you fast.</strong> Training just provides the stimulus. Don't skip the recovery.</p>
+<ul>
+<li>10-15 minute cooldown spin (Z1)</li>
+<li>Consume 20-30g protein + 60-80g carbs within 30 minutes</li>
+<li>Rehydrate: 16-24 oz water or electrolyte drink</li>
+</ul>
+<h4>Within 2 hours</h4>
+<ul>
+<li>Full meal with protein, carbs, vegetables</li>
+<li>Continue hydrating (urine should be pale yellow)</li>
+</ul>
+<h4>Same day</h4>
+<ul>
+<li>Light movement (walk, easy spin, stretching)</li>
+<li>Foam rolling for hard sessions</li>
+<li>Avoid sitting for extended periods</li>
+</ul>
+<h4>That night</h4>
+<ul>
+<li><strong>7-9 hours of sleep (non-negotiable)</strong></li>
+<li>Keep room cool and dark</li>
+<li>Avoid screens 30 minutes before bed</li>
+</ul>
+<h4>Next day</h4>
+<ul>
+<li>Assess readiness: resting heart rate, legs feel, motivation</li>
+<li>Adjust today's workout if needed</li>
+</ul>
+        
+        <div class="callout callout-success">
+    <div class="callout-title">The Truth About Recovery</div>
+    <p><strong>Recovery makes you fast.</strong> Training just provides the stimulus. Don't skip the recovery.</p>
+</div>
+        
+        <h3>HRV: What It Is, What It Isn't, and How to Use It</h3>
         <p>HRV measures the variation in time between heartbeats. A healthy, recovered nervous system produces variable gaps. Higher HRV generally indicates your parasympathetic nervous system is dominant—your body is recovered and ready for stress.</p>
-        <p><strong>Tracking trends:</strong> A single reading means almost nothing. But 7-day rolling average tells you if your body is absorbing training or accumulating fatigue.</p>
-        <p><strong>Tiebreaker decisions:</strong> You wake up feeling 'meh.' Check HRV. If suppressed, take the easy day.</p>
-        <p><strong>Early warning system:</strong> HRV often drops 24-48 hours before you feel sick.</p>
-        <p><strong>Predicting performance:</strong> High HRV doesn't mean you'll crush your intervals today.</p>
-        <p><strong>Daily decision-making:</strong> Never cancel a workout based on one reading.</p>
-        <p><strong>Comparing to others:</strong> Your HRV is only meaningful relative to YOUR baseline.</p>
-        <p><strong>Establish baseline:</strong> Measure every morning for 2-3 weeks. Same conditions: immediately upon waking, before coffee, before phone.</p>
-        <p><strong>Watch the trend:</strong> Daily fluctuations of 5-10% are normal. Pay attention to 7-day average trending down for 2+ weeks.</p>
-        <p><strong>Use as tiebreaker:</strong> Feel bad + HRV suppressed = easy day. Feel bad + HRV normal = probably just fatigue, try the workout.</p>
-        <p><strong>Don't overthink:</strong> Check it every morning, glance at the trend once a week, otherwise ignore it.</p>
-        <p>HRV4Training (most research-backed), Elite HRV (good free option), Whoop (expensive but automatic), Oura Ring (convenient), Garmin (if you have compatible watch).</p>
-
+        
+        <h4>What HRV Is Good For</h4>
+        <ul>
+<li><strong>Tracking trends:</strong> A single reading means almost nothing. But 7-day rolling average tells you if your body is absorbing training or accumulating fatigue.</li>
+<li><strong>Tiebreaker decisions:</strong> You wake up feeling 'meh.' Check HRV. If suppressed, take the easy day.</li>
+<li><strong>Early warning system:</strong> HRV often drops 24-48 hours before you feel sick.</li>
+</ul>
+        
+        <h4>What HRV Is NOT Good For</h4>
+        <ul>
+<li><strong>Predicting performance:</strong> High HRV doesn't mean you'll crush your intervals today.</li>
+<li><strong>Daily decision-making:</strong> Never cancel a workout based on one reading.</li>
+<li><strong>Comparing to others:</strong> Your HRV is only meaningful relative to YOUR baseline.</li>
+</ul>
+        
+        <h4>How to Actually Use HRV</h4>
+        <ol>
+<li><strong>Establish baseline:</strong> Measure every morning for 2-3 weeks. Same conditions: immediately upon waking, before coffee, before phone.</li>
+<li><strong>Watch the trend:</strong> Daily fluctuations of 5-10% are normal. Pay attention to 7-day average trending down for 2+ weeks.</li>
+<li><strong>Use as tiebreaker:</strong> Feel bad + HRV suppressed = easy day. Feel bad + HRV normal = probably just fatigue, try the workout.</li>
+<li><strong>Don't overthink:</strong> Check it every morning, glance at the trend once a week, otherwise ignore it.</li>
+</ol>
+        
+        <div class="callout callout-info">
+    <div class="callout-title">Apps That Work</div>
+    <p>HRV4Training (most research-backed), Elite HRV (good free option), Whoop (expensive but automatic), Oura Ring (convenient), Garmin (if you have compatible watch).</p>
+</div>
     </div>
 </section>
 
-<!-- SECTION 08: STRENGTH TRAINING -->
 <section class="section" id="strength">
     <div class="section-header">
         <span class="section-number">08</span>
         <h2>Strength Training</h2>
     </div>
-    <div class="section-content">        <p>Long neglected by endurance athletes, strength training has finally gotten the attention it deserves. The research is clear: stronger athletes perform better, get injured less, and extend their careers.</p>
-        <p><strong>Improved movement economy.</strong> Stronger muscles require less effort to produce the same output.</p>
-        <p><strong>Better force production.</strong> Stronger muscles generate more force per contraction.</p>
-        <p><strong>Enhanced muscle activation.</strong> Strength training improves your nervous system's ability to recruit muscle fibers.</p>
-        <p><strong>Greater explosiveness.</strong> Accelerations out of corners, punchy climbs, surges to close gaps.</p>
-        <p><strong>Increased training capacity.</strong> A stronger body can absorb more training stress and recover faster.</p>
-        <p><strong>Joint stability.</strong> Stronger muscles stabilize joints through their full range of motion.</p>
-        <p><strong>Muscle balance.</strong> Cycling creates imbalances—strong quads, weak glutes, tight hip flexors. Strength training addresses these.</p>
-        <p><strong>Resilience.</strong> A stronger body can handle the unexpected—a crash, a weird landing, an awkward dismount.</p>
+    <div class="section-content">
+        <p>Long neglected by endurance athletes, strength training has finally gotten the attention it deserves. The research is clear: stronger athletes perform better, get injured less, and extend their careers.</p>
+        
+        <h3>The Performance Benefits</h3>
+        <ul>
+<li><strong>Improved movement economy.</strong> Stronger muscles require less effort to produce the same output.</li>
+<li><strong>Better force production.</strong> Stronger muscles generate more force per contraction.</li>
+<li><strong>Enhanced muscle activation.</strong> Strength training improves your nervous system's ability to recruit muscle fibers.</li>
+<li><strong>Greater explosiveness.</strong> Accelerations out of corners, punchy climbs, surges to close gaps.</li>
+<li><strong>Increased training capacity.</strong> A stronger body can absorb more training stress and recover faster.</li>
+</ul>
+        
+        <h3>The Injury Prevention Benefits</h3>
+        <ul>
+<li><strong>Joint stability.</strong> Stronger muscles stabilize joints through their full range of motion.</li>
+<li><strong>Muscle balance.</strong> Cycling creates imbalances—strong quads, weak glutes, tight hip flexors. Strength training addresses these.</li>
+<li><strong>Resilience.</strong> A stronger body can handle the unexpected—a crash, a weird landing, an awkward dismount.</li>
+</ul>
+        
+        <h3>Here's My Policy</h3>
+        <h4>Mobility and stability work: Do it year-round.</h4>
         <p>Mobility and stability work: Do it year-round. 10-15 minutes of targeted mobility work, 2-3 times per week. Hip flexor stretches, glute activation, core stability, thoracic mobility. This is 'prehab'—preventing injuries before they happen.</p>
+        
+        <h4>Full periodized strength training: This is a skill.</h4>
         <p>Full periodized strength training requires: Time (16-20+ weeks), Proper instruction, Gym access, Energy that could go to cycling. If you can't commit to all four, focus on mobility and core stability instead.</p>
-        <p><strong>The Bottom Line:</strong> Strength training makes you faster and keeps you healthy. But it's a long-term investment, not a quick fix.
-During this 12-week block, prioritize: 1) Mobility/stability work (non-negotiable), 2) Basic core stability (highly recommended), 3) Maintenance strength if you already lift (continue what you're doing)
-<strong>Don't try to build a strength base while preparing for a race. Do one thing well, not two things poorly.</strong></p>
-        <p><strong>You cannot start this from scratch during a 12-week race prep.</strong> If you've never done structured strength training, trying to cram it into your race preparation is a recipe for excessive fatigue, DOMS that ruins key workouts, injury from poor form, and mental bandwidth overload.</p>
-
+        
+        <div class="callout callout-danger">
+    <div class="callout-title">Important</div>
+    <p><strong>You cannot start this from scratch during a 12-week race prep.</strong> If you've never done structured strength training, trying to cram it into your race preparation is a recipe for excessive fatigue, DOMS that ruins key workouts, injury from poor form, and mental bandwidth overload.</p>
+</div>
+        
+        <h3>What To Actually Do</h3>
+        <h4>If you already have a strength training habit:</h4>
+<p>Continue it. Shift toward maintenance phase as you enter peak training (weeks 8-12). Reduce volume, maintain intensity, prioritize recovery.</p>
+<p>Typical maintenance: 2 sessions/week, compound movements, moderate weight, 2-3 sets of 6-8 reps.</p>
+        <h4>If you don't have a strength training habit:</h4>
+<p>Don't start a full program now. Instead:</p>
+<ul>
+<li><strong>Add mobility work immediately.</strong> 10-15 minutes, 3x/week. Hip flexors, glutes, thoracic spine, ankles.</li>
+<li><strong>Add basic core stability.</strong> Planks, dead bugs, bird dogs. 10 minutes, 2-3x/week.</li>
+<li><strong>Add bodyweight movements if you have bandwidth.</strong> Squats, lunges, glute bridges, push-ups. 15-20 minutes, 2x/week.</li>
+<li><strong>Plan a proper strength block for your off-season.</strong> After this race, commit to 12-16 weeks of structured strength training.</li>
+</ul>
+        <h3>The Bottom Line</h3>
+        <p>Strength training makes you faster and keeps you healthy. But it's a long-term investment, not a quick fix.</p>
+<p>During this 12-week block, prioritize: 1) Mobility/stability work (non-negotiable), 2) Basic core stability (highly recommended), 3) Maintenance strength if you already lift (continue what you're doing)</p>
+<p><strong>Don't try to build a strength base while preparing for a race. Do one thing well, not two things poorly.</strong></p>
     </div>
 </section>
 
-<!-- SECTION 09: GRAVEL SKILLS -->
 <section class="section" id="skills">
     <div class="section-header">
         <span class="section-number">09</span>
         <h2>Gravel Skills</h2>
     </div>
-    <div class="section-content">        <p>Fitness gets you to the race. Skills get you to the finish. Here are the specific techniques that separate confident gravel racers from nervous ones.</p>
+    <div class="section-content">
+        <p>Fitness gets you to the race. Skills get you to the finish. Here are the specific techniques that separate confident gravel racers from nervous ones.</p>
+        
         <div class="skills-grid">
             <div class="skill-item">
-                <h4>Skill 1: Cadence Control</h4>
-                <p><strong>Why:</strong> Different cadences recruit different muscle fiber types. Optimizing cadence for terrain saves energy over long distances.</p>
-                <p><strong>Technique:</strong> Slow twitch fibers (<80 rpm) for maintaining speed on flats. Fast twitch fibers (>95 rpm) for changing speed and steep hills.</p>
-                <p><strong>Practice:</strong> On training rides, consciously vary your cadence. Climb at 60 rpm, then 90 rpm. Notice the difference.</p>
-                <p><strong>Cue:</strong> Flat = lower, Punchy = higher</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 2: Loose Surface Cornering</h4>
-                <p><strong>Why:</strong> Crashes end races. Confident cornering lets you maintain speed through technical sections while others slow to a crawl.</p>
-                <p><strong>Technique:</strong> Unlike road where you lean your body into turns, gravel requires keeping weight over the tires. <strong>Lean the bike, not your body.</strong> Stand up, drop your heels, drive front tire into ground, look through the turn.</p>
-                <p><strong>Practice:</strong> Find a gravel parking lot. Start at 50% of comfortable speed. Repeat 500 times.</p>
-                <p><strong>Cue:</strong> Lean the bike, not the body</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 3: Braking</h4>
-                <p><strong>Why:</strong> Panic braking on loose surfaces is how people crash. Proper technique keeps you upright.</p>
-                <p><strong>Technique:</strong> Feather brakes gradually—no death grip. Front brake for most stopping. Rear brake for adjustments. Brake <em>before</em> the turn, not during.</p>
-                <p><strong>Practice:</strong> Practice controlled rear-wheel skidding on low-risk gravel roads. Get comfortable with the limits.</p>
-                <p><strong>Cue:</strong> Feather before the turn, commit through it</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 4: Steep Climbs (15-25%)</h4>
-                <p><strong>Why:</strong> Gravel courses include 'wall' climbs that require different technique than normal climbing.</p>
-                <p><strong>Technique:</strong> Keep momentum going in. Stay seated for rear wheel traction. Weight over rear wheel, hands light on bars. Standing shifts weight forward and loses traction.</p>
-                <p><strong>Practice:</strong> Find a steep loose climb. Practice seated climbing with weight back.</p>
-                <p><strong>Cue:</strong> Momentum in, weight back, stay seated</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 5: Eating While Riding</h4>
-                <p><strong>Why:</strong> In a race lasting 8+ hours, you'll consume thousands of calories. If you can't eat while riding, you'll either stop frequently or bonk.</p>
-                <p><strong>Technique:</strong> Unwrap bars before you leave, or use easy-open packaging. Practice eating with both hands.</p>
-                <p><strong>Practice:</strong> On every training ride over 90 minutes, eat something while actually pedaling.</p>
-                <p><strong>Cue:</strong> Flat road first, then rough. Both hands work</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 6: Group Riding & Pace Line Dynamics</h4>
-                <p><strong>Why:</strong> Drafting saves roughly 25-30% of energy. Over 200 miles, that's enormous.</p>
-                <p><strong>Technique:</strong> Smooth, predictable movements. No sudden braking, no surging, no erratic lines. Communicate about hazards.</p>
-                <p><strong>Practice:</strong> Join group rides. Focus on smooth, predictable movements. Practice maintaining 2-3 bike length gap.</p>
-                <p><strong>Cue:</strong> Smooth pulls, steady pace, speak up</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 7: Track Standing & Balance</h4>
-                <p><strong>Why:</strong> If you can track stand, you have enhanced balance and handling ability—which comes in handy when gravel riding.</p>
-                <p><strong>Technique:</strong> Start on slight uphill with front wheel turned slightly. Apply gentle pressure to pedals while making small corrections with handlebars.</p>
-                <p><strong>Practice:</strong> Start with 5 seconds and work up to 30+.</p>
-                <p><strong>Cue:</strong> Balance is handling</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 8: Bunny Hopping</h4>
-                <p><strong>Why:</strong> For unexpected obstacles, drainage bars, ruts you didn't see in time.</p>
-                <p><strong>Technique:</strong> Compress down → pull up on bars → scoop back with feet → level out in air.</p>
-                <p><strong>Practice:</strong> Start small with a stick on flat ground.</p>
-                <p><strong>Cue:</strong> Compress, pull, scoop</p>
-            </div>
-            <div class="skill-item">
-                <h4>Skill 9: Mechanical Self-Sufficiency</h4>
-                <p><strong>Why:</strong> A flat tire at mile 80 shouldn't end your race.</p>
-                <p><strong>Technique:</strong> Practice changing tubes until under 5 minutes. Know how to plug tubeless tires. Know how to reset a dropped chain.</p>
-                <p><strong>Practice:</strong> Practice at home so you're calm on the course.</p>
-                <p><strong>Cue:</strong> Practice at home so you're calm on the course</p>
-            </div>
+    <h4>Cadence Control</h4>
+    <p><strong>Why it matters:</strong> Different cadences recruit different muscle fiber types. Optimizing cadence for terrain saves energy over long distances.</p>
+    <p><strong>The technique:</strong> Slow twitch fibers (<80 rpm) for maintaining speed on flats. Fast twitch fibers (>95 rpm) for changing speed and steep hills.</p>
+    <p><strong>How to practice:</strong> On training rides, consciously vary your cadence. Climb at 60 rpm, then 90 rpm. Notice the difference.</p>
+    <p class="skill-cue">The cue: "Flat = lower, Punchy = higher"</p>
+</div>
+<div class="skill-item">
+    <h4>Loose Surface Cornering</h4>
+    <p><strong>Why it matters:</strong> Crashes end races. Confident cornering lets you maintain speed through technical sections while others slow to a crawl.</p>
+    <p><strong>The technique:</strong> Unlike road where you lean your body into turns, gravel requires keeping weight over the tires. <strong>Lean the bike, not your body.</strong> Stand up, drop your heels, drive front tire into ground, look through the turn.</p>
+    <p><strong>How to practice:</strong> Find a gravel parking lot. Start at 50% of comfortable speed. Repeat 500 times.</p>
+    <p class="skill-cue">The cue: "Lean the bike, not the body"</p>
+</div>
+<div class="skill-item">
+    <h4>Braking</h4>
+    <p><strong>Why it matters:</strong> Panic braking on loose surfaces is how people crash. Proper technique keeps you upright.</p>
+    <p><strong>The technique:</strong> Feather brakes gradually—no death grip. Front brake for most stopping. Rear brake for adjustments. Brake <em>before</em> the turn, not during.</p>
+    <p><strong>How to practice:</strong> Practice controlled rear-wheel skidding on low-risk gravel roads. Get comfortable with the limits.</p>
+    <p class="skill-cue">The cue: "Feather before the turn, commit through it"</p>
+</div>
+<div class="skill-item">
+    <h4>Steep Climbs (15-25%)</h4>
+    <p><strong>Why it matters:</strong> Gravel courses include 'wall' climbs that require different technique than normal climbing.</p>
+    <p><strong>The technique:</strong> Keep momentum going in. Stay seated for rear wheel traction. Weight over rear wheel, hands light on bars. Standing shifts weight forward and loses traction.</p>
+    <p><strong>How to practice:</strong> Find a steep loose climb. Practice seated climbing with weight back.</p>
+    <p class="skill-cue">The cue: "Momentum in, weight back, stay seated"</p>
+</div>
+<div class="skill-item">
+    <h4>Eating While Riding</h4>
+    <p><strong>Why it matters:</strong> In a race lasting 8+ hours, you'll consume thousands of calories. If you can't eat while riding, you'll either stop frequently or bonk.</p>
+    <p><strong>The technique:</strong> Unwrap bars before you leave, or use easy-open packaging. Practice eating with both hands.</p>
+    <p><strong>How to practice:</strong> On every training ride over 90 minutes, eat something while actually pedaling.</p>
+    <p class="skill-cue">The cue: "Flat road first, then rough. Both hands work"</p>
+</div>
+<div class="skill-item">
+    <h4>Group Riding & Pace Line Dynamics</h4>
+    <p><strong>Why it matters:</strong> Drafting saves roughly 25-30% of energy. Over 200 miles, that's enormous.</p>
+    <p><strong>The technique:</strong> Smooth, predictable movements. No sudden braking, no surging, no erratic lines. Communicate about hazards.</p>
+    <p><strong>How to practice:</strong> Join group rides. Focus on smooth, predictable movements. Practice maintaining 2-3 bike length gap.</p>
+    <p class="skill-cue">The cue: "Smooth pulls, steady pace, speak up"</p>
+</div>
+<div class="skill-item">
+    <h4>Track Standing & Balance</h4>
+    <p><strong>Why it matters:</strong> If you can track stand, you have enhanced balance and handling ability—which comes in handy when gravel riding.</p>
+    <p><strong>The technique:</strong> Start on slight uphill with front wheel turned slightly. Apply gentle pressure to pedals while making small corrections with handlebars.</p>
+    <p><strong>How to practice:</strong> Start with 5 seconds and work up to 30+.</p>
+    <p class="skill-cue">The cue: "Balance is handling"</p>
+</div>
+<div class="skill-item">
+    <h4>Bunny Hopping</h4>
+    <p><strong>Why it matters:</strong> For unexpected obstacles, drainage bars, ruts you didn't see in time.</p>
+    <p><strong>The technique:</strong> Compress down → pull up on bars → scoop back with feet → level out in air.</p>
+    <p><strong>How to practice:</strong> Start small with a stick on flat ground.</p>
+    <p class="skill-cue">The cue: "Compress, pull, scoop"</p>
+</div>
+<div class="skill-item">
+    <h4>Mechanical Self-Sufficiency</h4>
+    <p><strong>Why it matters:</strong> A flat tire at mile 80 shouldn't end your race.</p>
+    <p><strong>The technique:</strong> Practice changing tubes until under 5 minutes. Know how to plug tubeless tires. Know how to reset a dropped chain.</p>
+    <p><strong>How to practice:</strong> Practice at home so you're calm on the course.</p>
+    <p class="skill-cue">The cue: "Practice at home so you're calm on the course"</p>
+</div>
         </div>
-        <p>Where to Practice: MTB Trails & Obstacle Courses</p>
-        <p>Take your gravel bike on mountain bike trails—specifically green or blue trails. Alternatively, find a grassy field and set up your own obstacle course: cones for cornering, small objects to bunny hop, tight turns, figure-8 patterns. <strong>30 minutes of focused practice builds skills faster than 3 hours of just riding.</strong></p>
-        <p>Race-Specific Skill Notes for Unbound</p>
-        <p>Cornering on loose gravel is critical. Practice eating while riding. Group riding skills save massive energy over 200 miles.</p>
-        <p>You can't cram for these the week before the race. Technical skills require repetition over time. Build them into your training rides starting in Week 1, not Week 11.</p>
-
+        
+        <div class="callout callout-success">
+    <div class="callout-title">Where to Practice: MTB Trails & Obstacle Courses</div>
+    <p>Take your gravel bike on mountain bike trails—specifically green or blue trails. Alternatively, find a grassy field and set up your own obstacle course: cones for cornering, small objects to bunny hop, tight turns, figure-8 patterns. <strong>30 minutes of focused practice builds skills faster than 3 hours of just riding.</strong></p>
+</div>
+        
+        <div class="callout callout-warning">
+    <div class="callout-title">Race-Specific Skill Notes for Unbound</div>
+    <p>Cornering on loose gravel is critical. Practice eating while riding. Group riding skills save massive energy over 200 miles.</p>
+</div>
+        
+        <p><strong>The bottom line on skills:</strong> You can't cram for these the week before the race. Technical skills require repetition over time. Build them into your training rides starting in Week 1, not Week 11.</p>
     </div>
 </section>
 
-<!-- SECTION 10: FUELING & HYDRATION -->
 <section class="section" id="fueling">
     <div class="section-header">
         <span class="section-number">10</span>
         <h2>Fueling & Hydration</h2>
     </div>
-    <div class="section-content">        <p>Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel properly, you won't finish well. Maybe you won't finish at all.</p>
+    <div class="section-content">
+        <p>Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel properly, you won't finish well. Maybe you won't finish at all.</p>
         <p>A fit athlete might have 2,000 calories of stored glycogen. A 200-mile gravel race might burn 8,000+ calories. If you don't take in fuel during the race, you'll bonk. Not maybe—<strong>will</strong>.</p>
+        
         <h3>Quick Reference: Fueling Guidelines</h3>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Scenario</th><th>Carbs</th><th>Fluids</th><th>Notes</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Pre-Ride (2-3 hrs before)</strong></td>
-                        <td>1-2g/kg body weight</td>
-                        <td>16-24 oz</td>
-                        <td>Low fiber, familiar foods only</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Easy Ride (<90 min)</strong></td>
-                        <td>0-30g/hour</td>
-                        <td>16-24 oz/hour</td>
-                        <td>Water usually sufficient</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Long Ride (>90 min)</strong></td>
-                        <td>60-80g/hour</td>
-                        <td>24-32 oz/hour</td>
-                        <td>Mix liquid + solid calories</td>
-                    </tr>
-                    <tr class="g-spot-row">
-                        <td><strong>Race Day</strong></td>
-                        <td>80-100g/hour</td>
-                        <td>24-32 oz/hour</td>
-                        <td>Nothing new. Everything practiced.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hot Conditions (>80°F)</strong></td>
-                        <td>Same carbs</td>
-                        <td>36-48 oz/hour</td>
-                        <td>Sodium: 500-1000mg/hour</td>
-                    </tr>
-                </tbody>
+                <thead><tr><th>Scenario</th><th>Carbs</th><th>Fluids</th><th>Notes</th></tr></thead>
+                <tbody><tr>
+    <td><strong>Pre-Ride (2-3 hrs before)</strong></td>
+    <td>1-2g/kg body weight</td>
+    <td>16-24 oz</td>
+    <td>Low fiber, familiar foods only</td>
+</tr>
+<tr>
+    <td><strong>Easy Ride (<90 min)</strong></td>
+    <td>0-30g/hour</td>
+    <td>16-24 oz/hour</td>
+    <td>Water usually sufficient</td>
+</tr>
+<tr>
+    <td><strong>Long Ride (>90 min)</strong></td>
+    <td>60-80g/hour</td>
+    <td>24-32 oz/hour</td>
+    <td>Mix liquid + solid calories</td>
+</tr>
+<tr class="g-spot-row">
+    <td><strong>Race Day</strong></td>
+    <td>80-100g/hour</td>
+    <td>24-32 oz/hour</td>
+    <td>Nothing new. Everything practiced.</td>
+</tr>
+<tr>
+    <td><strong>Hot Conditions (>80°F)</strong></td>
+    <td>Same carbs</td>
+    <td>36-48 oz/hour</td>
+    <td>Sodium: 500-1000mg/hour</td>
+</tr></tbody>
             </table>
         </div>
+        
+        <h3>Understanding Hydration</h3>
         <p>20-24 ounces per hour in mild conditions (60-70°F). When temps climb above 80°F, sweat rate increases dramatically—often by 50% or more.</p>
-        <p>When you sweat, you lose both water and sodium. If you replace only water, your blood sodium concentration drops—a condition called hyponatremia that can be dangerous.</p>
-        <p>After long rides, do you see salt crystals on your kit or face? Do you crave salty foods? That's information—you need more sodium than average.</p>
+        <p><strong>Sodium:</strong> When you sweat, you lose both water and sodium. If you replace only water, your blood sodium concentration drops—a condition called hyponatremia that can be dangerous.</p>
+        <p><strong>Salty sweater:</strong> After long rides, do you see salt crystals on your kit or face? Do you crave salty foods? That's information—you need more sodium than average.</p>
+        
+        <div class="callout callout-info">
+    <div class="callout-title">Verify Your Hydration Strategy</div>
+    <p>Weigh yourself before and after long training rides. Every pound lost represents roughly 16 ounces of fluid deficit. If you're losing more than 2-3% of body weight during rides, you need to drink more.</p>
+</div>
+        
+        <h3>Training Your Gut</h3>
         <p>Your gut is trainable. The ability to absorb large amounts of carbohydrates while exercising improves with practice.</p>
-        <p>Start at 40-50 grams per hour in Week 1</p>
-        <p>Every 2-3 weeks, increase by 10 grams per hour</p>
-        <p>By race day, comfortably absorb 80-100 grams per hour</p>
-        <p>Combining glucose and fructose (ideally 2:1 ratio) allows your gut to absorb more total carbs per hour than either source alone.</p>
-        <p>The Solution</p>
-        <p>Treat fueling as a <strong>non-negotiable task</strong>, not an optional one based on hunger. Set a timer on your bike computer. Every 20 minutes: consume calories. Every 15 minutes: drink. Make it automatic. Don't wait until you feel hungry or thirsty—by then, you're already behind.</p>
+        <p><strong>The progression:</strong></p>
+        <ol>
+<li>Start at 40-50 grams per hour in Week 1</li>
+<li>Every 2-3 weeks, increase by 10 grams per hour</li>
+<li>By race day, comfortably absorb 80-100 grams per hour</li>
+</ol>
+        <p><strong>Tip:</strong> Combining glucose and fructose (ideally 2:1 ratio) allows your gut to absorb more total carbs per hour than either source alone.</p>
+        
+        <h3>The Reality Check on Fueling</h3>
         <p>Most athletes under-fuel during long events. At mile 100, eating another gel might make you gag. None of that changes the math.</p>
-
+        
+        <div class="callout callout-warning">
+    <div class="callout-title">The Solution</div>
+    <p>Treat fueling as a <strong>non-negotiable task</strong>, not an optional one based on hunger. Set a timer on your bike computer. Every 20 minutes: consume calories. Every 15 minutes: drink. Make it automatic. Don't wait until you feel hungry or thirsty—by then, you're already behind.</p>
+</div>
     </div>
 </section>
 
-<!-- SECTION 11: MENTAL GAME -->
 <section class="section" id="mental">
     <div class="section-header">
         <span class="section-number">11</span>
         <h2>Mental Game</h2>
     </div>
-    <div class="section-content">        <p>Physical training builds the engine. Mental training determines whether you use that engine when things get hard. And in any race measured in hours, things <em>will</em> get hard.</p>
-        <p>Inhale for 6 seconds, hold for 2 seconds, exhale for 7 seconds.</p>
+    <div class="section-content">
+        <p>Physical training builds the engine. Mental training determines whether you use that engine when things get hard. And in any race measured in hours, things <em>will</em> get hard.</p>
+        
+        <h3>The 6-2-7 Breathing Technique</h3>
+        <p><strong>The pattern:</strong> Inhale for 6 seconds, hold for 2 seconds, exhale for 7 seconds.</p>
         <p>The exhale is longer than the inhale. This triggers the calming response.</p>
-        <p><strong>Pre-race anxiety.</strong> The night before or morning of. 3-5 cycles will calm your nervous system.</p>
-        <p><strong>Mid-race panic.</strong> When things feel out of control—you're dropped, you flatted, the pain is overwhelming.</p>
-        <p><strong>After a bad section.</strong> After a crash, a mechanical, or a period of suffering.</p>
-        <p>Start with 5 minutes daily, sitting quietly. Then during easy rides. Eventually during hard efforts. By race day, it should be automatic.</p>
+        <h4>When to use it:</h4>
+        <ul>
+<li><strong>Pre-race anxiety.</strong> The night before or morning of. 3-5 cycles will calm your nervous system.</li>
+<li><strong>Mid-race panic.</strong> When things feel out of control—you're dropped, you flatted, the pain is overwhelming.</li>
+<li><strong>After a bad section.</strong> After a crash, a mechanical, or a period of suffering.</li>
+</ul>
+        <p><strong>How to practice:</strong> Start with 5 minutes daily, sitting quietly. Then during easy rides. Eventually during hard efforts. By race day, it should be automatic.</p>
+        
+        <h3>Performance Statements</h3>
         <p>Your internal monologue affects your performance. When you catch yourself thinking 'I can't do this,' those thoughts become self-fulfilling prophecies.</p>
-        <p><strong>Technical cues:</strong> 'Smooth pedal stroke.' 'Relax your shoulders.' 'Light hands on the bars.'</p>
-        <p><strong>Pain responses:</strong> 'This is supposed to be hard.' 'If you keep pedaling, you'll get there.'</p>
-        <p><strong>Process statements:</strong> 'Just get to the next aid station.' 'One more climb.'</p>
-        <p>Write 3-5 statements now, while you're not suffering. Choose phrases that resonate personally. Memorize them. Practice them during training rides.</p>
+        <h4>Three types:</h4>
+        <ul>
+<li><strong>Technical cues:</strong> 'Smooth pedal stroke.' 'Relax your shoulders.' 'Light hands on the bars.'</li>
+<li><strong>Pain responses:</strong> 'This is supposed to be hard.' 'If you keep pedaling, you'll get there.'</li>
+<li><strong>Process statements:</strong> 'Just get to the next aid station.' 'One more climb.'</li>
+</ul>
+        <div class="callout callout-info">
+    <div class="callout-title">Create Your Personal Statements</div>
+    <p>Write 3-5 statements now, while you're not suffering. Choose phrases that resonate personally. Memorize them. Practice them during training rides.</p>
+</div>
+        
+        <h3>Personal Highlight Reel</h3>
         <p>A highlight reel is a mental movie you can play to access confidence and motivation on demand.</p>
-        <p><strong>Scene 1: Past moment of strength.</strong> Recall a specific time when you overcame something difficult. Make this vivid.</p>
-        <p><strong>Scene 2: Future crucial moment.</strong> Visualize a specific section where you see yourself executing perfectly.</p>
-        <p><strong>Scene 3: Crossing the finish line.</strong> In full detail. What you see, hear, feel, the emotions.</p>
-        <p>Race morning, before getting out of bed. 5-10 minutes.</p>
-        <p>Any time during the race when you need a mental boost.</p>
-        <p><strong>Race morning (before getting up):</strong> Run through your highlight reel. 5-10 minutes.</p>
-        <p><strong>Race morning (after waking up):</strong> 6-2-7 breathing if anxious. Three cycles minimum.</p>
-        <p><strong>Pre-start (last 30 minutes):</strong> Review performance statements mentally.</p>
-        <p><strong>During the race:</strong> Stay in process focus. Next aid station. Next climb. Next hour.</p>
-        <p><strong>Crisis moments:</strong> Breathing (3-5 cycles) → Statement → Action (smallest possible next step)</p>
-        <p>These tools work, but only if you practice them. Don't wait until mile 150 to try 6-2-7 breathing for the first time.</p>
-
+        <h4>How to build your highlight reel:</h4>
+        <ol>
+<li><strong>Scene 1: Past moment of strength.</strong> Recall a specific time when you overcame something difficult. Make this vivid.</li>
+<li><strong>Scene 2: Future crucial moment.</strong> Visualize a specific section where you see yourself executing perfectly.</li>
+<li><strong>Scene 3: Crossing the finish line.</strong> In full detail. What you see, hear, feel, the emotions.</li>
+</ol>
+        
+        <h3>Race Day Mental Checklist</h3>
+        <ul>
+<li><strong>Race morning (before getting up):</strong> Run through your highlight reel. 5-10 minutes.</li>
+<li><strong>Race morning (after waking up):</strong> 6-2-7 breathing if anxious. Three cycles minimum.</li>
+<li><strong>Pre-start (last 30 minutes):</strong> Review performance statements mentally.</li>
+<li><strong>During the race:</strong> Stay in process focus. Next aid station. Next climb. Next hour.</li>
+<li><strong>Crisis moments:</strong> Breathing (3-5 cycles) → Statement → Action (smallest possible next step)</li>
+</ul>
+        
+        <p><strong>The bottom line on mental training:</strong> These tools work, but only if you practice them. Don't wait until mile 150 to try 6-2-7 breathing for the first time.</p>
     </div>
 </section>
 
-<!-- SECTION 12: RACE DAY TACTICS -->
 <section class="section" id="race-day">
     <div class="section-header">
         <span class="section-number">12</span>
         <h2>Race Day Tactics</h2>
     </div>
-    <div class="section-content">        <p>It turns out racing is much more pleasant if you employ something called 'tactics.' Tactics just mean having a plan for how you're going to use your energy over the course and against your fellow gravel racers.</p>
-        <p><strong>Tactics matter. A lot.</strong> If you're interested in placing well, you'll want to pay attention to the following suggestions.</p>
-        <p>That said, if you just want to zen out on washboards, sip whiskey, and forget about your troubles for hours on end, just ride. What matters most is that you're having fun.</p>
+    <div class="section-content">
+        <p>It turns out racing is much more pleasant if you employ something called 'tactics.' Tactics just mean having a plan for how you're going to use your energy over the course and against your fellow gravel racers.</p>
+<p><strong>Tactics matter. A lot.</strong> If you're interested in placing well, you'll want to pay attention to the following suggestions.</p>
+<p>That said, if you just want to zen out on washboards, sip whiskey, and forget about your troubles for hours on end, just ride. What matters most is that you're having fun.</p>
+        
         <h3>The Three-Act Structure</h3>
         <p>Every long gravel race follows a predictable three-act structure.</p>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Phase</th><th>When</th><th>What's Happening</th><th>Your Job</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>THE MADNESS</strong></td>
-                        <td>0-90 min</td>
-                        <td>Fresh legs, nervous energy, crowded course. Attacks fly. Adrenaline-fueled decisions.</td>
-                        <td>Go hard enough to find your group. Don't panic. Start eating immediately.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>FALSE DAWN</strong></td>
-                        <td>90 min - 3 hrs</td>
-                        <td>Order returns. Groups stabilize. Pace becomes predictable. Feels manageable.</td>
-                        <td>Stay fueled and hydrated. Contribute to your group without overworking. Bank energy.</td>
-                    </tr>
-                    <tr class="g-spot-row">
-                        <td><strong>THE PIPER</strong></td>
-                        <td>3+ hrs to finish</td>
-                        <td>The bill comes due. Under-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders check out.</td>
-                        <td>Execute your plan while others fall apart. <strong>This is where the race happens.</strong></td>
-                    </tr>
-                </tbody>
+                <thead><tr><th>Phase</th><th>When</th><th>What's Happening</th><th>Your Job</th></tr></thead>
+                <tbody><tr>
+    <td><strong>THE MADNESS</strong></td>
+    <td>0-90 min</td>
+    <td>Fresh legs, nervous energy, crowded course. Attacks fly. Adrenaline-fueled decisions.</td>
+    <td>Go hard enough to find your group. Don't panic. Start eating immediately.</td>
+</tr>
+<tr>
+    <td><strong>FALSE DAWN</strong></td>
+    <td>90 min - 3 hrs</td>
+    <td>Order returns. Groups stabilize. Pace becomes predictable. Feels manageable.</td>
+    <td>Stay fueled and hydrated. Contribute to your group without overworking. Bank energy.</td>
+</tr>
+<tr class="g-spot-row">
+    <td><strong>THE PIPER</strong></td>
+    <td>3+ hrs to finish</td>
+    <td>The bill comes due. Under-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders check out.</td>
+    <td>Execute your plan while others fall apart. <strong>This is where the race happens.</strong></td>
+</tr></tbody>
             </table>
         </div>
-        <h3>Understanding the Phases</h3>
-        <h4>Phase 1: The Madness (Miles 0-25)</h4>
-        <p>The first 60-90 minutes of any gravel race is chaos. Fresh legs meet nervous energy meet a crowded course.
-
-Your job: <strong>Find your group, start eating, don't do anything stupid.</strong>
-
-You can't win the race in the first hour. But you can definitely lose it.</p>
-        <h4>Phase 2: False Dawn (Miles 25-75)</h4>
-        <p>After the initial chaos settles, order returns. Groups stabilize. The race can start to feel manageable, even easy.
-
-<strong>Don't be fooled. This is the setup for phase three.</strong>
-
-Watch for riders who are overworking—taking pulls that are too long, going to the front too often. They're making withdrawals they'll pay for later.</p>
-        <h4>Phase 3: The Piper (Final 50-100 Miles)</h4>
-        <p>This is when the bill comes due. <strong>This is the race.</strong>
-
-Under-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders quit.
-
-If you've done the work—the training, the nutrition practice, the mental preparation—this is where you move up. You're not attacking. You're not surging. You're just maintaining your pace while others lose theirs.</p>
-        <h3>Phase Details</h3>
-        <h4>Phase 1: The Madness (Miles 0-25)</h4>
-        <p>The first 60-90 minutes of any gravel race is chaos. Fresh legs meet nervous energy meet a crowded course.
-
-Your job: <strong>Find your group, start eating, don't do anything stupid.</strong>
-
-You can't win the race in the first hour. But you can definitely lose it.</p>
-        <h4>Phase 2: False Dawn (Miles 25-75)</h4>
-        <p>After the initial chaos settles, order returns. Groups stabilize. The race can start to feel manageable, even easy.
-
-<strong>Don't be fooled. This is the setup for phase three.</strong>
-
-Watch for riders who are overworking—taking pulls that are too long, going to the front too often. They're making withdrawals they'll pay for later.</p>
-        <h4>Phase 3: The Piper (Final 50-100 Miles)</h4>
-        <p>This is when the bill comes due. <strong>This is the race.</strong>
-
-Under-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders quit.
-
-If you've done the work—the training, the nutrition practice, the mental preparation—this is where you move up. You're not attacking. You're not surging. You're just maintaining your pace while others lose theirs.</p>
+        
+        <h3>Phase 1: The Madness (Miles 0-25)</h3>
+<p>The first 60-90 minutes of any gravel race is chaos. Fresh legs meet nervous energy meet a crowded course.</p><p></p><p>Your job: <strong>Find your group, start eating, don't do anything stupid.</strong></p><p></p><p>You can't win the race in the first hour. But you can definitely lose it.</p>
+<h3>Phase 2: False Dawn (Miles 25-75)</h3>
+<p>After the initial chaos settles, order returns. Groups stabilize. The race can start to feel manageable, even easy.</p><p></p><p><strong>Don't be fooled. This is the setup for phase three.</strong></p><p></p><p>Watch for riders who are overworking—taking pulls that are too long, going to the front too often. They're making withdrawals they'll pay for later.</p>
+<h3>Phase 3: The Piper (Final 50-100 Miles)</h3>
+<p>This is when the bill comes due. <strong>This is the race.</strong></p><p></p><p>Under-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders quit.</p><p></p><p>If you've done the work—the training, the nutrition practice, the mental preparation—this is where you move up. You're not attacking. You're not surging. You're just maintaining your pace while others lose theirs.</p>
+        
+        <hr>
+        
         <h3>Tactical Principles</h3>
         <h4>The Start</h4>
-        <p>When the gun goes off you could be forgiven for thinking you accidentally turned up to the wrong race because people go off the line like it's a track race.
-
-<strong>Expect it.</strong> The race always starts hard.
-
-<strong>Yes, you should</strong> go hard. One of the key aspects to success in a gravel race is getting into the right group of similarly fit individuals. You need to be on the start line ready to go quite hard for at least an hour.</p>
-        <h4>Find a Group</h4>
-        <p>What group should you be in? A group with people with similar abilities.
-
-You don't need to overthink this. <strong>Start strong, but then titrate your effort and settle in with a group that feels challenging but doable.</strong></p>
-        <h4>Eat Early and Eat Often</h4>
-        <p>Once you're in a group, start eating. I can't emphasize eating enough.
-
-You need to eat early, eat often, and start slugging fluid. Don't wait until you're hungry. Don't wait until mile 50. Start at mile 10 and don't stop until you cross the finish line.</p>
-        <h4>Be Efficient</h4>
-        <p>Now that you've eaten, start asking yourself this question over and over:</p>
-        <p>How could I keep going at this speed for less effort?</p>
-        <p><strong>The goal of racing, unlike training, is not putting up big power numbers—it's to go from A to B as fast as possible using the least amount of energy.</strong>
-
-In training, you want to maximize stress to drive adaptation. In racing, you want to minimize stress while maximizing speed. Completely different objectives.</p>
-        <h4>Draft Smart</h4>
-        <p>Even on gravel, where it's harder to draft, it helps. Don't be a hero. Take pulls, but don't try to show anyone how strong you are. Every minute at the front is energy you're not saving. Every minute in the draft is energy you're banking for later.</p>
-        <h4>Read the Course</h4>
-        <p>You should always be picking the best possible line. If the right line is packed down and smooth, why are you riding to the left in potholes? Look ahead. Pick lines. Save watts.</p>
-        <h4>Read the Wind</h4>
-        <p>If it's a headwind, it's worth putting out more energy to put time on people. When it's a tailwind, your speed will be higher but you won't gain as much time for proportional power output. Don't hammer when you have a tailwind—save that for when it turns into a slog.</p>
-        <p>Survive the first 60 miles. Find a sustainable group. Fuel every 20 minutes. Don't chase attacks. The race happens after mile 100 when others fade.</p>
+<p>When the gun goes off you could be forgiven for thinking you accidentally turned up to the wrong race because people go off the line like it's a track race.</p><p></p><p><strong>Expect it.</strong> The race always starts hard.</p><p></p><p><strong>Yes, you should</strong> go hard. One of the key aspects to success in a gravel race is getting into the right group of similarly fit individuals. You need to be on the start line ready to go quite hard for at least an hour.</p>
+<h4>Find a Group</h4>
+<p>What group should you be in? A group with people with similar abilities.</p><p></p><p>You don't need to overthink this. <strong>Start strong, but then titrate your effort and settle in with a group that feels challenging but doable.</strong></p>
+<h4>Eat Early and Eat Often</h4>
+<p>Once you're in a group, start eating. I can't emphasize eating enough.</p><p></p><p>You need to eat early, eat often, and start slugging fluid. Don't wait until you're hungry. Don't wait until mile 50. Start at mile 10 and don't stop until you cross the finish line.</p>
+<h4>Be Efficient</h4>
+<p>Now that you've eaten, start asking yourself this question over and over:</p>
+        
+        <div class="callout callout-success">
+    <div class="callout-title">The Key Question</div>
+    <p><p style="font-size: 1.2rem; font-weight: 700;">"How could I keep going at this speed for less effort?"</p></p>
+</div>
+        
+        <p><strong>The goal of racing, unlike training, is not putting up big power numbers—it's to go from A to B as fast as possible using the least amount of energy.</strong></p><p></p><p>In training, you want to maximize stress to drive adaptation. In racing, you want to minimize stress while maximizing speed. Completely different objectives.</p>
+        
+        <h4>Efficiency Tips</h4>
+        <p><strong>Draft Smart:</strong> Even on gravel, where it's harder to draft, it helps. Don't be a hero. Take pulls, but don't try to show anyone how strong you are. Every minute at the front is energy you're not saving. Every minute in the draft is energy you're banking for later.</p>
+<p><strong>Read the Course:</strong> You should always be picking the best possible line. If the right line is packed down and smooth, why are you riding to the left in potholes? Look ahead. Pick lines. Save watts.</p>
+<p><strong>Read the Wind:</strong> If it's a headwind, it's worth putting out more energy to put time on people. When it's a tailwind, your speed will be higher but you won't gain as much time for proportional power output. Don't hammer when you have a tailwind—save that for when it turns into a slog.</p>
+        
+        <div class="callout callout-success">
+    <div class="callout-title">Unbound-Specific Tactics</div>
+    <p>Survive the first 60 miles. Find a sustainable group. Fuel every 20 minutes. Don't chase attacks. The race happens after mile 100 when others fade.</p>
+</div>
+        
+        <h3>Aid Station Strategy</h3>
         <p>Aid stations every 30-40 miles. <strong>Don't skip them.</strong> Refill bottles, grab real food, take 2-3 minutes to reset. The time lost is worth the energy gained.</p>
-        <h3>What You Need to Succeed</h3>
-        <h4>Non-Negotiables:</h4>
-        <ul class="checklist">
-            <li>{'requirement': 'Heat adaptation protocol starting 4-6 weeks out', 'by_when': 'Week 4-6', 'why': 'Kansas heat in June can break unprepared riders'}</li>
-            <li>{'requirement': 'Two 6+ hour rides minimum before race day', 'by_when': 'Weeks 8-10', 'why': 'Prove you can handle the duration'}</li>
-            <li>{'requirement': 'Race-day nutrition dialed: 80-100g carbs/hour', 'by_when': 'Week 6+', 'why': '200 miles burns 8,000+ calories'}</li>
-            <li>{'requirement': 'Tire strategy: 40mm+ with chunk protection', 'by_when': 'Week 8', 'why': 'Loose sections will destroy thin tires'}</li>
-            <li>{'requirement': 'Mental prep for hours 8-12', 'by_when': 'Week 10+', 'why': 'The race gets real after 8 hours'}</li>
-        </ul>
+        
         <h3>The Non-Negotiables</h3>
-        <p>These are the requirements that determine whether you finish strong, finish barely, or don't finish at all.</p>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Requirement</th><th>By When</th><th>Why It Matters</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Heat adaptation protocol starting 4-6 weeks out</td>
-                        <td>Week 4-6</td>
-                        <td>Kansas heat in June can break unprepared riders</td>
-                    </tr>
-                    <tr>
-                        <td>Two 6+ hour rides minimum before race day</td>
-                        <td>Weeks 8-10</td>
-                        <td>Prove you can handle the duration</td>
-                    </tr>
-                    <tr>
-                        <td>Race-day nutrition dialed: 80-100g carbs/hour</td>
-                        <td>Week 6+</td>
-                        <td>200 miles burns 8,000+ calories</td>
-                    </tr>
-                    <tr>
-                        <td>Tire strategy: 40mm+ with chunk protection</td>
-                        <td>Week 8</td>
-                        <td>Loose sections will destroy thin tires</td>
-                    </tr>
-                    <tr>
-                        <td>Mental prep for hours 8-12</td>
-                        <td>Week 10+</td>
-                        <td>The race gets real after 8 hours</td>
-                    </tr>
-                </tbody>
+                <thead><tr><th>Requirement</th><th>By When</th><th>Why It Matters</th></tr></thead>
+                <tbody><tr>
+    <td>Heat adaptation protocol starting 4-6 weeks out</td>
+    <td>Week 4-6</td>
+    <td>Kansas heat in June can break unprepared riders</td>
+</tr>
+<tr>
+    <td>Two 6+ hour rides minimum before race day</td>
+    <td>Weeks 8-10</td>
+    <td>Prove you can handle the duration</td>
+</tr>
+<tr>
+    <td>Race-day nutrition dialed: 80-100g carbs/hour</td>
+    <td>Week 6+</td>
+    <td>200 miles burns 8,000+ calories</td>
+</tr>
+<tr>
+    <td>Tire strategy: 40mm+ with chunk protection</td>
+    <td>Week 8</td>
+    <td>Loose sections will destroy thin tires</td>
+</tr>
+<tr>
+    <td>Mental prep for hours 8-12</td>
+    <td>Week 10+</td>
+    <td>The race gets real after 8 hours</td>
+</tr></tbody>
             </table>
         </div>
+        
+        <h3>Weather Strategy</h3>
         <p>June in Kansas means heat (80-95°F) and potential wind. Start early if possible. Hydrate aggressively (36-48 oz/hour). Wear light colors. Use ice in bottles. <strong>Sunscreen is mandatory.</strong></p>
+        
         <h3>The 7-Day Countdown</h3>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Day</th><th>Training</th><th>Focus</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Day 7</strong></td>
-                        <td>2 hours Z2 + 3x3 min Z3</td>
-                        <td>Last moderate ride. Final bike check.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Day 6</strong></td>
-                        <td>45 min easy or rest</td>
-                        <td>Pack gear. Finalize nutrition plan.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Day 5</strong></td>
-                        <td>Rest or 30 min Z1</td>
-                        <td>Travel day if needed. Stay hydrated.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Day 4</strong></td>
-                        <td>45 min Z2 + 3x30 sec Z4</td>
-                        <td>Shake out travel. Course recon if possible.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Day 3</strong></td>
-                        <td>20 min Z2 + 3x30 sec hard</td>
-                        <td>Openers. Packet pickup. Final bike check.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Day 2</strong></td>
-                        <td>Complete rest</td>
-                        <td>Hydrate. Carb loading begins (+200-300g).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Day 1</strong></td>
-                        <td>Complete rest</td>
-                        <td>Prep drop bags. Lay out kit. Visualize. Early to bed.</td>
-                    </tr>
-                </tbody>
+                <thead><tr><th>Day</th><th>Training</th><th>Focus</th></tr></thead>
+                <tbody><tr>
+    <td><strong>Day 7</strong></td>
+    <td>2 hours Z2 + 3x3 min Z3</td>
+    <td>Last moderate ride. Final bike check.</td>
+</tr>
+<tr>
+    <td><strong>Day 6</strong></td>
+    <td>45 min easy or rest</td>
+    <td>Pack gear. Finalize nutrition plan.</td>
+</tr>
+<tr>
+    <td><strong>Day 5</strong></td>
+    <td>Rest or 30 min Z1</td>
+    <td>Travel day if needed. Stay hydrated.</td>
+</tr>
+<tr>
+    <td><strong>Day 4</strong></td>
+    <td>45 min Z2 + 3x30 sec Z4</td>
+    <td>Shake out travel. Course recon if possible.</td>
+</tr>
+<tr>
+    <td><strong>Day 3</strong></td>
+    <td>20 min Z2 + 3x30 sec hard</td>
+    <td>Openers. Packet pickup. Final bike check.</td>
+</tr>
+<tr>
+    <td><strong>Day 2</strong></td>
+    <td>Complete rest</td>
+    <td>Hydrate. Carb loading begins (+200-300g).</td>
+</tr>
+<tr>
+    <td><strong>Day 1</strong></td>
+    <td>Complete rest</td>
+    <td>Prep drop bags. Lay out kit. Visualize. Early to bed.</td>
+</tr></tbody>
             </table>
         </div>
+        
         <h3>Race Morning Timeline</h3>
-        <ul class="checklist">
-            <li><strong>3-4 hours before start:</strong> Wake up. Eat familiar, high-carb, low-fiber breakfast. Target 1-2g carbs/kg body weight.</li>
-            <li><strong>2 hours before start:</strong> Arrive at venue. Set up bike and gear. Use the bathroom. Begin sipping fluids.</li>
-            <li><strong>1 hour before start:</strong> Final bike check: tire pressure, brakes, shifting. Short warm-up spin if possible. Start pre-race nutrition (100-200 calories).</li>
-            <li><strong>30 minutes before start:</strong> Run through your highlight reel. Review performance statements. Focus on what you can control.</li>
-            <li><strong>10 minutes before start:</strong> 6-2-7 breathing. Three cycles minimum. Find your spot. Check nutrition is accessible.</li>
-            <li><strong>Start:</strong> Go hard enough to find your group. First gel at 20 minutes, not 60 minutes.</li>
-        </ul>
-        <p>Race Week Bottom Line</p>
-        <p>Less is more. You've done the work. Now let your body absorb it. <strong>Show up fresh, not fatigued from last-minute training.</strong></p>
-
+        <ul>
+<li><strong>3-4 hours before start:</strong> Wake up. Eat familiar, high-carb, low-fiber breakfast. Target 1-2g carbs/kg body weight.</li>
+<li><strong>2 hours before start:</strong> Arrive at venue. Set up bike and gear. Use the bathroom. Begin sipping fluids.</li>
+<li><strong>1 hour before start:</strong> Final bike check: tire pressure, brakes, shifting. Short warm-up spin if possible. Start pre-race nutrition (100-200 calories).</li>
+<li><strong>30 minutes before start:</strong> Run through your highlight reel. Review performance statements. Focus on what you can control.</li>
+<li><strong>10 minutes before start:</strong> 6-2-7 breathing. Three cycles minimum. Find your spot. Check nutrition is accessible.</li>
+<li><strong>Start:</strong> Go hard enough to find your group. First gel at 20 minutes, not 60 minutes.</li>
+</ul>
+        
+        <div class="callout callout-info">
+    <div class="callout-title">Race Week Bottom Line</div>
+    <p>Less is more. You've done the work. Now let your body absorb it. <strong>Show up fresh, not fatigued from last-minute training.</strong></p>
+</div>
     </div>
 </section>
 
-<!-- SECTION 13: TIRE SELECTION -->
 <section class="section" id="tires">
     <div class="section-header">
         <span class="section-number">13</span>
         <h2>Tire Selection</h2>
     </div>
-    <div class="section-content">        <p>People spend more time obsessing over tires than they spend training. The irony is that conventional wisdom about tire selection has been largely wrong—and recent testing is forcing a rethink.</p>
-        <p>Wider Is Faster</p>
+    <div class="section-content">
+        <p>People spend more time obsessing over tires than they spend training. The irony is that conventional wisdom about tire selection has been largely wrong—and recent testing is forcing a rethink.</p>
+        
+        <h3>The Counterintuitive Truth: Wider Is Faster</h3>
         <p>Pro gravel racer and YouTube coach Dylan Johnson has been doing extensive tire testing at facilities like Silverstone's pedaling efficiency rig. The results: <strong>on rough terrain, wider tires—including mountain bike tires—consistently outperform narrower gravel tires.</strong></p>
         <p>Johnson predicts that at major gravel races in 2025, the majority of Lifetime Grand Prix riders will be running mountain bike tires on their gravel bikes.</p>
+        
         <h3>Why Wider Tires Are Faster on Gravel</h3>
-        <h4>Rolling Resistance on Rough Surfaces</h4>
-        <p>The bigger the tire, the less it sinks into loose surfaces. In Johnson's testing on cobbles (simulating gravel), a 2.2" mountain bike tire lost only 8 watts to rolling resistance at 36 km/h—while a 35mm gravel tire lost nearly 42 watts.</p>
-        <h4>Lower Vibration Loss</h4>
-        <p>Rough roads create vibrations, and vibrations slow you down. Wider tires at lower pressure absorb bumps, keeping you moving forward instead of bouncing.</p>
-        <h4>The Casing Paradox</h4>
-        <p>Lightweight XC mountain bike tires often have <em>thinner</em> casings than gravel tires. A tire like the Schwalbe Thunder Burt has a thinner casing than almost any gravel tire. Thinner casing = lower rolling resistance. And larger volume prevents pinch flats.</p>
-        <p>The Weight Myth</p>
-        <p>Switching from 35mm gravel tire to 2.2" MTB tire adds about 450 grams total. That weight difference only costs about 2 watts on a steep climb—while saving far more in rolling resistance on flats and rough stuff.
-
-<strong>If you're worrying about weight before considering rolling resistance, you've got it backwards.</strong></p>
+        <h4>1. Rolling Resistance on Rough Surfaces</h4>
+<p>The bigger the tire, the less it sinks into loose surfaces. In Johnson's testing on cobbles (simulating gravel), a 2.2" mountain bike tire lost only 8 watts to rolling resistance at 36 km/h—while a 35mm gravel tire lost nearly 42 watts.</p>
+<h4>2. Lower Vibration Loss</h4>
+<p>Rough roads create vibrations, and vibrations slow you down. Wider tires at lower pressure absorb bumps, keeping you moving forward instead of bouncing.</p>
+<h4>3. The Casing Paradox</h4>
+<p>Lightweight XC mountain bike tires often have <em>thinner</em> casings than gravel tires. A tire like the Schwalbe Thunder Burt has a thinner casing than almost any gravel tire. Thinner casing = lower rolling resistance. And larger volume prevents pinch flats.</p>
+        
+        <div class="callout callout-info">
+    <div class="callout-title">The Weight Myth</div>
+    <p>Switching from 35mm gravel tire to 2.2" MTB tire adds about 450 grams total. That weight difference only costs about 2 watts on a steep climb—while saving far more in rolling resistance on flats and rough stuff.</p><p></p><p><strong>If you're worrying about weight before considering rolling resistance, you've got it backwards.</strong></p>
+</div>
+        
         <h3>The Factors That Actually Matter</h3>
         <h4>Will this tire get you to the finish without flatting?</h4>
-        <p>This remains the most important variable. Wider tires puncture less because they're run at lower pressure, have larger contact patch, and better shock absorption.</p>
-        <h4>Can you ride this tire for 8+ hours without your hands going numb?</h4>
-        <p>Gravel races are long. Harsh tires beat you up. Wider tires at lower pressure provide a more damped ride.</p>
-        <h4>Does this tire fit your bike?</h4>
-        <p>Many gravel bikes max out at 45-50mm. If your frame can't clear a 2.2" MTB tire, you work with what you've got.</p>
-        <p><strong>Rolling resistance on smooth surfaces:</strong> Unless your gravel race is mostly paved, this doesn't matter.</p>
-        <p><strong>Tread pattern:</strong> Unless racing in mud or deep sand, tread pattern matters less than people think.</p>
-        <p><strong>Marginal weight differences:</strong> A 50-gram difference in tire weight is noise.</p>
+<p>This remains the most important variable. Wider tires puncture less because they're run at lower pressure, have larger contact patch, and better shock absorption.</p>
+<h4>Can you ride this tire for 8+ hours without your hands going numb?</h4>
+<p>Gravel races are long. Harsh tires beat you up. Wider tires at lower pressure provide a more damped ride.</p>
+<h4>Does this tire fit your bike?</h4>
+<p>Many gravel bikes max out at 45-50mm. If your frame can't clear a 2.2" MTB tire, you work with what you've got.</p>
+        
+        <h3>What Doesn't Matter (Much)</h3>
+        <ul>
+<li><strong>Rolling resistance on smooth surfaces:</strong> Unless your gravel race is mostly paved, this doesn't matter.</li>
+<li><strong>Tread pattern:</strong> Unless racing in mud or deep sand, tread pattern matters less than people think.</li>
+<li><strong>Marginal weight differences:</strong> A 50-gram difference in tire weight is noise.</li>
+</ul>
+        
         <h3>Width Selection Guide</h3>
         <div class="table-wrapper">
             <table>
-                <thead>
-                    <tr><th>Width</th><th>Best For</th><th>Pros</th><th>Cons</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>35-40mm</strong></td>
-                        <td>Fast, smooth gravel; lots of pavement</td>
-                        <td>Fastest on smooth surfaces</td>
-                        <td>Slowest on rough terrain; most flats</td>
-                    </tr>
-                    <tr>
-                        <td><strong>42-47mm</strong></td>
-                        <td>Mixed gravel (many riders' default)</td>
-                        <td>Reasonable balance</td>
-                        <td>Not optimal for either extreme</td>
-                    </tr>
-                    <tr class="g-spot-row">
-                        <td><strong>50-55mm (2.0-2.2")</strong></td>
-                        <td>Rough gravel, chunky terrain</td>
-                        <td>Fastest on rough; most comfortable; fewest flats</td>
-                        <td>May not fit all frames</td>
-                    </tr>
-                </tbody>
+                <thead><tr><th>Width</th><th>Best For</th><th>Pros</th><th>Cons</th></tr></thead>
+                <tbody><tr>
+    <td><strong>35-40mm</strong></td>
+    <td>Fast, smooth gravel; lots of pavement</td>
+    <td>Fastest on smooth surfaces</td>
+    <td>Slowest on rough terrain; most flats</td>
+</tr>
+<tr>
+    <td><strong>42-47mm</strong></td>
+    <td>Mixed gravel (many riders' default)</td>
+    <td>Reasonable balance</td>
+    <td>Not optimal for either extreme</td>
+</tr>
+<tr class="g-spot-row">
+    <td><strong>50-55mm (2.0-2.2")</strong></td>
+    <td>Rough gravel, chunky terrain</td>
+    <td>Fastest on rough; most comfortable; fewest flats</td>
+    <td>May not fit all frames</td>
+</tr></tbody>
             </table>
         </div>
-        <p>Go as wide as your frame allows. 45mm minimum; 50mm+ preferred. If you can fit a lightweight XC mountain bike tire, consider it.</p>
-        <p><strong>40-45mm:</strong> 28-38 psi depending on rider weight</p>
-        <p><strong>50-55mm:</strong> 22-32 psi depending on rider weight</p>
+        
+        <p><strong>For Unbound Gravel 200:</strong> Go as wide as your frame allows. 45mm minimum; 50mm+ preferred. If you can fit a lightweight XC mountain bike tire, consider it.</p>
+        
+        <h3>Pressure Guidelines</h3>
+        <ul>
+<li><strong>40-45mm:</strong> 28-38 psi depending on rider weight</li>
+<li><strong>50-55mm:</strong> 22-32 psi depending on rider weight</li>
+</ul>
         <p>Start on the higher end and drop pressure until you feel tires conform to terrain without feeling sloppy. The right pressure is the lowest you can run without rim strikes or handling issues.</p>
-        <p>Lower pressure capability, punctures often self-seal, slightly lower rolling resistance</p>
-        <p>More setup hassle, can burp air on hard impacts, requires practice to fix</p>
-        <p>Tubeless is better if you're competent at setting it up and fixing it. Tubes are fine if you're not.</p>
-        <p>Don't switch to new tires—or to tubeless for the first time—the week before your race. If you're running something and it works, keep running it.</p>
-        <p>The Goal</p>
-        <p>The actual best tire is the one that <strong>gets you to the finish line without flatting</strong> and doesn't beat you up for 8+ hours. Durability beats marginal speed gains. Every time.</p>
+        
+        <h3>Tubeless vs Tubes</h3>
+        <p><strong>Tubeless pros:</strong> Lower pressure capability, punctures often self-seal, slightly lower rolling resistance</p>
+        <p><strong>Tubeless cons:</strong> More setup hassle, can burp air on hard impacts, requires practice to fix</p>
+        <p><strong>The verdict:</strong> Tubeless is better if you're competent at setting it up and fixing it. Tubes are fine if you're not.</p>
+        
+        <div class="callout callout-danger">
+    <div class="callout-title">Don't Switch Race Week</div>
+    <p>Don't switch to new tires—or to tubeless for the first time—the week before your race. If you're running something and it works, keep running it.</p>
+</div>
+        
+        <h3>The Bottom Line on Tires</h3>
         <p>Pick a durable, 'fast enough' tire in the widest width your frame allows. Test it. Race it. Stop optimizing for lab-tested rolling resistance numbers. Start optimizing for finishing the race with your body and equipment intact.</p>
-
+        
+        <div class="callout callout-success">
+    <div class="callout-title">The Goal</div>
+    <p>The actual best tire is the one that <strong>gets you to the finish line without flatting</strong> and doesn't beat you up for 8+ hours. Durability beats marginal speed gains. Every time.</p>
+</div>
     </div>
 </section>
 
-<!-- SECTION 14: KEY WORKOUTS & GLOSSARY -->
 <section class="section" id="glossary">
     <div class="section-header">
         <span class="section-number">14</span>
         <h2>Key Workouts & Glossary</h2>
     </div>
-    <div class="section-content">        <div class="glossary-list">
-            <div class="glossary-item">
-                <div class="glossary-term">FTP (Functional Threshold Power)</div>
-                <div class="glossary-def">The highest average power you can sustain for approximately one hour at maximum effort. All training zones are calculated as percentages of FTP. An accurate FTP is essential—wrong FTP = wrong zones = ineffective training.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">TSS (Training Stress Score)</div>
-                <div class="glossary-def">A measure of training load accounting for both intensity and duration. 100 TSS = one hour at FTP. A hard 2-hour ride might be 180 TSS. A recovery ride might be 30 TSS. Weekly TSS helps track overall training load.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">CTL (Chronic Training Load)</div>
-                <div class="glossary-def">Your 42-day rolling average of TSS. Represents your 'fitness' level—how much training load your body has adapted to handle. A good amateur racer might have CTL of 60-80; elite pros reach 140+.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">ATL (Acute Training Load)</div>
-                <div class="glossary-def">Your 7-day rolling average of TSS. Represents 'fatigue'—how much stress you've accumulated recently. High ATL means you're working hard. Too high for too long leads to overtraining.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">TSB (Training Stress Balance)</div>
-                <div class="glossary-def">CTL minus ATL. Represents 'form' or freshness. Negative TSB = you're fatigued. Positive TSB = you're fresh. For racing, aim for TSB between +5 and +20—fit but fresh.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">NP (Normalized Power)</div>
-                <div class="glossary-def">An estimate of the power you could have held if your effort were perfectly steady. Accounts for the fact that variable power is harder than steady power at the same average. Always higher than average power for real-world rides.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">IF (Intensity Factor)</div>
-                <div class="glossary-def">Normalized Power divided by FTP. Tells you how hard a workout was relative to your threshold. IF of 0.75 = endurance ride. IF of 0.90 = tempo/G Spot. IF of 1.0 = you averaged FTP.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">VI (Variability Index)</div>
-                <div class="glossary-def">Normalized Power divided by Average Power. Measures how variable your power output was. VI of 1.0 = perfectly steady. VI of 1.2 = quite variable (typical for gravel with terrain changes).</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">EF (Efficiency Factor)</div>
-                <div class="glossary-def">Normalized Power divided by average heart rate. Higher EF = better aerobic efficiency. Track this over time—rising EF at same power indicates improving fitness.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Aerobic Decoupling (Pw:Hr)</div>
-                <div class="glossary-def">Compares power-to-heart-rate ratio in first half vs. second half of a ride. Less than 5% drift indicates good aerobic fitness. More than 5% suggests you're working beyond your aerobic capacity.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">PMC (Performance Management Chart)</div>
-                <div class="glossary-def">A TrainingPeaks chart showing CTL, ATL, and TSB over time. The primary tool for planning training load and tapering for races.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">W/kg (Watts per Kilogram)</div>
-                <div class="glossary-def">Power output divided by body weight. The most meaningful way to compare cycling fitness between riders. Good amateur racers are around 4 W/kg at threshold; elite pros reach 6+ W/kg.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">LTHR (Lactate Threshold Heart Rate)</div>
-                <div class="glossary-def">The heart rate you can sustain for approximately one hour at maximum effort. Useful when power data isn't available.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">RPE (Rate of Perceived Exertion)</div>
-                <div class="glossary-def">A subjective scale from 1-10 describing how hard an effort feels. Not precise, but always available, and sometimes more important than power or heart rate.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">G Spot (88-92% FTP)</div>
-                <div class="glossary-def">Our term for the intensity zone optimized for long gravel racing. Hard enough to move fast and stay with groups. Sustainable enough to hold for extended periods. 'Uncomfortably sustainable.'</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Polarized Training</div>
-                <div class="glossary-def">A training approach where roughly 80% of time is spent easy (zones 1-2) and 20% hard (zones 4+), with minimal time in the middle zones (zone 3).</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Block Periodization</div>
-                <div class="glossary-def">A training structure that focuses on developing one primary physical quality per 3-4 week block before moving to the next.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Traditional Pyramidal</div>
-                <div class="glossary-def">A training approach where volume forms a pyramid: lots of Z1-Z2, moderate Z3-Z4, small amount Z5+.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Taper</div>
-                <div class="glossary-def">A planned reduction in training volume before a race. Volume drops 30-50% while intensity remains. Typically 1-2 weeks for gravel races.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Bonk</div>
-                <div class="glossary-def">Severe glycogen depletion causing sudden, dramatic fatigue. Prevention: eat early and eat often.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Supercompensation</div>
-                <div class="glossary-def">The principle where your body adapts by building slightly more capacity than before to handle similar stress more easily next time.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Mitochondria</div>
-                <div class="glossary-def">The 'power plants' in your cells that produce aerobic energy. Endurance training increases mitochondrial density.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">Anaerobic Capacity</div>
-                <div class="glossary-def">The amount of work you can perform above lactate threshold. A fixed amount of 'matches' you can burn—use them wisely.</div>
-            </div>
-            <div class="glossary-item">
-                <div class="glossary-term">HRV (Heart Rate Variability)</div>
-                <div class="glossary-def">The variation in time between heartbeats. Higher HRV generally indicates better recovery and readiness to train.</div>
-            </div>
-        </div>
+    <div class="section-content">
         <h3>Key Workouts in This Plan</h3>
-        <div class="card-grid">
-            <div class="card" class="g-spot-row">
-                <h4>G Spot 3×15</h4>
-                <p>Race pace sustainment. Builds ability to hold uncomfortable but sustainable power.</p>
-            </div>
-            <div class="card">
-                <h4>Threshold 4×12</h4>
-                <p>FTP development. Raises your sustainable power ceiling.</p>
-            </div>
-            <div class="card">
-                <h4>Long Ride with G Spot</h4>
-                <p>Race simulation. Combines endurance with race-pace efforts.</p>
-            </div>
-            <div class="card">
-                <h4>VO2max 5×3</h4>
-                <p>Top-end power. Maintains ability to respond to attacks and climb hard.</p>
-            </div>
+        <p>These are the signature workouts you'll see throughout your 12 weeks.</p>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Workout</th><th>Purpose</th></tr></thead>
+                <tbody><tr class="g-spot-row">
+    <td><strong>G Spot 3×15</strong></td>
+    <td>Race pace sustainment. Builds ability to hold uncomfortable but sustainable power.</td>
+</tr>
+<tr>
+    <td><strong>Threshold 4×12</strong></td>
+    <td>FTP development. Raises your sustainable power ceiling.</td>
+</tr>
+<tr>
+    <td><strong>Long Ride with G Spot</strong></td>
+    <td>Race simulation. Combines endurance with race-pace efforts.</td>
+</tr>
+<tr>
+    <td><strong>VO2max 5×3</strong></td>
+    <td>Top-end power. Maintains ability to respond to attacks and climb hard.</td>
+</tr></tbody>
+            </table>
         </div>
-
+        
+        <h3>Support &amp; Resources</h3>
+        <p><strong>For race information:</strong> <a href="https://unboundgravel.com" target="_blank">unboundgravel.com</a></p>
+        <p><strong>For questions about this training plan:</strong> gravelgodcoaching@gmail.com</p>
+        
+        <h3>Glossary</h3>
+        <p>These are the terms you'll encounter in TrainingPeaks and throughout this guide.</p>
+        
+        <div class="glossary-grid">
+            <div class="glossary-item">
+    <div class="glossary-term">FTP (Functional Threshold Power)</div>
+    <div class="glossary-def">The highest average power you can sustain for approximately one hour at maximum effort. All training zones are calculated as percentages of FTP. An accurate FTP is essential—wrong FTP = wrong zones = ineffective training.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">TSS (Training Stress Score)</div>
+    <div class="glossary-def">A measure of training load accounting for both intensity and duration. 100 TSS = one hour at FTP. A hard 2-hour ride might be 180 TSS. A recovery ride might be 30 TSS. Weekly TSS helps track overall training load.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">CTL (Chronic Training Load)</div>
+    <div class="glossary-def">Your 42-day rolling average of TSS. Represents your 'fitness' level—how much training load your body has adapted to handle. A good amateur racer might have CTL of 60-80; elite pros reach 140+.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">ATL (Acute Training Load)</div>
+    <div class="glossary-def">Your 7-day rolling average of TSS. Represents 'fatigue'—how much stress you've accumulated recently. High ATL means you're working hard. Too high for too long leads to overtraining.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">TSB (Training Stress Balance)</div>
+    <div class="glossary-def">CTL minus ATL. Represents 'form' or freshness. Negative TSB = you're fatigued. Positive TSB = you're fresh. For racing, aim for TSB between +5 and +20—fit but fresh.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">NP (Normalized Power)</div>
+    <div class="glossary-def">An estimate of the power you could have held if your effort were perfectly steady. Accounts for the fact that variable power is harder than steady power at the same average. Always higher than average power for real-world rides.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">IF (Intensity Factor)</div>
+    <div class="glossary-def">Normalized Power divided by FTP. Tells you how hard a workout was relative to your threshold. IF of 0.75 = endurance ride. IF of 0.90 = tempo/G Spot. IF of 1.0 = you averaged FTP.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">VI (Variability Index)</div>
+    <div class="glossary-def">Normalized Power divided by Average Power. Measures how variable your power output was. VI of 1.0 = perfectly steady. VI of 1.2 = quite variable (typical for gravel with terrain changes).</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">EF (Efficiency Factor)</div>
+    <div class="glossary-def">Normalized Power divided by average heart rate. Higher EF = better aerobic efficiency. Track this over time—rising EF at same power indicates improving fitness.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Aerobic Decoupling (Pw:Hr)</div>
+    <div class="glossary-def">Compares power-to-heart-rate ratio in first half vs. second half of a ride. Less than 5% drift indicates good aerobic fitness. More than 5% suggests you're working beyond your aerobic capacity.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">PMC (Performance Management Chart)</div>
+    <div class="glossary-def">A TrainingPeaks chart showing CTL, ATL, and TSB over time. The primary tool for planning training load and tapering for races.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">W/kg (Watts per Kilogram)</div>
+    <div class="glossary-def">Power output divided by body weight. The most meaningful way to compare cycling fitness between riders. Good amateur racers are around 4 W/kg at threshold; elite pros reach 6+ W/kg.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">LTHR (Lactate Threshold Heart Rate)</div>
+    <div class="glossary-def">The heart rate you can sustain for approximately one hour at maximum effort. Useful when power data isn't available.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">RPE (Rate of Perceived Exertion)</div>
+    <div class="glossary-def">A subjective scale from 1-10 describing how hard an effort feels. Not precise, but always available, and sometimes more important than power or heart rate.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">G Spot (88-92% FTP)</div>
+    <div class="glossary-def">Our term for the intensity zone optimized for long gravel racing. Hard enough to move fast and stay with groups. Sustainable enough to hold for extended periods. 'Uncomfortably sustainable.'</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Polarized Training</div>
+    <div class="glossary-def">A training approach where roughly 80% of time is spent easy (zones 1-2) and 20% hard (zones 4+), with minimal time in the middle zones (zone 3).</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Block Periodization</div>
+    <div class="glossary-def">A training structure that focuses on developing one primary physical quality per 3-4 week block before moving to the next.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Traditional Pyramidal</div>
+    <div class="glossary-def">A training approach where volume forms a pyramid: lots of Z1-Z2, moderate Z3-Z4, small amount Z5+.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Taper</div>
+    <div class="glossary-def">A planned reduction in training volume before a race. Volume drops 30-50% while intensity remains. Typically 1-2 weeks for gravel races.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Bonk</div>
+    <div class="glossary-def">Severe glycogen depletion causing sudden, dramatic fatigue. Prevention: eat early and eat often.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Supercompensation</div>
+    <div class="glossary-def">The principle where your body adapts by building slightly more capacity than before to handle similar stress more easily next time.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Mitochondria</div>
+    <div class="glossary-def">The 'power plants' in your cells that produce aerobic energy. Endurance training increases mitochondrial density.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">Anaerobic Capacity</div>
+    <div class="glossary-def">The amount of work you can perform above lactate threshold. A fixed amount of 'matches' you can burn—use them wisely.</div>
+</div>
+<div class="glossary-item">
+    <div class="glossary-term">HRV (Heart Rate Variability)</div>
+    <div class="glossary-def">The variation in time between heartbeats. Higher HRV generally indicates better recovery and readiness to train.</div>
+</div>
+        </div>
     </div>
 </section>
 </main>
@@ -1883,16 +1546,20 @@ In training, you want to maximize stress to drive adaptation. In racing, you wan
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.sticky-nav a');
+    
     function updateActiveLink() {
         let current = '';
         const scrollPos = window.scrollY + 100;
+        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
+            
             if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
+        
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
@@ -1900,6 +1567,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
     window.addEventListener('scroll', updateActiveLink);
     updateActiveLink();
 });

@@ -1,0 +1,1192 @@
+{
+  "meta": {
+    "race_name": "Unbound Gravel 200",
+    "race_distance": "200 miles",
+    "race_location": "Emporia, Kansas",
+    "race_date": "June 2025",
+    "tier": "Finisher",
+    "level": "Intermediate",
+    "hours_per_week": "10",
+    "plan_weeks": "12",
+    "elevation": "11,000 feet",
+    "terrain": "mostly hard-packed gravel with some loose sections"
+  },
+  "radar_chart": {
+    "elevation": 3,
+    "length": 5,
+    "technical": 2,
+    "climate": 5,
+    "altitude": 1,
+    "adventure": 3
+  },
+  "sections": {
+    "welcome": {
+      "number": "01",
+      "title": "Welcome to Your Training",
+      "id": "welcome",
+      "intro_paragraphs": [
+        "This plan isn't generic. It's built for <strong>Unbound Gravel 200</strong>—its 200 miles, mostly hard-packed gravel with some loose sections, 11,000 feet of elevation, and what it'll take to be out there for 10-14 hours.",
+        "200 miles of Kansas gravel. Heat. Wind. Distance. This is the race that defines gravel racing. Finishing Unbound 200 puts you in an elite club of athletes who've conquered one of the most demanding events in cycling.",
+        "<strong>By the time you roll to the start, you'll know you're ready.</strong>"
+      ],
+      "cards": [
+        {
+          "title": "Built for Your Ability Level",
+          "content": "You're on the <strong>Intermediate</strong> version. The load and intensity match where you are right now."
+        },
+        {
+          "title": "Built for Your Schedule",
+          "content": "This is the <strong>Finisher</strong> tier, designed around <strong>10 hours/week</strong>. The week fits into your life so you can actually complete it."
+        },
+        {
+          "title": "Built for This Race",
+          "content": "The sessions target the key demands of Unbound: <strong>extreme heat, distance, wind, cumulative fatigue</strong>."
+        }
+      ]
+    },
+    "structure": {
+      "number": "02",
+      "title": "Plan Structure",
+      "id": "structure",
+      "phases": [
+        {
+          "name": "BASE",
+          "weeks": "1-3",
+          "color": "#4ecdc4",
+          "description": "Building aerobic foundation and endurance",
+          "legend": "Aerobic Foundation"
+        },
+        {
+          "name": "BUILD",
+          "weeks": "4-7",
+          "color": "#f4d03f",
+          "description": "Adding intensity, developing race-specific fitness",
+          "legend": "Race-Specific Fitness"
+        },
+        {
+          "name": "PEAK",
+          "weeks": "8-10",
+          "color": "#e74c3c",
+          "description": "Maximum training load and sharpening",
+          "legend": "Maximum Load"
+        },
+        {
+          "name": "TAPER",
+          "weeks": "11-12",
+          "color": "#27ae60",
+          "description": "Reducing volume while maintaining intensity",
+          "legend": "Fresh for Race Day"
+        }
+      ],
+      "weekly_structure": [
+        {
+          "day": "Monday",
+          "session": "Rest",
+          "duration": "—"
+        },
+        {
+          "day": "Tuesday",
+          "session": "Intensity",
+          "duration": "60-75 min"
+        },
+        {
+          "day": "Wednesday",
+          "session": "Endurance Z2",
+          "duration": "60-90 min"
+        },
+        {
+          "day": "Thursday",
+          "session": "G Spot Work",
+          "duration": "60-75 min",
+          "highlight": true
+        },
+        {
+          "day": "Friday",
+          "session": "Rest/Recovery",
+          "duration": "—"
+        },
+        {
+          "day": "Saturday",
+          "session": "Long Ride",
+          "duration": "2.5-4 hours"
+        },
+        {
+          "day": "Sunday",
+          "session": "Recovery/Skills",
+          "duration": "45-60 min"
+        }
+      ],
+      "recovery_weeks_callout": {
+        "title": "Recovery Weeks",
+        "content": "Every third or fourth week is a recovery week with 30-40% reduced volume. <strong>Recovery makes you fast.</strong> Don't skip these."
+      },
+      "compliance_note": {
+        "title": "A Note on Compliance vs. Perfection",
+        "paragraphs": [
+          "You won't execute this plan perfectly. No one does.",
+          "Life happens. Work intrudes. Illness strikes. Weather doesn't cooperate. Kids need attention. That's reality.",
+          "The goal isn't perfection—it's <strong>consistency</strong>. Complete 85-90% of the prescribed workouts, and you'll arrive at Unbound Gravel 200 prepared. Complete 95%+, and you'll be exceptionally prepared.",
+          "Miss multiple weeks, skip the hard workouts, or constantly substitute 'easier' options, and the plan won't work. Not because the plan failed—because you didn't do it.",
+          "<strong>Be honest with yourself about compliance.</strong>"
+        ]
+      }
+    },
+    "before_you_start": {
+      "number": "03",
+      "title": "Before You Start",
+      "id": "before",
+      "warnings": [
+        {
+          "type": "danger",
+          "title": "⚠️ Important",
+          "content": "This should go without saying, but we'll say it anyway: <strong>training is hard</strong>. It puts considerable stress on your cardiovascular system, your musculoskeletal system, and your body's ability to recover and adapt."
+        },
+        {
+          "type": "danger",
+          "title": "Cycling is Dangerous",
+          "content": "Let's be clear: cycling is dangerous. People die every day riding their bikes. Cars hit cyclists. Cyclists crash on descents. Mechanical failures happen at speed. Group rides go wrong.\n\nThe risk is real. You're accepting that risk by choosing to train and race. We're not going to pretend otherwise or sugarcoat it."
+        }
+      ],
+      "health_advice": [
+        "Ideally, you should get a physical before starting this plan. Have regular blood work done. Be confident you're healthy enough to handle the training load prescribed here.",
+        "If you have any concerns—chest pain, unusual shortness of breath, joint issues that worsen with activity, family history of heart problems—<strong>talk to a doctor before Week 1.</strong>",
+        "If you're injured, sick, or compromised in some way, don't train. Fix the problem first, then train. Training through injury doesn't make you tough—it makes you stupid. You can't out-train a broken body."
+      ],
+      "safety_tips": [
+        "<strong>Don't take stupid risks.</strong> That gravel descent at 40mph? Maybe slow down. That car approaching an intersection? Assume they don't see you.",
+        "<strong>Don't antagonize vehicles.</strong> You might technically have the right of way. You're also on a 20-pound bike versus a 4,000-pound vehicle. Physics doesn't care about traffic law.",
+        "<strong>Wear a helmet.</strong> Always. No exceptions. Get a good one. Replace it after any crash.",
+        "<strong>Use lights.</strong> Front and rear, even during daylight. Visibility = survival.",
+        "<strong>Ride predictably.</strong> Signal turns. Hold your line. Don't make sudden movements."
+      ],
+      "non_negotiables": [
+        "A power meter",
+        "A heart rate monitor",
+        "A bike set up correctly for gravel racing",
+        "Commitment to the full 12 weeks",
+        "Willingness to follow the plan as written",
+        "TrainingPeaks Premium (so your workouts sync to your device)",
+        "Smart trainer for indoor workouts"
+      ],
+      "equipment_mandatory": [
+        {
+          "item": "GPS bike computer",
+          "reason": "For tracking outdoor workouts, following routes, and displaying structured workouts from TrainingPeaks."
+        },
+        {
+          "item": "Power meter or heart rate monitor",
+          "reason": "You need objective data to execute the workouts correctly. Power is preferred (more precise, immediate feedback). Heart rate works but lags by 1-3 minutes."
+        },
+        {
+          "item": "Bike fit",
+          "reason": "A poorly fitting bike will break you over 12 weeks of training and 200 miles of racing. Invest in a professional fit if you haven't already."
+        },
+        {
+          "item": "Indoor training setup",
+          "reason": "At minimum: a basic trainer and a fan. Ideally: a smart trainer that controls resistance automatically."
+        },
+        {
+          "item": "Reliable bike",
+          "reason": "Your race bike should be mechanically sound. Shifting should be crisp. Brakes should be powerful. Don't wait until race week to discover problems."
+        }
+      ],
+      "ftp_testing": {
+        "when_to_test": [
+          "<strong>Week 1:</strong> Establish baseline FTP before training begins",
+          "<strong>Week 6-7 (optional):</strong> Check progress if curious, but not required",
+          "<strong>Week 11:</strong> Final test during taper to confirm fitness gains"
+        ],
+        "twenty_min_protocol": [
+          "Warm up thoroughly: 15-20 minutes progressive from Z1 to Z3",
+          "Include 3×1 minute at Z4-Z5 to open the legs",
+          "5 minutes easy recovery spin",
+          "<strong>20 minutes all-out</strong>, best average power you can hold",
+          "Cool down 10-15 minutes easy"
+        ],
+        "formula": "FTP = 20-minute average power × 0.95",
+        "execute_callout": {
+          "title": "Execute the Test Correctly",
+          "content": "Start conservatively in the first 5 minutes. Build into your effort. The last 5 minutes should be agonizing but sustainable. If you blow up at 15 minutes, you started too hard. The goal isn't heroics—it's an accurate number you can use for 6+ weeks of training."
+        }
+      }
+    },
+    "how_training_works": {
+      "number": "04",
+      "title": "How Training Works",
+      "id": "how-training-works",
+      "intro": "Before you start executing workouts, you need to understand how training works at a mechanical level. Not theory for theory's sake—practical understanding that changes how you approach every session.",
+      "adaptation_steps": [
+        {
+          "name": "Stress",
+          "description": "You apply training stress—a hard workout that exceeds your current capacity. This creates disruption: muscle fibers develop microtears, glycogen stores deplete, metabolic waste accumulates, cellular damage occurs. Your body registers this as a problem that needs solving."
+        },
+        {
+          "name": "Fatigue",
+          "description": "Immediately after training, you're weaker than before you started. Your muscles are damaged. Your fuel tanks are empty. Your nervous system is taxed. <strong>This is normal.</strong> Fatigue is the signal that triggers adaptation."
+        },
+        {
+          "name": "Recovery",
+          "description": "Given adequate rest, nutrition, and time, your body initiates repair: muscle fibers rebuild, mitochondria multiply, capillary density increases, glycogen storage expands, neurological efficiency improves."
+        },
+        {
+          "name": "Adaptation (Supercompensation)",
+          "description": "If recovery is complete, your body doesn't just return to baseline—it <strong>overshoots</strong>. This is called supercompensation: your body builds slightly more capacity than it had before."
+        },
+        {
+          "name": "Apply New Stress",
+          "description": "Once you've adapted, you apply a slightly larger stress. The cycle repeats. Over weeks and months, these small adaptations compound into meaningful fitness gains."
+        }
+      ],
+      "where_it_goes_wrong": [
+        {
+          "type": "warning",
+          "title": "Insufficient Stress",
+          "content": "If the workout is too easy, there's no disruption. No problem to solve. No adaptation triggered. You're just riding around."
+        },
+        {
+          "type": "danger",
+          "title": "Insufficient Recovery",
+          "content": "If you apply new stress before recovery is complete, you accumulate fatigue without adaptation. You're digging a hole, not building fitness."
+        },
+        {
+          "type": "warning",
+          "title": "Inconsistent Stress",
+          "content": "If you train sporadically—heroic efforts followed by weeks off—you never compound adaptations. You're starting over every time."
+        }
+      ],
+      "practical_rules": [
+        "<strong>Hard enough to trigger adaptation.</strong> Not so hard you can't recover.",
+        "<strong>Sleep, nutrition, stress management</strong>—these aren't optional. They're where adaptation happens.",
+        "<strong>Ten weeks of steady training</strong> beats four weeks of heroics followed by injury or burnout.",
+        "<strong>Every completed workout adds to the total.</strong> Missed workouts don't just subtract—they prevent compounding.",
+        "<strong>Meaningful adaptation takes weeks and months</strong>, not days. Trust the process."
+      ],
+      "phase_details": [
+        {
+          "phase": "Base (Weeks 1-3)",
+          "goal": "Build aerobic foundation and prepare for higher intensity work",
+          "what_youre_doing": "Long, steady endurance rides at Z2. Some tempo work to maintain feel for harder efforts. Focus on consistency and volume.",
+          "why": "Before adding intensity, you need aerobic capacity. Z2 work builds mitochondria, capillary density, and fat-burning efficiency.",
+          "how_it_feels": "Manageable. You're not exhausted. If you feel crushed, you're going too hard."
+        },
+        {
+          "phase": "Build (Weeks 4-7)",
+          "goal": "Develop race-specific fitness at G Spot intensity",
+          "what_youre_doing": "Sustained efforts at 88-92% FTP. Long rides with embedded race-pace intervals. Some threshold work to raise FTP.",
+          "why": "This is where you build the ability to hold 'uncomfortably sustainable' pace for hours. This is the core of gravel racing fitness.",
+          "how_it_feels": "Hard but purposeful. You're tired but recovering. Week 6 is a recovery week—use it."
+        },
+        {
+          "phase": "Peak (Weeks 8-10)",
+          "goal": "Maximum training load and race simulation",
+          "what_youre_doing": "Long rides approaching race distance. Big gear work. Some VO2max to maintain top-end. Week 9 recovery week.",
+          "why": "This is where fitness peaks. You're simulating race demands to prove you can handle them.",
+          "how_it_feels": "This is the hardest stretch. You should feel the load. Week 9 gives you a breather before Week 10's final big push."
+        },
+        {
+          "phase": "Taper (Weeks 11-12)",
+          "goal": "Reduce fatigue while maintaining fitness",
+          "what_youre_doing": "Volume drops 30-50%. Intensity stays present but shortened. Final race prep.",
+          "why": "Arrive at the start line fresh, not fatigued from training. Let your body express the fitness you built.",
+          "how_it_feels": "Restless. Anxious. Like you should be doing more. Resist. Trust the process."
+        }
+      ]
+    },
+    "zones": {
+      "number": "05",
+      "title": "Training Zones",
+      "id": "zones",
+      "intro": "Every workout prescription includes a zone target. Here's what they mean and how to use them.",
+      "point_of_zones": [
+        "Zones exist to quantify intensity and give you a common language for prescribing workouts.",
+        "But here's the paradox: <strong>the end goal of measuring intensity is to help you develop a feeling for intensity.</strong>",
+        "You use power meters, heart rate monitors, and zone charts to develop an intuitive sense of effort.",
+        "Your subjective feeling is infinitely more valuable than numbered outputs based on incomplete data collection.",
+        "<em>You're a special snowflake. Learn your snowflake.</em>"
+      ],
+      "measurement_systems": [
+        {
+          "name": "Power (% of FTP)",
+          "description": "Most precise system. Measures actual work output in watts. Immediate feedback. Not affected by heat, hydration, caffeine, or fatigue. <strong>This is the gold standard.</strong>"
+        },
+        {
+          "name": "Heart Rate (% of HRmax)",
+          "description": "Secondary system. Lags behind power by 1-3 minutes. Affected by heat, hydration, caffeine, stress, illness, fatigue. Still useful for pacing long efforts."
+        },
+        {
+          "name": "RPE (Rate of Perceived Exertion, 1-10 scale)",
+          "description": "Subjective. Your body's experience of the effort. Not precise. Always available. Sometimes more important than devices."
+        }
+      ],
+      "zone_table": [
+        {
+          "zone": "Z1",
+          "name": "Active Recovery",
+          "ftp": "<55%",
+          "hrmax": "<68%",
+          "rpe": "1-2",
+          "feel": "Very easy, barely pedaling"
+        },
+        {
+          "zone": "Z2",
+          "name": "Endurance",
+          "ftp": "56-75%",
+          "hrmax": "69-83%",
+          "rpe": "3-4",
+          "feel": "Conversational, all day pace"
+        },
+        {
+          "zone": "Z3",
+          "name": "Tempo",
+          "ftp": "76-87%",
+          "hrmax": "84-94%",
+          "rpe": "5-6",
+          "feel": "Moderate effort, focused"
+        },
+        {
+          "zone": "G",
+          "name": "G Spot",
+          "ftp": "88-92%",
+          "hrmax": "92-96%",
+          "rpe": "6-7",
+          "feel": "Uncomfortably sustainable",
+          "highlight": true
+        },
+        {
+          "zone": "Z4",
+          "name": "Threshold",
+          "ftp": "93-105%",
+          "hrmax": "95-100%",
+          "rpe": "7-8",
+          "feel": "Hard, time-limited"
+        },
+        {
+          "zone": "Z5",
+          "name": "VO2max",
+          "ftp": "106-120%",
+          "hrmax": "100%+",
+          "rpe": "9",
+          "feel": "Very hard, gasping"
+        },
+        {
+          "zone": "Z6",
+          "name": "Anaerobic",
+          "ftp": ">120%",
+          "hrmax": "N/A*",
+          "rpe": "10",
+          "feel": "Maximal, unsustainable"
+        }
+      ],
+      "g_spot_callout": {
+        "title": "The G Spot (88-92% FTP)",
+        "content": "This is our term for the intensity zone optimized for long gravel racing. Hard enough to move fast and stay with groups. Sustainable enough to hold for extended periods. <strong>This is where you'll spend most of your race.</strong>"
+      },
+      "common_mistake_callout": {
+        "title": "The Most Common Mistake",
+        "content": "Most people train too hard on easy days. Zone 2 should feel <strong>genuinely conversational</strong>. If you're breathing hard, you're in Z3. Fix this. It's the most common training mistake."
+      },
+      "critical_notes": [
+        "<strong>Zones describe what you did, not a rigid target you must hit.</strong> You're targeting a range, not a precise number.",
+        "<strong>Polarize your training.</strong> Easy days truly easy (Z1-Z2), hard days truly hard (Z4-Z6). Very little time in Z3.",
+        "<strong>Cross-reference all three metrics.</strong> Power meters can lie. Heart rate can be misleading. Your body doesn't lie.",
+        "<strong>When they align, you're dialed in. When they conflict, trust RPE.</strong>"
+      ],
+      "bottom_line": "Zones are tools, not masters. Learn them. Use them. But develop your intuition so you can ride by feel when devices fail. <strong>Power + Heart Rate + RPE = complete picture.</strong>"
+    },
+    "execution": {
+      "number": "06",
+      "title": "Workout Execution",
+      "id": "execution",
+      "intro": "You've got a plan. You understand the fundamentals. You know what the zones mean. None of that matters if you can't execute the workouts correctly.",
+      "execution_gap": {
+        "plan_says": "Tuesday: 3×15 min threshold @ 95-100% FTP, 8 min recovery between intervals",
+        "what_happens": [
+          "You skip the warmup because you're running late",
+          "Interval 1: You go out at 105% FTP because you feel good",
+          "Interval 2: You're struggling to hold 95%, questioning your FTP",
+          "Interval 3: You bail at 10 minutes because you're cooked",
+          "You skip the cooldown and immediately start checking Instagram"
+        ],
+        "result": "Incomplete workout, accumulated fatigue, no meaningful adaptation, compromised recovery for Wednesday's ride."
+      },
+      "universal_rules": [
+        {
+          "rule": "Always Warm Up",
+          "details": "For intensity sessions: 15-20 minutes Z1→Z2→Z3, include 3×1 min at Z3-Z4 to 'open the legs', 2-3 minutes easy spin before first work interval. Cold muscles don't produce power efficiently."
+        },
+        {
+          "rule": "Execute What's Prescribed",
+          "details": "Execute what's prescribed. Not more. Not less. Trust the plan. Adding volume or intensity might feel productive, but it accumulates fatigue and ruins tomorrow's workout."
+        },
+        {
+          "rule": "Pace for Completion",
+          "details": "The goal is <strong>highest average power across the entire set</strong>, not crushing the first interval then dying. Start conservatively. Finish strong. Complete the set."
+        }
+      ],
+      "zone_execution": [
+        {
+          "zone": "Z2 (Endurance)",
+          "target": "56-75% FTP, RPE 3-4, conversational",
+          "how_to": [
+            "Ride steady, no surges",
+            "Should feel easy enough to go for hours",
+            "Full sentences possible",
+            "Nose breathing (if you can't, you're too hard)"
+          ],
+          "mistakes": "Drifting into Z3 because you're bored. Turning every endurance ride into a tempo ride.",
+          "fix": "Discipline. Easy means easy. This is 70-80% of your training volume. Protect it."
+        },
+        {
+          "zone": "G Spot (88-92% FTP)",
+          "target": "88-92% FTP, RPE 6-7, 'uncomfortably sustainable'",
+          "how_to": [
+            "Stay seated, control breathing",
+            "Hard enough to hurt, easy enough to repeat",
+            "Could talk in short phrases but wouldn't want to",
+            "Fuel properly: 60-80g carbs/hour"
+          ],
+          "mistakes": "Pushing into threshold (93%+). Not fueling adequately. Letting Z2 rides drift here accidentally.",
+          "fix": "This is intentional race-pace work, not your default easy ride. Do it 2-3 times per week during build phase."
+        },
+        {
+          "zone": "Threshold (93-105% FTP)",
+          "target": "95-100% FTP, RPE 7-8, very hard but controlled",
+          "how_to": [
+            "Goal: 30-60 min total time-in-zone per session",
+            "Even intervals (2×20, 3×15, 4×12) beat one heroic 40-minute effort",
+            "Start at 95%, build into rhythm, settle at 97-98%"
+          ],
+          "success": "All intervals completed at target, power consistent (±3%), RPE 7-8, interval 3 felt hardest but you finished strong."
+        },
+        {
+          "zone": "VO2max (110-120% FTP)",
+          "target": "110-120% FTP, RPE 9, gasping, burning legs, maximal but repeatable",
+          "how_to": [
+            "Warm-up is critical: 20-25 min progressive with 3×1 min openers",
+            "Hit the target from the start",
+            "Full recovery between: 4-5 min Z1, heart rate must drop below 60% max",
+            "Stop if power drops >10% on any interval"
+          ]
+        }
+      ],
+      "indoor_vs_outdoor": {
+        "indoor": [
+          "Interval sessions (G Spot, threshold, VO2max)",
+          "Short workouts (<90 minutes)",
+          "Bad weather",
+          "Time-crunched days"
+        ],
+        "outdoor": [
+          "Long endurance rides (2+ hours)",
+          "Skills practice",
+          "Mental freshness",
+          "Terrain-specific preparation"
+        ],
+        "balance": "Roughly 60% indoor, 40% outdoor during base/build. Shifts to 70% outdoor during peak phase."
+      },
+      "modification_rules": {
+        "when_appropriate": [
+          "<strong>Illness:</strong> If sick above the neck, reduce intensity by one zone. If sick below the neck, skip entirely.",
+          "<strong>Injury:</strong> If something hurts, stop.",
+          "<strong>Extreme fatigue:</strong> If you're consistently unable to hit targets, you're either under-recovered or FTP is set too high.",
+          "<strong>Life stress:</strong> Major work deadlines, family emergencies, sleep deprivation—these all compromise training."
+        ],
+        "how_to_modify": [
+          "<strong>Reduce volume, not intensity:</strong> Cutting 90 minutes to 60 while maintaining intervals is better than doing full 90 at reduced intensity.",
+          "<strong>Substitute, don't skip:</strong> If you can't do the prescribed workout, do something. Even 30 minutes easy is better than nothing."
+        ],
+        "missed_workouts_rule": "One missed workout won't derail your plan. Two consecutive should trigger a conversation with yourself. Three consecutive means something fundamental isn't working—fix it."
+      }
+    },
+    "recovery": {
+      "number": "07",
+      "title": "Recovery & HRV",
+      "id": "recovery",
+      "intro": "Recovery isn't passive. It's active work that determines whether tomorrow's workout is productive or garbage.",
+      "protocol": [
+        {
+          "timing": "Immediately post-workout (0-30 min)",
+          "actions": [
+            "10-15 minute cooldown spin (Z1)",
+            "Consume 20-30g protein + 60-80g carbs within 30 minutes",
+            "Rehydrate: 16-24 oz water or electrolyte drink"
+          ]
+        },
+        {
+          "timing": "Within 2 hours",
+          "actions": [
+            "Full meal with protein, carbs, vegetables",
+            "Continue hydrating (urine should be pale yellow)"
+          ]
+        },
+        {
+          "timing": "Same day",
+          "actions": [
+            "Light movement (walk, easy spin, stretching)",
+            "Foam rolling for hard sessions",
+            "Avoid sitting for extended periods"
+          ]
+        },
+        {
+          "timing": "That night",
+          "actions": [
+            "<strong>7-9 hours of sleep (non-negotiable)</strong>",
+            "Keep room cool and dark",
+            "Avoid screens 30 minutes before bed"
+          ]
+        },
+        {
+          "timing": "Next day",
+          "actions": [
+            "Assess readiness: resting heart rate, legs feel, motivation",
+            "Adjust today's workout if needed"
+          ]
+        }
+      ],
+      "recovery_truth": "<strong>Recovery makes you fast.</strong> Training just provides the stimulus. Don't skip the recovery.",
+      "hrv": {
+        "what_it_measures": "HRV measures the variation in time between heartbeats. A healthy, recovered nervous system produces variable gaps. Higher HRV generally indicates your parasympathetic nervous system is dominant—your body is recovered and ready for stress.",
+        "good_for": [
+          "<strong>Tracking trends:</strong> A single reading means almost nothing. But 7-day rolling average tells you if your body is absorbing training or accumulating fatigue.",
+          "<strong>Tiebreaker decisions:</strong> You wake up feeling 'meh.' Check HRV. If suppressed, take the easy day.",
+          "<strong>Early warning system:</strong> HRV often drops 24-48 hours before you feel sick."
+        ],
+        "not_good_for": [
+          "<strong>Predicting performance:</strong> High HRV doesn't mean you'll crush your intervals today.",
+          "<strong>Daily decision-making:</strong> Never cancel a workout based on one reading.",
+          "<strong>Comparing to others:</strong> Your HRV is only meaningful relative to YOUR baseline."
+        ],
+        "how_to_use": [
+          "<strong>Establish baseline:</strong> Measure every morning for 2-3 weeks. Same conditions: immediately upon waking, before coffee, before phone.",
+          "<strong>Watch the trend:</strong> Daily fluctuations of 5-10% are normal. Pay attention to 7-day average trending down for 2+ weeks.",
+          "<strong>Use as tiebreaker:</strong> Feel bad + HRV suppressed = easy day. Feel bad + HRV normal = probably just fatigue, try the workout.",
+          "<strong>Don't overthink:</strong> Check it every morning, glance at the trend once a week, otherwise ignore it."
+        ],
+        "apps": "HRV4Training (most research-backed), Elite HRV (good free option), Whoop (expensive but automatic), Oura Ring (convenient), Garmin (if you have compatible watch)."
+      }
+    },
+    "strength": {
+      "number": "08",
+      "title": "Strength Training",
+      "id": "strength",
+      "intro": "Long neglected by endurance athletes, strength training has finally gotten the attention it deserves. The research is clear: stronger athletes perform better, get injured less, and extend their careers.",
+      "performance_benefits": [
+        "<strong>Improved movement economy.</strong> Stronger muscles require less effort to produce the same output.",
+        "<strong>Better force production.</strong> Stronger muscles generate more force per contraction.",
+        "<strong>Enhanced muscle activation.</strong> Strength training improves your nervous system's ability to recruit muscle fibers.",
+        "<strong>Greater explosiveness.</strong> Accelerations out of corners, punchy climbs, surges to close gaps.",
+        "<strong>Increased training capacity.</strong> A stronger body can absorb more training stress and recover faster."
+      ],
+      "injury_benefits": [
+        "<strong>Joint stability.</strong> Stronger muscles stabilize joints through their full range of motion.",
+        "<strong>Muscle balance.</strong> Cycling creates imbalances—strong quads, weak glutes, tight hip flexors. Strength training addresses these.",
+        "<strong>Resilience.</strong> A stronger body can handle the unexpected—a crash, a weird landing, an awkward dismount."
+      ],
+      "policy": {
+        "mobility": "Mobility and stability work: Do it year-round. 10-15 minutes of targeted mobility work, 2-3 times per week. Hip flexor stretches, glute activation, core stability, thoracic mobility. This is 'prehab'—preventing injuries before they happen.",
+        "full_strength": "Full periodized strength training requires: Time (16-20+ weeks), Proper instruction, Gym access, Energy that could go to cycling. If you can't commit to all four, focus on mobility and core stability instead."
+      },
+      "what_to_actually_do": {
+        "with_habit": {
+          "title": "If you already have a strength training habit:",
+          "content": [
+            "Continue it. Shift toward maintenance phase as you enter peak training (weeks 8-12). Reduce volume, maintain intensity, prioritize recovery.",
+            "Typical maintenance: 2 sessions/week, compound movements, moderate weight, 2-3 sets of 6-8 reps."
+          ]
+        },
+        "without_habit": {
+          "title": "If you don't have a strength training habit:",
+          "intro": "Don't start a full program now. Instead:",
+          "items": [
+            "<strong>Add mobility work immediately.</strong> 10-15 minutes, 3x/week. Hip flexors, glutes, thoracic spine, ankles.",
+            "<strong>Add basic core stability.</strong> Planks, dead bugs, bird dogs. 10 minutes, 2-3x/week.",
+            "<strong>Add bodyweight movements if you have bandwidth.</strong> Squats, lunges, glute bridges, push-ups. 15-20 minutes, 2x/week.",
+            "<strong>Plan a proper strength block for your off-season.</strong> After this race, commit to 12-16 weeks of structured strength training."
+          ]
+        },
+        "bottom_line": [
+          "Strength training makes you faster and keeps you healthy. But it's a long-term investment, not a quick fix.",
+          "During this 12-week block, prioritize: 1) Mobility/stability work (non-negotiable), 2) Basic core stability (highly recommended), 3) Maintenance strength if you already lift (continue what you're doing)",
+          "<strong>Don't try to build a strength base while preparing for a race. Do one thing well, not two things poorly.</strong>"
+        ]
+      },
+      "important_callout": "<strong>You cannot start this from scratch during a 12-week race prep.</strong> If you've never done structured strength training, trying to cram it into your race preparation is a recipe for excessive fatigue, DOMS that ruins key workouts, injury from poor form, and mental bandwidth overload."
+    },
+    "skills": {
+      "number": "09",
+      "title": "Gravel Skills",
+      "id": "skills",
+      "intro": "Fitness gets you to the race. Skills get you to the finish. Here are the specific techniques that separate confident gravel racers from nervous ones.",
+      "skills_list": [
+        {
+          "name": "Cadence Control",
+          "why": "Different cadences recruit different muscle fiber types. Optimizing cadence for terrain saves energy over long distances.",
+          "technique": "Slow twitch fibers (<80 rpm) for maintaining speed on flats. Fast twitch fibers (>95 rpm) for changing speed and steep hills.",
+          "practice": "On training rides, consciously vary your cadence. Climb at 60 rpm, then 90 rpm. Notice the difference.",
+          "cue": "Flat = lower, Punchy = higher"
+        },
+        {
+          "name": "Loose Surface Cornering",
+          "why": "Crashes end races. Confident cornering lets you maintain speed through technical sections while others slow to a crawl.",
+          "technique": "Unlike road where you lean your body into turns, gravel requires keeping weight over the tires. <strong>Lean the bike, not your body.</strong> Stand up, drop your heels, drive front tire into ground, look through the turn.",
+          "practice": "Find a gravel parking lot. Start at 50% of comfortable speed. Repeat 500 times.",
+          "cue": "Lean the bike, not the body"
+        },
+        {
+          "name": "Braking",
+          "why": "Panic braking on loose surfaces is how people crash. Proper technique keeps you upright.",
+          "technique": "Feather brakes gradually—no death grip. Front brake for most stopping. Rear brake for adjustments. Brake <em>before</em> the turn, not during.",
+          "practice": "Practice controlled rear-wheel skidding on low-risk gravel roads. Get comfortable with the limits.",
+          "cue": "Feather before the turn, commit through it"
+        },
+        {
+          "name": "Steep Climbs (15-25%)",
+          "why": "Gravel courses include 'wall' climbs that require different technique than normal climbing.",
+          "technique": "Keep momentum going in. Stay seated for rear wheel traction. Weight over rear wheel, hands light on bars. Standing shifts weight forward and loses traction.",
+          "practice": "Find a steep loose climb. Practice seated climbing with weight back.",
+          "cue": "Momentum in, weight back, stay seated"
+        },
+        {
+          "name": "Eating While Riding",
+          "why": "In a race lasting 8+ hours, you'll consume thousands of calories. If you can't eat while riding, you'll either stop frequently or bonk.",
+          "technique": "Unwrap bars before you leave, or use easy-open packaging. Practice eating with both hands.",
+          "practice": "On every training ride over 90 minutes, eat something while actually pedaling.",
+          "cue": "Flat road first, then rough. Both hands work"
+        },
+        {
+          "name": "Group Riding & Pace Line Dynamics",
+          "why": "Drafting saves roughly 25-30% of energy. Over 200 miles, that's enormous.",
+          "technique": "Smooth, predictable movements. No sudden braking, no surging, no erratic lines. Communicate about hazards.",
+          "practice": "Join group rides. Focus on smooth, predictable movements. Practice maintaining 2-3 bike length gap.",
+          "cue": "Smooth pulls, steady pace, speak up"
+        },
+        {
+          "name": "Track Standing & Balance",
+          "why": "If you can track stand, you have enhanced balance and handling ability—which comes in handy when gravel riding.",
+          "technique": "Start on slight uphill with front wheel turned slightly. Apply gentle pressure to pedals while making small corrections with handlebars.",
+          "practice": "Start with 5 seconds and work up to 30+.",
+          "cue": "Balance is handling"
+        },
+        {
+          "name": "Bunny Hopping",
+          "why": "For unexpected obstacles, drainage bars, ruts you didn't see in time.",
+          "technique": "Compress down → pull up on bars → scoop back with feet → level out in air.",
+          "practice": "Start small with a stick on flat ground.",
+          "cue": "Compress, pull, scoop"
+        },
+        {
+          "name": "Mechanical Self-Sufficiency",
+          "why": "A flat tire at mile 80 shouldn't end your race.",
+          "technique": "Practice changing tubes until under 5 minutes. Know how to plug tubeless tires. Know how to reset a dropped chain.",
+          "practice": "Practice at home so you're calm on the course.",
+          "cue": "Practice at home so you're calm on the course"
+        }
+      ],
+      "practice_callout": {
+        "title": "Where to Practice: MTB Trails & Obstacle Courses",
+        "content": "Take your gravel bike on mountain bike trails—specifically green or blue trails. Alternatively, find a grassy field and set up your own obstacle course: cones for cornering, small objects to bunny hop, tight turns, figure-8 patterns. <strong>30 minutes of focused practice builds skills faster than 3 hours of just riding.</strong>"
+      },
+      "race_specific_callout": {
+        "title": "Race-Specific Skill Notes for Unbound",
+        "content": "Cornering on loose gravel is critical. Practice eating while riding. Group riding skills save massive energy over 200 miles."
+      },
+      "bottom_line": "You can't cram for these the week before the race. Technical skills require repetition over time. Build them into your training rides starting in Week 1, not Week 11."
+    },
+    "fueling": {
+      "number": "10",
+      "title": "Fueling & Hydration",
+      "id": "fueling",
+      "intro": "Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel properly, you won't finish well. Maybe you won't finish at all.",
+      "math": "A fit athlete might have 2,000 calories of stored glycogen. A 200-mile gravel race might burn 8,000+ calories. If you don't take in fuel during the race, you'll bonk. Not maybe—<strong>will</strong>.",
+      "quick_reference": [
+        {
+          "scenario": "Pre-Ride (2-3 hrs before)",
+          "carbs": "1-2g/kg body weight",
+          "fluids": "16-24 oz",
+          "notes": "Low fiber, familiar foods only"
+        },
+        {
+          "scenario": "Easy Ride (<90 min)",
+          "carbs": "0-30g/hour",
+          "fluids": "16-24 oz/hour",
+          "notes": "Water usually sufficient"
+        },
+        {
+          "scenario": "Long Ride (>90 min)",
+          "carbs": "60-80g/hour",
+          "fluids": "24-32 oz/hour",
+          "notes": "Mix liquid + solid calories"
+        },
+        {
+          "scenario": "Race Day",
+          "carbs": "80-100g/hour",
+          "fluids": "24-32 oz/hour",
+          "notes": "Nothing new. Everything practiced.",
+          "highlight": true
+        },
+        {
+          "scenario": "Hot Conditions (>80°F)",
+          "carbs": "Same carbs",
+          "fluids": "36-48 oz/hour",
+          "notes": "Sodium: 500-1000mg/hour"
+        }
+      ],
+      "hydration": {
+        "baseline": "20-24 ounces per hour in mild conditions (60-70°F). When temps climb above 80°F, sweat rate increases dramatically—often by 50% or more.",
+        "sodium": "When you sweat, you lose both water and sodium. If you replace only water, your blood sodium concentration drops—a condition called hyponatremia that can be dangerous.",
+        "salty_sweater": "After long rides, do you see salt crystals on your kit or face? Do you crave salty foods? That's information—you need more sodium than average.",
+        "verify_callout": {
+          "title": "Verify Your Hydration Strategy",
+          "content": "Weigh yourself before and after long training rides. Every pound lost represents roughly 16 ounces of fluid deficit. If you're losing more than 2-3% of body weight during rides, you need to drink more."
+        }
+      },
+      "gut_training": {
+        "intro": "Your gut is trainable. The ability to absorb large amounts of carbohydrates while exercising improves with practice.",
+        "progression": [
+          "Start at 40-50 grams per hour in Week 1",
+          "Every 2-3 weeks, increase by 10 grams per hour",
+          "By race day, comfortably absorb 80-100 grams per hour"
+        ],
+        "tip": "Combining glucose and fructose (ideally 2:1 ratio) allows your gut to absorb more total carbs per hour than either source alone."
+      },
+      "solution_callout": {
+        "title": "The Solution",
+        "content": "Treat fueling as a <strong>non-negotiable task</strong>, not an optional one based on hunger. Set a timer on your bike computer. Every 20 minutes: consume calories. Every 15 minutes: drink. Make it automatic. Don't wait until you feel hungry or thirsty—by then, you're already behind."
+      },
+      "reality_check": "Most athletes under-fuel during long events. At mile 100, eating another gel might make you gag. None of that changes the math."
+    },
+    "mental": {
+      "number": "11",
+      "title": "Mental Game",
+      "id": "mental",
+      "intro": "Physical training builds the engine. Mental training determines whether you use that engine when things get hard. And in any race measured in hours, things <em>will</em> get hard.",
+      "breathing_627": {
+        "pattern": "Inhale for 6 seconds, hold for 2 seconds, exhale for 7 seconds.",
+        "key": "The exhale is longer than the inhale. This triggers the calming response.",
+        "when_to_use": [
+          "<strong>Pre-race anxiety.</strong> The night before or morning of. 3-5 cycles will calm your nervous system.",
+          "<strong>Mid-race panic.</strong> When things feel out of control—you're dropped, you flatted, the pain is overwhelming.",
+          "<strong>After a bad section.</strong> After a crash, a mechanical, or a period of suffering."
+        ],
+        "practice": "Start with 5 minutes daily, sitting quietly. Then during easy rides. Eventually during hard efforts. By race day, it should be automatic."
+      },
+      "performance_statements": {
+        "intro": "Your internal monologue affects your performance. When you catch yourself thinking 'I can't do this,' those thoughts become self-fulfilling prophecies.",
+        "types": [
+          "<strong>Technical cues:</strong> 'Smooth pedal stroke.' 'Relax your shoulders.' 'Light hands on the bars.'",
+          "<strong>Pain responses:</strong> 'This is supposed to be hard.' 'If you keep pedaling, you'll get there.'",
+          "<strong>Process statements:</strong> 'Just get to the next aid station.' 'One more climb.'"
+        ],
+        "callout": "Write 3-5 statements now, while you're not suffering. Choose phrases that resonate personally. Memorize them. Practice them during training rides."
+      },
+      "highlight_reel": {
+        "intro": "A highlight reel is a mental movie you can play to access confidence and motivation on demand.",
+        "scenes": [
+          "<strong>Scene 1: Past moment of strength.</strong> Recall a specific time when you overcame something difficult. Make this vivid.",
+          "<strong>Scene 2: Future crucial moment.</strong> Visualize a specific section where you see yourself executing perfectly.",
+          "<strong>Scene 3: Crossing the finish line.</strong> In full detail. What you see, hear, feel, the emotions."
+        ],
+        "when_to_use": [
+          "Race morning, before getting out of bed. 5-10 minutes.",
+          "Any time during the race when you need a mental boost."
+        ]
+      },
+      "race_day_checklist": [
+        "<strong>Race morning (before getting up):</strong> Run through your highlight reel. 5-10 minutes.",
+        "<strong>Race morning (after waking up):</strong> 6-2-7 breathing if anxious. Three cycles minimum.",
+        "<strong>Pre-start (last 30 minutes):</strong> Review performance statements mentally.",
+        "<strong>During the race:</strong> Stay in process focus. Next aid station. Next climb. Next hour.",
+        "<strong>Crisis moments:</strong> Breathing (3-5 cycles) → Statement → Action (smallest possible next step)"
+      ],
+      "bottom_line": "These tools work, but only if you practice them. Don't wait until mile 150 to try 6-2-7 breathing for the first time."
+    },
+    "race_tactics": {
+      "number": "12",
+      "title": "Race Day Tactics",
+      "id": "race-day",
+      "intro": [
+        "It turns out racing is much more pleasant if you employ something called 'tactics.' Tactics just mean having a plan for how you're going to use your energy over the course and against your fellow gravel racers.",
+        "<strong>Tactics matter. A lot.</strong> If you're interested in placing well, you'll want to pay attention to the following suggestions.",
+        "That said, if you just want to zen out on washboards, sip whiskey, and forget about your troubles for hours on end, just ride. What matters most is that you're having fun."
+      ],
+      "three_acts": [
+        {
+          "name": "THE MADNESS",
+          "when": "0-90 min",
+          "whats_happening": "Fresh legs, nervous energy, crowded course. Attacks fly. Adrenaline-fueled decisions.",
+          "your_job": "Go hard enough to find your group. Don't panic. Start eating immediately."
+        },
+        {
+          "name": "FALSE DAWN",
+          "when": "90 min - 3 hrs",
+          "whats_happening": "Order returns. Groups stabilize. Pace becomes predictable. Feels manageable.",
+          "your_job": "Stay fueled and hydrated. Contribute to your group without overworking. Bank energy."
+        },
+        {
+          "name": "THE PIPER",
+          "when": "3+ hrs to finish",
+          "whats_happening": "The bill comes due. Under-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders check out.",
+          "your_job": "Execute your plan while others fall apart. <strong>This is where the race happens.</strong>",
+          "highlight": true
+        }
+      ],
+      "phase_details": [
+        {
+          "phase": "Phase 1: The Madness (Miles 0-25)",
+          "content": "The first 60-90 minutes of any gravel race is chaos. Fresh legs meet nervous energy meet a crowded course.\n\nYour job: <strong>Find your group, start eating, don't do anything stupid.</strong>\n\nYou can't win the race in the first hour. But you can definitely lose it."
+        },
+        {
+          "phase": "Phase 2: False Dawn (Miles 25-75)",
+          "content": "After the initial chaos settles, order returns. Groups stabilize. The race can start to feel manageable, even easy.\n\n<strong>Don't be fooled. This is the setup for phase three.</strong>\n\nWatch for riders who are overworking—taking pulls that are too long, going to the front too often. They're making withdrawals they'll pay for later."
+        },
+        {
+          "phase": "Phase 3: The Piper (Final 50-100 Miles)",
+          "content": "This is when the bill comes due. <strong>This is the race.</strong>\n\nUnder-fueled riders bonk. Under-prepared riders cramp. Mentally weak riders quit.\n\nIf you've done the work—the training, the nutrition practice, the mental preparation—this is where you move up. You're not attacking. You're not surging. You're just maintaining your pace while others lose theirs."
+        }
+      ],
+      "tactical_principles": [
+        {
+          "name": "The Start",
+          "content": "When the gun goes off you could be forgiven for thinking you accidentally turned up to the wrong race because people go off the line like it's a track race.\n\n<strong>Expect it.</strong> The race always starts hard.\n\n<strong>Yes, you should</strong> go hard. One of the key aspects to success in a gravel race is getting into the right group of similarly fit individuals. You need to be on the start line ready to go quite hard for at least an hour."
+        },
+        {
+          "name": "Find a Group",
+          "content": "What group should you be in? A group with people with similar abilities.\n\nYou don't need to overthink this. <strong>Start strong, but then titrate your effort and settle in with a group that feels challenging but doable.</strong>"
+        },
+        {
+          "name": "Eat Early and Eat Often",
+          "content": "Once you're in a group, start eating. I can't emphasize eating enough.\n\nYou need to eat early, eat often, and start slugging fluid. Don't wait until you're hungry. Don't wait until mile 50. Start at mile 10 and don't stop until you cross the finish line."
+        },
+        {
+          "name": "Be Efficient",
+          "content": "Now that you've eaten, start asking yourself this question over and over:"
+        }
+      ],
+      "key_question": "How could I keep going at this speed for less effort?",
+      "efficiency_explanation": "<strong>The goal of racing, unlike training, is not putting up big power numbers—it's to go from A to B as fast as possible using the least amount of energy.</strong>\n\nIn training, you want to maximize stress to drive adaptation. In racing, you want to minimize stress while maximizing speed. Completely different objectives.",
+      "efficiency_tips": [
+        {
+          "name": "Draft Smart",
+          "content": "Even on gravel, where it's harder to draft, it helps. Don't be a hero. Take pulls, but don't try to show anyone how strong you are. Every minute at the front is energy you're not saving. Every minute in the draft is energy you're banking for later."
+        },
+        {
+          "name": "Read the Course",
+          "content": "You should always be picking the best possible line. If the right line is packed down and smooth, why are you riding to the left in potholes? Look ahead. Pick lines. Save watts."
+        },
+        {
+          "name": "Read the Wind",
+          "content": "If it's a headwind, it's worth putting out more energy to put time on people. When it's a tailwind, your speed will be higher but you won't gain as much time for proportional power output. Don't hammer when you have a tailwind—save that for when it turns into a slog."
+        }
+      ],
+      "race_specific_callout": "Survive the first 60 miles. Find a sustainable group. Fuel every 20 minutes. Don't chase attacks. The race happens after mile 100 when others fade.",
+      "aid_station": "Aid stations every 30-40 miles. <strong>Don't skip them.</strong> Refill bottles, grab real food, take 2-3 minutes to reset. The time lost is worth the energy gained.",
+      "non_negotiables": [
+        {
+          "requirement": "Heat adaptation protocol starting 4-6 weeks out",
+          "by_when": "Week 4-6",
+          "why": "Kansas heat in June can break unprepared riders"
+        },
+        {
+          "requirement": "Two 6+ hour rides minimum before race day",
+          "by_when": "Weeks 8-10",
+          "why": "Prove you can handle the duration"
+        },
+        {
+          "requirement": "Race-day nutrition dialed: 80-100g carbs/hour",
+          "by_when": "Week 6+",
+          "why": "200 miles burns 8,000+ calories"
+        },
+        {
+          "requirement": "Tire strategy: 40mm+ with chunk protection",
+          "by_when": "Week 8",
+          "why": "Loose sections will destroy thin tires"
+        },
+        {
+          "requirement": "Mental prep for hours 8-12",
+          "by_when": "Week 10+",
+          "why": "The race gets real after 8 hours"
+        }
+      ],
+      "weather": "June in Kansas means heat (80-95°F) and potential wind. Start early if possible. Hydrate aggressively (36-48 oz/hour). Wear light colors. Use ice in bottles. <strong>Sunscreen is mandatory.</strong>",
+      "race_week": [
+        {
+          "day": "Day 7",
+          "training": "2 hours Z2 + 3x3 min Z3",
+          "focus": "Last moderate ride. Final bike check."
+        },
+        {
+          "day": "Day 6",
+          "training": "45 min easy or rest",
+          "focus": "Pack gear. Finalize nutrition plan."
+        },
+        {
+          "day": "Day 5",
+          "training": "Rest or 30 min Z1",
+          "focus": "Travel day if needed. Stay hydrated."
+        },
+        {
+          "day": "Day 4",
+          "training": "45 min Z2 + 3x30 sec Z4",
+          "focus": "Shake out travel. Course recon if possible."
+        },
+        {
+          "day": "Day 3",
+          "training": "20 min Z2 + 3x30 sec hard",
+          "focus": "Openers. Packet pickup. Final bike check."
+        },
+        {
+          "day": "Day 2",
+          "training": "Complete rest",
+          "focus": "Hydrate. Carb loading begins (+200-300g)."
+        },
+        {
+          "day": "Day 1",
+          "training": "Complete rest",
+          "focus": "Prep drop bags. Lay out kit. Visualize. Early to bed."
+        }
+      ],
+      "race_morning": [
+        "<strong>3-4 hours before start:</strong> Wake up. Eat familiar, high-carb, low-fiber breakfast. Target 1-2g carbs/kg body weight.",
+        "<strong>2 hours before start:</strong> Arrive at venue. Set up bike and gear. Use the bathroom. Begin sipping fluids.",
+        "<strong>1 hour before start:</strong> Final bike check: tire pressure, brakes, shifting. Short warm-up spin if possible. Start pre-race nutrition (100-200 calories).",
+        "<strong>30 minutes before start:</strong> Run through your highlight reel. Review performance statements. Focus on what you can control.",
+        "<strong>10 minutes before start:</strong> 6-2-7 breathing. Three cycles minimum. Find your spot. Check nutrition is accessible.",
+        "<strong>Start:</strong> Go hard enough to find your group. First gel at 20 minutes, not 60 minutes."
+      ],
+      "race_week_bottom_line": {
+        "title": "Race Week Bottom Line",
+        "content": "Less is more. You've done the work. Now let your body absorb it. <strong>Show up fresh, not fatigued from last-minute training.</strong>"
+      }
+    },
+    "tires": {
+      "number": "13",
+      "title": "Tire Selection",
+      "id": "tires",
+      "intro": "People spend more time obsessing over tires than they spend training. The irony is that conventional wisdom about tire selection has been largely wrong—and recent testing is forcing a rethink.",
+      "counterintuitive_truth": {
+        "headline": "Wider Is Faster",
+        "content": "Pro gravel racer and YouTube coach Dylan Johnson has been doing extensive tire testing at facilities like Silverstone's pedaling efficiency rig. The results: <strong>on rough terrain, wider tires—including mountain bike tires—consistently outperform narrower gravel tires.</strong>",
+        "prediction": "Johnson predicts that at major gravel races in 2025, the majority of Lifetime Grand Prix riders will be running mountain bike tires on their gravel bikes."
+      },
+      "why_wider_faster": [
+        {
+          "reason": "Rolling Resistance on Rough Surfaces",
+          "explanation": "The bigger the tire, the less it sinks into loose surfaces. In Johnson's testing on cobbles (simulating gravel), a 2.2\" mountain bike tire lost only 8 watts to rolling resistance at 36 km/h—while a 35mm gravel tire lost nearly 42 watts."
+        },
+        {
+          "reason": "Lower Vibration Loss",
+          "explanation": "Rough roads create vibrations, and vibrations slow you down. Wider tires at lower pressure absorb bumps, keeping you moving forward instead of bouncing."
+        },
+        {
+          "reason": "The Casing Paradox",
+          "explanation": "Lightweight XC mountain bike tires often have <em>thinner</em> casings than gravel tires. A tire like the Schwalbe Thunder Burt has a thinner casing than almost any gravel tire. Thinner casing = lower rolling resistance. And larger volume prevents pinch flats."
+        }
+      ],
+      "weight_myth": {
+        "title": "The Weight Myth",
+        "content": "Switching from 35mm gravel tire to 2.2\" MTB tire adds about 450 grams total. That weight difference only costs about 2 watts on a steep climb—while saving far more in rolling resistance on flats and rough stuff.\n\n<strong>If you're worrying about weight before considering rolling resistance, you've got it backwards.</strong>"
+      },
+      "factors_that_matter": [
+        {
+          "factor": "Will this tire get you to the finish without flatting?",
+          "explanation": "This remains the most important variable. Wider tires puncture less because they're run at lower pressure, have larger contact patch, and better shock absorption."
+        },
+        {
+          "factor": "Can you ride this tire for 8+ hours without your hands going numb?",
+          "explanation": "Gravel races are long. Harsh tires beat you up. Wider tires at lower pressure provide a more damped ride."
+        },
+        {
+          "factor": "Does this tire fit your bike?",
+          "explanation": "Many gravel bikes max out at 45-50mm. If your frame can't clear a 2.2\" MTB tire, you work with what you've got."
+        }
+      ],
+      "what_doesnt_matter": [
+        "<strong>Rolling resistance on smooth surfaces:</strong> Unless your gravel race is mostly paved, this doesn't matter.",
+        "<strong>Tread pattern:</strong> Unless racing in mud or deep sand, tread pattern matters less than people think.",
+        "<strong>Marginal weight differences:</strong> A 50-gram difference in tire weight is noise."
+      ],
+      "width_guide": [
+        {
+          "width": "35-40mm",
+          "best_for": "Fast, smooth gravel; lots of pavement",
+          "pros": "Fastest on smooth surfaces",
+          "cons": "Slowest on rough terrain; most flats"
+        },
+        {
+          "width": "42-47mm",
+          "best_for": "Mixed gravel (many riders' default)",
+          "pros": "Reasonable balance",
+          "cons": "Not optimal for either extreme"
+        },
+        {
+          "width": "50-55mm (2.0-2.2\")",
+          "best_for": "Rough gravel, chunky terrain",
+          "pros": "Fastest on rough; most comfortable; fewest flats",
+          "cons": "May not fit all frames",
+          "highlight": true
+        }
+      ],
+      "race_recommendation": "Go as wide as your frame allows. 45mm minimum; 50mm+ preferred. If you can fit a lightweight XC mountain bike tire, consider it.",
+      "pressure": {
+        "guidelines": [
+          "<strong>40-45mm:</strong> 28-38 psi depending on rider weight",
+          "<strong>50-55mm:</strong> 22-32 psi depending on rider weight"
+        ],
+        "advice": "Start on the higher end and drop pressure until you feel tires conform to terrain without feeling sloppy. The right pressure is the lowest you can run without rim strikes or handling issues."
+      },
+      "tubeless": {
+        "pros": "Lower pressure capability, punctures often self-seal, slightly lower rolling resistance",
+        "cons": "More setup hassle, can burp air on hard impacts, requires practice to fix",
+        "verdict": "Tubeless is better if you're competent at setting it up and fixing it. Tubes are fine if you're not."
+      },
+      "dont_switch_race_week": "Don't switch to new tires—or to tubeless for the first time—the week before your race. If you're running something and it works, keep running it.",
+      "goal_callout": {
+        "title": "The Goal",
+        "content": "The actual best tire is the one that <strong>gets you to the finish line without flatting</strong> and doesn't beat you up for 8+ hours. Durability beats marginal speed gains. Every time."
+      },
+      "bottom_line": "Pick a durable, 'fast enough' tire in the widest width your frame allows. Test it. Race it. Stop optimizing for lab-tested rolling resistance numbers. Start optimizing for finishing the race with your body and equipment intact."
+    },
+    "glossary": {
+      "number": "14",
+      "title": "Key Workouts & Glossary",
+      "id": "glossary",
+      "terms": [
+        {
+          "term": "FTP (Functional Threshold Power)",
+          "definition": "The highest average power you can sustain for approximately one hour at maximum effort. All training zones are calculated as percentages of FTP. An accurate FTP is essential—wrong FTP = wrong zones = ineffective training."
+        },
+        {
+          "term": "TSS (Training Stress Score)",
+          "definition": "A measure of training load accounting for both intensity and duration. 100 TSS = one hour at FTP. A hard 2-hour ride might be 180 TSS. A recovery ride might be 30 TSS. Weekly TSS helps track overall training load."
+        },
+        {
+          "term": "CTL (Chronic Training Load)",
+          "definition": "Your 42-day rolling average of TSS. Represents your 'fitness' level—how much training load your body has adapted to handle. A good amateur racer might have CTL of 60-80; elite pros reach 140+."
+        },
+        {
+          "term": "ATL (Acute Training Load)",
+          "definition": "Your 7-day rolling average of TSS. Represents 'fatigue'—how much stress you've accumulated recently. High ATL means you're working hard. Too high for too long leads to overtraining."
+        },
+        {
+          "term": "TSB (Training Stress Balance)",
+          "definition": "CTL minus ATL. Represents 'form' or freshness. Negative TSB = you're fatigued. Positive TSB = you're fresh. For racing, aim for TSB between +5 and +20—fit but fresh."
+        },
+        {
+          "term": "NP (Normalized Power)",
+          "definition": "An estimate of the power you could have held if your effort were perfectly steady. Accounts for the fact that variable power is harder than steady power at the same average. Always higher than average power for real-world rides."
+        },
+        {
+          "term": "IF (Intensity Factor)",
+          "definition": "Normalized Power divided by FTP. Tells you how hard a workout was relative to your threshold. IF of 0.75 = endurance ride. IF of 0.90 = tempo/G Spot. IF of 1.0 = you averaged FTP."
+        },
+        {
+          "term": "VI (Variability Index)",
+          "definition": "Normalized Power divided by Average Power. Measures how variable your power output was. VI of 1.0 = perfectly steady. VI of 1.2 = quite variable (typical for gravel with terrain changes)."
+        },
+        {
+          "term": "EF (Efficiency Factor)",
+          "definition": "Normalized Power divided by average heart rate. Higher EF = better aerobic efficiency. Track this over time—rising EF at same power indicates improving fitness."
+        },
+        {
+          "term": "Aerobic Decoupling (Pw:Hr)",
+          "definition": "Compares power-to-heart-rate ratio in first half vs. second half of a ride. Less than 5% drift indicates good aerobic fitness. More than 5% suggests you're working beyond your aerobic capacity."
+        },
+        {
+          "term": "PMC (Performance Management Chart)",
+          "definition": "A TrainingPeaks chart showing CTL, ATL, and TSB over time. The primary tool for planning training load and tapering for races."
+        },
+        {
+          "term": "W/kg (Watts per Kilogram)",
+          "definition": "Power output divided by body weight. The most meaningful way to compare cycling fitness between riders. Good amateur racers are around 4 W/kg at threshold; elite pros reach 6+ W/kg."
+        },
+        {
+          "term": "LTHR (Lactate Threshold Heart Rate)",
+          "definition": "The heart rate you can sustain for approximately one hour at maximum effort. Useful when power data isn't available."
+        },
+        {
+          "term": "RPE (Rate of Perceived Exertion)",
+          "definition": "A subjective scale from 1-10 describing how hard an effort feels. Not precise, but always available, and sometimes more important than power or heart rate."
+        },
+        {
+          "term": "G Spot (88-92% FTP)",
+          "definition": "Our term for the intensity zone optimized for long gravel racing. Hard enough to move fast and stay with groups. Sustainable enough to hold for extended periods. 'Uncomfortably sustainable.'"
+        },
+        {
+          "term": "Polarized Training",
+          "definition": "A training approach where roughly 80% of time is spent easy (zones 1-2) and 20% hard (zones 4+), with minimal time in the middle zones (zone 3)."
+        },
+        {
+          "term": "Block Periodization",
+          "definition": "A training structure that focuses on developing one primary physical quality per 3-4 week block before moving to the next."
+        },
+        {
+          "term": "Traditional Pyramidal",
+          "definition": "A training approach where volume forms a pyramid: lots of Z1-Z2, moderate Z3-Z4, small amount Z5+."
+        },
+        {
+          "term": "Taper",
+          "definition": "A planned reduction in training volume before a race. Volume drops 30-50% while intensity remains. Typically 1-2 weeks for gravel races."
+        },
+        {
+          "term": "Bonk",
+          "definition": "Severe glycogen depletion causing sudden, dramatic fatigue. Prevention: eat early and eat often."
+        },
+        {
+          "term": "Supercompensation",
+          "definition": "The principle where your body adapts by building slightly more capacity than before to handle similar stress more easily next time."
+        },
+        {
+          "term": "Mitochondria",
+          "definition": "The 'power plants' in your cells that produce aerobic energy. Endurance training increases mitochondrial density."
+        },
+        {
+          "term": "Anaerobic Capacity",
+          "definition": "The amount of work you can perform above lactate threshold. A fixed amount of 'matches' you can burn—use them wisely."
+        },
+        {
+          "term": "HRV (Heart Rate Variability)",
+          "definition": "The variation in time between heartbeats. Higher HRV generally indicates better recovery and readiness to train."
+        }
+      ],
+      "key_workouts": [
+        {
+          "name": "G Spot 3×15",
+          "purpose": "Race pace sustainment. Builds ability to hold uncomfortable but sustainable power.",
+          "highlight": true
+        },
+        {
+          "name": "Threshold 4×12",
+          "purpose": "FTP development. Raises your sustainable power ceiling."
+        },
+        {
+          "name": "Long Ride with G Spot",
+          "purpose": "Race simulation. Combines endurance with race-pace efforts."
+        },
+        {
+          "name": "VO2max 5×3",
+          "purpose": "Top-end power. Maintains ability to respond to attacks and climb hard."
+        }
+      ],
+      "support": {
+        "race_info": {
+          "text": "For race information:",
+          "url": "https://unboundgravel.com"
+        },
+        "questions": {
+          "text": "For questions about this training plan:",
+          "email": "gravelgodcoaching@gmail.com"
+        }
+      }
+    }
+  },
+  "footer": {
+    "tagline": "See You at the Finish",
+    "body": "You have the plan. You understand how training works, how to execute the workouts, how to fuel and hydrate, how to manage your mental game, and how to approach race day.",
+    "emphasis_1": "Now do the work.",
+    "middle": "Not perfectly. Not heroically. Consistently. Intelligently. Over 12 weeks.",
+    "confidence": "On race morning, you'll stand at the start line knowing you did everything you could to prepare. That confidence—not hope, not optimism, but confidence based on completed work—is what this plan builds.",
+    "emphasis_2": "The race will be hard. You trained for hard.",
+    "email": "gravelgodcoaching@gmail.com",
+    "motto": "Become what you could be."
+  }
+}

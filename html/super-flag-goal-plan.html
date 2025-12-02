@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Flag PR - Goal Plan Summary</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .goal-section {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2196f3;
+        }
+        .goal-statement {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: 600;
+            padding: 16px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+        td {
+            padding: 16px;
+            border: 1px solid #dee2e6;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        .smarrt-table th {
+            width: 20%;
+            background-color: #fff3e0;
+        }
+        .plan-table th {
+            background-color: #e8f5e9;
+        }
+        .feedback-table th {
+            background-color: #fce4ec;
+        }
+        .current-state {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .target-state {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .metrics {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .metric-box {
+            flex: 1;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .metric-box.current {
+            background-color: #ffebee;
+            border: 2px solid #ef5350;
+        }
+        .metric-box.target {
+            background-color: #e8f5e9;
+            border: 2px solid #66bb6a;
+        }
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+        }
+        .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #999;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Super Flag PR - Goal Achievement Plan</h1>
+        
+        <div class="goal-section">
+            <div class="goal-statement">
+                "I will complete the Super Flag Strava segment in 25:01 or faster by May 1, 2026, improving my current PR by 1 minute, which will prove to myself that at 39 I can still be better than I've ever been."
+            </div>
+        </div>
+
+        <h2>SMARRT Goal Breakdown</h2>
+        <table class="smarrt-table">
+            <tr>
+                <th>Specific</th>
+                <td>PR Super Flag segment (7.38km, 659m gain, 8.2% avg) by 1 minute (26:01 → 25:01)</td>
+            </tr>
+            <tr>
+                <th>Measurable</th>
+                <td>Clear pass/fail: Finish in 25:01 or faster. Currently requires 4% speed improvement (17 km/h → 17.7 km/h)</td>
+            </tr>
+            <tr>
+                <th>Achievable</th>
+                <td>Yes - requires 4.5% improvement in power-to-weight ratio over 6 months with consistent training</td>
+            </tr>
+            <tr>
+                <th>Relevant/Reason</th>
+                <td>Prove that at 39, you can still improve and be better than you've ever been (internal motivation)</td>
+            </tr>
+            <tr>
+                <th>Risky</th>
+                <td>Meaningful challenge - 1 minute improvement on optimized segment requires real gains, not just better conditions</td>
+            </tr>
+            <tr>
+                <th>Time-bound</th>
+                <td>May 1, 2026 (6 months / 24 weeks to execute)</td>
+            </tr>
+        </table>
+
+        <h2>Current State → Target State</h2>
+        <div class="metrics">
+            <div class="metric-box current">
+                <div class="metric-label">CURRENT</div>
+                <div class="metric-value">4.4 w/kg</div>
+                <div style="margin-top: 10px; font-size: 0.9em;">
+                    370W @ 185 lbs<br>
+                    26:01 segment time
+                </div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="metric-box target">
+                <div class="metric-label">TARGET</div>
+                <div class="metric-value">4.6 w/kg</div>
+                <div style="margin-top: 10px; font-size: 0.9em;">
+                    378W @ 181 lbs<br>
+                    25:01 segment time
+                </div>
+            </div>
+        </div>
+
+        <h2>The Plan</h2>
+        <table class="plan-table">
+            <tr>
+                <th style="width: 25%;">Element</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td><strong>Limiter Identified</strong></td>
+                <td><span class="highlight">Power-to-weight ratio</span> - Need 4.5% improvement (4.4 → 4.6 w/kg) to achieve 4% speed increase on 8.2% grade</td>
+            </tr>
+            <tr>
+                <td><strong>Practices</strong></td>
+                <td>
+                    <ul>
+                        <li><strong>Threshold intervals</strong> (2x/week) - Build sustained power at FTP</li>
+                        <li><strong>Long tempo climbs</strong> (1x/week) - Specificity for 25-min climbing efforts</li>
+                        <li><strong>Body composition optimization</strong> - Lose 4 lbs while maintaining/gaining power</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Weekly Actions</strong></td>
+                <td>
+                    <ul>
+                        <li><strong>Tuesday:</strong> 2x20min @ FTP with 10min recovery</li>
+                        <li><strong>Thursday:</strong> 3x12min @ 105% FTP with 6min recovery</li>
+                        <li><strong>Saturday:</strong> 90min ride with 40min continuous tempo climb (85-90% FTP)</li>
+                        <li><strong>Daily:</strong> 300 calorie deficit + 1g protein per lb bodyweight</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Progression Timeline</strong></td>
+                <td>
+                    <ul>
+                        <li><strong>Weeks 1-8:</strong> Build base threshold power + establish calorie deficit</li>
+                        <li><strong>Weeks 9-16:</strong> Increase interval intensity, maintain deficit</li>
+                        <li><strong>Weeks 17-20:</strong> Taper volume, hold weight, peak for attempt</li>
+                        <li><strong>Weeks 21-24:</strong> Final taper and attempt window</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Feedback Loops</h2>
+        <table class="feedback-table">
+            <tr>
+                <th style="width: 25%;">What to Track</th>
+                <th style="width: 25%;">How Often</th>
+                <th>Success Indicator</th>
+            </tr>
+            <tr>
+                <td><strong>FTP Test</strong></td>
+                <td>Every 4 weeks</td>
+                <td>Power trending upward (+2-3W per month = on track)</td>
+            </tr>
+            <tr>
+                <td><strong>Body Weight</strong></td>
+                <td>Daily (track weekly average)</td>
+                <td>Losing ~0.5 lbs per week = on track (too fast = losing muscle)</td>
+            </tr>
+            <tr>
+                <td><strong>Interval Completion</strong></td>
+                <td>Every workout</td>
+                <td>Can complete prescribed intervals at target power? If yes = progressing. If no = need recovery or adjust intensity.</td>
+            </tr>
+            <tr>
+                <td><strong>Recovery Quality</strong></td>
+                <td>Daily subjective assessment</td>
+                <td>Feeling ready for hard workouts? Good sleep? If no = reduce volume or intensity</td>
+            </tr>
+            <tr>
+                <td><strong>Power-to-Weight Ratio</strong></td>
+                <td>Every 4 weeks (after FTP test)</td>
+                <td>
+                    <strong>Progress checkpoints:</strong><br>
+                    • Week 8: 4.45 w/kg<br>
+                    • Week 12: 4.5 w/kg<br>
+                    • Week 16: 4.55 w/kg<br>
+                    • Week 20: 4.6 w/kg (ready for attempt)
+                </td>
+            </tr>
+        </table>
+
+        <div style="margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 6px;">
+            <strong>Bottom Line:</strong> One limiter (power-to-weight), three practices (threshold work + tempo climbs + body comp), simple weekly actions, clear 6-month progression with monthly checkpoints. Execute consistently and you'll be at 4.6 w/kg by May 1.
+        </div>
+    </div>
+</body>
+</html>

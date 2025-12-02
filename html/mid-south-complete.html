@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mid South – Gravel Race Info & Training Guide | Gravel God</title>
+    <meta name="description" content="Complete guide to The Mid South: 100 miles on Oklahoma red clay, $100K purse, extreme weather. Race vitals, mud vs dry conditions, and training plan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', 'Courier New', monospace;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #59473C 0%, #8C7568 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 6px solid #5CE1E6;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4em;
+            color: #FFDE59;
+            font-style: normal;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: #FFFFFF;
+            margin: 60px 0;
+            padding: 40px 0;
+            border-left: 8px solid #5CE1E6;
+            padding-left: 40px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #000000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 3px solid #8C7568;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            color: #59473C;
+            margin: 30px 0 20px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section h4 {
+            font-size: 1.1em;
+            color: #8C7568;
+            margin: 20px 0 15px 0;
+            font-weight: 700;
+        }
+
+        .section p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        /* Hexagon Rating System */
+        .hexagon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .hex-item {
+            background-color: #F5F5F5;
+            padding: 30px;
+            border: 2px solid #A68E80;
+            transition: border-color 0.3s ease;
+        }
+
+        .hex-item:hover {
+            border-color: #5CE1E6;
+        }
+
+        .hex-title {
+            font-size: 1.1em;
+            color: #000000;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hexagon-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            gap: 5px;
+        }
+
+        .hexagon {
+            width: 40px;
+            height: 23px;
+            background-color: #BFA595;
+            position: relative;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            left: 0;
+        }
+
+        .hexagon:before {
+            bottom: 100%;
+            border-bottom: 11.5px solid #BFA595;
+        }
+
+        .hexagon:after {
+            top: 100%;
+            border-top: 11.5px solid #BFA595;
+        }
+
+        .hexagon.filled {
+            background-color: #5CE1E6;
+        }
+
+        .hexagon.filled:before {
+            border-bottom-color: #5CE1E6;
+        }
+
+        .hexagon.filled:after {
+            border-top-color: #5CE1E6;
+        }
+
+        .hex-desc {
+            text-align: center;
+            font-size: 0.9em;
+            color: #59473C;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: #FFFFFF;
+        }
+
+        th {
+            background-color: #59473C;
+            color: #FFFFFF;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #8C7568;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #BFA595;
+            background-color: #FAFAFA;
+        }
+
+        tbody tr:nth-child(even) td {
+            background-color: #F5F5F5;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            background-color: #F5F5F5;
+            border-left: 6px solid #FFDE59;
+            padding: 30px;
+            margin: 30px 0;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .warning-box {
+            background-color: #FFF9E6;
+            border: 3px solid #5CE1E6;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .warning-box h3 {
+            color: #59473C;
+            margin-bottom: 15px;
+        }
+
+        .tldr-box {
+            background-color: #E8F5F7;
+            border-left: 8px solid #5CE1E6;
+            padding: 35px;
+            margin: 30px 0;
+            font-size: 1.05em;
+        }
+
+        .score-box {
+            background-color: #FFFACD;
+            border: 4px solid #FFDE59;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 20px 0 20px 40px;
+            line-height: 1.9;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #59473C;
+        }
+
+        em {
+            font-style: italic;
+            color: #8C7568;
+        }
+
+        /* Links */
+        a {
+            color: #5CE1E6;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #5CE1E6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #59473C;
+            padding: 50px 20px;
+            text-align: center;
+            color: #BFA595;
+            margin-top: 80px;
+            border-top: 6px solid #5CE1E6;
+        }
+
+        .footer a {
+            color: #FFDE59;
+        }
+
+        /* Training Section Special Styling */
+        .training-philosophy {
+            background-color: #F9F9F9;
+            border-left: 4px solid #8C7568;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .training-philosophy h4 {
+            color: #59473C;
+            margin-bottom: 10px;
+        }
+
+        .suitability-score {
+            display: inline-block;
+            background-color: #5CE1E6;
+            color: #000000;
+            padding: 5px 15px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+                letter-spacing: 4px;
+            }
+            
+            .hexagon-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding-left: 20px;
+                border-left-width: 4px;
+            }
+
+            table {
+                font-size: 0.85em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container">
+            <h1>THE MID SOUTH</h1>
+            <div class="hero-subtitle">Oklahoma's Red Clay Roulette</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Race Vitals -->
+        <div class="section">
+            <h2>Race Vitals</h2>
+            <table>
+                <tbody>
+                    <tr><th>Location</th><td>Stillwater, Oklahoma</td></tr>
+                    <tr><th>Date</th><td>March 12-15, 2026 (annually mid-March)</td></tr>
+                    <tr><th>Distances</th><td>100 miles, 50 miles, 12 miles</td></tr>
+                    <tr><th>Elevation Gain</th><td>3,500 ft (100mi), 2,000 ft (50mi)</td></tr>
+                    <tr><th>Terrain</th><td>Red clay gravel, rolling hills, creek crossings, late singletrack</td></tr>
+                    <tr><th>Field Size</th><td>4,000+ riders</td></tr>
+                    <tr><th>Start Time</th><td>8:00 AM (mass start), 7:45 AM (pro waves)</td></tr>
+                    <tr><th>Registration</th><td>Opens September, $165 (100mi), $115 (50mi)</td></tr>
+                    <tr><th>Prize Purse</th><td>$100,000 (split equally men/women elite)</td></tr>
+                    <tr><th>Aid Stations</th><td>Neutral support at ~50mi, snacks/water</td></tr>
+                    <tr><th>Cut-off Time</th><td>None (Bobby wants everyone to finish)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TL;DR -->
+        <div class="section">
+            <h2>TL;DR</h2>
+            <div class="tldr-box">
+                <p>The Mid South is gravel racing's season opener and biggest personality cult. When it's dry (recent trend), you get a blazingly fast 100-mile tactical race on hard-packed red clay with average speeds over 20mph for the front groups. When it rains (historically common), those same roads become unrideable peanut butter mud that destroys drivetrains and forces miles of hike-a-bike. Either way, you finish to a hug from race director Bobby Wintle, live music, and the kind of community vibe that makes people come back year after year despite the suffering.</p>
+            </div>
+            
+            <div class="callout">
+                <strong>You should race this if:</strong> You want the ultimate gravel season opener test against stacked pro fields, you can handle extreme weather variability, and you value atmosphere/community as much as competition.
+            </div>
+            
+            <div class="warning-box">
+                <h3>⚠️ Skip this if:</h3>
+                <p>You need predictable conditions, hate tactical pack racing, or want a remote self-supported adventure instead of a festival atmosphere.</p>
+            </div>
+        </div>
+
+        <!-- What It Means -->
+        <div class="section">
+            <h2>What It Means</h2>
+            
+            <h3>History</h3>
+            <p>The Mid South started in 2013 as the "Land Run 100" when Bobby and Crystal Wintle of District Bicycles in Stillwater invited 121 riders to explore Oklahoma's red dirt roads. Bobby stood at the finish line and hugged every single finisher—a tradition he's maintained for 13 years running. The race grew explosively: 350 riders year two, 500 by year three, 1,000 by year five, and now over 4,000 participants from 48 states and multiple countries.</p>
+
+            <p>In 2025, the race added separate pro wave starts and a $100,000 prize purse split equally between elite men and women, cementing its status as a major professional event while maintaining its grassroots party vibe. The 2025 edition was tragically cancelled due to catastrophic wildfires and hurricane-force winds, but the community response—pivoting immediately to wildfire relief fundraising—only reinforced why this event is so beloved.</p>
+
+            <h3>Random Facts You Should Know</h3>
+            
+            <p><strong>The Mud Reputation:</strong> The Mid South's nickname "Mud South" isn't marketing—it's earned. Oklahoma's red clay contains iron oxide that gives it that distinctive crimson color, but more importantly, it becomes sticky, bike-stopping cement when wet. The clay particles bind together with moisture, creating what racers call "peanut butter mud" that can add 10+ pounds to your bike weight and render derailleurs completely useless. Race organizers used to include wooden paint stir sticks in registration packets specifically for scraping mud off bikes. In the notorious 2017 edition, freezing rain turned the course into a mud-fest where fewer than 200 of 1,000 starters finished.</p>
+
+            <p><strong>The Bobby Hug:</strong> Race founder Bobby Wintle has hugged every finisher he physically can for 13 years. Not just winners—every single rider who crosses that line, from 4:26 to midnight. It's become such a defining part of the event that "getting a Bobby Hug" is listed as a legitimate goal for many participants.</p>
+
+            <p><strong>No Cut-Offs Philosophy:</strong> Unlike most major gravel races, The Mid South refuses to impose cut-off times. Crystal Wintle has explicitly stated this as a core value—if you start, they want you to finish, even if that means rolling in after dark. The event provides support and encouragement for every rider regardless of pace.</p>
+
+            <p><strong>The Dry Years Trend:</strong> After being notorious for mud for years, The Mid South has had three consecutive dry editions (2022-2024), resulting in record-fast times and tactical racing. This has shifted the race dynamic from survival epic to high-speed criterium-style pack racing. But don't be fooled—March in Oklahoma remains unpredictable, and the mud can return at any time.</p>
+        </div>
+
+        <!-- The Stats / Ratings -->
+        <div class="section">
+            <h2>The Ratings</h2>
+            
+            <div class="hexagon-grid">
+                <div class="hex-item">
+                    <div class="hex-title">Prestige</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="hex-desc">
+                        5/5 — Season opener status, $100K purse, Bobby Wintle legend, 4,000+ field, attracts WorldTour pros
+                    </div>
+                </div>
+
+                <div class="hex-item">
+                    <div class="hex-title">Length</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        3/5 — 100 miles is substantial but raceable. Fast times (4:26-4:47 for winners). 50-mile option available.
+                    </div>
+                </div>
+
+                <div class="hex-item">
+                    <div class="hex-title">Technicality</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="hex-desc">
+                        5/5 — Creek crossings, singletrack, red clay chaos. Dry: 3.5/5. Mud: 5/5 (bike-destroying peanut butter).
+                    </div>
+                </div>
+
+                <div class="hex-item">
+                    <div class="hex-title">Elevation</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        2/5 — 3,500ft over 100 miles. Rolling "shark teeth" terrain with constant small climbs. Not mountainous.
+                    </div>
+                </div>
+
+                <div class="hex-item">
+                    <div class="hex-title">Climate</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="hex-desc">
+                        5/5 — THE defining variable. March Oklahoma = anything goes. Recent: snow, wildfires, perfect conditions. Red clay + rain = race-ending.
+                    </div>
+                </div>
+
+                <div class="hex-item">
+                    <div class="hex-title">Altitude</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        1/5 — Stillwater at ~900ft elevation. Essentially sea level racing. No altitude concerns.
+                    </div>
+                </div>
+
+                <div class="hex-item">
+                    <div class="hex-title">Adventure Factor</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="hex-desc">
+                        2/5 (dry) / 5/5 (mud) — Mass start with aid stations. But when mud hits, it's pure survival chaos.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Prestige: 5/5</h3>
+            <p>This isn't a Life Time Grand Prix event, but it carries more cultural weight than some that are. The Mid South is the accepted gravel season opener—the race that signals winter is over and racing season has begun. The $100,000 prize purse (equal men/women split) attracts top pros from road, cyclocross, and mountain biking. Lauren De Crescenzo's three-peat and course records, Torbjorn Røed's sprint victories, and the caliber of riders who show up each year (think WorldTour riders using this as early-season testing) give this race serious professional credibility.</p>
+
+            <p>But the prestige goes beyond prize money. This is Bobby Wintle's race—a figure who's become synonymous with gravel culture through his finish line hugs, guitar playing at after-parties, and genuine care for every single rider. When Payson McElveen or Mat Stephens talks about winning The Mid South, there's a reverence in their voice you don't hear about every race. The field size (4,000+), the media coverage, the Radavist photo essays, the documentary film screenings—this is a Monument of Gravel.</p>
+
+            <h3>Length: 3/5</h3>
+            <p>100 miles is substantial but sits in that perfect middle ground—long enough to test fitness and endurance, short enough to race tactically and finish before dark. It's not ultra-endurance territory like Unbound 200 or BWR Cedar City. The recent winning times (men: 4:27, women: 4:47) show that this is a race, not a survival epic. That said, 100 miles is still 100 miles. If you're a 12-15 hour/week athlete, this will hurt. The 50-mile option exists for those wanting the Mid South experience without the full suffer-fest.</p>
+
+            <h3>Technicality: 5/5 (Weather Dependent)</h3>
+            <p>This score is the most condition-dependent in all of gravel racing. Let's break it down:</p>
+
+            <p><strong>DRY CONDITIONS (recent trend): 3.5/5</strong></p>
+            <ul>
+                <li>Creek crossings at mile 13 and 52 that force dismounts and run-throughs</li>
+                <li>Steep climbs immediately after crossings (when you're fatigued from running)</li>
+                <li>Late-race singletrack section around mile 90 that splinters groups</li>
+                <li>Rutted red clay sections that require line choice and bike handling</li>
+                <li>Sandy patches that can stop forward momentum dead</li>
+                <li>Fast descents on loose gravel requiring confident handling</li>
+            </ul>
+
+            <p><strong>MUD CONDITIONS (historically common): 5/5</strong></p>
+            <ul>
+                <li>Peanut butter red clay that renders bikes nearly unrideable</li>
+                <li>Drivetrain-destroying mud that clogs everything within seconds</li>
+                <li>Sections requiring miles of hike-a-bike carrying 20+ pound mud-caked bikes</li>
+                <li>Brake rotors and cables seized by clay</li>
+                <li>Zero ability to shift or change gears</li>
+                <li>Shoe-sucking mud that can literally pull footwear off</li>
+                <li>Paint stir sticks become your most important equipment</li>
+            </ul>
+
+            <p>The technicality isn't just about terrain—it's about the binary nature of the conditions. You're either racing at 23mph in a pack, or you're suffering through a cyclocross-meets-Tough Mudder nightmare. There's no in-between.</p>
+
+            <h3>Elevation Gain: 2/5</h3>
+            <p>With approximately 3,500 feet of elevation gain over 100 miles, The Mid South won't break you with climbing. This isn't Leadville or SBT GRVL. However, don't mistake "low elevation gain" for "flat." The course profile looks like shark teeth—constant rolling terrain where you're never truly on flat ground. You're perpetually climbing or descending small 50-150 foot rollers. This creates a different kind of suffering: your power is constantly spiking and dropping, you can never settle into a rhythm, and the accumulated fatigue from hundreds of small accelerations adds up over 100 miles.</p>
+
+            <p>The lack of sustained climbing means you can't use low gears to hide fitness gaps. It rewards punchy power, pack positioning, and the ability to surge repeatedly. If you're a diesel climber who likes grinding 8% grades at steady state, this terrain will frustrate you.</p>
+
+            <h3>Climate: 5/5 (THE Defining Variable)</h3>
+            <p>This is where The Mid South earns its reputation and its terror. March in Oklahoma is meteorological chaos:</p>
+
+            <p><strong>Temperature Range:</strong> The region has recorded temperatures from -19°F to 117°F. Race weekend historically ranges from 30-70°F, but you truly never know. The 2022 edition saw snow on Friday before the race. Recent years have been 40-60°F and dry.</p>
+
+            <p><strong>Precipitation:</strong> This is the race-defining factor. Oklahoma averages 3-4 inches of rain in March. Even light rain (0.25 inches) can turn the red clay from hard-packed to unrideable. The official race website literally states: "Even light rain can lead to wheel stopping mud buildup."</p>
+
+            <p><strong>Wind:</strong> Oklahoma wind is relentless. Recent years have seen 40mph sustained winds with gusts to 60-80mph. The 2025 cancellation involved hurricane-force winds that sparked catastrophic wildfires.</p>
+
+            <p><strong>Extreme Weather Events:</strong> The 2025 wildfire cancellation involved 130+ separate fires across Oklahoma, hurricane-force winds, and mandatory evacuations. This isn't normal, but it illustrates the extreme variability possible.</p>
+
+            <p><strong>Recent Trend:</strong> 2022-2024 were all dry and fast, leading some to think the "Mud South" reputation is outdated. Don't be fooled. The weather gods giveth and the weather gods taketh away. March in Oklahoma remains fundamentally unpredictable.</p>
+
+            <h3>Altitude: 1/5</h3>
+            <p>Stillwater sits at approximately 900 feet elevation. This is essentially sea level racing—altitude won't be a factor. If you live at elevation, you'll actually have an advantage here. No acclimatization needed, no altitude-specific training required.</p>
+
+            <h3>Adventure Factor: 2/5 (Dry) / 5/5 (Rain/Mud)</h3>
+            <p><strong>Dry Conditions:</strong> This is a mass-start race with 4,000 riders, neutral support at the 50-mile mark (fast hand-ups for front groups), and a festival atmosphere. You're not out there alone on remote roads figuring things out. The course is marked, there are other riders everywhere, and support exists. It's a race, not an adventure.</p>
+
+            <p><strong>Mud Conditions:</strong> All bets are off. When the mud hits, The Mid South becomes a suffer-fest survival scenario where finishing itself is an achievement. The neutral support can't save you when your bike won't shift and you're carrying 15 pounds of clay. You're problem-solving on the fly, making do-or-die equipment choices, and genuinely wondering if you'll make it. In these conditions, the adventure score maxes out.</p>
+        </div>
+
+        <!-- Why It Matters -->
+        <div class="section">
+            <h2>Why It Matters</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Score</th>
+                        <th>Commentary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cultural Weight</td>
+                        <td>5/5</td>
+                        <td>Season opener status, Bobby Wintle legend, finish line hugs, gravel identity</td>
+                    </tr>
+                    <tr>
+                        <td>Field Depth</td>
+                        <td>5/5</td>
+                        <td>4,000+ riders, WorldTour pros, CX stars, MTB specialists, privateers</td>
+                    </tr>
+                    <tr>
+                        <td>Course Quality</td>
+                        <td>4/5</td>
+                        <td>Iconic red clay, rolling terrain, technical features, but not remote/epic</td>
+                    </tr>
+                    <tr>
+                        <td>Organization</td>
+                        <td>6/5</td>
+                        <td>Gold standard event production, inclusive philosophy, crisis management</td>
+                    </tr>
+                    <tr>
+                        <td>Prize Money</td>
+                        <td>5/5</td>
+                        <td>$100K purse, equal men/women split, top payout for 100-mile gravel race</td>
+                    </tr>
+                    <tr>
+                        <td>Community</td>
+                        <td>6/5</td>
+                        <td>Unmatched atmosphere, inclusive ethos, DFL = champion treatment</td>
+                    </tr>
+                    <tr>
+                        <td>Suffering Quotient</td>
+                        <td>5/5</td>
+                        <td>Weather-dependent chaos, mud destruction, tactical racing brutality</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Our Take:</strong> The Mid South sits in a unique position—it's both a high-level professional race (pro waves, $100K purse, stacked fields) and a grassroots community celebration (no cut-offs, Bobby hugs, party vibes). This duality is rare. Most races either embrace elite racing and lose the community feel, or prioritize inclusivity and lose competitive legitimacy. The Mid South nails both.</p>
+
+            <p>The weather variability means you need to prepare for everything and accept that you can't control the outcome. Your perfect prep could still result in a mud-fest DNF. Your mediocre fitness might coincide with a fast, dry day. This randomness is either frustrating or exhilarating depending on your personality.</p>
+
+            <p>What makes The Mid South matter beyond the racing is Bobby and Crystal Wintle's vision. The 2025 wildfire cancellation showed their true colors—they prioritized community safety over event revenue, transparently communicated difficult decisions, and immediately pivoted to wildfire relief fundraising. The community responded in kind. This race has soul because the people running it have souls.</p>
+        </div>
+
+        <!-- Overall Score -->
+        <div class="section">
+            <h2>Overall Score</h2>
+            
+            <div class="score-box">
+                72/100
+            </div>
+
+            <p><strong>How we got here:</strong></p>
+            <ul>
+                <li>Prestige (5) + Length (3) + Technicality (5) + Elevation (2) + Climate (5) + Altitude (1) + Adventure (2 dry / 5 mud) = <strong>23-26 raw points</strong></li>
+                <li>Multiplier for: Elite field quality (+8), weather lottery factor (+8), cultural significance (+10), organization/atmosphere (+12), accessibility (no cut-offs, multiple distances, +6), prize purse (+4)</li>
+                <li>Penalty for: Lack of remote adventure character (-3), elevation gain not mountainous (-2)</li>
+            </ul>
+
+            <p><strong>What this score means:</strong></p>
+
+            <p>A 72/100 places The Mid South in "Elite Regional Classic" territory—it's a must-do for serious gravel racers, especially those focused on competitive racing rather than ultra-endurance or bikepacking adventures. The score would be higher if not for the relatively modest elevation gain and lack of true wilderness adventure character. But the 5/5 climate score and weather-dependent nature means this race can play significantly harder than a 72 suggests.</p>
+
+            <p>This isn't a race you do once and check off a list. It's a race you return to year after year, hoping for redemption from past mud-fests or trying to beat your best time on a fast year. The community pull is strong—stronger than nearly any other gravel event. People don't just race The Mid South; they make pilgrimages to it.</p>
+        </div>
+
+        <!-- The Troll's Take -->
+        <div class="section">
+            <h2>The Troll's Take</h2>
+            
+            <h3>"It's Oklahoma. In March. What did you expect?"</h3>
+
+            <p>Let's address the elephant in the room: The Mid South's reputation is built almost entirely on its weather unpredictability and the red clay mud drama. But look at the recent results—three consecutive dry, fast years (2022-2024). The winning times keep dropping. The "Mud South" hasn't been muddy lately. So are we all just LARPing nostalgia for suffer-fests that don't exist anymore?</p>
+
+            <p>Maybe. Climate trends suggest Oklahoma is getting warmer and potentially drier in March. The race that made its name destroying drivetrains with peanut butter mud has recently been more "Crit on Dirt" than "Apocalypse on Clay." The pros love this—tactical racing at 23mph average speeds is way more interesting than six hours of hike-a-bike. But does that mean we're mourning the loss of what made this race special?</p>
+
+            <p>Here's the contrarian truth: <strong>The Mid South is better fast.</strong> Fight me on this. The mud-fest years were survival lottos where bike handling and equipment luck mattered more than fitness. Riders literally walked for miles because their bikes wouldn't function. That's not racing—that's disaster management. The fast years reveal who actually did the training, who has tactical acumen, who can suffer in a pack, and who has the engine to TT solo when the race splinters.</p>
+
+            <p>Bobby Wintle added pro waves and $100,000 in prize money because he recognized that The Mid South had evolved beyond grassroots roots. The event now attracts WorldTour riders, national champions, and legitimate professional athletes. This isn't a weekend warrior party anymore—though there's still a weekend warrior party happening simultaneously in the back half of the 4,000-person field.</p>
+
+            <p>Some gravel purists will say this professionalization kills the spirit. But here's what they miss: The Mid South can be both. Lauren De Crescenzo can drop a 4:47 course record in a tactical race for $10,000 while someone in the back of the pack gets a Bobby hug at 8pm after nine hours of pure grit. Both experiences are valid. Both are celebrated. This isn't zero-sum.</p>
+
+            <p><strong>The wildfire cancellation in 2025 proved something important:</strong> This race isn't just about the race. When hurricane-force winds sparked fires that threatened Stillwater, Bobby made the call to cancel and the community pivoted immediately to helping affected families. Riders who traveled from Europe didn't complain—they donated to wildfire relief. This revealed that the "vibe" everyone talks about isn't manufactured marketing BS. It's real.</p>
+
+            <p>But let's be honest about the weather lottery: If you travel to Oklahoma in March, you're gambling. You might get perfect conditions and a PR. You might get snow on Friday. You might get unrideable mud. You might get catastrophic wildfires. That's the deal. If you need predictable conditions, go race Belgian Waffle Ride Arizona in February or Unbound in May (when it's reliably hot). The Mid South offers no such guarantees.</p>
+
+            <p>Here's the real question: <strong>Does weather unpredictability add value or just add chaos?</strong> For competitive athletes trying to test form and hit power targets, it's frustrating. For adventurers who love the unknown, it's exhilarating. For spectators and media, it creates storylines. The 2020 mud-fest with Payson McElveen's dominant ride is still talked about. The 2024 fast conditions with Lauren De Crescenzo's three-peat are still talked about. Both matter.</p>
+
+            <p>The Mid South sits in this weird space where it's simultaneously a legitimate professional race and a community celebration. It's the gravel season opener but also a party. It's tactical racing but also potential disaster survival. This tension is either the race's greatest strength or its fundamental contradiction—depends on what you value.</p>
+
+            <p>One thing is certain: <strong>You can't fake the atmosphere.</strong> When 4,000+ people converge on a small Oklahoma college town to ride bikes on red dirt roads, get hugged by Bobby Wintle, and celebrate movement in community, something special happens. Whether the roads are dry and fast or muddy and apocalyptic becomes almost secondary to the shared experience. Almost.</p>
+        </div>
+
+        <!-- Coach's Note: Training Recommendations -->
+        <div class="section">
+            <h2>Coach's Note: Training for The Mid South</h2>
+            
+            <p><strong>Race Experience Category:</strong> COMPETE (dry conditions) / SURVIVE (mud conditions)</p>
+
+            <p>The Mid South requires you to train for two completely different races because you won't know which one you're getting until 24-48 hours before the start. This creates a unique training challenge.</p>
+
+            <h3>Performance Category Framework</h3>
+
+            <p>I'm giving you training recommendations for the <strong>COMPETE</strong> category since that's what the race has been recently (dry, fast, tactical). If you're planning to just finish and enjoy the vibe, scroll down to the FINISHER recommendations.</p>
+
+            <div class="callout">
+                <strong>COMPETE Category</strong><br>
+                <strong>Athlete Profile:</strong> 15-22 hrs/week training volume, targeting top-100 finish or sub-5:30 time (women) / sub-4:45 (men), comfortable racing in packs, wants to be competitive without podium pressure.
+            </div>
+
+            <h4>What The Mid South Demands:</h4>
+            <ul>
+                <li>Ability to hold 250-290w (women) / 320-380w (men) normalized power for 4.5-6 hours</li>
+                <li>Pack racing skills on variable terrain with constant surges</li>
+                <li>Explosive power for attacks and bridging gaps (5-8min efforts at 110-120% FTP)</li>
+                <li>Handling skills for creek crossings, rutted sections, and late singletrack</li>
+                <li>Fueling execution at 90-110g carbs/hour while racing tactically</li>
+                <li>Mental toughness for weather chaos and equipment failures</li>
+            </ul>
+
+            <h3>Training Philosophy Recommendations (Ranked)</h3>
+
+            <div class="training-philosophy">
+                <h4>#1: TrainerRoad's Polarized Build</h4>
+                <span class="suitability-score">Suitability: 9/10</span>
+
+                <p><strong>Why it's perfect for The Mid South:</strong> The polarized approach (80% easy, 20% hard) builds massive aerobic base through zone 2 volume while developing the VO2 max punch needed for pack racing surges. The Mid South's rolling terrain and tactical racing require constant accelerations out of every roller—you need repeatability, not steady-state grinding.</p>
+
+                <p>TrainerRoad's plans scale to your available hours (15-22/week sweet spot) and emphasize high-intensity intervals that mirror race demands: 5x5min VO2 efforts simulate bridging after the creek crossings, 3x15min sweet spot intervals build the engine to hold tempo in groups, and over/under work develops the ability to respond to attacks.</p>
+
+                <p><strong>Key workouts to prioritize:</strong></p>
+                <ul>
+                    <li>VO2 max: 5-8 x 3-5min at 115-120% FTP (Tuesday/Thursday)</li>
+                    <li>Sweet spot: 3-4 x 15-20min at 88-93% FTP (Wednesday/Saturday)</li>
+                    <li>Long endurance: 3-5 hour zone 2 rides with 10-15min tempo bursts (Sunday)</li>
+                    <li>Skills day: 90min technical ride with creek crossing/remount practice (Friday/Saturday)</li>
+                </ul>
+
+                <p>The polarized approach prevents burnout during the 12-16 week build while ensuring you arrive sharp, not fried.</p>
+            </div>
+
+            <div class="training-philosophy">
+                <h4>#2: CTS Field Test + Time Crunched Cyclist</h4>
+                <span class="suitability-score">Suitability: 8.5/10</span>
+
+                <p><strong>Why it works:</strong> Chris Carmichael's system excels at preparing time-constrained athletes for races requiring sustained power and repeatability. The Field Test benchmark (power @lactate threshold via 8min test) gives you clear FTP without the suffering of a 20min test, and the Time Crunched workouts maximize training density in limited hours.</p>
+
+                <p>For The Mid South, CTS intervals translate directly:</p>
+                <ul>
+                    <li>Tempo intervals (3 x 12-16min at 85-90% FTP) build pack-racing endurance</li>
+                    <li>ClimbingRepeat intervals (6-10 x 3-4min at 95-100% FTP) develop the punch for rollers</li>
+                    <li>PowerIntervals (8-12 x 1-2min at 110-120% FTP, short rest) create explosive acceleration ability</li>
+                </ul>
+
+                <p>The philosophy assumes you have 10-15 hours/week and emphasizes intensity over junk miles—perfect if you're balancing work/life and can't do 20+ hour weeks. The key is executing the prescribed intensities precisely and recovering adequately between sessions.</p>
+            </div>
+
+            <div class="training-philosophy">
+                <h4>#3: The GOAT Method</h4>
+                <span class="suitability-score">Suitability: 10/10</span>
+
+                <p><strong>Why it's the best:</strong> The GOAT Method (Gravel Optimized Adaptive Training) synthesizes the best elements of TrainerRoad's polarized volume and CTS's intensity focus while adding race-specific preparation that neither system addresses. Here's how it works for The Mid South:</p>
+
+                <h4>Phase 1: Aerobic Foundation (Weeks 1-6)</h4>
+                <ul>
+                    <li>80% zone 2 endurance: Long weekend rides (3-5 hours) on variable terrain</li>
+                    <li>20% high-intensity: 2 x VO2 sessions per week (Tuesday/Thursday)</li>
+                    <li>Weekly volume: Start 15 hours, progress to 20 hours</li>
+                    <li>No threshold work yet—build the base that supports everything</li>
+                </ul>
+
+                <h4>Phase 2: Specific Intensity (Weeks 7-10)</h4>
+                <ul>
+                    <li>Maintain zone 2 volume but add race-specific efforts:</li>
+                    <li><strong>"Roller Repeats":</strong> 10-15 x 2min hard (110% FTP) with 2min easy recovery, simulating rolling terrain accelerations</li>
+                    <li><strong>"Pack Surge Simulation":</strong> 3 x 15min sweet spot with 8-10 surges to 120% FTP for 20-30sec every 2min, mimicking pack racing dynamics</li>
+                    <li><strong>Long ride with "Race Final":</strong> Finish last 90min of Sunday ride with 3 x 8min threshold efforts at 95-100% FTP, simulating late-race fatigue</li>
+                </ul>
+
+                <h4>Phase 3: Race Simulation (Weeks 11-12)</h4>
+                <ul>
+                    <li>Practice race (3-4 hours, 75-90 miles, variable terrain with group if possible)</li>
+                    <li>Recon rides if traveling early to Stillwater</li>
+                    <li>Technical skills: Creek crossings, remounts, singletrack handling</li>
+                    <li>Taper: Reduce volume 40%, maintain intensity 2x this week</li>
+                </ul>
+
+                <h4>Phase 4: Taper (Week 13)</h4>
+                <ul>
+                    <li>Reduce volume 60% overall</li>
+                    <li>Keep one VO2 session early week (Tuesday): 4 x 3min at 115% FTP</li>
+                    <li>Keep one short race-opener ride (Thursday): 60min with 3 x 5min efforts</li>
+                    <li>Rest Friday, travel/recon Saturday, race Sunday</li>
+                </ul>
+
+                <p><strong>The Secret Sauce:</strong></p>
+                <p>The GOAT Method forces you to train what The Mid South actually tests:</p>
+                <ol>
+                    <li>Repeatability under fatigue (Roller Repeats)</li>
+                    <li>Pack racing surge tolerance (Pack Surge Simulation)</li>
+                    <li>Late-race power maintenance (Race Final intervals)</li>
+                    <li>Weather adaptation (training in shit conditions)</li>
+                    <li>Skills practice (creek crossings, remounts, bike handling)</li>
+                </ol>
+
+                <p>Most crucially, the GOAT Method includes "Chaos Training"—deliberately training in adverse conditions (rain, cold, early morning darkness, headwind time trials) because The Mid South doesn't care if conditions are ideal. If you only train in perfect weather, you're under-prepared.</p>
+
+                <p><strong>Nutrition Periodization:</strong> The GOAT Method also periodizes fueling—early base phase includes fasted rides to build metabolic efficiency, mid-build introduces race nutrition practice (100g carbs/hour on hard rides), and taper week includes carb-loading protocol.</p>
+
+                <p><strong>Why it beats TrainerRoad and CTS:</strong> Both systems are excellent but generic. They don't know The Mid South's specific demands. The GOAT Method adapts to the race's unique challenges: weather chaos, rolling terrain, technical sections, tactical racing, and mid-race equipment management. You're not just training power—you're training resilience, adaptability, and race-craft.</p>
+            </div>
+
+            <h3>FINISHER Category</h3>
+            
+            <div class="callout">
+                <strong>Athlete Profile:</strong> 8-12 hrs/week training, targeting sub-7:00 finish, more interested in the experience than the result, willing to walk sections if needed.
+            </div>
+
+            <h4>Recommended Philosophy: The GOAT Method (Modified for Finishers)</h4>
+            <p><em>10-12 Week Build, 8-10 hrs/week</em></p>
+
+            <p><strong>Simplified Structure:</strong></p>
+            <ul>
+                <li><strong>3 rides per week:</strong> Long endurance (Saturday/Sunday 3-4 hours building to 5 hours), mid-week threshold (Wednesday 90min with 3 x 8-12min at 80-85% FTP), easy recovery (Tuesday or Thursday 60min zone 2)</li>
+                <li><strong>Focus:</strong> Build time-in-saddle endurance, practice fueling, dial equipment, learn to love suffering</li>
+                <li><strong>Skills:</strong> Practice dismounts/remounts, ride in groups, navigate rough terrain</li>
+                <li><strong>Chaos Training:</strong> Do at least 4-5 rides in crappy weather (rain, cold, wind) to prove you can handle anything</li>
+            </ul>
+
+            <h4>Non-Negotiables for Finishers:</h4>
+            <ol>
+                <li>Complete at least two 4+ hour training rides</li>
+                <li>Practice eating/drinking on the bike (aim for 60-80g carbs/hour)</li>
+                <li>Test your equipment in mud if possible (seriously, ride after rain)</li>
+                <li>Accept that you might walk sections—it's fine</li>
+                <li>Show up for the experience, not the time</li>
+            </ol>
+
+            <h3>PODIUM Category</h3>
+            <p>If you're hunting a podium at The Mid South, you need 20-25 hrs/week, an FTP over 350w (men) / 270w (women), and professional-level training. Read the GOAT Method above, then triple the volume, add structured gym work for resilience, hire a coach, and pray for favorable weather. This race has Lauren De Crescenzo, Torbjorn Røed, and WorldTour-level riders. Podium hunting here is legitimate professional territory.</p>
+        </div>
+
+        <!-- Race Day Logistics -->
+        <div class="section">
+            <h2>Race Day Logistics</h2>
+            
+            <p><strong>Registration:</strong> Opens in September at bikereg.com/themidsouth. The 100-mile pro wave sells out in hours. Mass start sells out in days. Don't wait.</p>
+
+            <p><strong>Getting There:</strong> Stillwater is 70 miles from both Oklahoma City (OKC) and Tulsa (TUL) airports. Both work—OKC typically cheaper, TUL slightly closer. Rental cars book up, reserve early.</p>
+
+            <p><strong>Lodging:</strong> Hotel capacity in Stillwater gets overwhelmed by 4,000 visitors. Book immediately after registering. Options: hotels (limited), Airbnb, camping at the expo (overnight parking allowed), or OSU area rentals.</p>
+
+            <p><strong>Course Recon:</strong> The course is published a few weeks before the race. If serious about racing, arrive early and ride key sections (creek crossings, singletrack, finish approach). Local riders organize recon rides—join the Mid South Facebook group for details.</p>
+
+            <p><strong>Weather Strategy:</strong> Check forecast 48-72 hours out. If rain threatens, switch to knobby tires (35-40mm with tread) and narrower profile (mud clogs wider tires faster). If dry, run semi-slick or full slick 38-42mm for speed. Bring multiple wheelsets if possible.</p>
+
+            <p><strong>Aid Station Strategy:</strong> The 50-mile neutral support offers hand-ups for front groups. If racing, practice fast bottle grabs. If riding, you can stop and refuel properly. No drop bags anymore—carry what you need or rely on aid station snacks.</p>
+
+            <h3>Equipment Checklist:</h3>
+            <ul>
+                <li>Tubeless tires (mandatory), sealant refreshed week before</li>
+                <li>2-3 bottles (aid station at ~50mi)</li>
+                <li>Spare tube + CO2 (even if tubeless)</li>
+                <li>Multi-tool, chain tool, tire boot</li>
+                <li>Nutrition for 5-7 hours (100-120g carbs/hour)</li>
+                <li>Lights if recon riding at dawn</li>
+                <li>Mud scraper if rain threatens (paint stir stick works)</li>
+                <li>Clothing layers (March = 30-70°F range possible)</li>
+            </ul>
+        </div>
+
+        <!-- The Bottom Line -->
+        <div class="section">
+            <h2>The Bottom Line</h2>
+            
+            <p>The Mid South is gravel racing's most beloved event for reasons that have nothing to do with course design or prize money. It's Bobby's finish line hugs, the inclusive atmosphere, the community that rallies together whether racing or facing wildfires, and the red clay roads that symbolize both beauty and chaos.</p>
+
+            <p>You race The Mid South because it's the season opener—the moment when winter ends and gravel season begins. You race it to test yourself against weather you can't control and conditions that might destroy your bike. You race it to be part of something bigger than a bike race.</p>
+
+            <p>Just don't expect predictable conditions, and train for everything.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p><strong>Race Website:</strong> <a href="https://www.midsouthgravel.com" target="_blank">midsouthgravel.com</a></p>
+        <p><strong>Registration:</strong> Opens September at bikereg.com/themidsouth</p>
+        <p style="margin-top: 30px;">This race page was created by <strong>Gravel God Cycling</strong> to help you make informed decisions about your race calendar.</p>
+        <p style="margin-top: 15px;"><strong>Meta Title:</strong> The Mid South – Gravel Race Info & Training Guide | Gravel God</p>
+        <p><strong>Meta Description:</strong> Complete guide to The Mid South: 100 miles on Oklahoma red clay, $100K purse, extreme weather. Race vitals, mud vs dry conditions, and training plan.</p>
+        <p><strong>URL Slug:</strong> /races/mid-south</p>
+    </div>
+</body>
+</html>

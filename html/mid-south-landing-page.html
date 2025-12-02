@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mid South – Gravel Race Info & Training Guide | Gravel God</title>
+    <meta name="description" content="Complete guide to The Mid South: 100 miles on Oklahoma red clay, $100K purse, extreme weather. Race vitals, mud vs dry conditions, and training plan.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #59473C;
+            color: #BFA595;
+            line-height: 1.7;
+        }
+
+        /* 90s Geometric Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, #5CE1E6 48%, #5CE1E6 52%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, #FFDE59 48%, #FFDE59 52%, transparent 52%);
+            background-size: 80px 80px;
+            background-position: 0 0, 40px 40px;
+            opacity: 0.03;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8C7568 0%, #59473C 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 5px solid #5CE1E6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            background: #FFDE59;
+            opacity: 0.15;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            color: #FFDE59;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-size: 1.6em;
+            color: #5CE1E6;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        /* Content Sections */
+        .section {
+            background-color: #A68E80;
+            margin: 40px 20px;
+            padding: 50px;
+            border-radius: 0px;
+            border: 4px solid #8C7568;
+            border-left: 8px solid #5CE1E6;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            color: #59473C;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #5CE1E6;
+            padding-bottom: 15px;
+        }
+
+        .section h3 {
+            font-size: 1.8em;
+            color: #8C7568;
+            margin: 30px 0 20px 0;
+            font-weight: bold;
+        }
+
+        /* Hexagon Rating System */
+        .hexagon-ratings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin: 40px 0;
+        }
+
+        .rating-item {
+            background-color: #BFA595;
+            padding: 30px;
+            border-radius: 0px;
+            border: 3px solid #8C7568;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .rating-item:hover {
+            transform: translateY(-5px);
+            border-color: #5CE1E6;
+        }
+
+        .rating-title {
+            font-size: 1.4em;
+            color: #59473C;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hexagon-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            gap: 5px;
+        }
+
+        .hexagon {
+            width: 45px;
+            height: 26px;
+            background-color: #8C7568;
+            position: relative;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 22.5px solid transparent;
+            border-right: 22.5px solid transparent;
+            left: 0;
+        }
+
+        .hexagon:before {
+            bottom: 100%;
+            border-bottom: 13px solid #8C7568;
+        }
+
+        .hexagon:after {
+            top: 100%;
+            border-top: 13px solid #8C7568;
+        }
+
+        .hexagon.filled {
+            background-color: #5CE1E6;
+        }
+
+        .hexagon.filled:before {
+            border-bottom-color: #5CE1E6;
+        }
+
+        .hexagon.filled:after {
+            border-top-color: #5CE1E6;
+        }
+
+        .rating-explanation {
+            text-align: center;
+            font-size: 1em;
+            color: #59473C;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: #BFA595;
+        }
+
+        thead {
+            background-color: #59473C;
+            color: #BFA595;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 2px solid #8C7568;
+        }
+
+        th {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1em;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #A68E80;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            background-color: #8C7568;
+            border: 4px solid #FFDE59;
+            padding: 35px;
+            margin: 35px 0;
+            font-size: 1.2em;
+            color: #BFA595;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .warning-box {
+            background-color: #59473C;
+            border: 4px solid #5CE1E6;
+            padding: 35px;
+            margin: 35px 0;
+        }
+
+        .warning-box h3 {
+            color: #5CE1E6;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .warning-box p {
+            color: #BFA595;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 20px 0 20px 40px;
+            line-height: 1.9;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #59473C;
+        }
+
+        strong {
+            color: #59473C;
+            font-weight: bold;
+        }
+
+        /* Links */
+        a {
+            color: #5CE1E6;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #5CE1E6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #59473C;
+            padding: 50px 20px;
+            text-align: center;
+            color: #A68E80;
+            border-top: 5px solid #FFDE59;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hexagon-ratings {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 30px 20px;
+                margin: 20px 10px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>THE MID SOUTH</h1>
+            <div class="hero-subtitle">Oklahoma's Red Clay Roulette</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Race Vitals Section -->
+        <div class="section">
+            <h2>Race Vitals</h2>
+            <table>
+                <tbody>
+                    <tr><th>Location</th><td>Stillwater, Oklahoma</td></tr>
+                    <tr><th>Date</th><td>March 12-15, 2026 (annually mid-March)</td></tr>
+                    <tr><th>Distances</th><td>100 miles, 50 miles, 12 miles</td></tr>
+                    <tr><th>Elevation Gain</th><td>3,500 ft (100mi), 2,000 ft (50mi)</td></tr>
+                    <tr><th>Terrain</th><td>Red clay gravel, rolling hills, creek crossings, late singletrack</td></tr>
+                    <tr><th>Field Size</th><td>4,000+ riders</td></tr>
+                    <tr><th>Start Time</th><td>8:00 AM (mass start), 7:45 AM (pro waves)</td></tr>
+                    <tr><th>Registration</th><td>Opens September, $165 (100mi), $115 (50mi)</td></tr>
+                    <tr><th>Prize Purse</th><td>$100,000 (split equally men/women elite)</td></tr>
+                    <tr><th>Aid Stations</th><td>Neutral support at ~50mi, snacks/water</td></tr>
+                    <tr><th>Cut-off Time</th><td>None (Bobby wants everyone to finish)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TL;DR Section -->
+        <div class="section">
+            <h2>TL;DR</h2>
+            <p>The Mid South is gravel racing's season opener and biggest personality cult. When it's dry (recent trend), you get a blazingly fast 100-mile tactical race on hard-packed red clay with average speeds over 20mph for the front groups. When it rains (historically common), those same roads become unrideable peanut butter mud that destroys drivetrains and forces miles of hike-a-bike. Either way, you finish to a hug from race director Bobby Wintle, live music, and the kind of community vibe that makes people come back year after year despite the suffering.</p>
+            
+            <div class="callout">
+                <strong>You should race this if:</strong> You want the ultimate gravel season opener test against stacked pro fields, you can handle extreme weather variability, and you value atmosphere/community as much as competition.
+            </div>
+            
+            <div class="warning-box">
+                <h3>⚠️ Skip this if:</h3>
+                <p>You need predictable conditions, hate tactical pack racing, or want a remote self-supported adventure instead of a festival atmosphere.</p>
+            </div>
+        </div>
+
+        <!-- Race Difficulty Ratings -->
+        <div class="section">
+            <h2>The Ratings</h2>
+            
+            <div class="hexagon-ratings">
+                <div class="rating-item">
+                    <div class="rating-title">Prestige</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="rating-explanation">
+                        5/5 - Season opener status, $100K purse, Bobby Wintle legend, 4,000+ field, attracts WorldTour pros
+                    </div>
+                </div>
+
+                <div class="rating-item">
+                    <div class="rating-title">Length</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="rating-explanation">
+                        3/5 - 100 miles is substantial but raceable. Fast times (4:26-4:47 for winners). 50-mile option available.
+                    </div>
+                </div>
+
+                <div class="rating-item">
+                    <div class="rating-title">Technicality</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="rating-explanation">
+                        5/5 - Creek crossings, singletrack, red clay chaos. Dry: 3.5/5. Mud: 5/5 (bike-destroying peanut butter).
+                    </div>
+                </div>
+
+                <div class="rating-item">
+                    <div class="rating-title">Elevation</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="rating-explanation">
+                        2/5 - 3,500ft over 100 miles. Rolling "shark teeth" terrain with constant small climbs. Not mountainous.
+                    </div>
+                </div>
+
+                <div class="rating-item">
+                    <div class="rating-title">Climate</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                    </div>
+                    <div class="rating-explanation">
+                        5/5 - THE defining variable. March Oklahoma = anything goes. Recent: snow, wildfires, perfect conditions. Red clay + rain = race-ending.
+                    </div>
+                </div>
+
+                <div class="rating-item">
+                    <div class="rating-title">Altitude</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="rating-explanation">
+                        1/5 - Stillwater at ~900ft elevation. Essentially sea level racing. No altitude concerns.
+                    </div>
+                </div>
+
+                <div class="rating-item">
+                    <div class="rating-title">Adventure Factor</div>
+                    <div class="hexagon-container">
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon filled"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                        <div class="hexagon"></div>
+                    </div>
+                    <div class="rating-explanation">
+                        2/5 (dry) / 5/5 (mud) - Mass start with aid stations. But when mud hits, it's pure survival chaos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <strong>Overall Score: 72/100</strong><br><br>
+                Elite Regional Classic territory. Must-do for competitive gravel racers, especially those focused on tactical racing rather than ultra-endurance. The 5/5 climate score means this race can play significantly harder than 72 suggests.
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Race Website:</strong> <a href="https://www.midsouthgravel.com" target="_blank">midsouthgravel.com</a></p>
+            <p><strong>Registration:</strong> Opens September at bikereg.com/themidsouth</p>
+            <p style="margin-top: 30px;">This race page was created by <strong>Gravel God Cycling</strong> to help you make informed decisions about your race calendar.</p>
+        </div>
+    </div>
+</body>
+</html>

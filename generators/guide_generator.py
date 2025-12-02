@@ -16,7 +16,10 @@ def load_race_data(race_json_path):
 
 def load_template():
     """Load the HTML template"""
-    template_path = Path('/home/claude/guide_template_full.html')
+    # Get path relative to this script's location
+    script_dir = Path(__file__).parent
+    repo_root = script_dir.parent
+    template_path = repo_root / 'templates' / 'guide_template_full.html'
     with open(template_path, 'r', encoding='utf-8') as f:
         return f.read()
 
@@ -46,6 +49,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{ABILITY_LEVEL}}': ability_level,
         '{{TIER_NAME}}': tier_name,
         '{{WEEKLY_HOURS}}': get_weekly_hours(tier_name),
+        '{{plan_weeks}}': '12',  # Default to 12 weeks, can be made dynamic
         '{{RACE_KEY_CHALLENGES}}': race_data.get('key_challenges', 'technical terrain, elevation, and endurance'),
         '{{WEEKLY_STRUCTURE_DESCRIPTION}}': get_weekly_structure(tier_name),
         '{{RACE_ELEVATION}}': str(race_data.get('elevation_gain_feet', 'XXX')),
@@ -62,7 +66,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{INFOGRAPHIC_PHASE_BARS}}': '[Phase progression infographic]',
         '{{INFOGRAPHIC_RATING_HEX}}': '[Race difficulty rating hex]',
         '{{INFOGRAPHIC_DIFFICULTY_TABLE}}': generate_difficulty_table(race_data),
-        '{{INFOGRAPHIC_FUELING_TABLE}}': '[Fueling calculator table]',
+        '{{INFOGRAPHIC_FUELING_TABLE}}': generate_fueling_table(race_data),
         '{{INFOGRAPHIC_MENTAL_MAP}}': '[Mental framework diagram]',
         '{{INFOGRAPHIC_THREE_ACTS}}': '[Three-act race structure]',
         '{{INFOGRAPHIC_INDOOR_OUTDOOR_DECISION}}': '[Indoor vs Outdoor decision tree]',
@@ -145,6 +149,77 @@ def generate_equipment_checklist(race_data):
     return '<br>'.join([f'• {item}' for item in items])
 
 
+def generate_fueling_table(race_data):
+    """Generate fueling and hydration calculator table"""
+    distance = race_data.get('distance_miles', 200)
+    duration_hours = distance / 15  # Rough estimate: 15 mph average
+    
+    # Base scenarios
+    scenarios = [
+        {
+            'scenario': 'Training Ride < 2 hours',
+            'carbs': '30-45g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Water + electrolytes. Start fueling after 60 min if needed.'
+        },
+        {
+            'scenario': 'Training Ride 2-4 hours',
+            'carbs': '45-60g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Mix of gels, bars, and real food. Practice your race nutrition.'
+        },
+        {
+            'scenario': 'Long Training Ride 4-6 hours',
+            'carbs': '60-75g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Aggressive gut training. Test race-day nutrition strategy.'
+        },
+        {
+            'scenario': f'Race Day ({distance} miles, ~{int(duration_hours)} hours)',
+            'carbs': '60-90g/hour',
+            'fluid': '500-750ml/hour',
+            'notes': 'Start fueling in first 30 min. Mix multiple carb sources (glucose + fructose).'
+        },
+        {
+            'scenario': 'Hot Conditions (>80°F)',
+            'carbs': '60-90g/hour',
+            'fluid': '750-1000ml/hour',
+            'notes': 'Increase sodium to 500-700mg/hour. Pre-cool if possible.'
+        },
+        {
+            'scenario': 'Cold Conditions (<50°F)',
+            'carbs': '60-90g/hour',
+            'fluid': '400-600ml/hour',
+            'notes': 'Lower fluid needs, but still fuel aggressively. Warm fluids help.'
+        }
+    ]
+    
+    # Build HTML table
+    html = '<table class="fueling-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Scenario</th>\n'
+    html += '      <th>Carbohydrate Intake</th>\n'
+    html += '      <th>Fluid Intake</th>\n'
+    html += '      <th>Notes</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    for scenario in scenarios:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{scenario["scenario"]}</strong></td>\n'
+        html += f'      <td>{scenario["carbs"]}</td>\n'
+        html += f'      <td>{scenario["fluid"]}</td>\n'
+        html += f'      <td>{scenario["notes"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
+    
+    return html
+
+
 def generate_difficulty_table(race_data):
     """Generate difficulty rating table"""
     return f'''
@@ -199,12 +274,17 @@ def main():
     }
     
     # Generate guide
-    output_path = '/home/claude/test_guide_unbound_200_finisher_intermediate.html'
+    script_dir = Path(__file__).parent
+    repo_root = script_dir.parent
+    output_dir = repo_root / 'output'
+    output_dir.mkdir(exist_ok=True)
+    output_path = output_dir / 'test_guide_unbound_200_finisher_intermediate.html'
+    
     generate_guide(
         race_data=race_data,
         tier_name='FINISHER',
         ability_level='Intermediate',
-        output_path=output_path
+        output_path=str(output_path)
     )
     
     print(f"\n✓ Test guide generated successfully!")

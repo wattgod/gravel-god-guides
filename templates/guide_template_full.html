@@ -284,11 +284,193 @@ LAST UPDATED: 2024
                 box-shadow: none;
             }
         }
-    </style>
+    
+        /* TABLE OF CONTENTS - ENHANCED STYLING */
+        .toc-box {
+            background: linear-gradient(135deg, var(--turquoise) 0%, #00A896 100%);
+            border: 5px solid var(--black);
+            box-shadow: 12px 12px 0 var(--black), 0 0 0 2px var(--yellow);
+            padding: 45px 40px;
+            margin: 50px 0 80px 0;
+            color: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+        .toc-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .toc-header {
+            text-align: center;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            box-shadow: 6px 6px 0 var(--black);
+            padding: 18px 35px;
+            margin: 0 auto 12px;
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .toc-subtitle {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--black);
+            opacity: 0.8;
+            margin: 0;
+            font-style: italic;
+        }
+        .toc-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            columns: 2;
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        .toc-list li {
+            margin: 0 0 14px 0;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        .toc-list a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid var(--black);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .toc-list a:hover {
+            background: var(--yellow);
+            transform: translateX(5px);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .toc-number {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--black);
+            min-width: 35px;
+            font-family: 'Sometype Mono', monospace;
+        }
+        .toc-title {
+            flex: 1;
+        }
+        @media (max-width: 768px) {
+            .toc-list {
+                columns: 1;
+            }
+        }
+
+        /* PLAN TITLE HEADER */
+        .plan-title-header {
+            text-align: center;
+            margin: 0 0 60px 0;
+            padding: 60px 40px 50px;
+            background: linear-gradient(135deg, var(--yellow) 0%, #FFC700 100%);
+            border: 5px solid var(--black);
+            box-shadow: 15px 15px 0 var(--black);
+            position: relative;
+        }
+        .plan-title-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 4px;
+            background: var(--black);
+        }
+        .plan-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            padding: 0;
+            background: none;
+            border: none;
+            box-shadow: none;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .plan-subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: var(--black);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .plan-meta {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+            color: var(--black);
+            opacity: 0.9;
+        }
+</style>
 </head>
 <body>
     <div class="container">
-<h1>1: Training Plan Brief</h1>
+
+<div class="plan-title-header">
+    <h1 class="plan-title">{{RACE_NAME}}</h1>
+    <p class="plan-subtitle">{{TIER_NAME}} • {{ABILITY_LEVEL}} Training Plan</p>
+    <p class="plan-meta">{{WEEKLY_HOURS}} hours/week • {{plan_weeks}} weeks</p>
+</div>
+
+
+<!-- ==================== PLAN TITLE ==================== -->
+
+<div class="toc-box">
+    <div class="toc-header">
+        <h2>Contents</h2>
+        <p class="toc-subtitle">Navigate your training guide</p>
+    </div>
+
+
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+
+    <ul class="toc-list">
+        <li><a href="#section-1"><span class="toc-number">01</span><span class="toc-title">Training Plan Brief</span></a></li>
+        <li><a href="#section-2"><span class="toc-number">02</span><span class="toc-title">Before You Start</span></a></li>
+        <li><a href="#section-3"><span class="toc-number">03</span><span class="toc-title">Training Fundamentals</span></a></li>
+        <li><a href="#section-4"><span class="toc-number">04</span><span class="toc-title">Your 12-Week Arc</span></a></li>
+        <li><a href="#section-5"><span class="toc-number">05</span><span class="toc-title">Training Zones</span></a></li>
+        <li><a href="#section-6"><span class="toc-number">06</span><span class="toc-title">Workout Execution</span></a></li>
+        <li><a href="#section-7"><span class="toc-number">07</span><span class="toc-title">Technical Skills</span></a></li>
+        <li><a href="#section-8"><span class="toc-number">08</span><span class="toc-title">Fueling & Hydration</span></a></li>
+        <li><a href="#section-9"><span class="toc-number">09</span><span class="toc-title">Mental Training</span></a></li>
+        <li><a href="#section-10"><span class="toc-number">10</span><span class="toc-title">Race Tactics</span></a></li>
+        <li><a href="#section-11"><span class="toc-number">11</span><span class="toc-title">Race-Specific Preparation</span></a></li>
+        <li><a href="#section-12"><span class="toc-number">12</span><span class="toc-title">Race Week Protocol</span></a></li>
+        <li><a href="#section-13"><span class="toc-number">13</span><span class="toc-title">Quick Reference</span></a></li>
+        <li><a href="#section-14"><span class="toc-number">14</span><span class="toc-title">Glossary</span></a></li>
+    </ul>
+</div>
+
+
+<h1 id="section-1">1: Training Plan Brief</h1>
 
 <p>Welcome to **<strong>{{RACE_NAME}}</strong>** Training</p>
 
@@ -362,7 +544,13 @@ LAST UPDATED: 2024
 
 <p>Be honest with yourself about compliance.</p>
 
-<h1>2: BEFORE YOU START</h1>
+
+
+
+
+
+
+<h1 id="section-2">2: BEFORE YOU START</h1>
 
 <h2>Health & Safety Check</h2>
 
@@ -507,7 +695,7 @@ LAST UPDATED: 2024
 
 <p>Use the formula only if you lack actual data. Real-world max is always more accurate than estimates.</p>
 
-<h1>3: TRAINING FUNDAMENTALS</h1>
+<h1 id="section-3">3: TRAINING FUNDAMENTALS</h1>
 
 <p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
 
@@ -635,7 +823,7 @@ LAST UPDATED: 2024
 
 <p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
 
-<h1>4: YOUR 12-WEEK ARC</h1>
+<h1 id="section-4">4: YOUR 12-WEEK ARC</h1>
 
 <p>[NOTE: This section contains the week-by-week table and phase</p>
 
@@ -691,7 +879,7 @@ LAST UPDATED: 2024
 
 <p>key workouts]</p>
 
-<h1>5: TRAINING ZONES</h1>
+<h1 id="section-5">5: TRAINING ZONES</h1>
 
 <p>Every workout prescription includes a zone target. Here's what they mean and how to use them.</p>
 
@@ -878,7 +1066,7 @@ LAST UPDATED: 2024
 
 <p>Power + Heart Rate + RPE = complete picture. When they align, you're executing correctly. When they conflict, trust your body.</p>
 
-<h1>6: WORKOUT EXECUTION</h1>
+<h1 id="section-6">6: WORKOUT EXECUTION</h1>
 
 <p>You've got a plan. You understand the fundamentals. You know what the zones mean.</p>
 
@@ -1664,7 +1852,7 @@ LAST UPDATED: 2024
 
 <p>After <strong>{{RACE_NAME}}</strong>, invest in a proper off-season strength block. Your future self---the one who's still racing at 50, 60, 70---will thank you</p>
 
-<p>SECTION 7: TECHNICAL SKILLS FOR **<strong>{{RACE_NAME}}</strong>**</p>
+<h1 id="section-7">7: Technical Skills for {{RACE_NAME}}</h1>
 
 <p>Fitness gets you to the race. Skills determine whether you use that fitness efficiently or waste it fighting your bike, crashing, or making mistakes that cost time and energy.</p>
 
@@ -1778,7 +1966,7 @@ LAST UPDATED: 2024
 
 <p>By race day, these skills should be automatic. You shouldn't be thinking about how to corner or how to eat---you should just be doing it.</p>
 
-<h1>8: FUELING & HYDRATION</h1>
+<h1 id="section-8">8: FUELING & HYDRATION</h1>
 
 <p>Fueling is often called the fourth discipline of endurance racing. You can have all the fitness in the world, but if you can't fuel and hydrate properly, you won't finish well. Maybe you won't finish at all.</p>
 
@@ -1788,9 +1976,7 @@ LAST UPDATED: 2024
 
 <h2>Quick Reference: Fueling & Hydration Guidelines</h2>
 
-<h2>{{INFOGRAPHIC_FUELING_TABLE}}</h2>
-
-<h2>Scenario | Carbohydrate Intake | Fluid Intake | Notes</h2>
+{{INFOGRAPHIC_FUELING_TABLE}}
 
 <h3>Understanding Hydration</h3>
 
@@ -1848,7 +2034,7 @@ LAST UPDATED: 2024
 
 <p>This is why practice matters. By race day, eating and drinking on schedule should feel like shifting gears---just something you do without thinking about it.</p>
 
-<h1>9: MENTAL TRAINING</h1>
+<h1 id="section-9">9: MENTAL TRAINING</h1>
 
 <p>Physical training builds the engine. Mental training determines whether you use that engine when things get hard.</p>
 
@@ -1961,7 +2147,7 @@ LAST UPDATED: 2024
 
 <p>The bottom line on mental training: These tools work, but only if you practice them. Don't wait until mile 150 to try 6-2-7 breathing for the first time. Practice during training so they're automatic during racing.</p>
 
-<p>SECTION 10: RACE TACTICS FOR **<strong>{{RACE_NAME}}</strong>**</p>
+<h1 id="section-10">10: Race Tactics for {{RACE_NAME}}</h1>
 
 <p>Every long gravel race follows a predictable three-act structure. Understanding this structure lets you make smart decisions when others are making emotional ones.</p>
 
@@ -2043,7 +2229,7 @@ LAST UPDATED: 2024
 
 <p>The bottom line on tactics: The race isn't won in the first hour, but it can be lost there. Survive phase one. Execute phase two. Capitalize in phase three.</p>
 
-<p>SECTION 11: RACE-SPECIFIC PREPARATION FOR **<strong>{{RACE_NAME}}</strong>**</p>
+<h1 id="section-11">11: Race-Specific Preparation for {{RACE_NAME}}</h1>
 
 <p>Every race has requirements that aren't optional. These are things that, if you skip them, the course itself will punish you. They're non-negotiable not because we're being strict---they're non-negotiable because physics and biology don't care about your intentions.</p>
 
@@ -2563,7 +2749,7 @@ LAST UPDATED: 2024
 
 <!-- END ALTITUDE SECTION -->
 
-<h1>12: RACE WEEK PROTOCOL</h1>
+<h1 id="section-12">12: RACE WEEK PROTOCOL</h1>
 
 <p>By race week, the training is done. You can't add fitness in the final seven days---you can only preserve what you've built or add dumb fatigue through poor decisions.</p>
 
@@ -3198,7 +3384,7 @@ LAST UPDATED: 2024
 
 <p>Stop optimizing. Start riding.</p>
 
-<h1>13: QUICK REFERENCE</h1>
+<h1 id="section-13">13: QUICK REFERENCE</h1>
 
 <h3>Key Workouts in This Plan</h3>
 
@@ -3214,7 +3400,7 @@ LAST UPDATED: 2024
 
 <p><strong>For questions about this training plan:</strong> gravelgodcoaching@gmail.com</p>
 
-<h1>14: GLOSSARY</h1>
+<h1 id="section-14">14: GLOSSARY</h1>
 
 <h3>FTP (Functional Threshold Power)</h3>
 

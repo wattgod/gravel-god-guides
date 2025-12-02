@@ -62,16 +62,16 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{EQUIPMENT_CHECKLIST}}': generate_equipment_checklist(race_data),
         '{{RACE_SUPPORT_URL}}': race_data.get('website', 'https://example.com'),
         
-        # Infographic placeholders (these would be replaced with actual SVG/images later)
-        '{{INFOGRAPHIC_PHASE_BARS}}': '[Phase progression infographic]',
-        '{{INFOGRAPHIC_RATING_HEX}}': '[Race difficulty rating hex]',
+        # Infographic placeholders (now all generated as HTML tables/diagrams)
+        '{{INFOGRAPHIC_PHASE_BARS}}': '[Phase progression infographic]',  # Could be enhanced later
+        '{{INFOGRAPHIC_RATING_HEX}}': generate_rating_hex(race_data),
         '{{INFOGRAPHIC_DIFFICULTY_TABLE}}': generate_difficulty_table(race_data),
         '{{INFOGRAPHIC_FUELING_TABLE}}': generate_fueling_table(race_data),
-        '{{INFOGRAPHIC_MENTAL_MAP}}': '[Mental framework diagram]',
-        '{{INFOGRAPHIC_THREE_ACTS}}': '[Three-act race structure]',
-        '{{INFOGRAPHIC_INDOOR_OUTDOOR_DECISION}}': '[Indoor vs Outdoor decision tree]',
-        '{{INFOGRAPHIC_TIRE_DECISION}}': '[Tire selection flowchart]',
-        '{{INFOGRAPHIC_KEY_WORKOUT_SUMMARY}}': '[Key workout types overview]',
+        '{{INFOGRAPHIC_MENTAL_MAP}}': generate_mental_map(race_data),
+        '{{INFOGRAPHIC_THREE_ACTS}}': generate_three_acts(race_data),
+        '{{INFOGRAPHIC_INDOOR_OUTDOOR_DECISION}}': generate_indoor_outdoor_decision(race_data),
+        '{{INFOGRAPHIC_TIRE_DECISION}}': generate_tire_decision(race_data),
+        '{{INFOGRAPHIC_KEY_WORKOUT_SUMMARY}}': generate_key_workout_summary(race_data),
         
         # Non-negotiables
         '{{NON_NEG_1_WHY}}': 'Precise power data ensures correct training zones and optimal adaptation',
@@ -223,29 +223,431 @@ def generate_fueling_table(race_data):
 def generate_difficulty_table(race_data):
     """Generate difficulty rating table"""
     return f'''
-    <table>
-        <tr>
-            <th>Category</th>
-            <th>Rating</th>
-        </tr>
-        <tr>
-            <td>Distance</td>
-            <td>{race_data.get('distance_miles', 'N/A')} miles</td>
-        </tr>
-        <tr>
-            <td>Elevation Gain</td>
-            <td>{race_data.get('elevation_gain_feet', 'N/A'):,} feet</td>
-        </tr>
-        <tr>
-            <td>Technical Difficulty</td>
-            <td>{race_data.get('technical_rating', 'Moderate')}</td>
-        </tr>
-        <tr>
-            <td>Time Cutoff</td>
-            <td>{race_data.get('time_cutoff', 'None')}</td>
-        </tr>
+    <table class="difficulty-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Distance</strong></td>
+                <td>{race_data.get('distance_miles', 'N/A')} miles</td>
+            </tr>
+            <tr>
+                <td><strong>Elevation Gain</strong></td>
+                <td>{race_data.get('elevation_gain_feet', 'N/A'):,} feet</td>
+            </tr>
+            <tr>
+                <td><strong>Technical Difficulty</strong></td>
+                <td>{race_data.get('technical_rating', 'Moderate')}</td>
+            </tr>
+            <tr>
+                <td><strong>Time Cutoff</strong></td>
+                <td>{race_data.get('time_cutoff', 'None')}</td>
+            </tr>
+        </tbody>
     </table>
     '''
+
+
+def generate_rating_hex(race_data):
+    """Generate race difficulty rating hex (radar chart as HTML table)"""
+    # Calculate ratings (1-5 scale) based on race characteristics
+    distance = race_data.get('distance_miles', 200)
+    elevation = race_data.get('elevation_gain_feet', 0)
+    terrain = race_data.get('terrain', 'rolling')
+    altitude = race_data.get('altitude_feet', 0)
+    
+    # Distance rating (1-5)
+    if distance >= 200:
+        dist_rating = 5
+    elif distance >= 150:
+        dist_rating = 4
+    elif distance >= 100:
+        dist_rating = 3
+    elif distance >= 50:
+        dist_rating = 2
+    else:
+        dist_rating = 1
+    
+    # Elevation rating
+    if elevation >= 15000:
+        elev_rating = 5
+    elif elevation >= 10000:
+        elev_rating = 4
+    elif elevation >= 5000:
+        elev_rating = 3
+    elif elevation >= 2000:
+        elev_rating = 2
+    else:
+        elev_rating = 1
+    
+    # Technicality rating
+    tech_map = {
+        'mountain': 5,
+        'flint_hills': 4,
+        'rolling': 3,
+        'flat': 2
+    }
+    tech_rating = tech_map.get(terrain, 3)
+    
+    # Climate rating (default moderate)
+    climate_rating = 3
+    
+    # Altitude rating
+    if altitude >= 8000:
+        alt_rating = 5
+    elif altitude >= 5000:
+        alt_rating = 4
+    elif altitude >= 3000:
+        alt_rating = 3
+    elif altitude >= 1000:
+        alt_rating = 2
+    else:
+        alt_rating = 1
+    
+    # Adventure rating (combination of factors)
+    adventure_rating = min(5, max(1, (dist_rating + elev_rating + tech_rating) // 3))
+    
+    html = '<div class="rating-hex">\n'
+    html += '  <table class="rating-table">\n'
+    html += '    <thead>\n'
+    html += '      <tr>\n'
+    html += '        <th>Dimension</th>\n'
+    html += '        <th>Rating (1-5)</th>\n'
+    html += '        <th>Visual</th>\n'
+    html += '      </tr>\n'
+    html += '    </thead>\n'
+    html += '    <tbody>\n'
+    
+    ratings = [
+        ('Elevation', elev_rating),
+        ('Length', dist_rating),
+        ('Technicality', tech_rating),
+        ('Climate', climate_rating),
+        ('Altitude', alt_rating),
+        ('Adventure', adventure_rating)
+    ]
+    
+    for name, rating in ratings:
+        bars = '█' * rating + '░' * (5 - rating)
+        html += f'      <tr>\n'
+        html += f'        <td><strong>{name}</strong></td>\n'
+        html += f'        <td>{rating}/5</td>\n'
+        html += f'        <td class="rating-bars">{bars}</td>\n'
+        html += f'      </tr>\n'
+    
+    html += '    </tbody>\n'
+    html += '  </table>\n'
+    html += '</div>'
+    
+    return html
+
+
+def generate_indoor_outdoor_decision(race_data):
+    """Generate indoor vs outdoor decision tree/table"""
+    html = '<table class="decision-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Condition</th>\n'
+    html += '      <th>Ride Indoors</th>\n'
+    html += '      <th>Ride Outdoors</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    decisions = [
+        {
+            'condition': 'Temperature < 20°F or > 100°F',
+            'indoors': 'Yes - Safety risk',
+            'outdoors': 'No - Dangerous conditions'
+        },
+        {
+            'condition': 'Ice, snow, or dangerous road conditions',
+            'indoors': 'Yes - Crash risk too high',
+            'outdoors': 'No - Unsafe'
+        },
+        {
+            'condition': 'Structured intervals (VO2max, Threshold)',
+            'indoors': 'Yes - Better control, no traffic',
+            'outdoors': 'Maybe - If safe route available'
+        },
+        {
+            'condition': 'Endurance ride (Z1-Z2)',
+            'indoors': 'Avoid - Too boring',
+            'outdoors': 'Yes - Mental training, skills practice'
+        },
+        {
+            'condition': 'Time-crunched (< 60 min)',
+            'indoors': 'Yes - No travel time, immediate start',
+            'outdoors': 'No - Travel time wastes workout'
+        },
+        {
+            'condition': 'Long ride (4+ hours)',
+            'indoors': 'No - Mental torture',
+            'outdoors': 'Yes - Essential for race prep'
+        },
+        {
+            'condition': 'Recovery ride',
+            'indoors': 'Maybe - If weather is terrible',
+            'outdoors': 'Yes - Fresh air aids recovery'
+        }
+    ]
+    
+    for item in decisions:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{item["condition"]}</strong></td>\n'
+        html += f'      <td>{item["indoors"]}</td>\n'
+        html += f'      <td>{item["outdoors"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
+    
+    return html
+
+
+def generate_mental_map(race_data):
+    """Generate mental framework diagram as structured content"""
+    html = '<div class="mental-map">\n'
+    html += '  <div class="mental-framework">\n'
+    html += '    <h3>Mental Training Framework</h3>\n'
+    html += '    <div class="mental-layers">\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>1. Foundation: Breathing & Presence</h4>\n'
+    html += '        <p><strong>6-2-7 Technique:</strong> Inhale 6 counts, hold 2, exhale 7. Calms nervous system, brings focus to present moment.</p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>2. Reframing: Change Your Story</h4>\n'
+    html += '        <p><strong>Instead of:</strong> <q>This hurts</q> → <strong>Say:</strong> <q>This is my body adapting. I\'m getting stronger.</q></p>\n'
+    html += '        <p><strong>Instead of:</strong> <q>I can\'t do this</q> → <strong>Say:</strong> <q>I\'m doing it right now. One pedal stroke at a time.</q></p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>3. Anchoring: Physical Cues</h4>\n'
+    html += '        <p><strong>Power position:</strong> Hands in drops, core engaged, smooth pedal stroke. This is your <q>race mode</q> trigger.</p>\n'
+    html += '        <p><strong>Breathing rhythm:</strong> Match cadence to breath (e.g., 2 pedal strokes per breath). Creates flow state.</p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>4. Acceptance: The Suffering Contract</h4>\n'
+    html += '        <p><strong>You signed up for this.</strong> Discomfort is part of the deal. Accept it. Don\'t fight it. Work with it.</p>\n'
+    html += '        <p><strong>Pain is temporary. Quitting lasts forever.</strong></p>\n'
+    html += '      </div>\n'
+    html += '      <div class="mental-layer">\n'
+    html += '        <h4>5. Purpose: Remember Your Why</h4>\n'
+    html += '        <p><strong>Why are you here?</strong> Connect to your deeper motivation. This race matters because you chose it.</p>\n'
+    html += '      </div>\n'
+    html += '    </div>\n'
+    html += '  </div>\n'
+    html += '</div>'
+    
+    return html
+
+
+def generate_three_acts(race_data):
+    """Generate three-act race structure table"""
+    distance = race_data.get('distance_miles', 200)
+    duration_hours = distance / 15
+    
+    html = '<table class="three-acts-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Phase</th>\n'
+    html += '      <th>When</th>\n'
+    html += '      <th>What\'s Happening</th>\n'
+    html += '      <th>Your Job</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    acts = [
+        {
+            'phase': 'Act 1: The Start',
+            'when': f'0 - {int(duration_hours * 0.2)} hours',
+            'happening': 'High energy, adrenaline, everyone goes too hard. Groups form. Positioning matters.',
+            'job': 'Stay calm. Don\'t chase. Fuel early (first 30 min). Find your rhythm. Let the race come to you.'
+        },
+        {
+            'phase': 'Act 2: The Grind',
+            'when': f'{int(duration_hours * 0.2)} - {int(duration_hours * 0.8)} hours',
+            'happening': 'The real race. Fatigue sets in. Groups break up. Mental game begins. This is where races are won or lost.',
+            'job': 'Stay consistent. Fuel every 20-30 min. Manage effort (don\'t redline). Use mental techniques. One section at a time.'
+        },
+        {
+            'phase': 'Act 3: The Finish',
+            'when': f'{int(duration_hours * 0.8)} hours - Finish',
+            'happening': 'Everything hurts. Decision fatigue. Final push. This is where training pays off.',
+            'job': 'Empty the tank. Use everything you\'ve got. Remember your why. Push through the pain. Finish strong.'
+        }
+    ]
+    
+    for act in acts:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{act["phase"]}</strong></td>\n'
+        html += f'      <td>{act["when"]}</td>\n'
+        html += f'      <td>{act["happening"]}</td>\n'
+        html += f'      <td>{act["job"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
+    
+    return html
+
+
+def generate_tire_decision(race_data):
+    """Generate tire selection decision tree/table"""
+    terrain = race_data.get('terrain', 'rolling')
+    distance = race_data.get('distance_miles', 200)
+    
+    html = '<div class="tire-decision">\n'
+    html += '  <table class="tire-table">\n'
+    html += '    <thead>\n'
+    html += '      <tr>\n'
+    html += '        <th>Condition</th>\n'
+    html += '        <th>Tire Width</th>\n'
+    html += '        <th>Tread</th>\n'
+    html += '        <th>Pressure</th>\n'
+    html += '        <th>Why</th>\n'
+    html += '      </tr>\n'
+    html += '    </thead>\n'
+    html += '    <tbody>\n'
+    
+    tire_scenarios = [
+        {
+            'condition': 'Smooth gravel, dry',
+            'width': '38-40mm',
+            'tread': 'Semi-slick or light file tread',
+            'pressure': '35-40 PSI',
+            'why': 'Low rolling resistance. Speed matters more than grip.'
+        },
+        {
+            'condition': 'Rough/loose gravel',
+            'width': '40-42mm',
+            'tread': 'Moderate knobs (2-3mm)',
+            'pressure': '30-35 PSI',
+            'why': 'Need grip and comfort. Wider = lower pressure = better traction.'
+        },
+        {
+            'condition': 'Mud or wet conditions',
+            'width': '42-45mm',
+            'tread': 'Aggressive knobs (4-5mm)',
+            'pressure': '28-32 PSI',
+            'why': 'Maximum grip. Lower pressure helps mud clear from tread.'
+        },
+        {
+            'condition': 'Mixed terrain (your race)',
+            'width': '40-42mm',
+            'tread': 'Moderate knobs (2-3mm)',
+            'pressure': '32-36 PSI',
+            'why': 'Versatile. Handles most conditions. Good balance of speed and grip.'
+        },
+        {
+            'condition': 'Long distance (6+ hours)',
+            'width': '40-42mm',
+            'tread': 'Moderate knobs',
+            'pressure': '32-35 PSI',
+            'why': 'Comfort matters. Lower pressure reduces fatigue. Still fast enough.'
+        }
+    ]
+    
+    for scenario in tire_scenarios:
+        html += '      <tr>\n'
+        html += f'        <td><strong>{scenario["condition"]}</strong></td>\n'
+        html += f'        <td>{scenario["width"]}</td>\n'
+        html += f'        <td>{scenario["tread"]}</td>\n'
+        html += f'        <td>{scenario["pressure"]}</td>\n'
+        html += f'        <td>{scenario["why"]}</td>\n'
+        html += '      </tr>\n'
+    
+    html += '    </tbody>\n'
+    html += '  </table>\n'
+    html += '  <p class="tire-note"><strong>Rule of thumb:</strong> When in doubt, go wider and lower pressure. Comfort and grip beat marginal speed gains on rough terrain.</p>\n'
+    html += '</div>'
+    
+    return html
+
+
+def generate_key_workout_summary(race_data):
+    """Generate key workout types overview table"""
+    html = '<table class="workout-summary-table">\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Workout Type</th>\n'
+    html += '      <th>Zone</th>\n'
+    html += '      <th>Duration</th>\n'
+    html += '      <th>Purpose</th>\n'
+    html += '      <th>Key Focus</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+    
+    workouts = [
+        {
+            'type': 'Endurance',
+            'zone': 'Z1-Z2',
+            'duration': '2-6 hours',
+            'purpose': 'Aerobic base, fat adaptation',
+            'focus': 'Easy pace. Conversational. Builds durability.'
+        },
+        {
+            'type': 'G-Spot Intervals',
+            'zone': '87-92% FTP',
+            'duration': '15-60 min blocks',
+            'purpose': 'Race-specific power',
+            'focus': 'Sustained gravel race pace. Practice position.'
+        },
+        {
+            'type': 'Threshold',
+            'zone': 'Z4 (93-105% FTP)',
+            'duration': '10-30 min blocks',
+            'purpose': 'Lactate clearance, sustained power',
+            'focus': 'Hard but controlled. Can say a few words.'
+        },
+        {
+            'type': 'VO2max',
+            'zone': 'Z5 (106-120% FTP)',
+            'duration': '2-8 min intervals',
+            'purpose': 'Max aerobic capacity',
+            'focus': 'Very hard. Near max. Single words only.'
+        },
+        {
+            'type': 'Anaerobic',
+            'zone': 'Z6 (121-150% FTP)',
+            'duration': '30 sec - 3 min',
+            'purpose': 'Power, lactate tolerance',
+            'focus': 'All-out efforts. Sharp, explosive.'
+        },
+        {
+            'type': 'Neuromuscular',
+            'zone': 'Z7 (>150% FTP)',
+            'duration': '5-15 seconds',
+            'purpose': 'Max power, sprint',
+            'focus': 'Pure explosive. All-out sprints.'
+        },
+        {
+            'type': 'Tempo',
+            'zone': 'Z3 (76-90% FTP)',
+            'duration': '20-60 min',
+            'purpose': 'Moderate intensity (limited use)',
+            'focus': 'Comfortably hard. Used sparingly in polarized plans.'
+        }
+    ]
+    
+    for workout in workouts:
+        html += '    <tr>\n'
+        html += f'      <td><strong>{workout["type"]}</strong></td>\n'
+        html += f'      <td>{workout["zone"]}</td>\n'
+        html += f'      <td>{workout["duration"]}</td>\n'
+        html += f'      <td>{workout["purpose"]}</td>\n'
+        html += f'      <td>{workout["focus"]}</td>\n'
+        html += '    </tr>\n'
+    
+    html += '  </tbody>\n'
+    html += '</table>'
+    
+    return html
 
 
 def main():

@@ -93,7 +93,7 @@ LAST UPDATED: 2024
         
         /* Headers */
         h1 {
-            font-size: 42px;
+            font-size: 22px;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 30px;
@@ -104,7 +104,7 @@ LAST UPDATED: 2024
         }
         
         h2 {
-            font-size: 28px;
+            font-size: 18px;
             font-weight: 700;
             margin: 50px 0 20px 0;
             padding: 15px;
@@ -168,7 +168,11 @@ LAST UPDATED: 2024
         }
         
         .callout-turquoise {
-            background: var(--turquoise);
+            background: #f0f9f8;
+            border-left: 4px solid var(--turquoise);
+            border: 2px solid var(--black);
+            padding: 15px 20px;
+            margin: 20px 0;
         }
         
         .callout-red {
@@ -243,7 +247,7 @@ LAST UPDATED: 2024
         }
         
         .footer h1 {
-            font-size: 48px;
+            font-size: 24px;
             margin-bottom: 10px;
             background: var(--yellow);
         }
@@ -287,14 +291,78 @@ LAST UPDATED: 2024
     
         /* TABLE OF CONTENTS - ENHANCED STYLING */
         .toc-box {
+            position: sticky;
+            top: 0;
+            z-index: 100;
             background: linear-gradient(135deg, var(--turquoise) 0%, #00A896 100%);
-            border: 5px solid var(--black);
-            box-shadow: 12px 12px 0 var(--black), 0 0 0 2px var(--yellow);
-            padding: 45px 40px;
-            margin: 50px 0 80px 0;
+            border: 3px solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+            padding: 15px 20px;
+            margin: 20px 0;
             color: var(--black);
-            position: relative;
             overflow: hidden;
+            max-height: 90px;
+            transition: max-height 0.3s ease;
+        }
+        
+        .toc-box:hover,
+        .toc-box:focus-within {
+            max-height: 600px;
+        }
+        
+        .toc-box:not(:hover):not(:focus-within) {
+            padding: 6px 15px;
+        }
+        
+        .toc-box:not(:hover):not(:focus-within) .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        .toc-box:hover .toc-list,
+        .toc-box:focus-within .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        .toc-box:not(:hover):not(:focus-within) {
+            padding: 10px 20px;
+        }
+        
+        .toc-box:not(:hover):not(:focus-within) .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        .toc-box:hover .toc-list,
+        .toc-box:focus-within .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        .toc-box:hover,
+        .toc-box:focus-within {
+            max-height: 600px;
         }
         .toc-box::before {
             content: '';
@@ -308,9 +376,140 @@ LAST UPDATED: 2024
         }
         .toc-header {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 10px;
             position: relative;
             z-index: 1;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 8px 15px;
+            margin: 0 auto 8px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .toc-box:hover .toc-header,
+        .toc-box:focus-within .toc-header {
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 8px 15px;
+            margin: 0 auto 8px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 6px 15px;
+            margin: 0 auto;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        
+        .toc-box:hover .toc-header,
+        .toc-box:focus-within .toc-header {
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 8px 15px;
+            margin: 0 auto 8px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .toc-box:hover .toc-header,
+        .toc-box:focus-within .toc-header {
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 8px 15px;
+            margin: 0 auto 8px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 6px 15px;
+            margin: 0 auto;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+            padding: 10px 20px;
+            margin: 0 auto;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        
+        .toc-box h2 {
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 6px 15px;
+            margin: 0 auto 8px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         .toc-box h2 {
             background: var(--yellow);
@@ -319,7 +518,7 @@ LAST UPDATED: 2024
             padding: 18px 35px;
             margin: 0 auto 12px;
             display: inline-block;
-            font-size: 32px;
+            font-size: 20px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -333,13 +532,13 @@ LAST UPDATED: 2024
             font-style: italic;
         }
         .toc-list {
-            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
             margin: 0;
             padding: 0;
-            columns: 2;
-            gap: 25px;
-            position: relative;
-            z-index: 1;
+            list-style: none;
+            overflow: hidden;
         }
         .toc-list li {
             margin: 0 0 14px 0;
@@ -366,19 +565,26 @@ LAST UPDATED: 2024
             box-shadow: 4px 4px 0 var(--black);
         }
         .toc-number {
+            font-size: 16px;
             font-weight: 700;
-            font-size: 18px;
-            color: var(--black);
-            min-width: 35px;
-            font-family: 'Sometype Mono', monospace;
+            color: var(--turquoise);
+            margin-right: 10px;
+            min-width: 30px;
+            text-align: center;
         }
         .toc-title {
             flex: 1;
         }
         @media (max-width: 768px) {
             .toc-list {
-                columns: 1;
-            }
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
         }
 
         /* PLAN TITLE HEADER */
@@ -402,7 +608,7 @@ LAST UPDATED: 2024
             background: var(--black);
         }
         .plan-title {
-            font-size: 56px;
+            font-size: 28px;
             font-weight: 700;
             margin: 0 0 15px 0;
             padding: 0;
@@ -426,6 +632,284 @@ LAST UPDATED: 2024
             margin: 0;
             color: var(--black);
             opacity: 0.9;
+        }
+
+        /* INFOGRAPHIC TABLE STYLES - Clean and readable */
+        .rating-table,
+        .difficulty-table,
+        .fueling-table,
+        .decision-table,
+        .three-acts-table,
+        .tire-table,
+        .workout-summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            background: white;
+            border: 2px solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        
+        .rating-table thead,
+        .difficulty-table thead,
+        .fueling-table thead,
+        .decision-table thead,
+        .three-acts-table thead,
+        .tire-table thead,
+        .workout-summary-table thead {
+            background: var(--yellow);
+            border-bottom: 3px solid var(--black);
+        }
+        
+        .rating-table th,
+        .difficulty-table th,
+        .fueling-table th,
+        .decision-table th,
+        .three-acts-table th,
+        .tire-table th,
+        .workout-summary-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--black);
+            border-right: 1px solid var(--black);
+        }
+        
+        .rating-table th:last-child,
+        .difficulty-table th:last-child,
+        .fueling-table th:last-child,
+        .decision-table th:last-child,
+        .three-acts-table th:last-child,
+        .tire-table th:last-child,
+        .workout-summary-table th:last-child {
+            border-right: none;
+        }
+        
+        .rating-table td,
+        .difficulty-table td,
+        .fueling-table td,
+        .decision-table td,
+        .three-acts-table td,
+        .tire-table td,
+        .workout-summary-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        
+        .rating-table td:last-child,
+        .difficulty-table td:last-child,
+        .fueling-table td:last-child,
+        .decision-table td:last-child,
+        .three-acts-table td:last-child,
+        .tire-table td:last-child,
+        .workout-summary-table td:last-child {
+            border-right: none;
+        }
+        
+        .rating-table tr:last-child td,
+        .difficulty-table tr:last-child td,
+        .fueling-table tr:last-child td,
+        .decision-table tr:last-child td,
+        .three-acts-table tr:last-child td,
+        .tire-table tr:last-child td,
+        .workout-summary-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .rating-table .rating-bars {
+            font-family: monospace;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+        
+        /* Mental Map Styling */
+        .mental-map {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border: 2px solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        
+        .mental-framework h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: var(--black);
+        }
+        
+        .mental-layer {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid var(--yellow);
+        }
+        
+        .mental-layer h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: var(--black);
+        }
+        
+        .mental-layer p {
+            margin: 8px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Tire Decision Note */
+        .tire-note {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f9f9f9;
+            border-left: 4px solid var(--yellow);
+            font-size: 14px;
+        }
+        
+        /* Quote styling - Neo-Brutalist */
+        q {
+            quotes: """ """;
+            display: inline;
+            font-family: 'Sometype Mono', monospace;
+            font-weight: 600 !important;
+            font-style: normal !important;
+            font-size: 1em !important;
+            color: var(--black) !important;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        
+        q::before {
+            content: """";
+            font-weight: 600;
+        }
+        
+        q::after {
+            content: """";
+            font-weight: 600;
+        }
+        
+        q::before {
+            content: """";
+            font-weight: 600;
+        }
+        
+        q::after {
+            content: """";
+            font-weight: 600;
+        }
+        
+        /* Block quotes (if used) */
+        blockquote {
+            background: var(--turquoise);
+            border: 4px solid var(--black);
+            box-shadow: 6px 6px 0 var(--black);
+            padding: 20px 25px;
+            margin: 20px 0;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--black);
+            position: relative;
+        }
+        
+        blockquote::before {
+            content: '"';
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+
+
+        /* HRV Decision Table */
+        .hrv-decision-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            background: white;
+            border: 2px solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        
+        .hrv-decision-table thead {
+            background: var(--yellow);
+            border-bottom: 3px solid var(--black);
+        }
+        
+        .hrv-decision-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--black);
+            border-right: 1px solid var(--black);
+        }
+        
+        .hrv-decision-table th:last-child {
+            border-right: none;
+        }
+        
+        .hrv-decision-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            font-size: 14px;
+        }
+        
+        .hrv-decision-table td:last-child {
+            border-right: none;
+        }
+        
+        .hrv-decision-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .hrv-note {
+            margin-top: 10px;
+            font-size: 13px;
+            font-style: italic;
+            color: #666;
+        }
+        
+
+        /* Special quote styling for prominent quotes */
+        q.special-quote,
+        .special-quote {
+            display: block;
+            font-family: 'Sometype Mono', monospace;
+            font-weight: 700 !important;
+            font-size: 2em !important;
+            color: var(--black) !important;
+            text-align: center;
+            margin: 40px 0;
+            padding: 0;
+            line-height: 1.4;
+        }
+        
+        q.special-quote::before,
+        .special-quote::before {
+            content: """";
+            font-weight: 700;
+            font-size: 2em;
+        }
+        
+        q.special-quote::after,
+        .special-quote::after {
+            content: """";
+            font-weight: 700;
+            font-size: 2em;
         }
 </style>
 </head>
@@ -895,7 +1379,8 @@ LAST UPDATED: 2024
 
 <p>Because despite our best efforts, the human body remains too complex to neatly summarize with device-generated data. Your subjective feeling is infinitely more valuable than numbered outputs based on incomplete data collection, reductive models, and population-level assumptions.</p>
 
-<h2>You're a special snowflake. Learn your snowflake.</h2>
+<p>You're a special snowflake.</p>
+<q class="special-quote">Learn your snowflake.</q>
 
 <h3>The Three Measurement Systems</h3>
 
@@ -1659,15 +2144,39 @@ LAST UPDATED: 2024
 </ul>
 <h3>Step 3: Use it as a tiebreaker</h3>
 
-<p>----------------------------------------------------------------------- <strong>How You     </strong>HRV Status<strong>    </strong>Action<strong> Feel</strong> ------------- ----------------- --------------------------------------- Feel good     HRV normal/high   Do the workout as planned</p>
+<table class="hrv-decision-table">
+  <thead>
+    <tr>
+      <th>How You Feel</th>
+      <th>HRV Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Feel good</strong></td>
+      <td>HRV normal/high</td>
+      <td>Do the workout as planned</td>
+    </tr>
+    <tr>
+      <td><strong>Feel good</strong></td>
+      <td>HRV suppressed</td>
+      <td>Do the workout, but monitor closely</td>
+    </tr>
+    <tr>
+      <td><strong>Feel bad</strong></td>
+      <td>HRV normal/high</td>
+      <td>Extended warmup, then reassess</td>
+    </tr>
+    <tr>
+      <td><strong>Feel bad</strong></td>
+      <td>HRV suppressed</td>
+      <td>Swap for easy day or rest</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Feel good     HRV suppressed    Do the workout, but monitor closely</p>
-
-<p>Feel bad      HRV normal/high   Extended warmup, then reassess</p>
-
-<p>Feel bad      HRV suppressed    Swap for easy day or rest -----------------------------------------------------------------------</p>
-
-<p>Note: "Feel bad" means genuinely fatigued, not just "don't feel like it." Be honest with yourself.</p>
+<p class="hrv-note"><strong>Note:</strong> <q>Feel bad</q> means genuinely fatigued, not just <q>don't feel like it.</q> Be honest with yourself.</p>
 
 <h3>Step 4: Don't overthink it</h3>
 

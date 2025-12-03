@@ -911,7 +911,111 @@ LAST UPDATED: 2024
             font-weight: 700;
             font-size: 2em;
         }
-</style>
+
+        /* Equipment Checklist Styling */
+        .equipment-checklist {
+            margin: 20px 0;
+        }
+        
+        .equipment-checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: var(--turquoise);
+        }
+        
+        .checklist-item span {
+            flex: 1;
+        }
+        
+        .checklist-download {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .download-link {
+            display: inline-block;
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .download-link:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 var(--black);
+        }
+        
+        .non-negotiables-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            background: white;
+            border: 2px solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        
+        .non-negotiables-table thead {
+            background: var(--turquoise);
+            border-bottom: 3px solid var(--black);
+        }
+        
+        .non-negotiables-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--black);
+            border-right: 1px solid var(--black);
+        }
+        
+        .non-negotiables-table th:last-child {
+            border-right: none;
+        }
+        
+        .non-negotiables-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        
+        .non-negotiables-table td:last-child {
+            border-right: none;
+        }
+        
+        .non-negotiables-table tr:last-child td {
+            border-bottom: none;
+        }
+
+
+        
+        
+        </style>
 </head>
 <body>
     <div class="container">
@@ -942,7 +1046,69 @@ LAST UPDATED: 2024
         <li><a href="#section-4"><span class="toc-number">04</span><span class="toc-title">Your 12-Week Arc</span></a></li>
         <li><a href="#section-5"><span class="toc-number">05</span><span class="toc-title">Training Zones</span></a></li>
         <li><a href="#section-6"><span class="toc-number">06</span><span class="toc-title">Workout Execution</span></a></li>
-        <li><a href="#section-7"><span class="toc-number">07</span><span class="toc-title">Technical Skills</span></a></li>
+        <li><a href="#section-7"><span class="toc-number">07</span><span class="toc-tit
+        /* Guide Ending Styling */
+        .guide-ending {
+            margin: 60px 0 40px;
+            padding: 40px 20px;
+        }
+        
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+            background: var(--yellow);
+            border: 4px solid var(--black);
+            box-shadow: 8px 8px 0 var(--black);
+            padding: 20px 40px;
+            display: inline-block;
+            margin: 0 auto 20px;
+        }
+        
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--black);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--black);
+            margin: 10px 0;
+        }
+        
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--black);
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .end-marker {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--black);
+            margin: 40px 0 20px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.7;
+        }
+        
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--black);
+            margin: 15px 0;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        le">Technical Skills</span></a></li>
         <li><a href="#section-8"><span class="toc-number">08</span><span class="toc-title">Fueling & Hydration</span></a></li>
         <li><a href="#section-9"><span class="toc-number">09</span><span class="toc-title">Mental Training</span></a></li>
         <li><a href="#section-10"><span class="toc-number">10</span><span class="toc-title">Race Tactics</span></a></li>
@@ -1287,11 +1453,11 @@ LAST UPDATED: 2024
 
 <h3>The Practical Rules</h3>
 
-<h2>1. Training stress must be adequate but not excessive</h2>
+<h3>1. Training stress must be adequate but not excessive</h2>
 
 <p>Hard enough to trigger adaptation. Not so hard you can't recover.</p>
 
-<h2>2. Recovery must be prioritized as much as training</h2>
+<h3>2. Recovery must be prioritized as much as training</h2>
 
 <p>Sleep, nutrition, stress management---these aren't optional. They're where adaptation happens.</p>
 
@@ -1496,14 +1662,13 @@ LAST UPDATED: 2024
 <p><em>*Heart rate can't respond fast enough to track Z6-Z7 efforts. Use power and RPE.</em></p>
 
 <h3>Critical Notes on Using Zones</h3>
-
-<h2>1. Zones are descriptive, not prescriptive</h2>
+<h4>1. Zones are descriptive, not prescriptive</h4>
 
 <p>Zones describe what you did, not a rigid target you must hit. You're targeting a range, not a precise number.</p>
 
 <p>If the workout says "Z2," anywhere in 56-75% FTP counts. Don't obsess over hitting exactly 65%. Somewhere in the zone is the goal.</p>
 
-<h3>2. Easy means easy</h3>
+<h4>2. Easy means easy</h4>
 
 <p>Most people train too hard on easy days. Zone 2 should feel genuinely conversational. If you're breathing hard, you're in Z3.</p>
 
@@ -1511,7 +1676,7 @@ LAST UPDATED: 2024
 
 <p>Most common mistake in endurance training: riding "moderately hard" all the time. You need polarization---easy days truly easy (Z1-Z2), hard days truly hard (Z4-Z6). Very little time in Z3.</p>
 
-<h3>3. RPE is the ultimate arbiter</h3>
+<h4>3. RPE is the ultimate arbiter</h4>
 
 <p>Power meters can lie: bad calibration, stale FTP, wrong crank length setting. Heart rate can be misleading: heat, dehydration, caffeine, illness, accumulating fatigue.</p>
 
@@ -1521,7 +1686,7 @@ LAST UPDATED: 2024
 
 <p>Cross-reference all three metrics. When they align, you're dialed in. When they conflict, trust RPE.</p>
 
-<h3>4. FTP changes slowly</h3>
+<h4>4. FTP changes slowly</h4>
 
 <p>Don't retest every week. Your FTP isn't changing that fast.</p>
 
@@ -1529,13 +1694,13 @@ LAST UPDATED: 2024
 
 <p>Zones don't need constant adjustment. Let the training work over weeks, not days.</p>
 
-<h3>5. Heart rate lags power</h3>
+<h4>5. Heart rate lags power</h4>
 
 <p>It takes 1-3 minutes for your heart rate to rise to match your power output. This makes HR less useful for short intervals but highly reliable for longer steady efforts.</p>
 
 <p>Use power for short, hard efforts (Z5-Z7). Use heart rate for pacing long endurance rides (Z2-Z3).</p>
 
-<h2>6. Anaerobically gifted athletes are different</h2>
+<h4>6. Anaerobically gifted athletes are different</h4>
 
 <p>The percentages for Z5-Z7 assume average physiology. Some athletes---former track sprinters, BMX racers, football players---have exceptional anaerobic capacity.</p>
 
@@ -1612,7 +1777,7 @@ LAST UPDATED: 2024
 </ul>
 <p>Why it matters: Cold muscles don't produce power efficiently. Skipping warmup compromises interval quality and increases injury risk.</p>
 
-<h2>2. Do the Actual Workout (Not More, Not Less)</h2>
+<h3>2. Do the Actual Workout (Not More, Not Less)</h2>
 
 <p>The most common mistake: freelancing.</p>
 
@@ -1632,7 +1797,7 @@ LAST UPDATED: 2024
 
 <p>Adding volume or intensity might feel productive, but it accumulates fatigue, compromises recovery, and ruins tomorrow's workout.</p>
 
-<h2>3. Chase Time-in-Zone, Not Hero Intervals</h2>
+<h3>3. Chase Time-in-Zone, Not Hero Intervals</h2>
 
 <p>This applies to everything from G Spot up to VO2max.</p>
 
@@ -2081,7 +2246,7 @@ LAST UPDATED: 2024
 
 <p>If your baseline is 65ms and you're consistently hitting 70ms, you're adapting well. Training is working.</p>
 
-<h2>2. Confirming what your body already knows</h2>
+<h3>2. Confirming what your body already knows</h3>
 
 <p>HRV is most useful as a tiebreaker. You wake up feeling "meh"---not terrible, not great. Should you do today's hard workout or swap it for easy spinning?</p>
 
@@ -2105,7 +2270,7 @@ LAST UPDATED: 2024
 
 <p>Use it as one input, not the answer.</p>
 
-<h2>2. Day-to-day decision making (in isolation)</h2>
+<h3>2. Day-to-day decision making (in isolation)</h3>
 
 <p>One bad HRV reading means nothing. You could have slept in a weird position, been dehydrated, had a stressful dream, or measured incorrectly.</p>
 
@@ -2318,29 +2483,14 @@ LAST UPDATED: 2024
 
 <h2>If you don't have a strength training habit:</h2>
 
-<p>Don't start a full program now. Instead:</p>
+<p>Don\'t start a full program now. Instead:</p>
 
 <ol>
-<li> <strong>Add mobility work immediately.</strong> 10-15 minutes, 3x/week. Hip</li>
-</ol>
-<p>> flexors, glutes, thoracic spine, ankles. YouTube "cycling > mobility routine" and pick one you'll actually do.</p>
-
-<ol>
-<li> <strong>Add basic core stability.</strong> Planks, dead bugs, bird dogs. 10</li>
-</ol>
-<p>> minutes, 2-3x/week. A stable core transfers power more efficiently > and protects your lower back during long rides.</p>
-
-<ol>
-<li> <strong>Add bodyweight movements if you have bandwidth.</strong> Squats, lunges,</li>
-</ol>
-<p>> glute bridges, push-ups. No gym required. 15-20 minutes, 2x/week. > This builds the foundation for future strength work.</p>
-
-<ol>
-<li> <strong>Plan a proper strength block for your off-season.</strong> After this</li>
-</ol>
-<p>> race, commit to 12-16 weeks of structured strength training before > your next build. Start with Anatomical Adaptation, progress > through the phases, build the habit properly.</p>
-
-<h3>The Bottom Line</h3>
+<li><strong>Add mobility work immediately.</strong> 10-15 minutes, 3x/week. Hip flexors, glutes, thoracic spine, ankles. YouTube "cycling mobility routine" and pick one you'll actually do.</li>
+<li><strong>Add basic core stability.</strong> Planks, dead bugs, bird dogs. 10 minutes, 2-3x/week. A stable core transfers power more efficiently and protects your lower back during long rides.</li>
+<li><strong>Add bodyweight movements if you have bandwidth.</strong> Squats, lunges, glute bridges, push-ups. No gym required. 15-20 minutes, 2x/week. This builds the foundation for future strength work.</li>
+<li><strong>Plan a proper strength block for your off-season.</strong> After this race, commit to 12-16 weeks of structured strength training before your next build. Start with Anatomical Adaptation, progress through the phases, build the habit properly.</li>
+</ol><h3>The Bottom Line</h3>
 
 <p>Strength training makes you faster and keeps you healthy. But it's a long-term investment, not a quick fix.</p>
 
@@ -2411,7 +2561,7 @@ LAST UPDATED: 2024
 
 <p><strong>The cue to remember:</strong> "Flat road first, then rough. Both hands work"</p>
 
-<h2>Skill 3: Group Riding & Pace Line Dynamics</h2>
+<h3>Skill 3: Group Riding & Pace Line Dynamics</h3>
 
 <h3>Why it matters:</h3>
 
@@ -2455,17 +2605,15 @@ LAST UPDATED: 2024
 
 <p><strong>The cue to remember:</strong> "Weight back, light hands, eyes up"</p>
 
-<p>Skill 5: **<strong>{{SKILL_5_NAME}}</strong>**</p>
+<h3>Skill 5: {{SKILL_5_NAME}}</h3>
 
-<h3>Why it matters:</h3>
+<h4>Why it matters:</h4>
+<p>{{SKILL_5_WHY}}</p>
 
-<h2>{{SKILL_5_WHY}}</h2>
+<h4>How to practice:</h4>
+<p>{{SKILL_5_HOW}}</p>
 
-<h3>How to practice:</h3>
-
-<h2>{{SKILL_5_HOW}}</h2>
-
-<p>The cue to remember: "**<strong>{{SKILL_5_CUE}}</strong>**"</p>
+<p><strong>The cue to remember:</strong> "{{SKILL_5_CUE}}"</p>
 
 <h3>Race-Specific Skill Notes</h3>
 
@@ -2648,9 +2796,9 @@ LAST UPDATED: 2024
 <li> Statement: Your most powerful performance statement</li>
 </ol>
 <ol>
-<li> Action: The smallest possible next step (just pedal 100 more meters,</li>
+<li> Action: The smallest possible next step (just pedal 100 more meters,
+<p>> then reassess)</p></li>
 </ol>
-<p>> then reassess)</p>
 
 <p>This sequence breaks the spiral of panic. Breathing calms your nervous system. Statement redirects your thoughts. Action gives you something concrete to do.</p>
 
@@ -2744,39 +2892,64 @@ LAST UPDATED: 2024
 
 <p>This section covers the specific preparation requirements for **<strong>{{RACE_NAME}}</strong>**, the weather considerations that matter, and the equipment you need to have dialed in.</p>
 
-<h3>The Non-Negotiables</h3>
-
-<p>These are the requirements that determine whether you finish strong, finish barely, or don't finish at all.</p>
-
-<h3>Requirement | By When | Why It Matters</h3>
-
-<h2>{{NON_NEG_1_WHY}}</h2>
-
-<h2>{{NON_NEG_2_WHY}}</h2>
-
-<h2>{{NON_NEG_3_WHY}}</h2>
-
-<h2>{{NON_NEG_4_WHY}}</h2>
-
-<h2>{{NON_NEG_5_WHY}}</h2>
+<h3>Non-Negotiables</h3>
+<p>These aren't suggestions. They're requirements discovered through painful experience---either yours during training, or others' during previous editions of this race.</p>
+<table class="non-negotiables-table">
+  <thead>
+    <tr>
+      <th>Requirement</th>
+      <th>By When</th>
+      <th>Why It Matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>{{NON_NEG_1_REQUIREMENT}}</strong></td>
+      <td>{{NON_NEG_1_BY_WHEN}}</td>
+      <td>{{NON_NEG_1_WHY}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{NON_NEG_2_REQUIREMENT}}</strong></td>
+      <td>{{NON_NEG_2_BY_WHEN}}</td>
+      <td>{{NON_NEG_2_WHY}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{NON_NEG_3_REQUIREMENT}}</strong></td>
+      <td>{{NON_NEG_3_BY_WHEN}}</td>
+      <td>{{NON_NEG_3_WHY}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{NON_NEG_4_REQUIREMENT}}</strong></td>
+      <td>{{NON_NEG_4_BY_WHEN}}</td>
+      <td>{{NON_NEG_4_WHY}}</td>
+    </tr>
+    <tr>
+      <td><strong>{{NON_NEG_5_REQUIREMENT}}</strong></td>
+      <td>{{NON_NEG_5_BY_WHEN}}</td>
+      <td>{{NON_NEG_5_WHY}}</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>These aren't suggestions. They're requirements discovered through painful experience---either yours during training, or others' during previous editions of this race.</p>
 
 <p>Skip them at your own risk. The course won't care. It will simply expose the gap in your preparation.</p>
 
 <h3>Weather Strategy</h3>
+<p>{{WEATHER_STRATEGY}}</p>
 
-<h2>{{WEATHER_STRATEGY}}</h2>
-
-<h2>Equipment Checklist</h2>
-
-<h2>{{EQUIPMENT_CHECKLIST}}</h2>
+<h3>Equipment Checklist</h3>
+<div class="equipment-checklist">
+{{EQUIPMENT_CHECKLIST}}
+</div>
 
 <p>The bottom line on preparation: The race will test everything you didn't practice and expose every shortcut you took. The time to discover your preparation was inadequate is during training, not during the race.</p>
 
-<h2>ALTITUDE TRAINING SECTION - FOR TRAINING PLAN GUIDE</h2>
+<!-- START ALTITUDE SECTION - ONLY SHOW IF RACE_ELEVATION >= 3000 -->
+<h2>Racing at Altitude</h2>
+<p>This race takes place at significant elevation ({{RACE_ELEVATION}} feet). The following section provides altitude-specific guidance.</p>
 
-<h2>PLACEMENT: Section 11 (Race-Specific Preparation)</h2>
+<!-- END ALTITUDE SECTION -->
 
 <!-- START ALTITUDE SECTION - REMOVE IF {{RACE_ELEVATION}} < 5000 -->
 
@@ -3221,9 +3394,9 @@ LAST UPDATED: 2024
 <li> Train by heart rate, not power</li>
 </ol>
 <ol>
-<li> Fuel like your life depends on it</li>
+<li> Fuel like your life depends on it
+<p>The race will be hard. Altitude makes it harder. But understanding what's happening and having a plan turns a variable you can't control into one you can manage.</p></li>
 </ol>
-<p>The race will be hard. Altitude makes it harder. But understanding what's happening and having a plan turns a variable you can't control into one you can manage.</p>
 
 <h2>VARIABLE REFERENCE FOR AUTOMATION</h2>
 
@@ -3289,610 +3462,584 @@ LAST UPDATED: 2024
 <p>The bottom line on race week: Less is more. You've done the work. Now let your body absorb it. Show up fresh, not fatigued from last-minute training.</p>
 
 <h3>Race Week Gear Checklist</h3>
-
-<p>You've trained for 12 weeks. Don't blow it by forgetting your shoes.</p>
-
 <p>This checklist covers everything you need for race day. Print it. Check boxes. Don't improvise at 5am on race morning.</p>
 
-<h2>BIKE & EQUIPMENT</h2>
+<h4>BIKE & EQUIPMENT</h4>
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Race bike (cleaned, lubed, mechanically sound)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Spare wheels (if you have them)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Tires mounted and tested (see tire selection guide below)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Tubes (2 minimum, 3 if racing 100+ miles)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>CO2 cartridges (3-4 minimum) or hand pump</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>CO2 inflator head</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Tire levers (2)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Multi-tool with chain breaker</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Spare chain links (2)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Tire plugs (bacon strips, 5-6 minimum)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Frame pump or mini pump (backup to CO2)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Spare derailleur hanger (if racing 100+ miles)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Tire pressure tested on training ride</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Shifting crisp (no ghost shifts, no chain drop)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Brakes powerful (pads >50% life)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Bottom bracket/headset tight (no creaks or play)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Chain lubed but not over-lubed</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>All bolts torqued (stem, bars, seatpost, bottle cages)</span>
+  </label>
+</div>
 
-<p>Essential:</p>
 
-<ul>
-<li>Race bike (cleaned, lubed, mechanically sound)</li>
-</ul>
-<ul>
-<li>Spare wheels (if you have them)</li>
-</ul>
-<ul>
-<li>Tires mounted and tested (see tire selection guide below)</li>
-</ul>
-<ul>
-<li>Tubes (2 minimum, 3 if racing 100+ miles)</li>
-</ul>
-<ul>
-<li>CO2 cartridges (3-4 minimum) or hand pump</li>
-</ul>
-<ul>
-<li>CO2 inflator head</li>
-</ul>
-<ul>
-<li>Tire levers (2)</li>
-</ul>
-<ul>
-<li>Multi-tool with chain breaker</li>
-</ul>
-<ul>
-<li>Spare chain links (2)</li>
-</ul>
-<ul>
-<li>Tire plugs (bacon strips, 5-6 minimum)</li>
-</ul>
-<ul>
-<li>Frame pump or mini pump (backup to CO2)</li>
-</ul>
-<ul>
-<li>Spare derailleur hanger (if racing 100+ miles)</li>
-</ul>
-<p>Check before packing:</p>
-
-<ul>
-<li>Tire pressure tested on training ride</li>
-</ul>
-<ul>
-<li>Shifting crisp (no ghost shifts, no chain drop)</li>
-</ul>
-<ul>
-<li>Brakes powerful (pads >50% life)</li>
-</ul>
-<ul>
-<li>Bottom bracket/headset tight (no creaks or play)</li>
-</ul>
-<ul>
-<li>Chain lubed but not over-lubed</li>
-</ul>
-<ul>
-<li>All bolts torqued (stem, bars, seatpost, bottle cages)</li>
-</ul>
-<h2>PERSONAL GEAR</h2>
-
-<p>Critical (if you forget these, you can't race):</p>
-
-<ul>
-<li>Helmet</li>
-</ul>
-<ul>
-<li>Cycling shoes</li>
-</ul>
-<ul>
-<li>Race kit (jersey + bibs)</li>
-</ul>
-<ul>
-<li>Socks</li>
-</ul>
-<ul>
-<li>Gloves</li>
-</ul>
-<p>Strongly recommended:</p>
-
-<ul>
-<li>Sunglasses (2 pairs if possible---one clear, one dark)</li>
-</ul>
-<ul>
-<li>Arm warmers or arm sleeves</li>
-</ul>
-<ul>
-<li>Leg warmers or knee warmers</li>
-</ul>
-<ul>
-<li>Lightweight vest or rain jacket (if weather questionable)</li>
-</ul>
-<ul>
-<li>Neck gaiter or buff</li>
-</ul>
-<ul>
-<li>Chamois cream (pre-applied at home or packed)</li>
-</ul>
-<p>Weather-dependent:</p>
-
-<ul>
-<li>Extra base layer (cold morning starts)</li>
-</ul>
-<ul>
-<li>Toe covers or shoe covers (if temps <50°F at start)</li>
-</ul>
-<ul>
-<li>Winter gloves (if temps <40°F)</li>
-</ul>
+<p class="checklist-download"><a href="#" onclick="downloadBIKE_EQUIPMENTPDF()" class="download-link">📥 Download BIKE & EQUIPMENT Checklist (PDF)</a></p>
+<h4>PERSONAL GEAR</h4>
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Sunglasses (2 pairs if possible---one clear, one dark)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Socks</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Lightweight vest or rain jacket (if weather questionable)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Chamois cream (pre-applied at home or packed)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Helmet</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Toe covers or shoe covers (if temps <50°F at start)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Winter gloves (if temps <40°F)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Cycling shoes</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Arm warmers or arm sleeves</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Neck gaiter or buff</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Extra base layer (cold morning starts)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Race kit (jersey + bibs)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Leg warmers or knee warmers</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Gloves</span>
+  </label>
+</div>
+<p class="checklist-download"><a href="#" onclick="downloadPERSONAL_GEARPDF()" class="download-link">📥 Download PERSONAL GEAR Checklist (PDF)</a></p>
 <h2>HYDRATION & FUELING</h2>
-
-<p>Race-day consumption:</p>
-
-<ul>
-<li>Water bottles (2 minimum, mounted on bike)</li>
-</ul>
-<ul>
-<li>Hydration pack (USWE or similar, if using)</li>
-</ul>
-<ul>
-<li>Electrolyte mix (pre-measured, ready to add)</li>
-</ul>
-<ul>
-<li>Gels (1 per hour + 2 extra)</li>
-</ul>
-<ul>
-<li>Bars (1 per 2 hours + 1 extra)</li>
-</ul>
-<ul>
-<li>Chews or blocks (optional but nice to have)</li>
-</ul>
-<ul>
-<li>Salt tabs (if hot conditions or salty sweater)</li>
-</ul>
-<ul>
-<li>Emergency real food (PB&J, rice cakes---pack in foil)</li>
-</ul>
-<p>Pre-race:</p>
-
-<ul>
-<li>Breakfast foods (familiar, high-carb, low-fiber)</li>
-</ul>
-<ul>
-<li>Coffee or caffeine source (if you use it)</li>
-</ul>
-<ul>
-<li>Pre-race gel or snack (100-200 cals, 30 min before start)</li>
-</ul>
-<p>Post-race:</p>
-
-<ul>
-<li>Recovery drink or shake</li>
-</ul>
-<ul>
-<li>Real food (whatever you can stomach)</li>
-</ul>
-<ul>
-<li>Extra water or electrolyte drink</li>
-</ul>
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Water bottles (2 minimum, mounted on bike)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Hydration pack (USWE or similar, if using)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Electrolyte mix (pre-measured, ready to add)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Gels (1 per hour + 2 extra)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Bars (1 per 2 hours + 1 extra)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Chews or blocks (optional but nice to have)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Salt tabs (if hot conditions or salty sweater)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Emergency real food (PB&J, rice cakes---pack in foil)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Breakfast foods (familiar, high-carb, low-fiber)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Coffee or caffeine source (if you use it)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Pre-race gel or snack (100-200 cals, 30 min before start)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Recovery drink or shake</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Real food (whatever you can stomach)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Extra water or electrolyte drink</span>
+  </label>
+</div>
+<p class="checklist-download"><a href="#" onclick="downloadHYDRATION_FUELINGPDF()" class="download-link">📥 Download HYDRATION & FUELING Checklist (PDF)</a></p>
 <h2>HEALTH & SAFETY</h2>
-
-<p>Non-negotiable:</p>
-
-<ul>
-<li>Sunscreen (SPF 30+, sweat-resistant)</li>
-</ul>
-<ul>
-<li>Chamois cream</li>
-</ul>
-<ul>
-<li>Lip balm with SPF</li>
-</ul>
-<ul>
-<li>Basic first aid (bandaids, antiseptic wipes)</li>
-</ul>
-<ul>
-<li>Any prescription medications</li>
-</ul>
-<p>Strongly recommended:</p>
-
-<ul>
-<li>Anti-chafe stick (nipples, inner thighs)</li>
-</ul>
-<ul>
-<li>Ibuprofen or pain reliever (for after, not during)</li>
-</ul>
-<ul>
-<li>Hand sanitizer or wipes</li>
-</ul>
-<ul>
-<li>Small pack of tissues (trust me)</li>
-</ul>
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Sunscreen (SPF 30+, sweat-resistant)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Chamois cream</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Lip balm with SPF</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Basic first aid (bandaids, antiseptic wipes)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Any prescription medications</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Anti-chafe stick (nipples, inner thighs)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Ibuprofen or pain reliever (for after, not during)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Hand sanitizer or wipes</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Small pack of tissues (trust me)</span>
+  </label>
+</div>
+<p class="checklist-download"><a href="#" onclick="downloadHEALTH_SAFETYPDF()" class="download-link">📥 Download HEALTH & SAFETY Checklist (PDF)</a></p>
 <h2>ELECTRONICS & TECH</h2>
-
-<p>Essential:</p>
-
-<ul>
-<li>Bike computer (charged, route loaded if using navigation)</li>
-</ul>
-<ul>
-<li>Phone (charged, in waterproof case or bag)</li>
-</ul>
-<ul>
-<li>ID and emergency contact info (in pocket or taped to bike)</li>
-</ul>
-<ul>
-<li>Insurance card (if you have it)</li>
-</ul>
-<p>Recommended:</p>
-
-<ul>
-<li>Power meter charged (if wireless)</li>
-</ul>
-<ul>
-<li>Heart rate monitor charged</li>
-</ul>
-<ul>
-<li>Lights (front + rear, even for daytime racing)</li>
-</ul>
-<ul>
-<li>Spare battery for bike computer (if not rechargeable)</li>
-</ul>
-<ul>
-<li>Charging cables (for night before)</li>
-</ul>
-<ul>
-<li>Wall outlet adapter (if traveling)</li>
-</ul>
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Bike computer (charged, route loaded if using navigation)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Phone (charged, in waterproof case or bag)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>ID and emergency contact info (in pocket or taped to bike)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Insurance card (if you have it)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Power meter charged (if wireless)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Heart rate monitor charged</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Lights (front + rear, even for daytime racing)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Spare battery for bike computer (if not rechargeable)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Charging cables (for night before)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Wall outlet adapter (if traveling)</span>
+  </label>
+</div>
+<p class="checklist-download"><a href="#" onclick="downloadELECTRONICS_TECHPDF()" class="download-link">📥 Download ELECTRONICS & TECH Checklist (PDF)</a></p>
 <h2>RACE LOGISTICS</h2>
-
-<p>Do not forget:</p>
-
-<ul>
-<li>Race bib (pinned to jersey or race belt)</li>
-</ul>
-<ul>
-<li>Timing chip (if separate from bib)</li>
-</ul>
-<ul>
-<li>Parking pass (if required)</li>
-</ul>
-<ul>
-<li>Proof of registration (email confirmation)</li>
-</ul>
-<ul>
-<li>Cash ($40-60 for emergencies, aid station donations)</li>
-</ul>
-<ul>
-<li>Credit card</li>
-</ul>
-<p>Helpful:</p>
-
-<ul>
-<li>Drop bag (if race allows)</li>
-</ul>
-<ul>
-<li>Change of clothes for after</li>
-</ul>
-<ul>
-<li>Towel (you'll be gross)</li>
-</ul>
-<ul>
-<li>Shoes for post-race (flip flops or slides)</li>
-</ul>
-<ul>
-<li>Cooler with ice and drinks for after</li>
-</ul>
-<ul>
-<li>Chair or blanket (for post-race sitting)</li>
-</ul>
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Race bib (pinned to jersey or race belt)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Timing chip (if separate from bib)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Parking pass (if required)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Proof of registration (email confirmation)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Cash ($40-60 for emergencies, aid station donations)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Credit card</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Drop bag (if race allows)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Change of clothes for after</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Towel (you'll be gross)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Shoes for post-race (flip flops or slides)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Cooler with ice and drinks for after</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Chair or blanket (for post-race sitting)</span>
+  </label>
+</div>
+<p class="checklist-download"><a href="#" onclick="downloadRACE_LOGISTICSPDF()" class="download-link">📥 Download RACE LOGISTICS Checklist (PDF)</a></p>
 <h2>VEHICLE/TRAVEL</h2>
-
-<p>If driving to race:</p>
-
-<ul>
-<li>Bike rack or vehicle space secured</li>
-</ul>
-<ul>
-<li>Straps/bungees to secure bike</li>
-</ul>
-<ul>
-<li>Hotel confirmation (if staying overnight)</li>
-</ul>
-<ul>
-<li>Directions to start line</li>
-</ul>
-<ul>
-<li>Parking plan confirmed</li>
-</ul>
-<p>If flying to race:</p>
-
-<ul>
-<li>Bike box or case</li>
-</ul>
-<ul>
-<li>Tools for bike assembly/disassembly</li>
-</ul>
-<ul>
-<li>Padding/protection for frame</li>
-</ul>
-<ul>
-<li>Checked bag for tools/CO2 (can't carry on)</li>
-</ul>
-<ul>
-<li>Confirmation that bike is checked baggage</li>
-</ul>
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Bike rack or vehicle space secured</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Straps/bungees to secure bike</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Hotel confirmation (if staying overnight)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Directions to start line</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Parking plan confirmed</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Bike box or case</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Tools for bike assembly/disassembly</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Padding/protection for frame</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Checked bag for tools/CO2 (can't carry on)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Confirmation that bike is checked baggage</span>
+  </label>
+</div>
+<p class="checklist-download"><a href="#" onclick="downloadVEHICLE_TRAVELPDF()" class="download-link">📥 Download VEHICLE/TRAVEL Checklist (PDF)</a></p>
 <h2>THE NIGHT BEFORE</h2>
-
-<p>Final prep:</p>
-
-<ul>
-<li>Bike ready (in vehicle or by door)</li>
-</ul>
-<ul>
-<li>All gear packed and checked twice</li>
-</ul>
-<ul>
-<li>Race outfit laid out</li>
-</ul>
-<ul>
-<li>Nutrition portioned and accessible</li>
-</ul>
-<ul>
-<li>Alarm set (with backup alarm)</li>
-</ul>
-<ul>
-<li>Bottles filled or ready to fill</li>
-</ul>
-<ul>
-<li>Breakfast planned</li>
-</ul>
-<ul>
-<li>Route to start line confirmed</li>
-</ul>
-<h3>How to Pick a Tire (Without Going Crazy)</h3>
-
-<h2>{{INFOGRAPHIC_TIRE_DECISION}}</h2>
-
-<p>People spend more time obsessing over tires than they spend training. Stop it.</p>
-
-<p>Here's the framework that actually matters:</p>
-
-<h3>The Three Variables That Actually Matter</h3>
-
-<h3>1. Durability</h3>
-
-<p>Will this tire get you to the finish line without flatting?</p>
-
-<p>This is the most important variable for gravel racing. A tire that saves you 2 minutes over 200 miles but leaves you on the side of the road with a sidewall tear at mile 80 is not a good tire.</p>
-
-<p>Look for:</p>
-
-<ul>
-<li>Reinforced casing (60+ TPI is fine, 120 TPI is nice but not</li>
-</ul>
-<p>> required)</p>
-
-<ul>
-<li>Sidewall protection</li>
-</ul>
-<ul>
-<li>Puncture-resistant layer under tread</li>
-</ul>
-<ul>
-<li>Reputation for reliability on your race's terrain type</li>
-</ul>
-<h3>2. Comfort</h3>
-
-<p>Can you ride this tire for 8+ hours without your hands going numb?</p>
-
-<p>Gravel races are long. Harsh tires beat you up. Fatigued hands lead to poor bike handling. Poor bike handling leads to crashes or lost time.</p>
-
-<p>Look for:</p>
-
-<ul>
-<li>Appropriate width (see width guide below)</li>
-</ul>
-<ul>
-<li>Supple casing (lower TPI = harsher ride)</li>
-</ul>
-<ul>
-<li>Enough air volume to absorb chatter</li>
-</ul>
-<h3>3. Grip</h3>
-
-<p>Does this tire corner and descend predictably on your race's surface?</p>
-
-<p>Note: "grip" is not "tread pattern." Tread matters less than most people think. Rubber compound and tire volume matter more.</p>
-
-<p>Look for:</p>
-
-<ul>
-<li>Decent tread (doesn't need to be aggressive unless it's muddy)</li>
-</ul>
-<ul>
-<li>Adequate width for conditions</li>
-</ul>
-<ul>
-<li>Tested on similar terrain to your race</li>
-</ul>
-<h2>What Doesn't Matter (Or Matters Way Less Than You Think)</h2>
-
-<h3>Rolling resistance</h3>
-
-<p>The difference between a "fast" gravel tire and a "slow" gravel tire over 200 miles is maybe 3-5 minutes. Maybe.</p>
-
-<p>The difference between finishing with a flat and finishing without one is 15-30 minutes.</p>
-
-<p>Durability beats speed. Every time.</p>
-
-<h3>Weight</h3>
-
-<p>A 50-gram difference in tire weight is ~100 grams for the pair. That's 3 ounces. You will not feel this during an 8-hour race.</p>
-
-<p>If a heavier tire is more durable or comfortable, choose the heavier tire.</p>
-
-<h3>Tread pattern</h3>
-
-<p>Unless you're racing in mud or deep sand, tread pattern matters much less than people think. Center tread provides speed. Side knobs provide cornering grip. Beyond that, you're overthinking it.</p>
-
-<p>Most gravel races happen on packed dirt, hardpack, or firm gravel. A semi-slick with small side knobs works fine.</p>
-
-<h3>Width Selection Guide</h3>
-
-<p>Wider is usually better for gravel. More air volume = more comfort = better handling when fatigued.</p>
-
-<h3>32-35mm:</h3>
-
-<ul>
-<li>Best for: Fast, smooth gravel (hard-packed, minimal loose material)</li>
-</ul>
-<ul>
-<li>Pros: Fastest rolling, responsive handling</li>
-</ul>
-<ul>
-<li>Cons: Harsh on rough surfaces, less forgiving of line choice</li>
-</ul>
-<ul>
-<li>Use if: Race is primarily smooth dirt roads or fast hardpack</li>
-</ul>
-<h3>38-42mm:</h3>
-
-<ul>
-<li>Best for: Mixed gravel (combination of smooth + rough sections)</li>
-</ul>
-<ul>
-<li>Pros: Good balance of speed and comfort, handles most conditions</li>
-</ul>
-<p>> well</p>
-
-<ul>
-<li>Cons: None really---this is the sweet spot for most races</li>
-</ul>
-<ul>
-<li>Use if: You're unsure or race has variable terrain (most gravel</li>
-</ul>
-<p>> races)</p>
-
-<h3>43-50mm:</h3>
-
-<ul>
-<li>Best for: Rough, chunky gravel or very long races</li>
-</ul>
-<ul>
-<li>Pros: Maximum comfort, excellent grip, forgiving on rough terrain</li>
-</ul>
-<ul>
-<li>Cons: Slightly slower, can feel sluggish on smooth sections</li>
-</ul>
-<ul>
-<li>Use if: Race is known for brutal surfaces or you value comfort over</li>
-</ul>
-<p>> speed</p>
-
-<p>For **<strong>{{RACE_NAME}}</strong><strong>: </strong><strong>{{RECOMMENDED_TIRE_WIDTH}}</strong>** works well.</p>
-
-<h3>Pressure Guidelines</h3>
-
-<p>Too high = harsh, poor grip, more flats (tire can't absorb impacts) Too low = pinch flats, sluggish handling, burping (if tubeless)</p>
-
-<h3>Tubeless setup:</h3>
-
-<ul>
-<li>32-35mm: 35-45 psi (lighter riders) / 40-50 psi (heavier riders)</li>
-</ul>
-<ul>
-<li>38-42mm: 30-40 psi (lighter riders) / 35-45 psi (heavier riders)</li>
-</ul>
-<ul>
-<li>43-50mm: 25-35 psi (lighter riders) / 30-40 psi (heavier riders)</li>
-</ul>
-<h3>Tubes:</h3>
-
-<ul>
-<li>Add 5-10 psi to tubeless recommendations</li>
-</ul>
-<ul>
-<li>Err higher to prevent pinch flats</li>
-</ul>
-<p><strong>Weight matters:</strong> <150 lbs → lower end of range. >200 lbs → higher end of range.</p>
-
-<p><strong>Test your pressure:</strong> Go ride gravel with your race setup. If it feels harsh and chattery, drop 5 psi. If it feels sluggish or you're hearing rim strikes, add 5 psi. Find the sweet spot through experimentation, not internet advice.</p>
-
-<h3>Tubeless vs Tubes: The Honest Answer</h3>
-
-<h3>Tubeless pros:</h3>
-
-<ul>
-<li>Lower pressure (more comfort, better grip)</li>
-</ul>
-<ul>
-<li>Punctures often self-seal</li>
-</ul>
-<ul>
-<li>Slightly lower rolling resistance</li>
-</ul>
-<h3>Tubeless cons:</h3>
-
-<ul>
-<li>More setup hassle</li>
-</ul>
-<ul>
-<li>Can burp air on hard impacts</li>
-</ul>
-<ul>
-<li>Requires practice to fix properly on trail</li>
-</ul>
-<ul>
-<li>Sealant dries out (needs refreshing)</li>
-</ul>
-<h3>Tubes pros:</h3>
-
-<ul>
-<li>Simple, reliable, everyone knows how to fix them</li>
-</ul>
-<ul>
-<li>No burping issues</li>
-</ul>
-<ul>
-<li>Easier to set up</li>
-</ul>
-<h3>Tubes cons:</h3>
-
-<ul>
-<li>Slightly higher pressure required</li>
-</ul>
-<ul>
-<li>Punctures require tube replacement (not self-sealing)</li>
-</ul>
-<ul>
-<li>Slightly more rolling resistance</li>
-</ul>
-<p><strong>The verdict:</strong> Tubeless is better if you're competent at setting it up and fixing it. Tubes are fine if you're not.</p>
-
-<p>Don't switch to tubeless for the first time the week before your race. If you're running tubes and they work, keep running tubes.</p>
-
-<h3>The Decision Framework</h3>
-
-<p>Stop overthinking. Use this:</p>
-
-<p><strong>Step 1:</strong> What width fits your bike and race terrain? → When in doubt, go 38-42mm</p>
-
-<p><strong>Step 2:</strong> What's known to be durable on this terrain? → Ask people who've raced it. Check race reports. Avoid experimental choices.</p>
-
-<p><strong>Step 3:</strong> Can you get it mounted and tested 2+ weeks before race day? → If not, don't buy it. Use what you have.</p>
-
-<p><strong>Step 4:</strong> Does it feel good on a 3-4 hour training ride? → If yes, race it. If no, try different pressure or different tire.</p>
-
-<p>That's it. Four steps. No analysis paralysis.</p>
-
-<h3>Common Mistakes</h3>
-
-<p><strong>Mistake 1: Buying new tires race week</strong> New tires need break-in. Tubeless needs time to seal. Don't experiment days before racing.</p>
-
-<p>Deadline: Tires mounted and tested by 2 weeks out, minimum.</p>
-
-<p><strong>Mistake 2: Chasing marginal gains</strong> That "fastest tire in the test" saved 90 seconds over 100 miles in lab conditions. It will also leave you stranded with a sidewall tear.</p>
-
-<p>Choose reliable, not optimal.</p>
-
-<p><strong>Mistake 3: Ignoring your own testing</strong> Internet opinions don't matter. Your experience on your local gravel with your bike and your weight matters.</p>
-
-<p>Ride your tire choice for 3-4 hours on terrain similar to race. If it works, you're done. If it doesn't, adjust.</p>
-
-<p><strong>Mistake 4: Using race-day tires for all training</strong> Race tires are expensive. Training tires are cheap. Save your race rubber for key workouts and race day.</p>
-
-<p>You don't need to train on what you race on. You just need to prove your race setup works.</p>
-
-<h3>The Bottom Line on Tires</h3>
-
-<p>Pick a durable, comfortable tire in an appropriate width. Test it. Race it.</p>
-
-<p>The internet will tell you the "best" tire is some $90 handmade artisan thing with a 127 TPI casing and a proprietary rubber compound.</p>
-
-<p>The actual best tire is the one that gets you to the finish line without flatting and doesn't beat you up for 8 hours.</p>
-
-<p>Stop optimizing. Start riding.</p>
-
+<div class="equipment-checklist-items">
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Bike ready (in vehicle or by door)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>All gear packed and checked twice</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Race outfit laid out</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Nutrition portioned and accessible</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Alarm set (with backup alarm)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Bottles filled or ready to fill</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Breakfast planned</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Route to start line confirmed</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Reinforced casing (60+ TPI is fine, 120 TPI is nice but not</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Sidewall protection</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Puncture-resistant layer under tread</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Reputation for reliability on your race's terrain type</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Appropriate width (see width guide below)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Supple casing (lower TPI = harsher ride)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Enough air volume to absorb chatter</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Decent tread (doesn't need to be aggressive unless it's muddy)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Adequate width for conditions</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Tested on similar terrain to your race</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Best for: Fast, smooth gravel (hard-packed, minimal loose material)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Pros: Fastest rolling, responsive handling</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Cons: Harsh on rough surfaces, less forgiving of line choice</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Use if: Race is primarily smooth dirt roads or fast hardpack</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Best for: Mixed gravel (combination of smooth + rough sections)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Pros: Good balance of speed and comfort, handles most conditions</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Cons: None really---this is the sweet spot for most races</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Use if: You're unsure or race has variable terrain (most gravel</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Best for: Rough, chunky gravel or very long races</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Pros: Maximum comfort, excellent grip, forgiving on rough terrain</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Cons: Slightly slower, can feel sluggish on smooth sections</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Use if: Race is known for brutal surfaces or you value comfort over</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>32-35mm: 35-45 psi (lighter riders) / 40-50 psi (heavier riders)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>38-42mm: 30-40 psi (lighter riders) / 35-45 psi (heavier riders)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>43-50mm: 25-35 psi (lighter riders) / 30-40 psi (heavier riders)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Add 5-10 psi to tubeless recommendations</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Err higher to prevent pinch flats</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Lower pressure (more comfort, better grip)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Punctures often self-seal</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Slightly lower rolling resistance</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>More setup hassle</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Can burp air on hard impacts</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Requires practice to fix properly on trail</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Sealant dries out (needs refreshing)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Simple, reliable, everyone knows how to fix them</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>No burping issues</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Easier to set up</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Slightly higher pressure required</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Punctures require tube replacement (not self-sealing)</span>
+  </label>
+  <label class="checklist-item">
+    <input type="checkbox">
+    <span>Slightly more rolling resistance</span>
+  </label>
+</div>
+<p class="checklist-download"><a href="#" onclick="downloadTHE_NIGHT_BEFOREPDF()" class="download-link">📥 Download THE NIGHT BEFORE Checklist (PDF)</a></p>
+
+<p class="checklist-download" style="margin-top: 40px; padding-top: 20px; border-top: 3px solid var(--black);"><a href="#" onclick="downloadCompleteRaceWeekChecklistPDF()" class="download-link" style="font-size: 16px; padding: 15px 30px;">📥 Download Complete Race Week Checklist (All Sections) (PDF)</a></p>
 <h1 id="section-13">13: QUICK REFERENCE</h1>
 
 <h3>Key Workouts in This Plan</h3>
@@ -3983,24 +4130,36 @@ LAST UPDATED: 2024
 
 <p>On race morning, you'll stand at the start line knowing you did everything you could to prepare. That confidence---not hope, not optimism, but confidence based on completed work---is what this plan builds.</p>
 
-<p>The race will be hard. You trained for hard.</p>
+</div>
 
-<p>See you at the finish.</p>
+        <script>
+        function downloadChecklistPDF() {
+            // Get all checklist items
+            const items = Array.from(document.querySelectorAll('.checklist-item span')).map(span => span.textContent);
+            
+            // Create a simple text representation (could be enhanced to actual PDF)
+            const checklistText = "EQUIPMENT CHECKLIST\n\n" + items.map((item, i) => `${i+1}. [ ] ${item}`).join("\n");
+            
+            // Create blob and download
+            const blob = new Blob([checklistText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'equipment-checklist.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('Checklist downloaded! (Note: This is a text file. PDF generation can be added later.)');
+        }
+        </script>
 
-<p>[CENTER, LARGE BOLD] <strong>GRAVEL GOD</strong></p>
 
-<p>[CENTER, NORMAL] gravelgodcoaching@gmail.com</p>
-
-<p>[CENTER, SMALLER] Become what you could be.</p>
-
-<p>END OF GUIDE</p>
-
-
-        <div class="footer">
-            <h1>GRAVEL GOD</h1>
-            <p>gravelgodcoaching@gmail.com</p>
-            <p class="tagline">Become what you could be.</p>
+    
         </div>
-    </div>
-</body>
+        
+        
+        
+    </body>
 </html>

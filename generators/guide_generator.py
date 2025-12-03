@@ -24,6 +24,38 @@ def load_template():
         return f.read()
 
 
+def extract_non_negotiables(race_data, index):
+    """Extract non-negotiable data, handling both dict and string formats"""
+    # Check multiple possible locations for non_negotiables
+    non_negs = (race_data.get('non_negotiables', []) or
+                race_data.get('race_metadata', {}).get('non_negotiables', []) or
+                race_data.get('guide_variables', {}).get('non_negotiables', []))
+    if index < len(non_negs):
+        nn = non_negs[index]
+        if isinstance(nn, dict):
+            return {
+                'requirement': nn.get('requirement', ''),
+                'by_when': nn.get('by_when', ''),
+                'why': nn.get('why', '')
+            }
+        else:
+            # String format - use as requirement
+            return {
+                'requirement': str(nn),
+                'by_when': '',
+                'why': ''
+            }
+    # Defaults
+    defaults = [
+        {'requirement': 'Power meter or heart rate monitor', 'by_when': 'Week 1', 'why': 'Precise power data ensures correct training zones and optimal adaptation'},
+        {'requirement': 'Heart rate monitor', 'by_when': 'Week 1', 'why': 'Heart rate provides backup data and helps gauge recovery status'},
+        {'requirement': 'Professional bike fit', 'by_when': 'Week 2-3', 'why': 'Proper position prevents injury and maximizes power transfer'},
+        {'requirement': 'Consistent training', 'by_when': 'Ongoing', 'why': 'Consistency is the foundation of adaptation - skip weeks, lose gains'},
+        {'requirement': 'Follow the plan', 'by_when': 'Ongoing', 'why': 'The plan works if you work it - modifications undermine the system'}
+    ]
+    return defaults[index] if index < len(defaults) else {'requirement': '', 'by_when': '', 'why': ''}
+
+
 def generate_guide(race_data, tier_name, ability_level, output_path):
     """
     Generate a training guide for a specific race, tier, and ability level.
@@ -73,12 +105,22 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{INFOGRAPHIC_TIRE_DECISION}}': generate_tire_decision(race_data),
         '{{INFOGRAPHIC_KEY_WORKOUT_SUMMARY}}': generate_key_workout_summary(race_data),
         
-        # Non-negotiables
-        '{{NON_NEG_1_WHY}}': 'Precise power data ensures correct training zones and optimal adaptation',
-        '{{NON_NEG_2_WHY}}': 'Heart rate provides backup data and helps gauge recovery status',
-        '{{NON_NEG_3_WHY}}': 'Proper position prevents injury and maximizes power transfer',
-        '{{NON_NEG_4_WHY}}': 'Consistency is the foundation of adaptation - skip weeks, lose gains',
-        '{{NON_NEG_5_WHY}}': 'The plan works if you work it - modifications undermine the system',
+        # Non-negotiables (extract from race_data)
+        '{{NON_NEG_1_REQUIREMENT}}': extract_non_negotiables(race_data, 0)['requirement'],
+        '{{NON_NEG_1_BY_WHEN}}': extract_non_negotiables(race_data, 0)['by_when'],
+        '{{NON_NEG_1_WHY}}': extract_non_negotiables(race_data, 0)['why'],
+        '{{NON_NEG_2_REQUIREMENT}}': extract_non_negotiables(race_data, 1)['requirement'],
+        '{{NON_NEG_2_BY_WHEN}}': extract_non_negotiables(race_data, 1)['by_when'],
+        '{{NON_NEG_2_WHY}}': extract_non_negotiables(race_data, 1)['why'],
+        '{{NON_NEG_3_REQUIREMENT}}': extract_non_negotiables(race_data, 2)['requirement'],
+        '{{NON_NEG_3_BY_WHEN}}': extract_non_negotiables(race_data, 2)['by_when'],
+        '{{NON_NEG_3_WHY}}': extract_non_negotiables(race_data, 2)['why'],
+        '{{NON_NEG_4_REQUIREMENT}}': extract_non_negotiables(race_data, 3)['requirement'],
+        '{{NON_NEG_4_BY_WHEN}}': extract_non_negotiables(race_data, 3)['by_when'],
+        '{{NON_NEG_4_WHY}}': extract_non_negotiables(race_data, 3)['why'],
+        '{{NON_NEG_5_REQUIREMENT}}': extract_non_negotiables(race_data, 4)['requirement'],
+        '{{NON_NEG_5_BY_WHEN}}': extract_non_negotiables(race_data, 4)['by_when'],
+        '{{NON_NEG_5_WHY}}': extract_non_negotiables(race_data, 4)['why'],
         
         # Skill placeholder examples (would be race-specific)
         '{{SKILL_5_NAME}}': 'Emergency Repairs',
@@ -91,6 +133,30 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     output = template
     for placeholder, value in substitutions.items():
         output = output.replace(placeholder, str(value))
+    
+    # Conditionally remove altitude section if elevation < 3000 feet
+    # Check multiple possible field names for elevation
+    race_elevation = 0
+    if isinstance(race_data, dict):
+        race_elevation = (race_data.get('race_metadata', {}).get('avg_elevation_feet', 0) or
+                         race_data.get('race_characteristics', {}).get('altitude_feet', 0) or
+                         race_data.get('elevation_feet', 0) or
+                         race_data.get('avg_elevation_feet', 0) or
+                         race_data.get('altitude_feet', 0))
+    
+    try:
+        race_elevation = int(race_elevation) if race_elevation else 0
+    except (ValueError, TypeError):
+        race_elevation = 0
+    
+    if race_elevation < 3000:
+        # Remove altitude section (between START and END comments)
+        import re
+        altitude_pattern = r'<!-- START ALTITUDE SECTION[^>]*-->.*?<!-- END ALTITUDE SECTION -->'
+        output = re.sub(altitude_pattern, '', output, flags=re.DOTALL)
+        print(f"  → Removed altitude section (race elevation: {race_elevation} feet < 3000)")
+    else:
+        print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 3000)")
     
     # Write output
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -123,7 +189,7 @@ def get_weekly_structure(tier_name):
 
 
 def generate_equipment_checklist(race_data):
-    """Generate race-specific equipment checklist"""
+    """Generate race-specific equipment checklist with checkboxes"""
     items = [
         'Power meter (calibrated)',
         'Heart rate monitor',
@@ -142,11 +208,21 @@ def generate_equipment_checklist(race_data):
     if race_data.get('elevation_gain_feet', 0) > 5000:
         items.append('Gear range for climbing')
     
-    if 'hot' in race_data.get('weather_strategy', '').lower():
+    if 'hot' in str(race_data.get('weather_strategy', '')).lower():
         items.append('Extra electrolytes')
         items.append('Sun protection')
     
-    return '<br>'.join([f'• {item}' for item in items])
+    # Generate HTML with checkboxes
+    checklist_html = '<div class="equipment-checklist-items">\n'
+    for item in items:
+        checklist_html += f'  <label class="checklist-item">\n'
+        checklist_html += f'    <input type="checkbox">\n'
+        checklist_html += f'    <span>{item}</span>\n'
+        checklist_html += f'  </label>\n'
+    checklist_html += '</div>\n'
+    checklist_html += '<p class="checklist-download"><a href="#" onclick="downloadChecklistPDF()" class="download-link">📥 Download Printable Checklist (PDF)</a></p>'
+    
+    return checklist_html
 
 
 def generate_fueling_table(race_data):

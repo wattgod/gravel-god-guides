@@ -70,29 +70,93 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     # Load template
     template = load_template()
     
+    # Helper function to safely extract nested data
+    def get_nested(data, *keys, default=None):
+        """Safely extract nested dictionary values"""
+        for key in keys:
+            if isinstance(data, dict):
+                data = data.get(key)
+            else:
+                return default
+            if data is None:
+                return default
+        return data if data is not None else default
+    
+    # Extract race data from nested structure
+    race_metadata = race_data.get('race_metadata', {})
+    guide_vars = race_data.get('guide_variables', {})
+    race_chars = race_data.get('race_characteristics', {})
+    
+    # Extract elevation gain - check multiple possible locations
+    elevation_gain = (race_data.get('elevation_gain_feet') or 
+                     race_metadata.get('elevation_feet') or
+                     race_data.get('elevation_feet') or 0)
+    try:
+        elevation_gain = int(elevation_gain) if elevation_gain else 0
+        elevation_gain_str = f"~{elevation_gain:,} ft" if elevation_gain else "~11,000 ft"
+    except (ValueError, TypeError):
+        elevation_gain_str = "~11,000 ft"
+    
+    # Extract race name
+    race_name = (race_data.get('name') or 
+                race_metadata.get('name') or 
+                guide_vars.get('race_name') or 
+                'Race Name')
+    
+    # Extract distance
+    distance = (race_data.get('distance_miles') or 
+               race_metadata.get('distance_miles') or 
+               'XXX')
+    
+    # Extract terrain description
+    terrain_desc = (race_data.get('terrain_description') or 
+                   guide_vars.get('race_terrain') or 
+                   'varied terrain')
+    
+    # Extract description
+    description = (race_data.get('description') or 
+                  race_data.get('race_hooks', {}).get('detail') or 
+                  'Race description here')
+    
+    # Extract key challenges
+    challenges = (race_data.get('key_challenges') or 
+                 ', '.join(guide_vars.get('race_challenges', [])) or 
+                 'technical terrain, elevation, and endurance')
+    
+    # Extract duration estimate
+    duration = race_data.get('duration_estimate', '10-15 hours')
+    
     # Build substitution dictionary
     substitutions = {
-        '{{RACE_NAME}}': race_data.get('name', 'Race Name'),
-        '{{DISTANCE}}': str(race_data.get('distance_miles', 'XXX')),
-        '{{TERRAIN_DESCRIPTION}}': race_data.get('terrain_description', 'varied terrain'),
-        '{{ELEVATION_GAIN}}': f"{race_data.get('elevation_gain_feet', 'XXX'):,} feet of elevation gain",
-        '{{DURATION_ESTIMATE}}': race_data.get('duration_estimate', 'X-X hours'),
-        '{{RACE_DESCRIPTION}}': race_data.get('description', 'Race description here'),
+        '{{RACE_NAME}}': race_name,
+        '{{DISTANCE}}': str(distance),
+        '{{TERRAIN_DESCRIPTION}}': terrain_desc,
+        '{{ELEVATION_GAIN}}': elevation_gain_str,
+        '{{DURATION_ESTIMATE}}': duration,
+        '{{RACE_DESCRIPTION}}': description,
         '{{ABILITY_LEVEL}}': ability_level,
         '{{TIER_NAME}}': tier_name,
         '{{WEEKLY_HOURS}}': get_weekly_hours(tier_name),
         '{{plan_weeks}}': '12',  # Default to 12 weeks, can be made dynamic
-        '{{RACE_KEY_CHALLENGES}}': race_data.get('key_challenges', 'technical terrain, elevation, and endurance'),
+        '{{RACE_KEY_CHALLENGES}}': challenges,
         '{{WEEKLY_STRUCTURE_DESCRIPTION}}': get_weekly_structure(tier_name),
-        '{{RACE_ELEVATION}}': str(race_data.get('elevation_gain_feet', 'XXX')),
-        '{{RACE_SPECIFIC_SKILL_NOTES}}': race_data.get('specific_skill_notes', 'Practice descending, cornering, and rough terrain handling.'),
-        '{{RACE_SPECIFIC_TACTICS}}': race_data.get('specific_tactics', 'Start conservatively. Fuel early and often. Be patient on climbs.'),
-        '{{WEATHER_STRATEGY}}': race_data.get('weather_strategy', 'Check forecast week of. Pack layers.'),
-        '{{AID_STATION_STRATEGY}}': race_data.get('aid_station_strategy', 'Use aid stations for quick refills. Don\'t linger.'),
-        '{{ALTITUDE_POWER_LOSS}}': race_data.get('altitude_power_loss', '5-10% power loss expected above 8,000 feet'),
-        '{{RECOMMENDED_TIRE_WIDTH}}': race_data.get('recommended_tire_width', '38-42mm'),
+        '{{RACE_ELEVATION}}': str(elevation_gain),
+        '{{RACE_SPECIFIC_SKILL_NOTES}}': (race_data.get('specific_skill_notes') or 
+                                          'Practice descending, cornering, and rough terrain handling.'),
+        '{{RACE_SPECIFIC_TACTICS}}': (race_data.get('specific_tactics') or 
+                                      'Start conservatively. Fuel early and often. Be patient on climbs.'),
+        '{{WEATHER_STRATEGY}}': (race_chars.get('typical_weather') or 
+                                race_data.get('weather_strategy') or 
+                                'Check forecast week of. Pack layers.'),
+        '{{AID_STATION_STRATEGY}}': (race_data.get('aid_station_strategy') or 
+                                    'Use aid stations for quick refills. Don\'t linger.'),
+        '{{ALTITUDE_POWER_LOSS}}': (race_data.get('altitude_power_loss') or 
+                                    'Minimal - race is at low elevation'),
+        '{{RECOMMENDED_TIRE_WIDTH}}': (race_data.get('recommended_tire_width') or 
+                                      '38-42mm'),
         '{{EQUIPMENT_CHECKLIST}}': generate_equipment_checklist(race_data),
-        '{{RACE_SUPPORT_URL}}': race_data.get('website', 'https://example.com'),
+        '{{RACE_SUPPORT_URL}}': (race_data.get('website') or 
+                                 'https://unboundgravel.com'),
         
         # Infographic placeholders (now all generated as HTML tables/diagrams)
         '{{INFOGRAPHIC_PHASE_BARS}}': '[Phase progression infographic]',  # Could be enhanced later
@@ -298,6 +362,29 @@ def generate_fueling_table(race_data):
 
 def generate_difficulty_table(race_data):
     """Generate difficulty rating table"""
+    # Extract distance
+    distance = (race_data.get('distance_miles') or 
+               race_data.get('race_metadata', {}).get('distance_miles') or 
+               'N/A')
+    
+    # Extract elevation gain
+    elevation = (race_data.get('elevation_gain_feet') or 
+                race_data.get('race_metadata', {}).get('elevation_feet') or 
+                0)
+    try:
+        elevation = int(elevation) if elevation else 0
+        elevation_str = f"{elevation:,} feet" if elevation else "N/A"
+    except (ValueError, TypeError):
+        elevation_str = "N/A"
+    
+    # Extract technical rating
+    tech_rating = (race_data.get('technical_rating') or 
+                  race_data.get('race_characteristics', {}).get('technical_difficulty', 'Moderate') or
+                  'Moderate')
+    
+    # Extract time cutoff
+    time_cutoff = race_data.get('time_cutoff', 'None')
+    
     return f'''
     <table class="difficulty-table">
         <thead>
@@ -309,19 +396,19 @@ def generate_difficulty_table(race_data):
         <tbody>
             <tr>
                 <td><strong>Distance</strong></td>
-                <td>{race_data.get('distance_miles', 'N/A')} miles</td>
+                <td>{distance} miles</td>
             </tr>
             <tr>
                 <td><strong>Elevation Gain</strong></td>
-                <td>{race_data.get('elevation_gain_feet', 'N/A'):,} feet</td>
+                <td>{elevation_str}</td>
             </tr>
             <tr>
                 <td><strong>Technical Difficulty</strong></td>
-                <td>{race_data.get('technical_rating', 'Moderate')}</td>
+                <td>{tech_rating}</td>
             </tr>
             <tr>
                 <td><strong>Time Cutoff</strong></td>
-                <td>{race_data.get('time_cutoff', 'None')}</td>
+                <td>{time_cutoff}</td>
             </tr>
         </tbody>
     </table>

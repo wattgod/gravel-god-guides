@@ -298,7 +298,7 @@
     <div class="gg-guide-layout">
 
       <header class="guide-header">
-        <h1>{{RACE_NAME}} – {{TIER_NAME}} · {{ABILITY_LEVEL}}</h1>
+        <h1>{{PLAN_TITLE}}</h1>
         <div class="guide-meta">
           <span>{{RACE_NAME}}</span>
           <span>{{DISTANCE}} miles</span>
@@ -332,26 +332,44 @@
         <section id="section-1-training-plan-brief" class="gg-section">
           <h2 id="section-1-training-plan-brief">1 · Training Plan Brief</h2>
           
-          <p>Welcome to your <strong>{{RACE_NAME}}</strong> training plan. {{RACE_DESCRIPTION}}</p>
+          <p>Welcome to your <strong>{{RACE_NAME}}</strong> training plan. {{RACE_INTRO_PARAGRAPH}}</p>
           
           <h3>What the Course Is Like</h3>
-          <p>{{TERRAIN_DESCRIPTION}}</p>
+          <p>{{COURSE_DESCRIPTION_PARAGRAPH}}</p>
           
           <h3>Why This Race Matters</h3>
-          <p>{{RACE_DESCRIPTION}}</p>
+          <p>{{RACE_SIGNIFICANCE_PARAGRAPH}}</p>
           
           <h3>What It Takes to Finish</h3>
-          <p>{{RACE_KEY_CHALLENGES}}</p>
+          <p>{{WHAT_IT_TAKES_TO_FINISH}}</p>
           
           <h3>This Plan Prepares You for All of It</h3>
-          <p>Every workout, long ride, and recovery week is designed around {{RACE_NAME}}'s specific demands.</p>
+          <p>{{PLAN_PREPARATION_SUMMARY}}</p>
+          <p>By the time you roll to the start{{RACE_LOCATION_REFERENCE}}, you'll know you're ready.</p>
 
-<p>By the time you roll to the start, you'll know you're ready.</p>
+          <h2>What Makes This Plan Different</h2>
 
-<h2>What Makes This Plan Different</h2>
-
+          <h3>{{PLAN_TITLE}}</h3>
+          
           <h3>1. Training Methodology Matched to Your Reality</h3>
           <p>You're on the <strong>{{ABILITY_LEVEL}}</strong> plan with <strong>~{{WEEKLY_HOURS}}</strong> hours per week in the <strong>{{TIER_NAME}}</strong> tier. This specific combination determines your optimal training philosophy.</p>
+          
+          <p>Choosing the right training plan comes down to two variables: <strong>What is your rider ability?</strong> (training experience + current fitness) and <strong>How much time do you have per week?</strong> (volume category). That's it. These two variables create a matrix. Your plan lives at the intersection.</p>
+          
+          <p>Most people get this wrong because they conflate "how much time I have" with "how fit I am" or they pick based on ego instead of reality. A former Cat 2 road racer who's been off the bike for three years and can only train 5 hours per week is not the same athlete as a complete beginner who's never done endurance sports and has 5 hours per week.</p>
+          
+          <p>Same weekly hours. Completely different plans.</p>
+          
+          <p><strong>Your ability level ({{ABILITY_LEVEL}})</strong> reflects your training experience and current fitness—not one or the other, but both. {{ABILITY_LEVEL_EXPLANATION}}</p>
+          
+          <p><strong>Your volume category ({{TIER_NAME}})</strong> is based on the hours you'll actually spend riding each week, week after week, for the full training block. Be honest. Don't count the time you wish you had—count the time you'll realistically ride. Life will interfere. Plan for 80% completion and you'll hit closer to 100%.</p>
+          
+          <p>At <strong>~{{WEEKLY_HOURS}} hours per week</strong>, you're in the {{TIER_NAME}} category. {{TIER_VOLUME_EXPLANATION}}</p>
+          
+          <p>This plan is designed specifically for the intersection of {{ABILITY_LEVEL}} ability and {{TIER_NAME}} volume. Every workout, every progression, every recovery week is optimized for this exact combination.</p>
+          
+          <h3>Performance Expectations</h3>
+          {{PERFORMANCE_EXPECTATIONS}}
           
           <h3>2. Race-Specific Preparation</h3>
           <p>Every session, long ride, and progression targets the key demands of <strong>{{RACE_NAME}}</strong>:</p>

@@ -234,6 +234,19 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     else:
         print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 3000)")
     
+    # Conditionally remove Masters section if not a Masters plan
+    import re
+    if ability_level != 'Masters':
+        # Remove Masters section from TOC
+        masters_toc_pattern = r'<!-- START MASTERS SECTION TOC -->.*?<!-- END MASTERS SECTION TOC -->'
+        output = re.sub(masters_toc_pattern, '', output, flags=re.DOTALL)
+        # Remove Masters section content
+        masters_section_pattern = r'<!-- START MASTERS SECTION -->.*?<!-- END MASTERS SECTION -->'
+        output = re.sub(masters_section_pattern, '', output, flags=re.DOTALL)
+        print(f"  → Removed Masters section (not a Masters plan)")
+    else:
+        print(f"  → Included Masters section (Masters plan)")
+    
     # Write output
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(output)

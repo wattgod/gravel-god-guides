@@ -2,36 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>{{RACE_NAME}} – {{TIER_NAME}} · {{ABILITY_LEVEL}} Guide</title>
+  <title>{{PAGE_TITLE}}</title>
 
-  <!-- Font -->
+  <!-- Fonts: Source Serif 4 (editorial) + Sometype Mono (data) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Sometype+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-      --gg-bg: #ffffff;
-      --gg-fg: #111111;
-      --gg-border: #000000;
-      --gg-muted: #777777;
-      --gg-soft: #f5f5f5;
+  <!-- Brand CSS (injected by generator) -->
+  <!-- BRAND_CSS -->
+
+  <!-- Legacy styles for backwards compatibility -->
+  <style>
+    /* Legacy variable mappings for existing template content */
+    :root {
+      --gg-bg: var(--gg-color-sand, #ede4d8);
+      --gg-fg: var(--gg-color-dark-brown, #3a2e25);
+      --gg-border: var(--gg-color-dark-brown, #3a2e25);
+      --gg-muted: var(--gg-color-secondary-brown, #8c7568);
+      --gg-soft: var(--gg-color-warm-paper, #f5efe6);
     }
 
+    /* Brand-aligned base styles */
     * {
-            box-sizing: border-box;
-        }
-        
-        body {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 32px auto 64px auto;
       padding: 0 20px;
       max-width: 1120px;
-      background: var(--gg-bg);
-      color: var(--gg-fg);
-      font-family: "Sometype Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 15px;
-            line-height: 1.7;
-      letter-spacing: 0.01em;
+      background: var(--gg-color-sand, #ede4d8);
+      color: var(--gg-color-dark-brown, #3a2e25);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.75;
       overflow-x: hidden;
     }
 
@@ -57,93 +62,115 @@
 
     header.guide-header {
       grid-column: 1 / -1;
-      border-bottom: 2px solid var(--gg-border);
-      padding-bottom: 12px;
-      margin-bottom: 24px;
+      border-bottom: 4px double var(--gg-color-dark-brown, #3a2e25);
+      padding-bottom: 16px;
+      margin-bottom: 32px;
     }
 
     .guide-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      font-size: 12px;
-            text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--gg-muted);
-      margin-top: 8px;
+      font-family: 'Sometype Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gg-color-secondary-brown, #8c7568);
+      margin-top: 12px;
     }
 
     .guide-meta span {
-      border: 1px solid var(--gg-border);
-      padding: 2px 6px;
+      border: 2px solid var(--gg-color-dark-brown, #3a2e25);
+      padding: 4px 8px;
+      background: var(--gg-color-warm-paper, #f5efe6);
     }
 
-    h1, h2, h3, h4 {
+    /* Two-voice typography: Editorial (serif) for headings, Data (mono) for labels */
+    h1, h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 1.6rem 0 0.6rem 0;
+      color: var(--gg-color-dark-brown, #3a2e25);
+    }
+
+    h3, h4 {
+      font-family: 'Sometype Mono', monospace;
       font-weight: 600;
       line-height: 1.2;
-      margin: 1.6rem 0 0.6rem 0;
+      margin: 1.4rem 0 0.5rem 0;
     }
 
     h1 {
-      font-size: 26px;
-      padding-bottom: 6px;
-      border-bottom: 3px solid var(--gg-border);
-            text-transform: uppercase;
-      letter-spacing: 0.16em;
+      font-size: 32px;
+      padding-bottom: 12px;
+      border-bottom: 4px double var(--gg-color-dark-brown, #3a2e25);
       margin-top: 0;
     }
 
     h2 {
-      font-size: 19px;
-      padding-bottom: 4px;
-      border-bottom: 2px solid var(--gg-border);
-            text-transform: uppercase;
-      letter-spacing: 0.14em;
+      font-size: 24px;
+      padding-bottom: 8px;
+      border-bottom: 4px double var(--gg-color-dark-brown, #3a2e25);
     }
 
     h3 {
-      font-size: 13px;
-            text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--gg-muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gg-color-gold, #B7950B);
     }
 
     h4 {
-      font-size: 12px;
-            text-transform: uppercase;
-      letter-spacing: 0.16em;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gg-color-secondary-brown, #8c7568);
     }
 
     p {
-      margin: 0 0 0.8rem 0;
+      margin: 0 0 1rem 0;
+      max-width: 65ch;
     }
 
     strong {
-            font-weight: 600;
+      font-weight: 600;
     }
 
     ul, ol {
       margin: 0.3rem 0 1rem 1.4rem;
-            padding: 0;
+      padding: 0;
     }
 
     li {
-      margin: 0 0 0.35rem 0;
+      margin: 0 0 0.4rem 0;
+      line-height: 1.6;
     }
 
     hr {
       border: none;
-      border-top: 1px solid var(--gg-border);
-      margin: 2rem 0;
+      border-top: 4px double var(--gg-color-dark-brown, #3a2e25);
+      margin: 2.5rem 0;
     }
 
-    /* TOC */
+    /* Links - teal accent */
+    a {
+      color: var(--gg-color-teal, #1A8A82);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      color: var(--gg-color-light-teal, #4ECDC4);
+    }
+
+    /* TOC - Brand styling */
     nav.gg-guide-toc {
       position: sticky;
       top: 16px;
-      border: 2px solid var(--gg-border);
-      padding: 12px 14px;
-      background: #fafafa;
+      border: 3px solid var(--gg-color-dark-brown, #3a2e25);
+      padding: 16px;
+      background: var(--gg-color-warm-paper, #f5efe6);
       max-width: 260px;
       overflow-x: hidden;
       max-height: calc(100vh - 32px);
@@ -152,24 +179,37 @@
     }
 
     nav.gg-guide-toc h2 {
+      font-family: 'Sometype Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--gg-color-gold, #B7950B);
       margin-top: 0;
-      margin-bottom: 8px;
-      border-bottom: 1px solid var(--gg-border);
-      font-size: 13px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gg-color-tan, #d4c5b9);
     }
 
     nav.gg-guide-toc ol {
       margin-left: 1.2rem;
-      font-size: 13px;
+      font-family: 'Sometype Mono', monospace;
+      font-size: 12px;
     }
 
     nav.gg-guide-toc a {
+      color: var(--gg-color-primary-brown, #59473c);
       text-decoration: none;
-      color: var(--gg-fg);
+      border-left: 2px solid transparent;
+      padding-left: 8px;
+      margin-left: -8px;
+      display: inline-block;
+      transition: border-color 0.3s, color 0.3s;
     }
 
     nav.gg-guide-toc a:hover {
-      text-decoration: underline;
+      color: var(--gg-color-dark-brown, #3a2e25);
+      border-left-color: var(--gg-color-gold, #B7950B);
     }
 
     .gg-guide-content {
@@ -183,86 +223,126 @@
     }
 
     section.gg-section {
-      margin-bottom: 2.4rem;
+      margin-bottom: 3rem;
       max-width: 100%;
       overflow-x: hidden;
     }
 
-    /* Modules (from Section 10 aesthetic) */
+    /* Modules / Callouts - Brand styling */
     .gg-module {
-      border: 1px solid var(--gg-border);
+      border: 3px solid var(--gg-color-dark-brown, #3a2e25);
       border-left-width: 6px;
-      padding: 12px 14px;
-      margin: 1.3rem 0;
-      background: var(--gg-soft);
+      padding: 16px 20px;
+      margin: 1.5rem 0;
+      background: var(--gg-color-warm-paper, #f5efe6);
     }
 
     .gg-alert {
-      border-left-color: var(--gg-border);
+      border-left-color: var(--gg-color-gold, #B7950B);
     }
 
     .gg-tactical {
-      border-style: dashed;
+      border-left-color: var(--gg-color-teal, #1A8A82);
     }
 
     .gg-info {
-      border-left-color: var(--gg-muted);
+      border-left-color: var(--gg-color-secondary-brown, #8c7568);
     }
 
     .gg-decision-tree {
-      border-style: solid;
       border-left-width: 8px;
-      padding-left: 20px;
+      border-left-color: var(--gg-color-gold, #B7950B);
+      padding-left: 24px;
     }
 
     .gg-blackpill {
-      background: #f0f0f0;
-      border-style: solid;
+      background: var(--gg-color-sand, #ede4d8);
       border-left-width: 8px;
+      border-left-color: var(--gg-color-dark-brown, #3a2e25);
     }
 
     .gg-label {
       display: inline-block;
-      font-size: 11px;
+      font-family: 'Sometype Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      border: 1px solid var(--gg-border);
-      padding: 2px 6px;
-      margin-bottom: 8px;
+      letter-spacing: 0.25em;
+      border: 2px solid var(--gg-color-dark-brown, #3a2e25);
+      padding: 4px 8px;
+      margin-bottom: 10px;
+      color: var(--gg-color-gold, #B7950B);
     }
 
+    /* Tables - Brand styling */
     table {
-            width: 100%;
-            border-collapse: collapse;
-      margin: 0.6rem 0 1.2rem 0;
-      font-size: 13px;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem 0;
+      border: 3px solid var(--gg-color-dark-brown, #3a2e25);
     }
 
     th, td {
-      border: 1px solid var(--gg-border);
-      padding: 4px 6px;
-            text-align: left;
+      border: 1px solid var(--gg-color-tan, #d4c5b9);
+      padding: 10px 12px;
+      text-align: left;
       vertical-align: top;
     }
 
     th {
-      background: #f0f0f0;
-            font-weight: 600;
+      font-family: 'Sometype Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      background: var(--gg-color-dark-brown, #3a2e25);
+      color: var(--gg-color-warm-paper, #f5efe6);
+      border-bottom: 4px double var(--gg-color-dark-brown, #3a2e25);
+    }
+
+    td {
+      font-family: 'Sometype Mono', monospace;
+      font-size: 13px;
     }
 
     tbody tr:nth-child(even) {
-      background: #fafafa;
+      background: rgba(212, 197, 185, 0.15);
+    }
+
+    tbody tr:hover {
+      background: rgba(183, 149, 11, 0.08);
+    }
+
+    /* Race day row highlight */
+    tr.race-day-row td,
+    tr.race-week td {
+      background: rgba(183, 149, 11, 0.15);
+      font-weight: 600;
     }
 
     footer.guide-footer {
       grid-column: 1 / -1;
-      border-top: 1px solid var(--gg-border);
-      margin-top: 32px;
-      padding-top: 8px;
-      font-size: 11px;
+      border-top: 4px double var(--gg-color-dark-brown, #3a2e25);
+      margin-top: 48px;
+      padding-top: 24px;
+      text-align: center;
+    }
+
+    footer.guide-footer .footer-logo {
+      font-family: 'Sometype Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--gg-muted);
+      color: var(--gg-color-gold, #B7950B);
+    }
+
+    footer.guide-footer .footer-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--gg-color-secondary-brown, #8c7568);
+      margin-top: 8px;
     }
 
     .gg-section-content {
@@ -313,7 +393,7 @@
           <li><a href="#section-1-training-plan-brief">Training Plan Brief</a></li>
           <li><a href="#section-2-before-you-start">Before You Start</a></li>
           <li><a href="#section-3-training-fundamentals">Training Fundamentals</a></li>
-          <li><a href="#section-4-your-12-week-arc">Your 12-Week Arc</a></li>
+          <li><a href="#section-4-your-training-arc">Your {{plan_weeks}}-Week Arc</a></li>
           <li><a href="#section-5-training-zones">Training Zones</a></li>
           <li><a href="#section-6-workout-execution">Workout Execution</a></li>
           <li><a href="#section-7-technical-skills">Technical Skills for {{RACE_NAME}}</a></li>
@@ -352,25 +432,69 @@
 
           <h2>What Makes This Plan Different</h2>
 
+          <!-- START STATIC PLAN TIER SECTION -->
           <h3>{{PLAN_TITLE}}</h3>
-          
+
           <h3>1. Training Methodology Matched to Your Reality</h3>
           <p>You're on the <strong>{{ABILITY_LEVEL}}</strong> plan with <strong>~{{WEEKLY_HOURS}}</strong> hours per week in the <strong>{{TIER_NAME}}</strong> tier. This specific combination determines your optimal training philosophy.</p>
-          
+
           <p>Choosing the right training plan comes down to two variables: <strong>What is your rider ability?</strong> (training experience + current fitness) and <strong>How much time do you have per week?</strong> (volume category). That's it. These two variables create a matrix. Your plan lives at the intersection.</p>
-          
+
           <p>Most people get this wrong because they conflate "how much time I have" with "how fit I am" or they pick based on ego instead of reality. A former Cat 2 road racer who's been off the bike for three years and can only train 5 hours per week is not the same athlete as a complete beginner who's never done endurance sports and has 5 hours per week.</p>
-          
+
           <p>Same weekly hours. Completely different plans.</p>
-          
+
           <p><strong>Your ability level ({{ABILITY_LEVEL}})</strong> reflects your training experience and current fitness—not one or the other, but both. {{ABILITY_LEVEL_EXPLANATION}}</p>
-          
+
           <p><strong>Your volume category ({{TIER_NAME}})</strong> is based on the hours you'll actually spend riding each week, week after week, for the full training block. Be honest. Don't count the time you wish you had—count the time you'll realistically ride. Life will interfere. Plan for 80% completion and you'll hit closer to 100%.</p>
-          
+
           <p>At <strong>~{{WEEKLY_HOURS}} hours per week</strong>, you're in the {{TIER_NAME}} category. {{TIER_VOLUME_EXPLANATION}}</p>
-          
+
           <p>This plan is designed specifically for the intersection of {{ABILITY_LEVEL}} ability and {{TIER_NAME}} volume. Every workout, every progression, every recovery week is optimized for this exact combination.</p>
-          
+          <!-- END STATIC PLAN TIER SECTION -->
+
+          <!-- START CUSTOM METHODOLOGY SECTION -->
+          <div class="custom-methodology-section" data-custom-plan="{{IS_CUSTOM_PLAN}}">
+            <h4>Your Selected Training Methodology: {{SELECTED_METHODOLOGY}}</h4>
+            {{METHODOLOGY_REASONS}}
+            {{METHODOLOGY_WARNINGS}}
+
+            <h4>Intensity Distribution</h4>
+            <table class="intensity-distribution">
+              <thead>
+                <tr>
+                  <th>Zone</th>
+                  <th>Percentage</th>
+                  <th>Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Z1-Z2 (Easy Aerobic)</strong></td>
+                  <td>{{INTENSITY_Z1_Z2}}</td>
+                  <td>Aerobic base, fat adaptation, durability</td>
+                </tr>
+                <tr>
+                  <td><strong>Z3 (Tempo)</strong></td>
+                  <td>{{INTENSITY_Z3}}</td>
+                  <td>Muscular endurance, sustained power</td>
+                </tr>
+                <tr>
+                  <td><strong>Z4-Z5 (Threshold+)</strong></td>
+                  <td>{{INTENSITY_Z4_Z5}}</td>
+                  <td>FTP development, VO2max, race sharpness</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4>Key Workouts in This Plan</h4>
+            {{KEY_WORKOUTS_LIST}}
+
+            <h4>Progression Style</h4>
+            <p>{{PROGRESSION_STYLE}}</p>
+          </div>
+          <!-- END CUSTOM METHODOLOGY SECTION -->
+
           <h3>Performance Expectations</h3>
           {{PERFORMANCE_EXPECTATIONS}}
           
@@ -389,6 +513,20 @@
             <li><strong>Quick reference cards</strong> for zones, pacing, common issues</li>
             <li><strong>FAQ section</strong> answering common training questions</li>
 </ul>
+
+          <!-- START CUSTOM PLAN CALENDAR SECTION -->
+          <div class="custom-plan-calendar" data-custom-plan="{{IS_CUSTOM_PLAN}}">
+            <h3>Your Training Calendar</h3>
+            <p>Your {{plan_weeks}}-week plan starts <strong>{{PLAN_START_DATE}}</strong> and ends race week <strong>{{RACE_WEEK_MONDAY}}</strong>. Race day is <strong>{{RACE_DATE}} ({{RACE_WEEKDAY}})</strong>.</p>
+
+            {{PLAN_CALENDAR_TABLE}}
+
+            <h4>Workout File Naming</h4>
+            <p>Your workout files follow this naming convention: <code>W{week}_{day}_{name}.zwo</code></p>
+            <p>Example: <code>W01_Mon_Endurance.zwo</code> = Week 1, Monday, Endurance ride</p>
+            <p>Day abbreviations: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
+          </div>
+          <!-- END CUSTOM PLAN CALENDAR SECTION -->
         </section>
 
         <section id="section-2-before-you-start" class="gg-section">
@@ -402,12 +540,14 @@
             <li><strong>Indoor trainer</strong> - You'll do many workouts indoors. A smart trainer (power-controlled) is ideal, but a basic trainer with power meter on bike works.</li>
             <li><strong>Training computer</strong> - Garmin, Wahoo, or similar to record workouts and sync to TrainingPeaks.</li>
 </ul>
+          <!-- START STATIC PLAN TESTING SECTION -->
           <h3>Testing Requirements</h3>
           <p>You need baseline numbers to train effectively:</p>
-<ul>
+          <ul>
             <li><strong>FTP Test:</strong> Complete a 20-minute FTP test before starting. This sets your training zones. If you don't know your FTP, you're training blind.</li>
             <li><strong>Heart Rate Max Test:</strong> Complete a heart rate max test. This provides backup zones when power data is unreliable (heat, fatigue, equipment issues).</li>
-</ul>
+          </ul>
+          <!-- END STATIC PLAN TESTING SECTION -->
           <h3>TrainingPeaks Setup</h3>
           <p>This plan is designed to sync with TrainingPeaks. Set up your account, connect your devices, and ensure workouts sync automatically.</p>
           <h3>Time Commitment</h3>
@@ -420,7 +560,7 @@
           <h2 id="section-3-training-fundamentals">3 · Training Fundamentals</h2>
           <p>Before you start executing workouts, you need to understand how training works at a mechanical level.</p>
           <p>Not theory for theory's sake---practical understanding that changes how you approach every session, how you structure your week, and how you respond when your body doesn't cooperate.</p>
-          <p>This chapter builds from first principles: the adaptation cycle that drives all fitness gains, the zones that define intensity, the variables you manipulate to create training stress, the phases that organize your 12 weeks, and the philosophical approaches that match different athlete types.</p>
+          <p>This chapter builds from first principles: the adaptation cycle that drives all fitness gains, the zones that define intensity, the variables you manipulate to create training stress, the phases that organize your {{plan_weeks}} weeks, and the philosophical approaches that match different athlete types.</p>
           <p>Start here. Everything else makes more sense after this.</p>
 
           <h2>The Foundational Model: How Adaptation Works</h2>
@@ -497,10 +637,10 @@
           <p>Meaningful adaptation takes weeks and months, not days. Trust the process.</p>
         </section>
 
-        <section id="section-4-your-12-week-arc" class="gg-section">
-          <h2 id="section-4-your-12-week-arc">4 · Your 12-Week Arc</h2>
+        <section id="section-4-your-training-arc" class="gg-section">
+          <h2 id="section-4-your-training-arc">4 · Your {{plan_weeks}}-Week Arc</h2>
           <p>Understanding the big picture helps you navigate the individual weeks.</p>
-          <p>Your 12-week plan isn't random workouts strung together---it's a carefully structured progression designed to build the specific fitness required for <strong>{{RACE_NAME}}</strong>.</p>
+          <p>Your {{plan_weeks}}-week plan isn't random workouts strung together---it's a carefully structured progression designed to build the specific fitness required for <strong>{{RACE_NAME}}</strong>.</p>
           <p>Here's how it breaks down:</p>
 
           <table>
@@ -541,7 +681,7 @@
           </table>
 
           <h3>Week-by-Week Overview</h3>
-          <p>The following table provides a high-level view of your 12-week progression. Individual workouts are detailed in your TrainingPeaks calendar.</p>
+          <p>The following table provides a high-level view of your {{plan_weeks}}-week progression. Individual workouts are detailed in your TrainingPeaks calendar.</p>
 
           <table>
             <thead>
@@ -580,7 +720,9 @@
             </tbody>
           </table>
 
-          <p><em>Note: Specific TSS and hour targets vary by tier (Ayahuasca, Finisher, Compete, Podium). See your TrainingPeaks calendar for exact weekly prescriptions.</em></p>
+          <!-- START STATIC PLAN TIER NOTE -->
+          <p><em>Note: Specific TSS and hour targets vary by volume category. See your TrainingPeaks calendar for exact weekly prescriptions.</em></p>
+          <!-- END STATIC PLAN TIER NOTE -->
         </section>
 
         <section id="section-5-training-zones" class="gg-section">
@@ -935,6 +1077,46 @@
             </tbody>
 </table>
 
+          <!-- START CUSTOM FUELING SECTION -->
+          <div class="custom-fueling-section" data-custom-plan="{{IS_CUSTOM_PLAN}}">
+            <h3>Your Personalized Fueling Targets</h3>
+            <p>Based on your questionnaire, body weight, race distance, and goal type, here are your specific fueling numbers:</p>
+
+            <div class="fueling-summary-box">
+              <div class="fueling-metric">
+                <span class="metric-label">Hourly Carb Target:</span>
+                <span class="metric-value">{{HOURLY_CARB_TARGET}}</span>
+              </div>
+              <div class="fueling-metric">
+                <span class="metric-label">Total Carbs for Race:</span>
+                <span class="metric-value">{{TOTAL_CARB_TARGET}}</span>
+              </div>
+              <div class="fueling-metric">
+                <span class="metric-label">Estimated Race Duration:</span>
+                <span class="metric-value">{{ESTIMATED_RACE_DURATION}}</span>
+              </div>
+              <div class="fueling-metric">
+                <span class="metric-label">Hourly Fluid Target:</span>
+                <span class="metric-value">{{HOURLY_FLUID_TARGET}}</span>
+              </div>
+              <div class="fueling-metric">
+                <span class="metric-label">Hourly Sodium Target:</span>
+                <span class="metric-value">{{HOURLY_SODIUM_TARGET}}</span>
+              </div>
+            </div>
+
+            <h4>Gut Training Progression</h4>
+            <p>Your gut needs training just like your legs. Build to race-day fueling rates progressively:</p>
+            {{GUT_TRAINING_PHASES}}
+
+            <h4>Pre-Race Nutrition</h4>
+            {{PRE_RACE_NUTRITION}}
+
+            <h4>Product Recommendations</h4>
+            {{PRODUCT_RECOMMENDATIONS}}
+          </div>
+          <!-- END CUSTOM FUELING SECTION -->
+
           <hr />
 
           <h3>The Nutrition Reality Check</h3>
@@ -1242,14 +1424,14 @@
           <p>But chasing leanness during a training block is self-sabotage.</p>
           
           <h4>The Training Block Rule</h4>
-          <p>During your 12-week build, your job is to train hard and recover well. Not cut weight.</p>
+          <p>During your {{plan_weeks}}-week build, your job is to train hard and recover well. Not cut weight.</p>
           <p><strong>Why?</strong></p>
           <p>Energy deficit impairs recovery. Under-fueled training produces inferior workouts. You're trying to build fitness, not starve yourself into a smaller body.</p>
           <p><strong>The hierarchy:</strong><br />
           1. Train consistently and well<br />
           2. Recover fully<br />
           3. Maintain current weight or gain slightly</p>
-          <p>If you finish your 12 weeks 2kg heavier but significantly fitter, you did it right.</p>
+          <p>If you finish your {{plan_weeks}} weeks 2kg heavier but significantly fitter, you did it right.</p>
           
           <h4>When to Cut Weight</h4>
           <p>After your race. During the off-season. When training volume is low and intensity is moderate.</p>
@@ -1648,7 +1830,7 @@
             <h4>Integrating Heat Training Into Your 12-Week Plan</h4>
             <p>Heat training compromises workout quality by elevating heart rate, reducing power output capability, and increasing perceived effort. Research consensus strongly favors reserving heat training for <strong>easy endurance rides (Zone 2)</strong> while completing intervals in cool conditions.</p>
 
-            <p><strong>The 12-week integration framework:</strong></p>
+            <p><strong>The {{plan_weeks}}-week integration framework:</strong></p>
             <table>
               <thead>
                 <tr>
@@ -2157,7 +2339,7 @@
           <hr>
           
           <h3>Q: What's the minimum equipment I need to start this plan today?</h3>
-          <p><strong>A:</strong> A bike that fits and works. Power meter (required for this plan). Heart rate chest strap (required for backup). That's it. Everything else—fancy computers, carbon wheels, aero bars—can be figured out over 12 weeks. Stop shopping and start training.</p>
+          <p><strong>A:</strong> A bike that fits and works. Power meter (required for this plan). Heart rate chest strap (required for backup). That's it. Everything else—fancy computers, carbon wheels, aero bars—can be figured out over {{plan_weeks}} weeks. Stop shopping and start training.</p>
         </section>
 
 </div>

@@ -2,10 +2,42 @@
 """
 Training Guide Generator
 Reads the HTML template and substitutes race-specific data.
+
+For custom coaching clients, pass athlete_data dict containing:
+- profile: Athlete profile from questionnaire
+- derived: Derived classifications (tier, plan_weeks, etc.)
+- methodology: Selected training methodology
+- fueling: Personalized fueling calculations
 """
 
 import json
+import re
 from pathlib import Path
+from typing import Dict, Optional
+
+
+def load_brand_css():
+    """Load and combine brand CSS files for inlining into guides."""
+    script_dir = Path(__file__).parent
+    repo_root = script_dir.parent
+    brand_dir = repo_root / 'brand'
+    styles_dir = repo_root / 'styles'
+
+    css_parts = []
+
+    # Load design tokens
+    tokens_path = brand_dir / 'tokens.css'
+    if tokens_path.exists():
+        with open(tokens_path, 'r', encoding='utf-8') as f:
+            css_parts.append(f"/* === Brand Tokens === */\n{f.read()}")
+
+    # Load training guide styles
+    guide_css_path = styles_dir / 'training-guide.css'
+    if guide_css_path.exists():
+        with open(guide_css_path, 'r', encoding='utf-8') as f:
+            css_parts.append(f"/* === Training Guide Styles === */\n{f.read()}")
+
+    return '\n\n'.join(css_parts)
 
 
 def load_race_data(race_json_path):
@@ -15,13 +47,27 @@ def load_race_data(race_json_path):
 
 
 def load_template():
-    """Load the HTML template"""
+    """
+    Load the HTML template and inject brand CSS.
+
+    The template has a placeholder <!-- BRAND_CSS --> that gets replaced
+    with the inlined brand tokens and guide styles.
+    """
     # Get path relative to this script's location
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent
     template_path = repo_root / 'templates' / 'guide_template_full.html'
     with open(template_path, 'r', encoding='utf-8') as f:
-        return f.read()
+        template = f.read()
+
+    # Load and inject brand CSS
+    brand_css = load_brand_css()
+    if brand_css:
+        # Replace the placeholder with brand CSS
+        if '<!-- BRAND_CSS -->' in template:
+            template = template.replace('<!-- BRAND_CSS -->', f'<style>\n{brand_css}\n</style>')
+
+    return template
 
 
 def extract_non_negotiables(race_data, index):
@@ -56,16 +102,28 @@ def extract_non_negotiables(race_data, index):
     return defaults[index] if index < len(defaults) else {'requirement': '', 'by_when': '', 'why': ''}
 
 
-def generate_guide(race_data, tier_name, ability_level, output_path):
+def generate_guide(race_data, tier_name, ability_level, output_path, athlete_data: Optional[Dict] = None):
     """
     Generate a training guide for a specific race, tier, and ability level.
-    
+
     Args:
         race_data: Dict containing race information
         tier_name: str - "AYAHUASCA", "FINISHER", "COMPETE", or "PODIUM"
         ability_level: str - "Beginner", "Intermediate", or "Advanced"
         output_path: str - Where to save the generated HTML
+        athlete_data: Optional dict for custom coaching clients containing:
+            - profile: Athlete profile from questionnaire
+            - derived: Derived classifications
+            - methodology: Selected training methodology
+            - fueling: Personalized fueling calculations
     """
+
+    # Extract athlete-specific data if provided (custom coaching)
+    is_custom_plan = athlete_data is not None
+    profile = athlete_data.get('profile', {}) if athlete_data else {}
+    derived = athlete_data.get('derived', {}) if athlete_data else {}
+    methodology = athlete_data.get('methodology', {}) if athlete_data else {}
+    fueling = athlete_data.get('fueling', {}) if athlete_data else {}
     
     # Load template
     template = load_template()
@@ -136,6 +194,7 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{RACE_DESCRIPTION}}': description,
         '{{ABILITY_LEVEL}}': ability_level,
         '{{TIER_NAME}}': tier_name,
+        '{{PAGE_TITLE}}': f"{race_name} – {tier_name} · {ability_level} Guide",  # Default for static plans
         '{{WEEKLY_HOURS}}': get_weekly_hours(tier_name),
         '{{plan_weeks}}': '12',  # Default to 12 weeks, can be made dynamic
         '{{RACE_KEY_CHALLENGES}}': challenges,
@@ -204,7 +263,293 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         '{{SKILL_5_HOW}}': 'Practice changing tubes, fixing chains, and adjusting brakes before race day.',
         '{{SKILL_5_CUE}}': 'Carry tools. Know your bike. Practice fixes.',
     }
-    
+
+    # Override with custom plan data when athlete_data is provided
+    if is_custom_plan:
+        # Extract athlete name for personalization
+        name_field = profile.get('name', 'Athlete')
+        if isinstance(name_field, dict):
+            athlete_name = name_field.get('first', 'Athlete')
+        else:
+            # Name is a string, extract first name
+            athlete_name = str(name_field).split()[0] if name_field else 'Athlete'
+
+        # Override plan weeks from derived data
+        custom_plan_weeks = str(derived.get('plan_weeks', 12))
+        substitutions['{{plan_weeks}}'] = custom_plan_weeks
+
+        # Override weekly hours from profile (check multiple possible locations)
+        weekly_hours = profile.get('training', {}).get('weekly_hours', '')
+        if not weekly_hours:
+            weekly_hours = profile.get('weekly_availability', {}).get('cycling_hours_target', '')
+        if not weekly_hours:
+            weekly_hours = profile.get('weekly_availability', {}).get('total_hours_available', '')
+        if weekly_hours:
+            substitutions['{{WEEKLY_HOURS}}'] = str(weekly_hours)
+
+        # Override tier from derived (for custom plans, tier is derived from methodology)
+        custom_tier = derived.get('tier', tier_name).upper()
+        substitutions['{{TIER_NAME}}'] = custom_tier
+
+        # Build custom plan title (no tier names for custom plans)
+        selected_methodology = methodology.get('selected_methodology', 'Personalized')
+        substitutions['{{PLAN_TITLE}}'] = f"{race_name} – Custom Plan for {athlete_name} ({custom_plan_weeks} weeks)"
+        substitutions['{{PAGE_TITLE}}'] = f"{race_name} – Custom Training Plan for {athlete_name}"
+
+        # Methodology-specific content
+        methodology_config = methodology.get('configuration', {})
+        substitutions['{{SELECTED_METHODOLOGY}}'] = selected_methodology
+        substitutions['{{METHODOLOGY_ID}}'] = methodology.get('methodology_id', '')
+        substitutions['{{METHODOLOGY_SCORE}}'] = str(methodology.get('score', ''))
+        substitutions['{{METHODOLOGY_CONFIDENCE}}'] = methodology.get('confidence', 'medium')
+
+        # Build methodology reasons/philosophy
+        methodology_reasons = methodology.get('reasons', [])
+        if methodology_reasons:
+            reasons_html = '<ul class="methodology-reasons">\n'
+            for reason in methodology_reasons:
+                reasons_html += f'  <li>{reason}</li>\n'
+            reasons_html += '</ul>'
+            substitutions['{{METHODOLOGY_REASONS}}'] = reasons_html
+        else:
+            substitutions['{{METHODOLOGY_REASONS}}'] = ''
+
+        # Build methodology warnings
+        methodology_warnings = methodology.get('warnings', [])
+        if methodology_warnings:
+            warnings_html = '<div class="methodology-warnings">\n<p><strong>Things to watch:</strong></p>\n<ul>\n'
+            for warning in methodology_warnings:
+                warnings_html += f'  <li>{warning}</li>\n'
+            warnings_html += '</ul>\n</div>'
+            substitutions['{{METHODOLOGY_WARNINGS}}'] = warnings_html
+        else:
+            substitutions['{{METHODOLOGY_WARNINGS}}'] = ''
+
+        # Intensity distribution from methodology
+        intensity_dist = methodology_config.get('intensity_distribution', {})
+        z1_z2 = intensity_dist.get('z1_z2', 0.8)
+        z3 = intensity_dist.get('z3', 0.1)
+        z4_z5 = intensity_dist.get('z4_z5', 0.1)
+        substitutions['{{INTENSITY_Z1_Z2}}'] = f"{int(z1_z2 * 100)}%"
+        substitutions['{{INTENSITY_Z3}}'] = f"{int(z3 * 100)}%"
+        substitutions['{{INTENSITY_Z4_Z5}}'] = f"{int(z4_z5 * 100)}%"
+
+        # Key workouts from methodology
+        key_workouts = methodology_config.get('key_workouts', [])
+        if key_workouts:
+            workouts_html = '<ul class="key-workouts">\n'
+            workout_descriptions = {
+                'long_z2': 'Long Zone 2 endurance rides (4-6 hours)',
+                'tempo_progression': 'Tempo progression workouts',
+                'threshold_intervals': 'Threshold intervals (FTP work)',
+                'vo2max_intervals': 'VO2max intervals (3-5 min hard efforts)',
+                'sweet_spot': 'Sweet spot training (88-93% FTP)',
+                'polarized_intervals': 'Polarized high-intensity blocks',
+                'race_simulation': 'Race simulation long rides',
+                'strength_endurance': 'Strength-endurance climbing work'
+            }
+            for workout in key_workouts:
+                desc = workout_descriptions.get(workout, workout.replace('_', ' ').title())
+                workouts_html += f'  <li>{desc}</li>\n'
+            workouts_html += '</ul>'
+            substitutions['{{KEY_WORKOUTS_LIST}}'] = workouts_html
+        else:
+            substitutions['{{KEY_WORKOUTS_LIST}}'] = ''
+
+        # Progression style
+        progression_style = methodology_config.get('progression_style', 'balanced')
+        progression_descriptions = {
+            'volume_then_intensity': 'Build volume first, then add intensity (Traditional)',
+            'intensity_then_volume': 'Build intensity first, then add volume (Reverse)',
+            'balanced': 'Balanced progression throughout',
+            'block': 'Concentrated blocks of specific work'
+        }
+        substitutions['{{PROGRESSION_STYLE}}'] = progression_descriptions.get(progression_style, progression_style)
+
+        # Override ability level explanation with personalized context
+        experience_level = profile.get('training', {}).get('experience_level', 'intermediate')
+        training_history = profile.get('training', {}).get('training_history', '')
+
+        custom_ability_explanation = f"Based on your questionnaire, you have {experience_level} experience"
+        if training_history:
+            custom_ability_explanation += f" with a background in {training_history}"
+        custom_ability_explanation += f". Your {selected_methodology} plan is designed around your specific profile—{weekly_hours} hours per week, with {custom_plan_weeks} weeks until race day."
+        substitutions['{{ABILITY_LEVEL_EXPLANATION}}'] = custom_ability_explanation
+
+        # Override tier volume explanation with methodology-specific context
+        custom_tier_explanation = f"This plan uses the {selected_methodology} approach. "
+        if z1_z2 >= 0.8:
+            custom_tier_explanation += f"You'll spend {int(z1_z2 * 100)}% of your time in Zone 1-2 (easy aerobic), with {int(z4_z5 * 100)}% at high intensity. "
+        else:
+            custom_tier_explanation += f"Your intensity distribution: {int(z1_z2 * 100)}% easy, {int(z3 * 100)}% moderate, {int(z4_z5 * 100)}% hard. "
+        custom_tier_explanation += f"Progression style: {progression_descriptions.get(progression_style, progression_style).lower()}."
+        substitutions['{{TIER_VOLUME_EXPLANATION}}'] = custom_tier_explanation
+
+        # Override performance expectations with personalized context (no tier jargon)
+        custom_expectations = f"With {weekly_hours} hours per week over {custom_plan_weeks} weeks, "
+        custom_expectations += f"you're building race-specific fitness using the {selected_methodology} approach. "
+        custom_expectations += "This plan is calibrated to your available time and experience level. "
+        custom_expectations += "Execute consistently, fuel properly, and trust the process."
+        substitutions['{{PERFORMANCE_EXPECTATIONS}}'] = custom_expectations
+
+        # ========== FUELING DATA ==========
+        if fueling:
+            # Extract from nested structure (matches calculate_fueling.py output)
+            carbs_data = fueling.get('carbohydrates', {})
+            calories_data = fueling.get('calories', {})
+            race_info = fueling.get('race', {})
+            gut_training = fueling.get('gut_training', {})
+            recommendations = fueling.get('recommendations', {})
+            hydration = recommendations.get('hydration', {})
+
+            # Core fueling targets
+            hourly_target = carbs_data.get('hourly_target', 60)
+            total_carbs = carbs_data.get('total_grams', 600)
+            total_calories = calories_data.get('total_calories', 3000)
+            race_duration_hours = race_info.get('duration_hours', 10)
+
+            substitutions['{{HOURLY_CARB_TARGET}}'] = f"{hourly_target}g/hr"
+            substitutions['{{TOTAL_CARB_TARGET}}'] = f"{int(total_carbs)}g"
+            substitutions['{{TOTAL_CALORIE_TARGET}}'] = f"{int(total_calories):,} kcal"
+            substitutions['{{ESTIMATED_RACE_DURATION}}'] = f"{race_duration_hours:.1f} hours"
+
+            # Fluid targets
+            hourly_fluid = hydration.get('target_ml_per_hour', 750)
+            total_fluid = hourly_fluid * race_duration_hours / 1000
+            substitutions['{{HOURLY_FLUID_TARGET}}'] = f"{hourly_fluid}ml/hr"
+            substitutions['{{TOTAL_FLUID_TARGET}}'] = f"{total_fluid:.1f}L"
+
+            # Sodium
+            hourly_sodium = 500  # Default, could extract from electrolytes field
+            substitutions['{{HOURLY_SODIUM_TARGET}}'] = f"{hourly_sodium}mg/hr"
+
+            # Gut training phases
+            gut_phases = gut_training.get('phases', {})
+            if gut_phases:
+                phases_html = '<table class="gut-training-table">\n'
+                phases_html += '  <thead><tr><th>Phase</th><th>Weeks</th><th>Target</th><th>Focus</th></tr></thead>\n'
+                phases_html += '  <tbody>\n'
+                for phase_name, phase_data in gut_phases.items():
+                    if isinstance(phase_data, dict):
+                        weeks = phase_data.get('weeks', '')
+                        target_range = phase_data.get('target_range', [0, 0])
+                        description = phase_data.get('description', '')
+                        phases_html += f'    <tr><td><strong>{phase_name.title()}</strong></td>'
+                        phases_html += f'<td>{weeks}</td>'
+                        phases_html += f'<td>{target_range[0]}-{target_range[1]}g/hr</td>'
+                        phases_html += f'<td>{description}</td></tr>\n'
+                phases_html += '  </tbody>\n</table>'
+                substitutions['{{GUT_TRAINING_PHASES}}'] = phases_html
+            else:
+                substitutions['{{GUT_TRAINING_PHASES}}'] = ''
+
+            # Personalized fueling table (overrides generic one)
+            substitutions['{{INFOGRAPHIC_FUELING_TABLE}}'] = generate_personalized_fueling_table(
+                fueling, race_data, profile
+            )
+
+            # Pre-race nutrition
+            pre_race = recommendations.get('pre_race', {})
+            if pre_race:
+                pre_race_html = '<div class="pre-race-nutrition">\n'
+                pre_race_html += f'<p><strong>Pre-Race Meal:</strong> {pre_race.get("meal_timing", "3-4 hours before start")}</p>\n'
+                pre_race_html += f'<p><strong>Composition:</strong> {pre_race.get("meal_composition", "High carb, moderate protein, low fat/fiber")}</p>\n'
+                pre_race_html += f'<p><strong>Example:</strong> {pre_race.get("example", "Oatmeal with banana, honey, and nut butter")}</p>\n'
+                pre_race_html += f'<p><strong>Final Top-off:</strong> {pre_race.get("final_top_off", "30-50g carbs 30min before start")}</p>\n'
+                pre_race_html += '</div>'
+                substitutions['{{PRE_RACE_NUTRITION}}'] = pre_race_html
+            else:
+                substitutions['{{PRE_RACE_NUTRITION}}'] = ''
+
+            # Product recommendations based on athlete weight
+            athlete_info = fueling.get('athlete', {})
+            weight_kg = athlete_info.get('weight_kg', profile.get('physical', {}).get('weight_kg', 75))
+
+            # Calculate products needed
+            gels_per_hour = hourly_target / 25  # ~25g per gel
+            bars_estimate = total_carbs / 40 / 3  # ~40g per bar, eat ~1/3 of carbs from bars
+
+            products_html = f'''
+            <div class="product-recommendations">
+                <p><strong>Based on your {hourly_target}g/hr target:</strong></p>
+                <ul>
+                    <li>Gels: ~{gels_per_hour:.1f} per hour (or equivalent liquid carbs)</li>
+                    <li>Bars: ~{int(bars_estimate)} for variety during race</li>
+                    <li>Drink mix: {int(hourly_target * 0.3)}g carbs per bottle</li>
+                </ul>
+                <p class="note">Practice this exact fueling strategy during long training rides.</p>
+            </div>
+            '''
+            substitutions['{{PRODUCT_RECOMMENDATIONS}}'] = products_html
+
+        # ========== PLAN CALENDAR DATA ==========
+        plan_dates = athlete_data.get('plan_dates', {})
+        if plan_dates:
+            substitutions['{{PLAN_START_DATE}}'] = plan_dates.get('plan_start', '')
+            substitutions['{{RACE_WEEK_MONDAY}}'] = plan_dates.get('race_week_monday', '')
+            substitutions['{{RACE_DATE}}'] = plan_dates.get('race_date', '')
+            substitutions['{{RACE_WEEKDAY}}'] = plan_dates.get('race_weekday', '')
+
+            # Generate plan calendar table
+            weeks = plan_dates.get('weeks', [])
+            if weeks:
+                calendar_html = '<table class="plan-calendar-table">\n'
+                calendar_html += '  <thead><tr><th>Week</th><th>Dates</th><th>Phase</th></tr></thead>\n'
+                calendar_html += '  <tbody>\n'
+                for week in weeks:
+                    row_class = ' class="race-week"' if week.get('is_race_week') else ''
+                    notes = ' (RACE WEEK)' if week.get('is_race_week') else ''
+                    calendar_html += f'    <tr{row_class}><td>W{week["week"]:02d}</td>'
+                    calendar_html += f'<td>{week["monday"]} - {week["sunday"]}</td>'
+                    calendar_html += f'<td>{week["phase"].title()}{notes}</td></tr>\n'
+                calendar_html += '  </tbody>\n</table>'
+                substitutions['{{PLAN_CALENDAR_TABLE}}'] = calendar_html
+            else:
+                substitutions['{{PLAN_CALENDAR_TABLE}}'] = ''
+        else:
+            # Try to get from derived if plan_dates not explicitly passed
+            race_date = derived.get('race_date', profile.get('target_race', {}).get('date', ''))
+            plan_start = derived.get('plan_start', '')
+            substitutions['{{PLAN_START_DATE}}'] = plan_start
+            substitutions['{{RACE_WEEK_MONDAY}}'] = derived.get('race_week_monday', '')
+            substitutions['{{RACE_DATE}}'] = race_date
+            substitutions['{{RACE_WEEKDAY}}'] = derived.get('race_weekday', '')
+            substitutions['{{PLAN_CALENDAR_TABLE}}'] = ''
+
+        # Set placeholders for sections that should be hidden or shown for custom plans
+        substitutions['{{IS_CUSTOM_PLAN}}'] = 'true'
+        substitutions['{{ATHLETE_FIRST_NAME}}'] = athlete_name
+    else:
+        # Default values for non-custom plans
+        substitutions['{{SELECTED_METHODOLOGY}}'] = ''
+        substitutions['{{METHODOLOGY_ID}}'] = ''
+        substitutions['{{METHODOLOGY_SCORE}}'] = ''
+        substitutions['{{METHODOLOGY_CONFIDENCE}}'] = ''
+        substitutions['{{METHODOLOGY_REASONS}}'] = ''
+        substitutions['{{METHODOLOGY_WARNINGS}}'] = ''
+        substitutions['{{INTENSITY_Z1_Z2}}'] = '80%'
+        substitutions['{{INTENSITY_Z3}}'] = '10%'
+        substitutions['{{INTENSITY_Z4_Z5}}'] = '10%'
+        substitutions['{{KEY_WORKOUTS_LIST}}'] = ''
+        substitutions['{{PROGRESSION_STYLE}}'] = ''
+        substitutions['{{HOURLY_CARB_TARGET}}'] = '60-90g/hr'
+        substitutions['{{TOTAL_CARB_TARGET}}'] = 'varies'
+        substitutions['{{TOTAL_CALORIE_TARGET}}'] = 'varies'
+        substitutions['{{ESTIMATED_RACE_DURATION}}'] = 'varies'
+        substitutions['{{HOURLY_FLUID_TARGET}}'] = '500-750ml/hr'
+        substitutions['{{TOTAL_FLUID_TARGET}}'] = 'varies'
+        substitutions['{{HOURLY_SODIUM_TARGET}}'] = '400-700mg/hr'
+        substitutions['{{GUT_TRAINING_PHASES}}'] = ''
+        substitutions['{{PRE_RACE_NUTRITION}}'] = ''
+        substitutions['{{PRODUCT_RECOMMENDATIONS}}'] = ''
+        substitutions['{{PLAN_START_DATE}}'] = ''
+        substitutions['{{RACE_WEEK_MONDAY}}'] = ''
+        substitutions['{{RACE_DATE}}'] = ''
+        substitutions['{{RACE_WEEKDAY}}'] = ''
+        substitutions['{{PLAN_CALENDAR_TABLE}}'] = ''
+        substitutions['{{IS_CUSTOM_PLAN}}'] = 'false'
+        substitutions['{{ATHLETE_FIRST_NAME}}'] = ''
+
     # Perform all substitutions
     output = template
     for placeholder, value in substitutions.items():
@@ -227,7 +572,6 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
     
     if race_elevation < 3000:
         # Remove altitude section (between START and END comments)
-        import re
         altitude_pattern = r'<!-- START ALTITUDE SECTION[^>]*-->.*?<!-- END ALTITUDE SECTION -->'
         output = re.sub(altitude_pattern, '', output, flags=re.DOTALL)
         print(f"  → Removed altitude section (race elevation: {race_elevation} feet < 3000)")
@@ -235,7 +579,6 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         print(f"  → Included altitude section (race elevation: {race_elevation} feet >= 3000)")
     
     # Conditionally remove Masters section if not a Masters plan
-    import re
     if ability_level != 'Masters':
         # Remove Masters section from TOC
         masters_toc_pattern = r'<!-- START MASTERS SECTION TOC -->.*?<!-- END MASTERS SECTION TOC -->'
@@ -246,7 +589,34 @@ def generate_guide(race_data, tier_name, ability_level, output_path):
         print(f"  → Removed Masters section (not a Masters plan)")
     else:
         print(f"  → Included Masters section (Masters plan)")
-    
+
+    # Conditionally remove custom plan sections if not a custom plan
+    if not is_custom_plan:
+        # Remove custom methodology section
+        custom_methodology_pattern = r'<!-- START CUSTOM METHODOLOGY SECTION -->.*?<!-- END CUSTOM METHODOLOGY SECTION -->'
+        output = re.sub(custom_methodology_pattern, '', output, flags=re.DOTALL)
+        # Remove custom fueling section
+        custom_fueling_pattern = r'<!-- START CUSTOM FUELING SECTION -->.*?<!-- END CUSTOM FUELING SECTION -->'
+        output = re.sub(custom_fueling_pattern, '', output, flags=re.DOTALL)
+        # Remove custom plan calendar section
+        custom_calendar_pattern = r'<!-- START CUSTOM PLAN CALENDAR SECTION -->.*?<!-- END CUSTOM PLAN CALENDAR SECTION -->'
+        output = re.sub(custom_calendar_pattern, '', output, flags=re.DOTALL)
+        print(f"  → Removed custom plan sections (not a custom plan)")
+    else:
+        # For custom plans, remove the static tier/ability sections (AYAHUASCA, etc.)
+        static_tier_pattern = r'<!-- START STATIC PLAN TIER SECTION -->.*?<!-- END STATIC PLAN TIER SECTION -->'
+        output = re.sub(static_tier_pattern, '', output, flags=re.DOTALL)
+        # Remove testing requirements section for custom plans (coach handles this)
+        static_testing_pattern = r'<!-- START STATIC PLAN TESTING SECTION -->.*?<!-- END STATIC PLAN TESTING SECTION -->'
+        output = re.sub(static_testing_pattern, '', output, flags=re.DOTALL)
+        # Remove tier note mentioning Ayahuasca/Finisher/etc
+        static_tier_note_pattern = r'<!-- START STATIC PLAN TIER NOTE -->.*?<!-- END STATIC PLAN TIER NOTE -->'
+        output = re.sub(static_tier_note_pattern, '', output, flags=re.DOTALL)
+        name_field = profile.get('name', 'Athlete')
+        display_name = name_field.get('first', 'Athlete') if isinstance(name_field, dict) else str(name_field).split()[0]
+        print(f"  → Included custom plan sections (custom coaching plan for {display_name})")
+        print(f"  → Removed static tier/testing sections (not needed for custom plans)")
+
     # Write output
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(output)
@@ -650,7 +1020,94 @@ def generate_fueling_table(race_data):
     
     html += '  </tbody>\n'
     html += '</table>'
-    
+
+    return html
+
+
+def generate_personalized_fueling_table(fueling_data, race_data, profile):
+    """Generate personalized fueling table based on athlete's calculated needs"""
+    # Extract from nested structure
+    race_info = fueling_data.get('race', {})
+    carbs_data = fueling_data.get('carbohydrates', {})
+    recommendations = fueling_data.get('recommendations', {})
+    hydration = recommendations.get('hydration', {})
+    athlete_info = fueling_data.get('athlete', {})
+
+    distance = race_data.get('distance_miles', race_info.get('distance_miles', 200))
+    duration_hours = race_info.get('duration_hours', distance / 15)
+    hourly_carb = carbs_data.get('hourly_target', 60)
+    total_carbs = carbs_data.get('total_grams', hourly_carb * duration_hours)
+    hourly_fluid = hydration.get('target_ml_per_hour', 750)
+    hourly_sodium = 500  # Default
+
+    weight_kg = athlete_info.get('weight_kg', profile.get('physical', {}).get('weight_kg', 75))
+
+    # Personalized scenarios based on actual targets
+    scenarios = [
+        {
+            'scenario': 'Training Ride < 2 hours',
+            'carbs': f'{int(hourly_carb * 0.5)}-{int(hourly_carb * 0.7)}g/hour',
+            'fluid': f'{int(hourly_fluid * 0.7)}-{hourly_fluid}ml/hour',
+            'notes': 'Water + electrolytes. Start fueling after 60 min if needed.'
+        },
+        {
+            'scenario': 'Training Ride 2-4 hours',
+            'carbs': f'{int(hourly_carb * 0.7)}-{int(hourly_carb * 0.9)}g/hour',
+            'fluid': f'{int(hourly_fluid * 0.8)}-{hourly_fluid}ml/hour',
+            'notes': 'Mix of gels, bars, and real food. Practice your race nutrition.'
+        },
+        {
+            'scenario': 'Long Training Ride 4-6 hours',
+            'carbs': f'{int(hourly_carb * 0.9)}-{hourly_carb}g/hour',
+            'fluid': f'{hourly_fluid}ml/hour',
+            'notes': 'Full race-day fueling. This IS your gut training.'
+        },
+        {
+            'scenario': f'YOUR Race Day ({distance} miles, ~{int(duration_hours)} hours)',
+            'carbs': f'{hourly_carb}g/hour',
+            'fluid': f'{hourly_fluid}ml/hour',
+            'notes': f'Your target: {int(total_carbs)}g total carbs. Start in first 30 min.'
+        },
+        {
+            'scenario': 'Hot Conditions (>80°F)',
+            'carbs': f'{hourly_carb}g/hour',
+            'fluid': f'{int(hourly_fluid * 1.3)}-{int(hourly_fluid * 1.5)}ml/hour',
+            'notes': f'Increase sodium to {int(hourly_sodium * 1.3)}-{int(hourly_sodium * 1.5)}mg/hour. Pre-cool if possible.'
+        },
+        {
+            'scenario': 'Cold Conditions (<50°F)',
+            'carbs': f'{hourly_carb}g/hour',
+            'fluid': f'{int(hourly_fluid * 0.6)}-{int(hourly_fluid * 0.8)}ml/hour',
+            'notes': 'Lower fluid needs, but still fuel aggressively. Warm fluids help.'
+        }
+    ]
+
+    # Build HTML table
+    html = '<table class="fueling-table personalized">\n'
+    html += f'  <caption>Your Personalized Fueling Calculator (based on {weight_kg}kg body weight)</caption>\n'
+    html += '  <thead>\n'
+    html += '    <tr>\n'
+    html += '      <th>Scenario</th>\n'
+    html += '      <th>Carbohydrate Intake</th>\n'
+    html += '      <th>Fluid Intake</th>\n'
+    html += '      <th>Notes</th>\n'
+    html += '    </tr>\n'
+    html += '  </thead>\n'
+    html += '  <tbody>\n'
+
+    for scenario in scenarios:
+        # Highlight the race day row
+        row_class = ' class="race-day-row"' if 'YOUR Race Day' in scenario['scenario'] else ''
+        html += f'    <tr{row_class}>\n'
+        html += f'      <td><strong>{scenario["scenario"]}</strong></td>\n'
+        html += f'      <td>{scenario["carbs"]}</td>\n'
+        html += f'      <td>{scenario["fluid"]}</td>\n'
+        html += f'      <td>{scenario["notes"]}</td>\n'
+        html += '    </tr>\n'
+
+    html += '  </tbody>\n'
+    html += '</table>'
+
     return html
 
 

@@ -1,0 +1,81 @@
+{
+  "name": "SBT GRVL 75",
+  "race_id": "sbt_grvl_75",
+  "race_metadata": {
+    "name": "SBT GRVL 75",
+    "distance_miles": 75,
+    "elevation_feet": 5500,
+    "location": "Steamboat Springs, CO",
+    "date": "2026-06-28",
+    "start_elevation_feet": 6700,
+    "avg_elevation_feet": 7500
+  },
+  "distance_miles": 75,
+  "elevation_gain_feet": 5500,
+  "terrain_description": "Mountain gravel roads with sustained climbs, technical descents, and stunning Colorado scenery",
+  "duration_estimate": "4-6 hours",
+  "description": "SBT GRVL is Steamboat Springs' premier gravel race, featuring challenging mountain terrain, significant climbing, and the stunning backdrop of the Yampa Valley. The 75-mile course delivers a proper test of fitness with enough distance to require smart pacing and solid fueling.",
+  "key_challenges": "sustained climbing at altitude, technical gravel descents, variable weather, and managing effort across 5500ft of elevation gain",
+  "recommended_tire_width": "40-45mm",
+  "technical_rating": "Moderate-High",
+  "time_cutoff": "None",
+  "website": "https://www.sbtgrvl.com",
+  "weather_strategy": "Mountain weather is unpredictable. Check forecast, pack arm warmers and vest. Morning starts can be cold, afternoon thunderstorms possible.",
+  "aid_station_strategy": "Well-supported course. Quick stops for refills. Don't rely solely on aid stations - carry enough between stops.",
+  "altitude_power_loss": "Significant - race is at 6,700-8,500 feet elevation. Expect 5-10% power loss vs sea level. Acclimatize if possible.",
+  "specific_skill_notes": "Practice descending on loose gravel. The course has technical sections where confidence matters. Train on similar terrain if available.",
+  "specific_tactics": "Start conservatively - the altitude will catch up with you. The climbing is relentless so pace yourself. Save legs for the back half.",
+  "race_characteristics": {
+    "terrain": "mountain_gravel",
+    "technical_difficulty": "moderate-high",
+    "climate": "mountain",
+    "typical_weather": "Variable. Cold mornings, warm afternoons, possible afternoon thunderstorms. Be prepared for anything.",
+    "altitude_feet": 7500
+  },
+  "race_hooks": {
+    "punchy": "Colorado mountain gravel at its finest.",
+    "detail": "SBT GRVL delivers a proper mountain gravel experience - challenging climbs, technical descents, and scenery that makes you forget the suffering. The 75-mile course is the sweet spot: long enough to require real fitness, short enough to push hard."
+  },
+  "race_significance": {
+    "iconic_status": "a rapidly growing premier mountain gravel event",
+    "organization_quality": "excellent - professional organization with small-town charm",
+    "energy": "competitive but welcoming",
+    "community": "Steamboat's cycling community creates a festive atmosphere",
+    "field_depth": "strong regional field with national talent",
+    "entry_fee": "moderate",
+    "travel_lodging": "Steamboat is a destination town - book early, lodging fills up"
+  },
+  "guide_variables": {
+    "race_name": "SBT GRVL 75",
+    "race_terrain": "mountain gravel roads with sustained climbs",
+    "race_weather": "Variable mountain conditions",
+    "race_challenges": ["altitude", "climbing", "technical descents", "variable weather"]
+  },
+  "non_negotiables": [
+    {
+      "requirement": "Altitude acclimatization",
+      "by_when": "Week 1-2 before race (if possible)",
+      "why": "Racing at 7,000+ feet without acclimatization will significantly impact performance"
+    },
+    {
+      "requirement": "Power meter and HR monitor",
+      "by_when": "Week 1",
+      "why": "Precise power data is critical for pacing at altitude where RPE is unreliable"
+    },
+    {
+      "requirement": "Technical descending practice",
+      "by_when": "Throughout training",
+      "why": "The course has technical sections - confidence on descents prevents crashes and saves energy"
+    },
+    {
+      "requirement": "Heat/altitude training",
+      "by_when": "Weeks 6-10",
+      "why": "Simulating race conditions prepares your body for the stress of altitude"
+    },
+    {
+      "requirement": "Fueling plan execution",
+      "by_when": "Race day",
+      "why": "Altitude increases calorie burn - nail your fueling or bonk hard"
+    }
+  ]
+}

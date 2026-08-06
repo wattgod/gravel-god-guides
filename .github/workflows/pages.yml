@@ -6,7 +6,9 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pages
+  # Keep the replacement publisher independent from legacy Pages runs whose
+  # generated `pages` queue can remain stuck after their deploy job is cancelled.
+  group: guides-pages-v2
   cancel-in-progress: false
 
 permissions:

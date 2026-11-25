@@ -3,12 +3,16 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 concurrency:
   # Keep the replacement publisher independent from legacy Pages runs whose
   # generated `pages` queue can remain stuck after their deploy job is cancelled.
-  group: guides-pages-v2
+  group: guides-pages-v2-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
   cancel-in-progress: false
 
 permissions:
@@ -21,8 +25,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
 
       - name: Configure Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
 
       - name: Stage static site
@@ -40,12 +47,41 @@ jobs:
           ! grep -R "Reliance Deep Woods" _site/athletes/reliance-deep-woods-*/index.html
           grep -R -q "Reliance Tennessee Gravel" _site/athletes/reliance-deep-woods-*/index.html
 
+      - name: Install pinned TruffleHog
+        shell: bash
+        run: |
+          tool_dir="$RUNNER_TEMP/trufflehog"
+          mkdir -p "$tool_dir"
+          curl --fail --silent --show-error --location --retry 3 --max-time 75 --proto '=https' \
+            --output "$tool_dir/release.tar.gz" \
+            https://github.com/trufflesecurity/trufflehog/releases/download/v3.100.1/trufflehog_3.100.1_linux_amd64.tar.gz
+          echo "b2460688116f29ce33f1afe16d14fef3fa3db928e74ba55a6c9fed392c60ad69  $tool_dir/release.tar.gz" | sha256sum --check
+          tar -xzf "$tool_dir/release.tar.gz" -C "$tool_dir" trufflehog
+
+      - name: Scan staged Pages files for secrets
+        shell: bash
+        run: |
+          if "$RUNNER_TEMP/trufflehog/trufflehog" filesystem _site --no-verification \
+            --no-update --fail --fail-on-scan-errors --concurrency=2 >/dev/null 2>&1; then
+            echo "No secret candidates found."
+          else
+            status=$?
+            if [[ "$status" == 183 ]]; then
+              echo "::error::A secret candidate was detected in the staged site."
+            else
+              echo "::error::The site secret scan could not complete (exit $status)."
+            fi
+            exit "$status"
+          fi
+
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:
           path: _site
 
   deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 15
